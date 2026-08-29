@@ -1835,7 +1835,14 @@ section {
     font-family: var(--font-display);
     font-size: 2rem;
     font-weight: 800;
-    color: var(--gold);
+    color: var(--gold-dark);
+}
+
+.stat-card .stat-label {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
 }
 
 /* Icon bubbles used across cards */
@@ -10509,4 +10516,190 @@ textarea:focus-visible,
     font-size: 0.8rem;
     color: var(--text-secondary);
     margin: 0.15rem 0 0;
+}
+
+/* ---------- About: story timeline (years) ---------- */
+.story-timeline {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding-left: 2.8rem;
+}
+
+.story-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: var(--gray-200);
+}
+
+.story-timeline-item {
+    position: relative;
+    padding-bottom: 2.2rem;
+}
+
+.story-timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.story-timeline-dot {
+    position: absolute;
+    left: -2.8rem;
+    top: 0.15rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--black);
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--gold);
+}
+
+.story-timeline-year {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--gold-dark);
+    margin-bottom: 0.3rem;
+}
+
+.story-timeline-item strong {
+    display: block;
+    color: var(--black);
+    margin-bottom: 0.3rem;
+    font-size: 1.05rem;
+}
+
+.story-timeline-item p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .story-timeline {
+        padding-left: 2.2rem;
+    }
+
+    .story-timeline-dot {
+        left: -2.2rem;
+    }
+}
+
+/* ---------- About: team cards ---------- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.6rem;
+}
+
+.team-card {
+    background: var(--white);
+    border-radius: var(--radius-md, 16px);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elevated);
+}
+
+.team-card-img {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.team-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.team-card-body {
+    padding: 1.2rem 1.1rem 1.4rem;
+}
+
+.team-card-body h3 {
+    font-size: 1.05rem;
+    color: var(--black);
+    margin-bottom: 0.2rem;
+}
+
+.team-card-role {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.team-card-body p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ---------- About: destination pill links ---------- */
+.about-destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+}
+
+.about-destination-pill {
+    position: relative;
+    display: block;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.about-destination-pill img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition);
+}
+
+.about-destination-pill:hover img {
+    transform: scale(1.06);
+}
+
+.about-destination-pill::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.about-destination-pill-label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.9rem;
+    z-index: 2;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.about-destination-pill-label strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.about-destination-pill-label small {
+    font-size: 0.72rem;
+    opacity: 0.85;
 }
