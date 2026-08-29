@@ -58,7 +58,7 @@
     <link rel="icon" href="<?= asset('images/favicon.svg') ?>" type="image/svg+xml" />
 </head>
 
-<body class="hero-behind-header">
+<body class="hero-behind-header <?= e($bodyClass ?? '') ?>">
 
     <header class="site-header" id="siteHeader">
         <div class="container header-container">

@@ -110,14 +110,14 @@ require dirname(__DIR__) . '/includes/header.php';
                             </div>
                         </div>
                     </a>
-                    <a href="<?= url('contact.php') ?>" class="popular-package-card">
+                    <a href="<?= url('safari/5-day-serengeti-ngorongoro-safari.php') ?>" class="popular-package-card">
                         <div class="popular-package-img">
-                            <img src="<?= asset('images/hero/ngorongoro-crater-panorama.jpg') ?>" alt="2 Days Tarangire and Ngorongoro Safari" loading="lazy" />
+                            <img src="<?= asset('images/hero/ngorongoro-crater-panorama.jpg') ?>" alt="5 Days Serengeti and Ngorongoro Safari" loading="lazy" />
                             <span class="popular-package-badge">🌿 Budget</span>
                         </div>
                         <div class="popular-package-body">
-                            <h3>2 Days Tarangire &amp; Ngorongoro</h3>
-                            <div class="pkg-dest">Ngorongoro Crater</div>
+                            <h3>5 Days Serengeti &amp; Ngorongoro</h3>
+                            <div class="pkg-dest">Tarangire · Serengeti · Ngorongoro</div>
                             <div class="popular-package-footer">
                                 <div class="price-tag">€650 <small>from · <?= e(t('safari_pp')) ?></small></div>
                                 <span class="popular-package-arrow"><i class="fas fa-arrow-right"></i></span>

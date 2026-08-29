@@ -9295,3 +9295,677 @@ textarea:focus-visible,
     text-align: center;
     margin-top: 0.9rem;
 }
+
+/* ============================================================
+   SAFARI DETAIL PAGE (booking-style layout)
+   ============================================================ */
+
+.safari-detail-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .safari-detail-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.safari-detail-main {
+    min-width: 0;
+}
+
+/* ---------- Detail hero ---------- */
+.detail-hero {
+    position: relative;
+    padding: calc(var(--header-height) + 2.5rem) 0 2.5rem;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.detail-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.detail-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.detail-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.detail-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.7rem;
+}
+
+.detail-hero-meta .dot {
+    opacity: 0.5;
+}
+
+.detail-hero h1 {
+    color: var(--white);
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.detail-hero-route {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.4rem;
+}
+
+.detail-hero-price {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 1.4rem;
+}
+
+.detail-hero-price strong {
+    display: block;
+    font-size: 1.6rem;
+    color: var(--gold-light);
+    font-weight: 800;
+}
+
+.detail-hero-quickfacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.detail-hero-quickfacts span {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* ---------- Photo gallery with "view all" ---------- */
+.detail-gallery {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: repeat(2, 140px);
+    gap: 0.6rem;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.detail-gallery a {
+    position: relative;
+    display: block;
+}
+
+.detail-gallery a:first-child {
+    grid-row: span 2;
+}
+
+.detail-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.detail-gallery-more {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .detail-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 110px);
+    }
+
+    .detail-gallery a:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+/* ---------- Why you'll love it ---------- */
+.love-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.2rem 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+
+@media (max-width: 560px) {
+    .love-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.love-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.love-list li i {
+    color: #2f9e44;
+    margin-top: 0.2rem;
+}
+
+/* ---------- Safari route strip ---------- */
+.route-strip {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    padding: 1.5rem;
+}
+
+.route-strip-stop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 90px;
+}
+
+.route-strip-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.route-strip-stop span {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.route-strip-arrow {
+    color: var(--gray-300);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    padding: 0 0.3rem;
+}
+
+@media (max-width: 700px) {
+    .route-strip {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .route-strip-arrow {
+        transform: rotate(90deg);
+        align-self: center;
+        padding: 0.3rem 0;
+    }
+}
+
+/* ---------- Day-by-day accordion ---------- */
+.itinerary-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.itinerary-day {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+.itinerary-day-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 1.1rem 1.3rem;
+    cursor: pointer;
+    font-family: var(--font-body);
+}
+
+.itinerary-day-number {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--gold-dark);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.itinerary-day-heading {
+    flex: 1;
+}
+
+.itinerary-day-heading strong {
+    display: block;
+    font-size: 0.98rem;
+    color: var(--black);
+}
+
+.itinerary-day-heading small {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+}
+
+.itinerary-day-toggle i {
+    color: var(--gray-600);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.itinerary-day.open .itinerary-day-toggle i {
+    transform: rotate(180deg);
+}
+
+.itinerary-day-body {
+    display: none;
+    padding: 0 1.3rem 1.3rem 4.2rem;
+}
+
+.itinerary-day.open .itinerary-day-body {
+    display: block;
+}
+
+.itinerary-day-body p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.9rem;
+}
+
+.itinerary-day-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.9rem;
+}
+
+.itinerary-day-tags span {
+    background: var(--gray-100);
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.78rem;
+    color: var(--black);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.itinerary-day-accommodation {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.85rem;
+}
+
+.itinerary-day-accommodation i {
+    color: var(--gold-dark);
+}
+
+/* ---------- Safari features grid ---------- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 900px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.feature-tile {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    padding: 1rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.feature-tile i {
+    font-size: 1.15rem;
+    color: var(--gold-dark);
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.feature-tile span {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.feature-tile strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--black);
+}
+
+/* ---------- Wildlife / activity tag clouds ---------- */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tag-cloud span {
+    background: var(--white);
+    box-shadow: var(--shadow-card);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--black);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ---------- Getting there ---------- */
+.getting-there-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+@media (max-width: 700px) {
+    .getting-there-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.getting-there-item {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    padding: 1.2rem;
+}
+
+.getting-there-item i {
+    color: var(--gold-dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+.getting-there-item strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+}
+
+.getting-there-item span {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+/* ---------- Why book with us ---------- */
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.3rem;
+}
+
+.trust-item {
+    display: flex;
+    gap: 0.9rem;
+}
+
+.trust-item i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--gold-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+}
+
+.trust-item strong {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--black);
+    margin-bottom: 0.2rem;
+}
+
+.trust-item p {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ---------- Sticky booking card ---------- */
+.booking-card-wrap {
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+}
+
+.booking-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-elevated);
+    padding: 1.6rem;
+    border: 1px solid var(--gray-200);
+}
+
+.booking-card-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 0.9rem;
+}
+
+.booking-card-from {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.1rem;
+}
+
+.booking-card-price {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 1.2rem;
+}
+
+.booking-card-price small {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.booking-card-field {
+    margin-bottom: 1rem;
+}
+
+.booking-card-field label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.4rem;
+}
+
+.booking-card-field input[type="date"],
+.booking-card-field select {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    color: var(--black);
+    background: var(--white);
+}
+
+.booking-card-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--gray-100);
+    border-radius: 10px;
+    padding: 0.4rem 0.6rem;
+}
+
+.booking-card-stepper button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: var(--black);
+    color: var(--white);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.booking-card-stepper button:hover {
+    background: var(--gold-dark);
+}
+
+.booking-card-stepper input {
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1rem;
+    width: 40px;
+    font-family: var(--font-body);
+}
+
+.booking-card-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 1px dashed var(--gray-200);
+    padding-top: 0.9rem;
+    margin: 0.3rem 0 1.2rem;
+}
+
+.booking-card-total span:first-child {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.booking-card-total strong {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--gold-dark);
+}
+
+.booking-card .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.booking-card-whatsapp {
+    margin-top: 0.7rem;
+}
+
+/* ---------- Mobile sticky bottom bar ---------- */
+.mobile-booking-bar {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .mobile-booking-bar {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 400;
+        background: var(--white);
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
+        padding: 0.8rem 1rem;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .mobile-booking-bar-price {
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+    }
+
+    .mobile-booking-bar-price strong {
+        display: block;
+        font-size: 1.1rem;
+        color: var(--black);
+    }
+
+    .mobile-booking-bar .btn {
+        flex-shrink: 0;
+    }
+
+    /* leave room so the fixed bar doesn't cover the final CTA/footer */
+    body.has-mobile-booking-bar {
+        padding-bottom: 70px;
+    }
+}
