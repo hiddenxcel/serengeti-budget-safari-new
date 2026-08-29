@@ -1,8 +1,8 @@
 /* ================================================================
    SERENGETI BUDGET SAFARI – HEADER CSS
-   Floating pill navigation: transparent bar over the hero, logo on
-   the bare left, white rounded nav capsule in the middle, phone +
-   CTA on the right. Turns solid once the page is scrolled.
+   "Floating glass card" nav: a dark strip holds a single rounded
+   white card containing logo, nav-pill links and the right-hand
+   actions together — the card lifts slightly on scroll.
    ================================================================ */
 
 .site-header {
@@ -12,58 +12,43 @@
     right: 0;
     z-index: 1000;
     height: var(--header-height);
-    background: transparent;
-    transition: background var(--transition), box-shadow var(--transition);
-    padding: 0 26px;
+    background: linear-gradient(120deg, #141414, #2b2b2b);
+    padding: 0.85rem 26px;
     display: flex;
     align-items: center;
     border-bottom: none;
 }
 
 .site-header.scrolled {
-    background: rgba(255, 248, 235, 0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
 }
 
-/* The transparent bar only works over a full-bleed hero. Inner pages open
-   on light content (breadcrumb, article), where white-on-white text would
-   vanish — so there the header is solid from the start. `body.hero-behind-header` is
-   set on pages whose hero sits directly behind the header. */
-body:not(.hero-behind-header) .site-header {
-    background: rgba(255, 248, 235, 0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-}
-
-body:not(.hero-behind-header) .logo,
-body:not(.hero-behind-header) .header-phone-number {
+.logo,
+.header-phone-number {
     color: var(--black);
     text-shadow: none;
 }
 
-body:not(.hero-behind-header) .logo img {
+.logo img {
     filter: none;
 }
 
-body:not(.hero-behind-header) .header-phone-label {
+.header-phone-label {
     color: var(--gray-600);
     text-shadow: none;
 }
 
-body:not(.hero-behind-header) .header-phone {
+.header-phone {
     border-right-color: rgba(0, 0, 0, 0.12);
 }
 
-body:not(.hero-behind-header) .lang-toggle {
-    background: rgba(0, 0, 0, 0.04);
+.lang-toggle {
+    background: var(--gray-100);
     border-color: rgba(0, 0, 0, 0.1);
     color: var(--black);
 }
 
-body:not(.hero-behind-header) .hamburger span {
+.hamburger span {
     background: var(--black);
     box-shadow: none;
 }
@@ -71,7 +56,8 @@ body:not(.hero-behind-header) .hamburger span {
 /* The markup reuses `.container`, whose 1240px cap is narrower than the
    header needs — the logo, nav pill and actions together want ~1300px, so
    the pill was being squeezed below the width of its own links.
-   `.container.header-container` outranks the plain `.container` rule. */
+   `.container.header-container` outranks the plain `.container` rule. It
+   is also now the "glass card" itself: rounded, white, shadowed. */
 .container.header-container,
 .header-container {
     width: 100%;
@@ -83,6 +69,10 @@ body:not(.hero-behind-header) .hamburger span {
     gap: 1.5rem;
     height: 100%;
     min-width: 0;
+    background: var(--white);
+    border-radius: 18px;
+    padding: 0.5rem 1.3rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 /* The logo and the right-hand actions keep their intrinsic size; only the
@@ -94,7 +84,7 @@ body:not(.hero-behind-header) .hamburger span {
 }
 
 /* ============================================================
-   LOGO – sits directly on the hero, so it needs a shadow
+   LOGO – sits on the white glass card, no shadow needed
    ============================================================ */
 
 .logo {
@@ -104,16 +94,16 @@ body:not(.hero-behind-header) .hamburger span {
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 1.05rem;
-    color: var(--white);
+    color: var(--black);
     flex: 0 0 auto;
     white-space: nowrap;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+    text-shadow: none;
 }
 
 .logo img {
-    height: 46px;
+    height: 42px;
     width: auto;
-    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
+    filter: none;
 }
 
 .logo span {
@@ -121,28 +111,22 @@ body:not(.hero-behind-header) .hamburger span {
 }
 
 .logo span span {
-    color: var(--gold);
-}
-
-.scrolled .logo {
-    color: var(--black);
-    text-shadow: none;
+    color: var(--gold-dark);
 }
 
 .scrolled .logo img {
-    height: 40px;
-    filter: none;
+    height: 36px;
 }
 
 /* ============================================================
-   NAV PILL – white capsule floating over the hero
+   NAV PILL – grey capsule embedded inside the glass card
    ============================================================ */
 
 #mainNav {
-    background: var(--white);
-    border-radius: 60px;
-    padding: 0.55rem 1.6rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    background: var(--gray-100);
+    border-radius: 999px;
+    padding: 0.4rem 0.5rem;
+    box-shadow: none;
     /* `auto` basis, not 0 — with a 0 basis the pill drew at its flex share
        while the un-shrinkable links kept their intrinsic width and spilled
        out both ends, sliding under the logo. */
@@ -157,26 +141,31 @@ body:not(.hero-behind-header) .hamburger span {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.4rem;
+    gap: 0.2rem;
     list-style: none;
     min-width: 0;
     flex-wrap: nowrap;
 }
 
-#mainNav ul li a {
+#mainNav ul > li > a,
+#mainNav ul li .mega-trigger {
     color: var(--black);
-    font-weight: 500;
-    font-size: 0.9rem;
+    font-weight: 600;
+    font-size: 0.85rem;
     white-space: nowrap;
-    transition: color var(--transition);
-    padding: 0.25rem 0;
-    border-bottom: 2px solid transparent;
+    transition: background var(--transition), color var(--transition);
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    border-bottom: none;
+    display: inline-flex;
+    align-items: center;
 }
 
-#mainNav ul li a:hover,
-#mainNav ul li a.active {
-    color: var(--gold-dark);
-    border-bottom-color: var(--gold);
+#mainNav ul > li > a:hover,
+#mainNav ul > li > a.active {
+    background: var(--black);
+    color: var(--white);
+    border-bottom-color: transparent;
 }
 
 /* The old in-nav contact button is redundant now that the header
@@ -8352,13 +8341,8 @@ textarea:focus-visible,
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    color: var(--black);
     font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 0.9rem;
     cursor: pointer;
-    padding: 0.25rem 0;
-    border-bottom: 2px solid transparent;
     transition: color var(--transition);
 }
 
@@ -8367,10 +8351,10 @@ textarea:focus-visible,
     transition: transform 0.2s;
 }
 
-.has-mega:hover .mega-trigger,
-.has-mega.open .mega-trigger {
-    color: var(--gold-dark);
-    border-bottom-color: var(--gold);
+#mainNav ul li .has-mega:hover .mega-trigger,
+#mainNav ul li .has-mega.open .mega-trigger {
+    background: var(--black);
+    color: var(--white);
 }
 
 .has-mega:hover .mega-trigger i,
@@ -8381,8 +8365,8 @@ textarea:focus-visible,
 .mega-panel {
     position: absolute;
     top: calc(100% + 1.3rem);
-    left: 50%;
-    transform: translateX(-50%) translateY(8px);
+    left: 0;
+    transform: translateY(8px);
     width: min(640px, 90vw);
     background: var(--white);
     border-radius: 20px;
@@ -8400,7 +8384,7 @@ textarea:focus-visible,
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 .mega-panel-inner {
@@ -10164,4 +10148,175 @@ textarea:focus-visible,
 .saved-empty-state p {
     color: var(--text-secondary);
     margin-bottom: 1.3rem;
+}
+
+/* ---------- Contact page ---------- */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-form-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-elevated);
+    padding: 2rem;
+}
+
+.contact-form-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 560px) {
+    .contact-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-field {
+    margin-bottom: 1.1rem;
+}
+
+.contact-field label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.4rem;
+}
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--black);
+    background: var(--white);
+    transition: border-color var(--transition);
+}
+
+.contact-field input:focus,
+.contact-field select:focus,
+.contact-field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.contact-field textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-privacy-note {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 0.8rem;
+}
+
+.contact-form-error {
+    display: none;
+    background: rgba(192, 57, 43, 0.08);
+    border: 1px solid rgba(192, 57, 43, 0.25);
+    color: #c0392b;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.1rem;
+}
+
+.contact-form-error.visible {
+    display: block;
+}
+
+.contact-success {
+    display: none;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.contact-success.visible {
+    display: block;
+}
+
+.contact-success i {
+    font-size: 2.5rem;
+    color: #2f9e44;
+    margin-bottom: 1rem;
+}
+
+.contact-success h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-success p {
+    color: var(--text-secondary);
+    margin-bottom: 1.3rem;
+}
+
+/* ---------- Contact info list ---------- */
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.contact-info-item {
+    display: flex;
+    gap: 1rem;
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow-card);
+    padding: 1.1rem 1.2rem;
+}
+
+.contact-info-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--gold-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.05rem;
+}
+
+.contact-info-item strong {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--black);
+    margin-bottom: 0.15rem;
+}
+
+.contact-info-item a {
+    color: var(--gold-dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.contact-info-item p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0.15rem 0 0;
 }
