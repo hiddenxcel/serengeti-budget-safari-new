@@ -1,3 +1,7 @@
+    <a href="https://wa.me/255697612865?text=<?= urlencode($waMessage ?? t('whatsapp_default_message')) ?>" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <footer class="mega-footer">
         <div class="container">
             <div class="mega-footer-grid">

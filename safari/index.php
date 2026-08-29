@@ -82,7 +82,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <p class="popular-packages-title"><i class="fas fa-fire"></i> Popular now</p>
                 <div class="popular-packages-grid">
-                    <a href="<?= url('contact.php') ?>" class="popular-package-card">
+                    <a href="<?= url('safari/3-day-serengeti-safari.php') ?>" class="popular-package-card">
                         <div class="popular-package-img">
                             <img src="<?= asset('images/wildlife/lion-pride-zebra-kill.jpg') ?>" alt="3 Days Serengeti Safari" loading="lazy" />
                             <span class="popular-package-badge">⭐ Best Seller</span>
@@ -176,7 +176,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Big Five</span><span>Predators</span><span>Private</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€1,000 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('safari/3-day-serengeti-safari.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
