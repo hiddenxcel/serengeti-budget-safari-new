@@ -1,3 +1,7 @@
+    <a href="<?= url('saved.php') ?>" class="saved-safaris-pill" id="savedSafarisPill">
+        <i class="fas fa-heart"></i> <?= e(t('saved_safaris_count')) ?> (<span class="saved-safaris-count">0</span>)
+    </a>
+
     <a href="https://wa.me/255697612865?text=<?= urlencode($waMessage ?? t('whatsapp_default_message')) ?>" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>

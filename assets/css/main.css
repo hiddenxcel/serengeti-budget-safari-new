@@ -9969,3 +9969,199 @@ textarea:focus-visible,
         padding-bottom: 70px;
     }
 }
+
+.route-strip-stop.linked {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform var(--transition);
+}
+
+.route-strip-stop.linked:hover {
+    transform: translateY(-3px);
+}
+
+.route-strip-stop.linked:hover span:last-child {
+    color: var(--gold-dark);
+}
+
+.route-strip-stop.linked .route-strip-dot {
+    transition: background var(--transition);
+}
+
+.route-strip-stop.linked:hover .route-strip-dot {
+    background: var(--gold-dark);
+}
+
+/* ---------- Save safari button ---------- */
+.save-safari-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    border-radius: 999px;
+    padding: 0.55rem 1.1rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.save-safari-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.save-safari-btn.saved {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+}
+
+.save-safari-btn i {
+    font-size: 0.95rem;
+}
+
+.saved-safaris-pill {
+    position: fixed;
+    top: calc(var(--header-height) + 0.8rem);
+    right: 1.3rem;
+    z-index: 450;
+    background: var(--black);
+    color: var(--white);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    box-shadow: var(--shadow-elevated);
+}
+
+.saved-safaris-pill.visible {
+    display: inline-flex;
+}
+
+.saved-safaris-pill i {
+    color: var(--gold);
+}
+
+@media (max-width: 700px) {
+    .saved-safaris-pill {
+        top: auto;
+        bottom: 5.5rem;
+        right: 1rem;
+    }
+}
+
+/* ---------- Migration season badge ---------- */
+.migration-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(212, 168, 67, 0.12);
+    border: 1px solid rgba(212, 168, 67, 0.35);
+    border-radius: 12px;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    color: var(--black);
+    margin-top: 1rem;
+}
+
+.migration-badge i {
+    color: var(--gold-dark);
+}
+
+.migration-badge strong {
+    color: var(--gold-dark);
+}
+
+/* ---------- Saved safaris page ---------- */
+.saved-safaris-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .saved-safaris-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .saved-safaris-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.saved-safari-card {
+    background: var(--white);
+    border-radius: var(--radius-md, 16px);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.saved-safari-img {
+    aspect-ratio: 4 / 3;
+}
+
+.saved-safari-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.saved-safari-body {
+    padding: 1.1rem 1.2rem 1.3rem;
+}
+
+.saved-safari-body h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+}
+
+.saved-safari-price {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--gold-dark);
+    margin-bottom: 0.9rem;
+}
+
+.saved-safari-actions {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.saved-safari-actions .btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.82rem;
+    padding: 0.5rem 0.8rem;
+}
+
+.saved-empty-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+.saved-empty-state i {
+    font-size: 2.5rem;
+    color: var(--gray-300);
+    margin-bottom: 1rem;
+}
+
+.saved-empty-state h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.saved-empty-state p {
+    color: var(--text-secondary);
+    margin-bottom: 1.3rem;
+}

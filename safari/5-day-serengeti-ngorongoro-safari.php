@@ -21,6 +21,9 @@ $priceTiers = [
     ['upTo' => 20, 'pp' => 470],
 ];
 $tiersJson = e(json_encode($priceTiers));
+
+$currentMonth = (int) date('n');
+$isMigrationSeason = $currentMonth >= 7 && $currentMonth <= 10;
 $waTemplate = e(t('booking_wa_template'));
 
 $waMessage = str_replace(
@@ -57,6 +60,15 @@ require dirname(__DIR__) . '/includes/header.php';
             <div class="btn-group" style="margin-top:1.4rem;">
                 <a href="#booking" class="btn btn-primary btn-lg"><?= e(t('pkg5d_hero_book')) ?></a>
                 <a href="https://wa.me/255697612865" class="btn btn-success btn-lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <?= e(t('pkg5d_hero_whatsapp')) ?></a>
+                <button type="button" class="save-safari-btn"
+                        data-safari-id="5-day-serengeti-ngorongoro-safari"
+                        data-safari-title="<?= e(t('pkg5d_hero_title')) ?>"
+                        data-safari-price="€650"
+                        data-safari-url="<?= e(url('safari/5-day-serengeti-ngorongoro-safari.php')) ?>"
+                        data-safari-image="<?= e(asset('images/hero/ngorongoro-crater-panorama.jpg')) ?>"
+                        data-saved-text="<?= e(t('save_safari_saved')) ?>">
+                    <i class="far fa-heart"></i> <span class="save-safari-label"><?= e(t('save_safari_add')) ?></span>
+                </button>
             </div>
         </div>
     </section>
@@ -114,11 +126,11 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="route-strip">
                             <div class="route-strip-stop"><span class="route-strip-dot"><i class="fas fa-plane-arrival"></i></span><span><?= e(t('pkg5d_route_arusha')) ?></span></div>
                             <i class="fas fa-arrow-right route-strip-arrow"></i>
-                            <div class="route-strip-stop"><span class="route-strip-dot"><i class="fas fa-paw"></i></span><span><?= e(t('pkg5d_route_tarangire')) ?></span></div>
+                            <a href="<?= url('parks/tarangire-national-park.php') ?>" class="route-strip-stop linked"><span class="route-strip-dot"><i class="fas fa-paw"></i></span><span><?= e(t('pkg5d_route_tarangire')) ?></span></a>
                             <i class="fas fa-arrow-right route-strip-arrow"></i>
-                            <div class="route-strip-stop"><span class="route-strip-dot"><i class="fas fa-crow"></i></span><span><?= e(t('pkg5d_route_serengeti')) ?></span></div>
+                            <a href="<?= url('parks/serengeti-national-park.php') ?>" class="route-strip-stop linked"><span class="route-strip-dot"><i class="fas fa-crow"></i></span><span><?= e(t('pkg5d_route_serengeti')) ?></span></a>
                             <i class="fas fa-arrow-right route-strip-arrow"></i>
-                            <div class="route-strip-stop"><span class="route-strip-dot"><i class="fas fa-mountain"></i></span><span><?= e(t('pkg5d_route_ngorongoro')) ?></span></div>
+                            <a href="<?= url('parks/ngorongoro-conservation-area.php') ?>" class="route-strip-stop linked"><span class="route-strip-dot"><i class="fas fa-mountain"></i></span><span><?= e(t('pkg5d_route_ngorongoro')) ?></span></a>
                             <i class="fas fa-arrow-right route-strip-arrow"></i>
                             <div class="route-strip-stop"><span class="route-strip-dot"><i class="fas fa-flag-checkered"></i></span><span><?= e(t('pkg5d_route_arusha')) ?></span></div>
                         </div>
@@ -280,6 +292,17 @@ require dirname(__DIR__) . '/includes/header.php';
                             <span><i class="fas fa-sun"></i> <?= e(t('pkg5d_activity_sunrise')) ?></span>
                             <span><i class="fas fa-moon"></i> <?= e(t('pkg5d_activity_sunset')) ?></span>
                         </div>
+                        <?php if ($isMigrationSeason): ?>
+                        <div class="migration-badge">
+                            <i class="fas fa-kiwi-bird"></i>
+                            <span><strong><?= e(t('pkg5d_migration_in_season')) ?></strong> — <?= e(t('pkg5d_migration_in_season_desc')) ?></span>
+                        </div>
+                        <?php else: ?>
+                        <div class="migration-badge">
+                            <i class="fas fa-kiwi-bird"></i>
+                            <span><strong><?= e(t('pkg5d_migration_out_season')) ?></strong> — <?= e(t('pkg5d_migration_out_season_desc')) ?></span>
+                        </div>
+                        <?php endif; ?>
                     </section>
 
                     <section style="margin-bottom:2.5rem;">

@@ -1,6 +1,82 @@
 (function () {
     'use strict';
 
+    // ===== SAVE SAFARI (localStorage, per-browser) =====
+    var SAVED_KEY = 'savedSafaris';
+
+    function getSaved() {
+        try {
+            var raw = localStorage.getItem(SAVED_KEY);
+            return raw ? JSON.parse(raw) : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function setSaved(list) {
+        try {
+            localStorage.setItem(SAVED_KEY, JSON.stringify(list));
+        } catch (e) { /* storage unavailable — fail silently */ }
+    }
+
+    function isSaved(id) {
+        return getSaved().some(function (s) { return s.id === id; });
+    }
+
+    function toggleSaved(data) {
+        var list = getSaved();
+        var idx = list.findIndex(function (s) { return s.id === data.id; });
+        if (idx === -1) {
+            list.push(data);
+        } else {
+            list.splice(idx, 1);
+        }
+        setSaved(list);
+        return idx === -1;
+    }
+
+    function updateSavedPill() {
+        var pill = document.getElementById('savedSafarisPill');
+        if (!pill) return;
+        var count = getSaved().length;
+        var countEl = pill.querySelector('.saved-safaris-count');
+        if (countEl) countEl.textContent = count;
+        pill.classList.toggle('visible', count > 0);
+    }
+
+    document.querySelectorAll('.save-safari-btn').forEach(function (btn) {
+        var id = btn.getAttribute('data-safari-id');
+        if (!id) return;
+
+        function refresh() {
+            var saved = isSaved(id);
+            btn.classList.toggle('saved', saved);
+            var label = btn.querySelector('.save-safari-label');
+            var icon = btn.querySelector('i');
+            if (label) label.textContent = saved ? btn.getAttribute('data-saved-label') : btn.getAttribute('data-add-label');
+            if (icon) icon.className = saved ? 'fas fa-heart' : 'far fa-heart';
+        }
+
+        btn.setAttribute('data-add-label', btn.querySelector('.save-safari-label') ? btn.querySelector('.save-safari-label').textContent : 'Save Safari');
+        btn.setAttribute('data-saved-label', btn.getAttribute('data-saved-text') || 'Saved');
+
+        refresh();
+
+        btn.addEventListener('click', function () {
+            toggleSaved({
+                id: id,
+                title: btn.getAttribute('data-safari-title') || '',
+                price: btn.getAttribute('data-safari-price') || '',
+                url: btn.getAttribute('data-safari-url') || '#',
+                image: btn.getAttribute('data-safari-image') || ''
+            });
+            refresh();
+            updateSavedPill();
+        });
+    });
+
+    updateSavedPill();
+
     // ===== HAMBURGER =====
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.getElementById('mainNav');
