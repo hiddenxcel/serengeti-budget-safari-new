@@ -10315,6 +10315,196 @@ textarea:focus-visible,
     font-size: 0.9rem;
 }
 
+/* ---------- Day trip: quick info bar ---------- */
+.quick-info-bar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    margin-top: -3.5rem;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.quick-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+    padding: 1.2rem 0.8rem;
+    border-right: 1px solid var(--gray-200);
+}
+
+.quick-info-item:last-child {
+    border-right: none;
+}
+
+.quick-info-item i {
+    color: var(--gold-dark);
+    font-size: 1.1rem;
+}
+
+.quick-info-item span {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+}
+
+.quick-info-item strong {
+    font-size: 0.92rem;
+    color: var(--black);
+}
+
+@media (max-width: 860px) {
+    .quick-info-bar {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: -2rem;
+    }
+
+    .quick-info-item {
+        border-bottom: 1px solid var(--gray-200);
+    }
+}
+
+/* ---------- Day trip: timeline ---------- */
+.day-timeline {
+    position: relative;
+    padding-left: 2.6rem;
+}
+
+.day-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.65rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: var(--gray-200);
+}
+
+.day-timeline-item {
+    position: relative;
+    padding-bottom: 1.8rem;
+}
+
+.day-timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.day-timeline-dot {
+    position: absolute;
+    left: -2.6rem;
+    top: 0.15rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background: var(--gold-dark);
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--gold-dark);
+}
+
+.day-timeline-time {
+    font-weight: 800;
+    color: var(--gold-dark);
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+}
+
+.day-timeline-item strong {
+    display: block;
+    color: var(--black);
+    margin-bottom: 0.2rem;
+}
+
+.day-timeline-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ---------- Day trip: listing card ---------- */
+.day-trip-card {
+    display: block;
+    border-radius: var(--radius-md, 16px);
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: var(--shadow-card);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.day-trip-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elevated);
+}
+
+.day-trip-card-img {
+    position: relative;
+    aspect-ratio: 4 / 3;
+}
+
+.day-trip-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.day-trip-card-duration {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    background: rgba(0, 0, 0, 0.65);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    backdrop-filter: blur(2px);
+}
+
+.day-trip-card-body {
+    padding: 1.1rem 1.2rem 1.3rem;
+}
+
+.day-trip-card-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+    color: var(--black);
+}
+
+.day-trip-card-body p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.9rem;
+}
+
+.day-trip-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--gray-200);
+    padding-top: 0.7rem;
+}
+
+.day-trip-card-footer .price-tag {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--black);
+}
+
+.day-trip-card-footer .price-tag small {
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
 .contact-info-item p {
     font-size: 0.8rem;
     color: var(--text-secondary);
