@@ -1,6 +1,14 @@
 (function () {
     'use strict';
 
+    // ===== FAQ ACCORDION (.faq-item-acc, used across safari/park/day-trip/blog pages) =====
+    document.querySelectorAll('.faq-question-acc').forEach(function (question) {
+        question.addEventListener('click', function () {
+            var item = question.closest('.faq-item-acc');
+            if (item) item.classList.toggle('active');
+        });
+    });
+
     // ===== SAVE SAFARI (localStorage, per-browser) =====
     var SAVED_KEY = 'savedSafaris';
 

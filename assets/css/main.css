@@ -10703,3 +10703,468 @@ textarea:focus-visible,
     font-size: 0.72rem;
     opacity: 0.85;
 }
+
+/* ---------- Blog: featured article ---------- */
+.featured-article-card {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: stretch;
+    background: var(--white);
+    border-radius: var(--radius-md, 16px);
+    overflow: hidden;
+    box-shadow: var(--shadow-elevated);
+}
+
+.featured-article-img {
+    position: relative;
+    min-height: 320px;
+}
+
+.featured-article-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-article-tag {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    background: var(--gold);
+    color: var(--black);
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+}
+
+.featured-article-body {
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-article-body h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.featured-article-body p {
+    color: var(--text-secondary);
+    margin-bottom: 1.3rem;
+}
+
+@media (max-width: 860px) {
+    .featured-article-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-article-img {
+        min-height: 220px;
+    }
+}
+
+/* ---------- Blog: category pills ---------- */
+.blog-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+}
+
+.blog-category-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.blog-category-pill:hover,
+.blog-category-pill.active {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
+@media (max-width: 700px) {
+    .blog-categories {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 0.4rem;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ---------- Blog: article card ---------- */
+.blog-card {
+    display: block;
+    border-radius: var(--radius-md, 16px);
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: var(--shadow-card);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elevated);
+}
+
+.blog-card-img {
+    aspect-ratio: 16 / 10;
+}
+
+.blog-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-card-body {
+    padding: 1.2rem 1.3rem 1.4rem;
+}
+
+.blog-card-meta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card-meta .dot {
+    opacity: 0.5;
+    margin: 0 0.3rem;
+    color: var(--text-secondary);
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.blog-card-body h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+}
+
+.blog-card-body p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.9rem;
+}
+
+.blog-card-read {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--black);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* ---------- Blog: popular guide link rows ---------- */
+.popular-guides-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.9rem;
+}
+
+.popular-guide-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.popular-guide-link:hover {
+    border-color: var(--gold);
+    transform: translateX(4px);
+}
+
+.popular-guide-link i.fa-arrow-right {
+    color: var(--gold-dark);
+    flex-shrink: 0;
+}
+
+/* ---------- Blog: before-you-go tip links ---------- */
+.tip-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.tip-link-card {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.1rem;
+    text-decoration: none;
+    color: var(--black);
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.tip-link-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.tip-link-card i {
+    font-size: 1.3rem;
+    color: var(--gold-dark);
+    flex-shrink: 0;
+}
+
+.tip-link-card span {
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+/* ---------- Blog: newsletter (UI only, no backend yet) ---------- */
+.newsletter-card {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+    background: var(--white);
+    border-radius: var(--radius-md, 16px);
+    box-shadow: var(--shadow-card);
+    padding: 2.4rem 2rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.3rem;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 0.85rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--gray-200);
+    font-size: 0.9rem;
+    font-family: var(--font-body);
+}
+
+.newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.newsletter-note {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.8rem;
+}
+
+@media (max-width: 480px) {
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+/* ---------- Article: table of contents ---------- */
+.article-toc {
+    background: var(--gray-100);
+    border-radius: var(--radius-md, 16px);
+    padding: 1.5rem 1.7rem;
+    margin: 0 0 2rem;
+}
+
+.article-toc h3 {
+    font-size: 1rem;
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.article-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.5rem 1.5rem;
+}
+
+.article-toc a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.article-toc a:hover {
+    color: var(--gold-dark);
+}
+
+/* ---------- Article: meta bar (author/date/reading time) ---------- */
+.article-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.3rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+
+.article-meta-bar span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* ---------- Article: price/data table ---------- */
+.article-table-wrap {
+    overflow-x: auto;
+    margin: 1.2rem 0 1.6rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--gray-200);
+}
+
+.article-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.article-table th,
+.article-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-200);
+    white-space: nowrap;
+}
+
+.article-table th {
+    background: var(--gray-100);
+    font-weight: 700;
+    color: var(--black);
+}
+
+.article-table tr:last-child td {
+    border-bottom: none;
+}
+
+.article-table tr:last-child td strong {
+    color: var(--black);
+}
+
+/* ---------- Article: related-safari CTA embed ---------- */
+.article-safari-cta {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    background: var(--black);
+    color: var(--white);
+    border-radius: var(--radius-md, 16px);
+    padding: 1.4rem 1.6rem;
+    margin: 2rem 0;
+}
+
+.article-safari-cta img {
+    width: 96px;
+    height: 96px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.article-safari-cta-body {
+    flex: 1;
+}
+
+.article-safari-cta-body span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.2rem;
+}
+
+.article-safari-cta-body strong {
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.article-safari-cta-body em {
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+    .article-safari-cta {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ---------- Article: related-articles links ---------- */
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.8rem;
+}
+
+.related-link {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1.1rem;
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.related-link:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.related-link i {
+    color: var(--gold-dark);
+    flex-shrink: 0;
+}
