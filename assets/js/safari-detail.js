@@ -32,6 +32,7 @@
         var priceOut = card.querySelector('.booking-price-per-person');
         var totalOut = card.querySelector('.booking-total-price');
         var waLink = card.querySelector('.booking-whatsapp-link');
+        var bookLink = card.querySelector('.booking-card-book-link');
 
         if (!input) return;
 
@@ -65,6 +66,19 @@
                     .replace('{date}', date)
                     .replace('{accommodation}', accommodation);
                 waLink.href = 'https://wa.me/255697612865?text=' + encodeURIComponent(text);
+            }
+
+            if (bookLink) {
+                try {
+                    var url = new URL(bookLink.href, window.location.origin);
+                    url.searchParams.set('adults', String(people));
+                    if (dateInput && dateInput.value) {
+                        url.searchParams.set('date', dateInput.value);
+                    }
+                    bookLink.href = url.pathname + url.search;
+                } catch (err) {
+                    // Older browsers without URL() support simply keep the static link.
+                }
             }
         }
 

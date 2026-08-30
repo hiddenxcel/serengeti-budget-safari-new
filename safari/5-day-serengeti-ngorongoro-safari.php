@@ -390,7 +390,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <strong class="booking-total-price">€1,300</strong>
                         </div>
 
-                        <a href="<?= url('contact.php') ?>" class="btn btn-primary"><?= e(t('booking_card_book')) ?></a>
+                        <a href="<?= url('booking/?safari=5-day-serengeti-ngorongoro-safari&title=' . rawurlencode(t('pkg5d_hero_title') ?: '5-Day Serengeti & Ngorongoro Safari') . '&pp=' . $priceTiers[0]['pp'] . '&adults=2') ?>" class="btn btn-primary booking-card-book-link"><?= e(t('booking_card_book')) ?></a>
                         <a href="https://wa.me/255697612865" target="_blank" rel="noopener" class="btn btn-success booking-card-whatsapp booking-whatsapp-link"><i class="fab fa-whatsapp"></i> <?= e(t('booking_card_whatsapp')) ?></a>
                     </div>
                 </aside>

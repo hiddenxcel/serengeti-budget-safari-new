@@ -182,7 +182,7 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
             <p><?= e(t('pkg3d_cta_intro')) ?></p>
             <div class="btn-group" style="justify-content:center;">
                 <a href="https://wa.me/255697612865" class="btn btn-success btn-lg" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <?= e(t('pkg3d_cta_whatsapp')) ?></a>
-                <a href="<?= url('contact.php') ?>" class="btn btn-light btn-lg"><?= e(t('pkg3d_cta_contact_form')) ?></a>
+                <a href="<?= url('booking/?safari=3-day-serengeti-safari&title=' . rawurlencode(t('pkg3d_hero_title') ?: '3-Day Serengeti Safari') . '&pp=' . $priceTiers[0]['pp'] . '&adults=2') ?>" class="btn btn-light btn-lg"><?= e(t('pkg3d_cta_contact_form')) ?></a>
             </div>
         </div>
     </section>
