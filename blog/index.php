@@ -21,7 +21,7 @@ $articles = [
         'time' => 8,
     ],
     [
-        'slug' => null,
+        'slug' => 'best-time-to-visit-tanzania.php',
         'img' => 'hero/ngorongoro-crater-panorama.jpg',
         'category' => t('blog_cat_guides'),
         'title' => t('blog_art_besttime_title'),
@@ -29,7 +29,7 @@ $articles = [
         'time' => 7,
     ],
     [
-        'slug' => null,
+        'slug' => 'great-migration-month-by-month.php',
         'img' => 'wildlife/zebra-herd-grazing-savanna.jpg',
         'category' => t('blog_cat_wildlife'),
         'title' => t('blog_art_migration_title'),
@@ -37,7 +37,7 @@ $articles = [
         'time' => 9,
     ],
     [
-        'slug' => null,
+        'slug' => 'serengeti-vs-ngorongoro.php',
         'img' => 'hero/elephant-under-acacia-tree.jpg',
         'category' => t('blog_cat_destinations'),
         'title' => t('blog_art_serengetivs_title'),
@@ -45,7 +45,7 @@ $articles = [
         'time' => 6,
     ],
     [
-        'slug' => null,
+        'slug' => 'where-to-stay-on-safari.php',
         'img' => 'team/guide-client-ngorongoro-viewpoint.jpg',
         'category' => t('blog_cat_guides'),
         'title' => t('blog_art_stay_title'),
@@ -53,7 +53,7 @@ $articles = [
         'time' => 7,
     ],
     [
-        'slug' => null,
+        'slug' => 'big-five-tanzania.php',
         'img' => 'wildlife/white-rhino-grazing.jpg',
         'category' => t('blog_cat_wildlife'),
         'title' => t('blog_art_bigfive_title'),
@@ -61,7 +61,7 @@ $articles = [
         'time' => 6,
     ],
     [
-        'slug' => null,
+        'slug' => 'what-to-pack-for-safari.php',
         'img' => 'gallery/savanna-sunrise-acacia-trees.jpg',
         'category' => t('blog_cat_tips'),
         'title' => t('blog_art_pack_title'),
@@ -69,7 +69,7 @@ $articles = [
         'time' => 5,
     ],
     [
-        'slug' => null,
+        'slug' => 'tanzania-visa-and-entry.php',
         'img' => 'team/clients-serengeti-park-gate-1.jpg',
         'category' => t('blog_cat_tips'),
         'title' => t('blog_art_visa_title'),
@@ -77,7 +77,7 @@ $articles = [
         'time' => 5,
     ],
     [
-        'slug' => null,
+        'slug' => 'tipping-on-safari.php',
         'img' => 'team/ranger-clients-company-vehicle-1.jpg',
         'category' => t('blog_cat_tips'),
         'title' => t('blog_art_tipping_title'),
@@ -85,12 +85,20 @@ $articles = [
         'time' => 4,
     ],
     [
-        'slug' => null,
+        'slug' => 'kenya-vs-tanzania-safari.php',
         'img' => 'wildlife/cheetah-alert-grassland.jpg',
         'category' => t('blog_cat_destinations'),
         'title' => t('blog_art_kenyavs_title'),
         'excerpt' => t('blog_art_kenyavs_excerpt'),
         'time' => 6,
+    ],
+    [
+        'slug' => 'vaccinations-and-health.php',
+        'img' => 'hero/elephant-under-acacia-tree.jpg',
+        'category' => t('blog_cat_tips'),
+        'title' => t('blog_art_vax_title'),
+        'excerpt' => t('blog_art_vax_excerpt'),
+        'time' => 7,
     ],
 ];
 
