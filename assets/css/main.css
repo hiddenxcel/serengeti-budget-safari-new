@@ -1,8 +1,8 @@
 /* ================================================================
    SERENGETI BUDGET SAFARI – HEADER CSS
-   "Floating glass card" nav: a dark strip holds a single rounded
-   white card containing logo, nav-pill links and the right-hand
-   actions together — the card lifts slightly on scroll.
+   Floating pill navigation: transparent bar over the hero, logo on
+   the bare left, white rounded nav capsule in the middle, phone +
+   CTA on the right. Turns solid once the page is scrolled.
    ================================================================ */
 
 .site-header {
@@ -12,43 +12,58 @@
     right: 0;
     z-index: 1000;
     height: var(--header-height);
-    background: linear-gradient(120deg, #141414, #2b2b2b);
-    padding: 0.85rem 26px;
+    background: transparent;
+    transition: background var(--transition), box-shadow var(--transition);
+    padding: 0 26px;
     display: flex;
     align-items: center;
     border-bottom: none;
 }
 
 .site-header.scrolled {
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 248, 235, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
 }
 
-.logo,
-.header-phone-number {
+/* The transparent bar only works over a full-bleed hero. Inner pages open
+   on light content (breadcrumb, article), where white-on-white text would
+   vanish — so there the header is solid from the start. `body.hero-behind-header` is
+   set on pages whose hero sits directly behind the header. */
+body:not(.hero-behind-header) .site-header {
+    background: rgba(255, 248, 235, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+body:not(.hero-behind-header) .logo,
+body:not(.hero-behind-header) .header-phone-number {
     color: var(--black);
     text-shadow: none;
 }
 
-.logo img {
+body:not(.hero-behind-header) .logo img {
     filter: none;
 }
 
-.header-phone-label {
+body:not(.hero-behind-header) .header-phone-label {
     color: var(--gray-600);
     text-shadow: none;
 }
 
-.header-phone {
+body:not(.hero-behind-header) .header-phone {
     border-right-color: rgba(0, 0, 0, 0.12);
 }
 
-.lang-toggle {
-    background: var(--gray-100);
+body:not(.hero-behind-header) .lang-toggle {
+    background: rgba(0, 0, 0, 0.04);
     border-color: rgba(0, 0, 0, 0.1);
     color: var(--black);
 }
 
-.hamburger span {
+body:not(.hero-behind-header) .hamburger span {
     background: var(--black);
     box-shadow: none;
 }
@@ -56,8 +71,7 @@
 /* The markup reuses `.container`, whose 1240px cap is narrower than the
    header needs — the logo, nav pill and actions together want ~1300px, so
    the pill was being squeezed below the width of its own links.
-   `.container.header-container` outranks the plain `.container` rule. It
-   is also now the "glass card" itself: rounded, white, shadowed. */
+   `.container.header-container` outranks the plain `.container` rule. */
 .container.header-container,
 .header-container {
     width: 100%;
@@ -69,10 +83,6 @@
     gap: 1.5rem;
     height: 100%;
     min-width: 0;
-    background: var(--white);
-    border-radius: 18px;
-    padding: 0.5rem 1.3rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 /* The logo and the right-hand actions keep their intrinsic size; only the
@@ -84,7 +94,7 @@
 }
 
 /* ============================================================
-   LOGO – sits on the white glass card, no shadow needed
+   LOGO – sits directly on the hero, so it needs a shadow
    ============================================================ */
 
 .logo {
@@ -94,16 +104,16 @@
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 1.05rem;
-    color: var(--black);
+    color: var(--white);
     flex: 0 0 auto;
     white-space: nowrap;
-    text-shadow: none;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 .logo img {
-    height: 42px;
+    height: 46px;
     width: auto;
-    filter: none;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
 }
 
 .logo span {
@@ -111,22 +121,28 @@
 }
 
 .logo span span {
-    color: var(--gold-dark);
+    color: var(--gold);
+}
+
+.scrolled .logo {
+    color: var(--black);
+    text-shadow: none;
 }
 
 .scrolled .logo img {
-    height: 36px;
+    height: 40px;
+    filter: none;
 }
 
 /* ============================================================
-   NAV PILL – grey capsule embedded inside the glass card
+   NAV PILL – white capsule floating over the hero
    ============================================================ */
 
 #mainNav {
-    background: var(--gray-100);
-    border-radius: 999px;
-    padding: 0.4rem 0.5rem;
-    box-shadow: none;
+    background: var(--white);
+    border-radius: 60px;
+    padding: 0.55rem 1.6rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
     /* `auto` basis, not 0 — with a 0 basis the pill drew at its flex share
        while the un-shrinkable links kept their intrinsic width and spilled
        out both ends, sliding under the logo. */
@@ -141,7 +157,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.2rem;
+    gap: 1.4rem;
     list-style: none;
     min-width: 0;
     flex-wrap: nowrap;
@@ -150,22 +166,18 @@
 #mainNav ul > li > a,
 #mainNav ul li .mega-trigger {
     color: var(--black);
-    font-weight: 600;
-    font-size: 0.85rem;
+    font-weight: 500;
+    font-size: 0.9rem;
     white-space: nowrap;
-    transition: background var(--transition), color var(--transition);
-    padding: 0.55rem 1rem;
-    border-radius: 999px;
-    border-bottom: none;
-    display: inline-flex;
-    align-items: center;
+    transition: color var(--transition);
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
 }
 
 #mainNav ul > li > a:hover,
 #mainNav ul > li > a.active {
-    background: var(--black);
-    color: var(--white);
-    border-bottom-color: transparent;
+    color: var(--gold-dark);
+    border-bottom-color: var(--gold);
 }
 
 /* The old in-nav contact button is redundant now that the header
@@ -8375,8 +8387,8 @@ textarea:focus-visible,
 
 #mainNav ul li .has-mega:hover .mega-trigger,
 #mainNav ul li .has-mega.open .mega-trigger {
-    background: var(--black);
-    color: var(--white);
+    color: var(--gold-dark);
+    border-bottom-color: var(--gold);
 }
 
 .has-mega:hover .mega-trigger i,
