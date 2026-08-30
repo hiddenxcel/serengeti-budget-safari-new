@@ -1,6 +1,30 @@
 <?php
 declare(strict_types=1);
 
+// Flip to false when deploying to production — this must never show raw
+// PHP errors/stack traces/file paths to visitors. Left true here since this
+// is still the XAMPP development environment (SITE_URL below confirms it).
+define('APP_DEBUG', true);
+
+if (APP_DEBUG) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+} else {
+    error_reporting(E_ALL);
+    ini_set('display_errors', '0');
+    ini_set('log_errors', '1');
+}
+
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'httponly' => true,
+    'samesite' => 'Lax',
+    // 'secure' is intentionally left false while the site is served over
+    // plain HTTP on XAMPP (SITE_URL below) — flip to true once deployed
+    // behind HTTPS, or the session cookie will silently stop being sent.
+    'secure' => false,
+]);
 session_start();
 
 define('DB_HOST', 'localhost');

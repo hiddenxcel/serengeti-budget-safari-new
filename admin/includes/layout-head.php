@@ -32,6 +32,7 @@ declare(strict_types=1);
         </nav>
         <div class="admin-sidebar-user">
             <div class="admin-user-name"><?= e(current_admin()['name'] ?? '') ?></div>
+            <a href="<?= admin_base_url() ?>/change-password.php" class="admin-logout-link" style="display:block;margin-bottom:0.4rem;">Change Password</a>
             <a href="<?= admin_base_url() ?>/logout.php" class="admin-logout-link">Log out</a>
         </div>
     </aside>

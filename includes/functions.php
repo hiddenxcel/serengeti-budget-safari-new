@@ -63,6 +63,36 @@ function csrf_verify(?string $token): bool
 }
 
 /**
+ * Generic session+IP-keyed rate limiter for public unauthenticated
+ * endpoints (booking submission, My Trip lookup) that have no per-user
+ * account to key a limit on. Not a substitute for a real WAF/reverse-proxy
+ * rate limit, but stops naive scripted abuse from a single session.
+ *
+ * Returns true if the action is allowed to proceed (and records this
+ * attempt); returns false if the caller has exceeded $maxAttempts within
+ * $windowSeconds and should be rejected.
+ */
+function rate_limit_check(string $bucket, int $maxAttempts, int $windowSeconds): bool
+{
+    $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+    $key = 'rl_' . $bucket . '_' . sha1($ip);
+    $data = $_SESSION[$key] ?? ['count' => 0, 'first_at' => time()];
+
+    if ((time() - $data['first_at']) >= $windowSeconds) {
+        $data = ['count' => 0, 'first_at' => time()];
+    }
+
+    if ($data['count'] >= $maxAttempts) {
+        return false;
+    }
+
+    $data['count']++;
+    $_SESSION[$key] = $data;
+
+    return true;
+}
+
+/**
  * Fetch a safari's pricing tiers from the database by slug, in the
  * {upTo, pp} shape assets/js/price-calculator.js expects. Returns the
  * given $fallback array unchanged if the safari doesn't exist in the DB

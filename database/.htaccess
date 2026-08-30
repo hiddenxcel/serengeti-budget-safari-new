@@ -1,0 +1,10 @@
+# Deny all direct web access to this folder — schema/migration .sql files
+# must never be downloadable. This is a server-side asset only, read by
+# the mysql CLI during setup, never by a web request.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+</IfModule>

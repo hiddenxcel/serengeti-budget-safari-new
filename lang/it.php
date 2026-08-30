@@ -4208,6 +4208,7 @@ return [
     'mytrip_error_required' => 'Inserisci sia il riferimento della prenotazione che l\'email.',
     'mytrip_error_expired' => 'La tua sessione è scaduta, riprova.',
     'mytrip_error_not_found' => 'Non abbiamo trovato una prenotazione corrispondente a questo riferimento ed email. Verifica e riprova, oppure contattaci su WhatsApp.',
+    'mytrip_error_rate_limited' => 'Troppi tentativi. Attendi qualche minuto e riprova, oppure contattaci su WhatsApp.',
     'mytrip_label_reference' => 'Riferimento',
     'mytrip_label_status' => 'Stato',
     'mytrip_label_safari' => 'Safari',

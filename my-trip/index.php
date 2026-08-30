@@ -20,6 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!csrf_verify($_POST['csrf_token'] ?? null)) {
         $error = t('mytrip_error_expired');
+    } elseif (!rate_limit_check('mytrip_lookup', 10, 600)) {
+        $error = t('mytrip_error_rate_limited');
     } else {
         $reference = strtoupper(trim((string) ($_POST['reference'] ?? '')));
         $email = trim((string) ($_POST['email'] ?? ''));

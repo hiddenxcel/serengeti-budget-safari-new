@@ -4252,6 +4252,7 @@ return [
     'mytrip_error_required' => 'Please enter both your booking reference and email.',
     'mytrip_error_expired' => 'Your session expired, please try again.',
     'mytrip_error_not_found' => 'We could not find a booking matching that reference and email. Please double-check and try again, or contact us on WhatsApp.',
+    'mytrip_error_rate_limited' => 'Too many attempts. Please wait a few minutes and try again, or contact us on WhatsApp.',
     'mytrip_label_reference' => 'Reference',
     'mytrip_label_status' => 'Status',
     'mytrip_label_safari' => 'Safari',

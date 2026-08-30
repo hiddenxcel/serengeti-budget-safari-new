@@ -21,6 +21,10 @@ if (!csrf_verify($_POST['csrf_token'] ?? null)) {
     booking_json_error('Your session expired. Please refresh the page and try again.');
 }
 
+if (!rate_limit_check('booking_submit', 15, 3600)) {
+    booking_json_error('Too many booking requests from this session. Please try again later or contact us on WhatsApp.', 429);
+}
+
 $firstName = trim((string) ($_POST['first_name'] ?? ''));
 $lastName = trim((string) ($_POST['last_name'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));

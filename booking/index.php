@@ -319,6 +319,12 @@ require dirname(__DIR__) . '/includes/header.php';
             });
         });
 
+        function escapeHtml(value) {
+            var div = document.createElement('div');
+            div.textContent = value == null ? '' : String(value);
+            return div.innerHTML;
+        }
+
         function renderReview() {
             var est = currentEstimate();
             var date = dateInput && dateInput.value ? dateInput.value : '—';
@@ -327,11 +333,11 @@ require dirname(__DIR__) . '/includes/header.php';
             var email = document.getElementById('bf-email').value;
 
             reviewBox.innerHTML =
-                '<div class="booking-review-row"><span>Safari</span><strong>' + safariName + '</strong></div>' +
-                '<div class="booking-review-row"><span>Date</span><strong>' + date + '</strong></div>' +
+                '<div class="booking-review-row"><span>Safari</span><strong>' + escapeHtml(safariName) + '</strong></div>' +
+                '<div class="booking-review-row"><span>Date</span><strong>' + escapeHtml(date) + '</strong></div>' +
                 '<div class="booking-review-row"><span>Travelers</span><strong>' + est.adults + ' adult(s)' + (est.children ? ', ' + est.children + ' child(ren)' : '') + '</strong></div>' +
-                '<div class="booking-review-row"><span>Name</span><strong>' + firstName + ' ' + lastName + '</strong></div>' +
-                '<div class="booking-review-row"><span>Email</span><strong>' + email + '</strong></div>';
+                '<div class="booking-review-row"><span>Name</span><strong>' + escapeHtml(firstName) + ' ' + escapeHtml(lastName) + '</strong></div>' +
+                '<div class="booking-review-row"><span>Email</span><strong>' + escapeHtml(email) + '</strong></div>';
 
             if (est.pp > 0) {
                 reviewTotalBox.innerHTML =
