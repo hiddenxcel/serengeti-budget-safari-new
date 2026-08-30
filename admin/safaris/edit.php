@@ -12,6 +12,7 @@ $id = isset($_GET['id']) ? (int) $_GET['id'] : null;
 $safari = null;
 $days = [];
 $tiers = [];
+$pricingOptions = null;
 $errors = [];
 
 if ($id) {
@@ -31,6 +32,10 @@ if ($id) {
     $tiersStmt = db()->prepare('SELECT * FROM pricing_tiers WHERE safari_id = ? ORDER BY up_to_travelers');
     $tiersStmt->execute([$id]);
     $tiers = $tiersStmt->fetchAll();
+
+    $optStmt = db()->prepare('SELECT * FROM safari_pricing_options WHERE safari_id = ?');
+    $optStmt->execute([$id]);
+    $pricingOptions = $optStmt->fetch() ?: null;
 }
 
 $pageTitle = $id ? 'Edit Safari' : 'Add Safari';
@@ -129,6 +134,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $tierInsert->execute([$safariId, $upTo, $price, trim((string) ($_POST['tier_currency'][$i] ?? 'USD')) ?: 'USD']);
             }
 
+            // Upsert optional supplement pricing (child/single/private) — only
+            // stored if at least one value was actually entered.
+            $childPrice = trim((string) ($_POST['child_price_per_person'] ?? ''));
+            $singleSupp = trim((string) ($_POST['single_supplement'] ?? ''));
+            $privateSupp = trim((string) ($_POST['private_supplement'] ?? ''));
+
+            if ($childPrice !== '' || $singleSupp !== '' || $privateSupp !== '') {
+                db()->prepare(
+                    'INSERT INTO safari_pricing_options (safari_id, child_price_per_person, single_supplement, private_supplement)
+                     VALUES (?, ?, ?, ?)
+                     ON DUPLICATE KEY UPDATE
+                        child_price_per_person = VALUES(child_price_per_person),
+                        single_supplement = VALUES(single_supplement),
+                        private_supplement = VALUES(private_supplement)'
+                )->execute([
+                    $safariId,
+                    $childPrice !== '' ? (float) $childPrice : null,
+                    $singleSupp !== '' ? (float) $singleSupp : null,
+                    $privateSupp !== '' ? (float) $privateSupp : null,
+                ]);
+            } else {
+                db()->prepare('DELETE FROM safari_pricing_options WHERE safari_id = ?')->execute([$safariId]);
+            }
+
             header('Location: ' . admin_base_url() . '/safaris/edit.php?id=' . $safariId . '&saved=1');
             exit;
         }
@@ -147,6 +176,9 @@ if (!$dayRows) {
 }
 if (!$tiers) {
     $tiers = [['up_to_travelers' => '', 'price_per_person' => '', 'currency' => 'USD']];
+}
+if (!$pricingOptions) {
+    $pricingOptions = ['child_price_per_person' => null, 'single_supplement' => null, 'private_supplement' => null];
 }
 
 require dirname(__DIR__) . '/includes/layout-head.php';
@@ -261,6 +293,22 @@ require dirname(__DIR__) . '/includes/layout-head.php';
             <?php endforeach; ?>
         </div>
         <button type="button" class="admin-btn" id="addTierRow" style="margin-top:0.5rem;">+ Add price tier</button>
+
+        <h2 style="font-size:1.05rem;margin-top:1.75rem;">Optional Supplements (leave blank if not applicable)</h2>
+        <div class="admin-form-row">
+            <div class="admin-form-group">
+                <label for="child_price_per_person">Child price per person</label>
+                <input type="number" step="0.01" id="child_price_per_person" name="child_price_per_person" value="<?= e($pricingOptions['child_price_per_person'] !== null ? (string) $pricingOptions['child_price_per_person'] : '') ?>" />
+            </div>
+            <div class="admin-form-group">
+                <label for="single_supplement">Single supplement</label>
+                <input type="number" step="0.01" id="single_supplement" name="single_supplement" value="<?= e($pricingOptions['single_supplement'] !== null ? (string) $pricingOptions['single_supplement'] : '') ?>" />
+            </div>
+            <div class="admin-form-group">
+                <label for="private_supplement">Private safari supplement</label>
+                <input type="number" step="0.01" id="private_supplement" name="private_supplement" value="<?= e($pricingOptions['private_supplement'] !== null ? (string) $pricingOptions['private_supplement'] : '') ?>" />
+            </div>
+        </div>
     </div>
 
     <div class="admin-card">

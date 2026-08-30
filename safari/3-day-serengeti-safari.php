@@ -15,14 +15,14 @@ $waMessage = str_replace(['{people}', '{pp}', '{total}'], ['2', '€1,000', '€
 
 require dirname(__DIR__) . '/includes/header.php';
 
-$priceTiers = [
+$priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
     ['upTo' => 1, 'pp' => 950],
     ['upTo' => 2, 'pp' => 650],
     ['upTo' => 3, 'pp' => 540],
     ['upTo' => 4, 'pp' => 490],
     ['upTo' => 5, 'pp' => 450],
     ['upTo' => 20, 'pp' => 420],
-];
+]);
 ?>
 
     <section class="page-hero">

@@ -61,3 +61,39 @@ function csrf_verify(?string $token): bool
 {
     return is_string($token) && !empty($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
 }
+
+/**
+ * Fetch a safari's pricing tiers from the database by slug, in the
+ * {upTo, pp} shape assets/js/price-calculator.js expects. Returns the
+ * given $fallback array unchanged if the safari doesn't exist in the DB
+ * yet (or has no tiers) — lets pages migrate to DB-driven pricing one at
+ * a time without breaking ones that aren't migrated yet.
+ */
+function pricing_tiers_for_slug(string $slug, array $fallback = []): array
+{
+    try {
+        $stmt = db()->prepare(
+            'SELECT pt.up_to_travelers, pt.price_per_person
+             FROM pricing_tiers pt
+             INNER JOIN safaris s ON s.id = pt.safari_id
+             WHERE s.slug = ?
+             ORDER BY pt.up_to_travelers ASC'
+        );
+        $stmt->execute([$slug]);
+        $rows = $stmt->fetchAll();
+    } catch (PDOException $e) {
+        return $fallback;
+    }
+
+    if (!$rows) {
+        return $fallback;
+    }
+
+    return array_map(
+        static fn(array $row): array => [
+            'upTo' => (int) $row['up_to_travelers'],
+            'pp' => (float) $row['price_per_person'],
+        ],
+        $rows
+    );
+}

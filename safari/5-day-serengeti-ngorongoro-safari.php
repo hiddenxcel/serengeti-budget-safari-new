@@ -12,14 +12,14 @@ $pageMetaTitle = 'pkg5d_meta_title';
 $pageMetaDescription = 'pkg5d_meta_description';
 $bodyClass = 'has-mobile-booking-bar';
 
-$priceTiers = [
+$priceTiers = pricing_tiers_for_slug('5-day-serengeti-ngorongoro-safari', [
     ['upTo' => 1, 'pp' => 850],
     ['upTo' => 2, 'pp' => 650],
     ['upTo' => 3, 'pp' => 580],
     ['upTo' => 4, 'pp' => 530],
     ['upTo' => 5, 'pp' => 500],
     ['upTo' => 20, 'pp' => 470],
-];
+]);
 $tiersJson = e(json_encode($priceTiers));
 
 $currentMonth = (int) date('n');
