@@ -61,6 +61,7 @@
                     <ul>
                         <li><a href="<?= url('about.php') ?>"><?= e(t('nav_about')) ?></a></li>
                         <li><a href="<?= url('contact.php') ?>"><?= e(t('nav_contact')) ?></a></li>
+                        <li><a href="<?= url('my-trip/') ?>"><?= e(t('mytrip_hero_badge')) ?></a></li>
                         <li><a href="<?= url('privacy-policy.php') ?>"><?= e(t('footer_privacy')) ?></a></li>
                         <li><a href="<?= url('terms-and-conditions.php') ?>"><?= e(t('footer_terms')) ?></a></li>
                     </ul>
