@@ -4223,4 +4223,9 @@ return [
     'mytrip_itinerary_title' => 'Il Tuo Itinerario',
     'mytrip_cta_whatsapp' => 'Contattaci su WhatsApp',
     'mytrip_cta_lookup_another' => 'Cerca un\'Altra Prenotazione',
+
+    // Testimonials
+    'testimonials_badge' => 'Storie degli Ospiti',
+    'testimonials_title' => 'Cosa Dicono i Nostri Viaggiatori',
+    'testimonials_intro' => 'Parole vere di ospiti veri che hanno viaggiato con noi.',
 ];

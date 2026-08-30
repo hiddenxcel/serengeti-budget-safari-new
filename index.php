@@ -9,6 +9,10 @@ $strings = load_lang($lang);
 $page = 'home';
 $altPath = '';
 
+$testimonials = db()->query(
+    "SELECT * FROM testimonials WHERE status = 'published' ORDER BY sort_order ASC, created_at DESC LIMIT 9"
+)->fetchAll();
+
 require __DIR__ . '/includes/header.php';
 ?>
 
@@ -731,6 +735,42 @@ require __DIR__ . '/includes/header.php';
             </div>
         </div>
     </section>
+
+    <?php if ($testimonials): ?>
+    <section class="testimonials-section" id="testimonials" aria-labelledby="testimonialsTitle">
+        <div class="container">
+            <div class="section-title-left centered">
+                <span class="section-badge"><i class="fas fa-quote-left"></i> <?= e(t('testimonials_badge')) ?></span>
+                <h2 id="testimonialsTitle"><?= e(t('testimonials_title')) ?></h2>
+                <p><?= e(t('testimonials_intro')) ?></p>
+            </div>
+
+            <div class="testimonials-grid">
+                <?php foreach ($testimonials as $tItem): ?>
+                <?php
+                    $tQuote = ($lang === 'it' && !empty($tItem['quote_it'])) ? $tItem['quote_it'] : $tItem['quote_en'];
+                    $tInitial = mb_strtoupper(mb_substr($tItem['guest_name'], 0, 1));
+                ?>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar-fallback" aria-hidden="true"><?= e($tInitial) ?></div>
+                        <div>
+                            <div class="testimonial-name"><?= e($tItem['guest_name']) ?></div>
+                            <?php if (!empty($tItem['guest_country'])): ?>
+                            <div class="testimonial-meta"><?= e($tItem['guest_country']) ?></div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating" aria-label="<?= (int) $tItem['rating'] ?> out of 5 stars">
+                        <?= str_repeat('★', (int) $tItem['rating']) . str_repeat('☆', 5 - (int) $tItem['rating']) ?>
+                    </div>
+                    <blockquote>&ldquo;<?= e($tQuote) ?>&rdquo;</blockquote>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
 
     <section class="faq-mega" id="faq" aria-labelledby="faqTitle">
         <div class="container">

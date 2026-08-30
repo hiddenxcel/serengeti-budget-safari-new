@@ -4267,4 +4267,9 @@ return [
     'mytrip_itinerary_title' => 'Your Itinerary',
     'mytrip_cta_whatsapp' => 'Contact Us on WhatsApp',
     'mytrip_cta_lookup_another' => 'Look Up Another Booking',
+
+    // Testimonials
+    'testimonials_badge' => 'Guest Stories',
+    'testimonials_title' => 'What Our Travelers Say',
+    'testimonials_intro' => 'Real words from real guests who traveled with us.',
 ];
