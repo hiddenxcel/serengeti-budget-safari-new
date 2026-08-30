@@ -13,13 +13,20 @@ declare(strict_types=1);
 </head>
 <body>
 <div class="admin-shell">
-    <aside class="admin-sidebar">
+    <header class="admin-topbar">
+        <button type="button" class="admin-menu-toggle" id="adminMenuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="adminSidebar">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="admin-topbar-brand">Serengeti Admin</div>
+    </header>
+    <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
+    <aside class="admin-sidebar" id="adminSidebar">
         <div class="admin-sidebar-brand">Serengeti Admin</div>
         <nav class="admin-nav">
-            <a href="<?= admin_base_url() ?>/index.php">Dashboard</a>
-            <a href="<?= admin_base_url() ?>/safaris/index.php">Safaris</a>
-            <a href="<?= admin_base_url() ?>/bookings/index.php">Bookings</a>
-            <a href="<?= admin_base_url() ?>/customers/index.php">Customers</a>
+            <a href="<?= admin_base_url() ?>/index.php"<?= admin_nav_active('index.php') ?>>Dashboard</a>
+            <a href="<?= admin_base_url() ?>/safaris/index.php"<?= admin_nav_active('safaris') ?>>Safaris</a>
+            <a href="<?= admin_base_url() ?>/bookings/index.php"<?= admin_nav_active('bookings') ?>>Bookings</a>
+            <a href="<?= admin_base_url() ?>/customers/index.php"<?= admin_nav_active('customers') ?>>Customers</a>
         </nav>
         <div class="admin-sidebar-user">
             <div class="admin-user-name"><?= e(current_admin()['name'] ?? '') ?></div>

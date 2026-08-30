@@ -132,3 +132,9 @@ function admin_logout(): void
     unset($_SESSION[ADMIN_SESSION_KEY]);
     session_regenerate_id(true);
 }
+
+function admin_nav_active(string $needle): string
+{
+    $script = str_replace('\\', '/', $_SERVER['SCRIPT_NAME']);
+    return str_contains($script, '/admin/' . $needle) ? ' class="active"' : '';
+}
