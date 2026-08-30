@@ -11228,3 +11228,114 @@ textarea:focus-visible,
 .legal-contact p {
     margin: 0;
 }
+
+/* ------------------------------------------------------------------ */
+/* Booking flow: 4-step progress + panels                              */
+/* ------------------------------------------------------------------ */
+.booking-steps {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0;
+    gap: 0.5rem;
+}
+
+.booking-step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    color: var(--gray-500, #9a9a9a);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.booking-step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--gray-100, #f0f0f0);
+    color: inherit;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.booking-step.active { color: var(--gold-dark, #b8922f); }
+.booking-step.active .booking-step-num { background: var(--gold, #d4a843); color: #fff; }
+.booking-step.done { color: var(--dark, #1c1f26); }
+.booking-step.done .booking-step-num { background: #1e824c; color: #fff; }
+
+.booking-step-label { display: none; }
+
+@media (min-width: 640px) {
+    .booking-step-label { display: inline; }
+}
+
+.booking-panel { display: none; }
+.booking-panel.active { display: block; animation: bookingFadeIn 0.2s ease; }
+
+@keyframes bookingFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.booking-step-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.booking-review-card {
+    background: var(--gray-50, #fafafa);
+    border: 1px solid var(--gray-100, #eee);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.booking-review-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--gray-100, #eee);
+    font-size: 0.92rem;
+}
+
+.booking-review-row:last-child { border-bottom: none; }
+.booking-review-row span { color: #777; }
+
+.booking-review-total {
+    background: #fff;
+    border: 1px solid var(--gray-100, #eee);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.booking-review-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.booking-review-note {
+    color: #777;
+    font-size: 0.82rem;
+    margin: 0.4rem 0 0;
+}
+
+@media (max-width: 600px) {
+    .booking-steps { gap: 0.25rem; }
+    .booking-step-num { width: 24px; height: 24px; font-size: 0.78rem; }
+    .booking-step-actions { flex-direction: column-reverse; align-items: stretch; }
+    .booking-step-actions .btn { width: 100%; }
+    .booking-review-row { flex-direction: column; gap: 0.15rem; }
+}
