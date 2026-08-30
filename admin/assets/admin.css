@@ -321,3 +321,37 @@ table.admin-table { width: 100%; border-collapse: collapse; min-width: 640px; }
 @media (max-width: 480px) {
     .admin-stats-grid { grid-template-columns: 1fr 1fr; }
 }
+
+.admin-activity-feed {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--admin-border);
+    font-size: 0.9rem;
+}
+
+.admin-activity-item:last-child { border-bottom: none; }
+
+.admin-activity-icon { flex-shrink: 0; font-size: 1.1rem; line-height: 1.4; }
+
+.admin-activity-text { flex: 1; line-height: 1.5; }
+.admin-activity-text a { color: var(--admin-text); }
+
+.admin-activity-time {
+    flex-shrink: 0;
+    color: #999;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .admin-activity-item { flex-wrap: wrap; }
+    .admin-activity-time { width: 100%; padding-left: 1.85rem; }
+}
