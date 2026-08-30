@@ -13,14 +13,44 @@ $pageMetaDescription = 'groups_meta_description';
 
 require dirname(__DIR__) . '/includes/header.php';
 
-$sampleDepartures = [
-    ['date' => 'Jan 12, 2027', 'itinerary' => '4-Day Big Five Safari', 'price' => '€1,250', 'status' => 'open'],
-    ['date' => 'Jan 26, 2027', 'itinerary' => '3-Day Serengeti Safari', 'price' => '€1,000', 'status' => 'open'],
-    ['date' => 'Feb 09, 2027', 'itinerary' => '5-Day Migration Safari', 'price' => '€1,100', 'status' => 'filling'],
-    ['date' => 'Feb 23, 2027', 'itinerary' => '4-Day Big Five Safari', 'price' => '€1,250', 'status' => 'open'],
-    ['date' => 'Mar 09, 2027', 'itinerary' => '3-Day Serengeti Safari', 'price' => '€1,000', 'status' => 'full'],
-    ['date' => 'Mar 23, 2027', 'itinerary' => '5-Day Migration Safari', 'price' => '€1,100', 'status' => 'open'],
-];
+$departureRows = db()->query(
+    "SELECT d.*,
+            (SELECT COALESCE(SUM(b.adults + b.children), 0) FROM bookings b
+             WHERE b.departure_id = d.id AND b.status != 'cancelled') AS booked_seats
+     FROM departures d
+     WHERE d.status = 'open' AND d.departure_date >= CURDATE()
+     ORDER BY d.departure_date ASC
+     LIMIT 12"
+)->fetchAll();
+
+$isUsingRealDepartures = count($departureRows) > 0;
+
+if ($isUsingRealDepartures) {
+    $departures = array_map(static function (array $d): array {
+        $available = (int) $d['capacity'] - (int) $d['booked_seats'];
+        $status = $available <= 0 ? 'full' : ($available <= 2 ? 'filling' : 'open');
+        return [
+            'id' => (int) $d['id'],
+            'date' => date('M d, Y', strtotime($d['departure_date'])),
+            'itinerary' => $d['itinerary_label'],
+            'price' => $d['currency'] . ' ' . number_format((float) $d['price_per_person'], 0),
+            'status' => $status,
+            'available' => max(0, $available),
+        ];
+    }, $departureRows);
+} else {
+    // No real departures entered yet — show clearly-labeled illustrative
+    // examples so the page isn't empty, per the standing decision to
+    // avoid a bare "coming soon" page (see project memory).
+    $departures = [
+        ['id' => null, 'date' => 'Jan 12, 2027', 'itinerary' => '4-Day Big Five Safari', 'price' => '€1,250', 'status' => 'open', 'available' => 4],
+        ['id' => null, 'date' => 'Jan 26, 2027', 'itinerary' => '3-Day Serengeti Safari', 'price' => '€1,000', 'status' => 'open', 'available' => 5],
+        ['id' => null, 'date' => 'Feb 09, 2027', 'itinerary' => '5-Day Migration Safari', 'price' => '€1,100', 'status' => 'filling', 'available' => 2],
+        ['id' => null, 'date' => 'Feb 23, 2027', 'itinerary' => '4-Day Big Five Safari', 'price' => '€1,250', 'status' => 'open', 'available' => 3],
+        ['id' => null, 'date' => 'Mar 09, 2027', 'itinerary' => '3-Day Serengeti Safari', 'price' => '€1,000', 'status' => 'full', 'available' => 0],
+        ['id' => null, 'date' => 'Mar 23, 2027', 'itinerary' => '5-Day Migration Safari', 'price' => '€1,100', 'status' => 'open', 'available' => 4],
+    ];
+}
 ?>
 
     <section class="page-hero">
@@ -114,10 +144,11 @@ $sampleDepartures = [
                                 <th><?= e(t('groups_departures_col_itinerary')) ?></th>
                                 <th><?= e(t('groups_departures_col_price')) ?></th>
                                 <th><?= e(t('groups_departures_col_seats')) ?></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($sampleDepartures as $dep): ?>
+                            <?php foreach ($departures as $dep): ?>
                             <tr>
                                 <td><strong><?= e($dep['date']) ?></strong></td>
                                 <td><?= e($dep['itinerary']) ?></td>
@@ -128,12 +159,21 @@ $sampleDepartures = [
                                         <?= e(t('groups_seats_' . $dep['status'])) ?>
                                     </span>
                                 </td>
+                                <td>
+                                    <?php if ($dep['status'] !== 'full' && $isUsingRealDepartures): ?>
+                                        <a class="btn btn-primary btn-sm" href="<?= url('booking/?departure=' . $dep['id'] . '&adults=1') ?>"><?= e(t('groups_join_cta')) ?></a>
+                                    <?php elseif ($dep['status'] === 'full'): ?>
+                                        <span style="color:#999;font-size:0.85rem;"><?= e(t('groups_seats_full')) ?></span>
+                                    <?php else: ?>
+                                        <a class="btn btn-light btn-sm" href="https://wa.me/255697612865" target="_blank" rel="noopener"><?= e(t('groups_join_cta')) ?></a>
+                                    <?php endif; ?>
+                                </td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
-                <p class="departures-note"><i class="fas fa-circle-info"></i> <?= e(t('groups_departures_note')) ?></p>
+                <p class="departures-note"><i class="fas fa-circle-info"></i> <?= e($isUsingRealDepartures ? t('groups_departures_note_real') : t('groups_departures_note')) ?></p>
             </div>
         </section>
 

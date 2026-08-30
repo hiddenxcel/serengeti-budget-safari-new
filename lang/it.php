@@ -542,6 +542,8 @@ return [
     'groups_departures_col_price' => 'Prezzo a persona',
     'groups_departures_col_seats' => 'Posti',
     'groups_departures_note' => 'Esempio illustrativo — scrivici per le date reali attualmente disponibili.',
+    'groups_departures_note_real' => 'I posti si aggiornano automaticamente in base alle prenotazioni. Scrivici su WhatsApp per qualsiasi domanda prima di iscriverti.',
+    'groups_join_cta' => 'Unisciti a Questo Safari',
     'groups_seats_open' => 'Disponibile',
     'groups_seats_filling' => 'Quasi pieno',
     'groups_seats_full' => 'Completo',

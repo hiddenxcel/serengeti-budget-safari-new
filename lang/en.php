@@ -542,6 +542,8 @@ return [
     'groups_departures_col_price' => 'Price p.p.',
     'groups_departures_col_seats' => 'Seats',
     'groups_departures_note' => 'Illustrative example — message us for the real, currently open dates.',
+    'groups_departures_note_real' => 'Seats update automatically as bookings come in. Message us on WhatsApp if you have any questions before joining.',
+    'groups_join_cta' => 'Join This Safari',
     'groups_seats_open' => 'Open',
     'groups_seats_filling' => 'Filling up',
     'groups_seats_full' => 'Full',

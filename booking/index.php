@@ -20,6 +20,28 @@ if ($slug !== '') {
     $safari = $stmt->fetch() ?: null;
 }
 
+// A group-joining departure (Phase 11) takes priority over everything else
+// if present and still has open seats — it locks the date and price.
+$departureId = (int) ($_GET['departure'] ?? 0);
+$departure = null;
+
+if ($departureId > 0) {
+    $depStmt = db()->prepare(
+        "SELECT d.*,
+                (SELECT COALESCE(SUM(b.adults + b.children), 0) FROM bookings b
+                 WHERE b.departure_id = d.id AND b.status != 'cancelled') AS booked_seats
+         FROM departures d
+         WHERE d.id = ? AND d.status = 'open'"
+    );
+    $depStmt->execute([$departureId]);
+    $departure = $depStmt->fetch() ?: null;
+
+    if ($departure && ((int) $departure['capacity'] - (int) $departure['booked_seats']) <= 0) {
+        $departure = null;
+        $departureId = 0;
+    }
+}
+
 // Legacy hardcoded packages (not yet migrated into the safaris table) are
 // still bookable — carry their title/price/link through as plain query
 // params from the calling page instead of a DB lookup.
@@ -27,7 +49,13 @@ $fallbackTitle = trim((string) ($_GET['title'] ?? ''));
 $fallbackPricePerPerson = isset($_GET['pp']) ? (float) $_GET['pp'] : null;
 $fallbackCurrency = trim((string) ($_GET['currency'] ?? 'USD')) ?: 'USD';
 
-if (!$safari && $fallbackTitle === '') {
+if ($departure) {
+    $fallbackTitle = $departure['itinerary_label'];
+    $fallbackPricePerPerson = (float) $departure['price_per_person'];
+    $fallbackCurrency = $departure['currency'];
+}
+
+if (!$safari && !$departure && $fallbackTitle === '') {
     header('Location: ' . url('safari/'));
     exit;
 }
@@ -42,8 +70,9 @@ if ($safari) {
     $tiers = $tiersStmt->fetchAll();
 }
 
-$prefillDate = trim((string) ($_GET['date'] ?? ''));
+$prefillDate = $departure ? $departure['departure_date'] : trim((string) ($_GET['date'] ?? ''));
 $prefillAdults = max(1, (int) ($_GET['adults'] ?? 2));
+$availableSeats = $departure ? ((int) $departure['capacity'] - (int) $departure['booked_seats']) : null;
 
 require dirname(__DIR__) . '/includes/header.php';
 ?>
@@ -87,10 +116,17 @@ require dirname(__DIR__) . '/includes/header.php';
 
                             <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>" />
                             <input type="hidden" name="safari_id" value="<?= $safari ? (int) $safari['id'] : '' ?>" />
+                            <input type="hidden" name="departure_id" value="<?= $departure ? (int) $departure['id'] : '' ?>" />
                             <input type="hidden" name="safari_title" value="<?= e($displayTitle) ?>" />
                             <input type="hidden" name="fallback_pp" value="<?= $fallbackPricePerPerson !== null ? e((string) $fallbackPricePerPerson) : '' ?>" />
                             <input type="hidden" name="fallback_currency" value="<?= e($fallbackCurrency) ?>" />
                             <input type="hidden" name="lang" value="<?= e($lang) ?>" />
+
+                            <?php if ($departure): ?>
+                            <div class="admin-success-msg" style="margin-bottom:1.25rem;">
+                                <?= (int) $availableSeats ?> seat<?= $availableSeats === 1 ? '' : 's' ?> left on this departure — book now to secure your spot.
+                            </div>
+                            <?php endif; ?>
 
                             <!-- STEP 1: Your Trip -->
                             <div class="booking-panel active" data-panel="1">
@@ -102,13 +138,13 @@ require dirname(__DIR__) . '/includes/header.php';
                                     </div>
                                     <div class="contact-field">
                                         <label for="bf-date"><?= e(t('booking_form_date')) ?></label>
-                                        <input type="date" id="bf-date" name="travel_date" min="<?= e(date('Y-m-d', strtotime('+2 days'))) ?>" value="<?= e($prefillDate) ?>" />
+                                        <input type="date" id="bf-date" name="travel_date" min="<?= e(date('Y-m-d', strtotime('+2 days'))) ?>" value="<?= e($prefillDate) ?>" <?= $departure ? 'readonly' : '' ?> />
                                     </div>
                                 </div>
                                 <div class="contact-form-row">
                                     <div class="contact-field">
                                         <label for="bf-adults"><?= e(t('booking_form_adults')) ?> *</label>
-                                        <input type="number" id="bf-adults" name="adults" min="1" max="20" value="<?= (int) $prefillAdults ?>" required />
+                                        <input type="number" id="bf-adults" name="adults" min="1" max="<?= $availableSeats !== null ? max(1, $availableSeats) : 20 ?>" value="<?= (int) $prefillAdults ?>" required />
                                     </div>
                                     <div class="contact-field">
                                         <label for="bf-children"><?= e(t('booking_form_children')) ?></label>

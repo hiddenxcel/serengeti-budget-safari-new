@@ -31,6 +31,7 @@ $children = max(0, min(20, (int) ($_POST['children'] ?? 0)));
 $travelDate = trim((string) ($_POST['travel_date'] ?? ''));
 $specialRequests = trim((string) ($_POST['special_requests'] ?? ''));
 $safariId = (int) ($_POST['safari_id'] ?? 0);
+$departureId = (int) ($_POST['departure_id'] ?? 0);
 $safariTitle = trim((string) ($_POST['safari_title'] ?? ''));
 $fallbackPp = ($_POST['fallback_pp'] ?? '') !== '' ? (float) $_POST['fallback_pp'] : null;
 $fallbackCurrency = trim((string) ($_POST['fallback_currency'] ?? 'USD')) ?: 'USD';
@@ -89,6 +90,38 @@ $estimatedTotal = $pricePerPerson !== null ? $pricePerPerson * ($adults + $child
 try {
     db()->beginTransaction();
 
+    // If joining a group departure, lock its row and re-check remaining
+    // seats server-side inside the transaction — never trust the client,
+    // and this prevents two simultaneous bookings from both taking the
+    // last seat (classic race condition on a shared-capacity resource).
+    $departure = null;
+    if ($departureId > 0) {
+        $depStmt = db()->prepare("SELECT * FROM departures WHERE id = ? AND status = 'open' FOR UPDATE");
+        $depStmt->execute([$departureId]);
+        $departure = $depStmt->fetch() ?: null;
+
+        if (!$departure) {
+            db()->rollBack();
+            booking_json_error('This departure is no longer available. Please choose another date.');
+        }
+
+        $bookedStmt = db()->prepare("SELECT COALESCE(SUM(adults + children), 0) FROM bookings WHERE departure_id = ? AND status != 'cancelled'");
+        $bookedStmt->execute([$departureId]);
+        $bookedSeats = (int) $bookedStmt->fetchColumn();
+        $availableSeats = (int) $departure['capacity'] - $bookedSeats;
+
+        if (($adults + $children) > $availableSeats) {
+            db()->rollBack();
+            booking_json_error('Only ' . $availableSeats . ' seat(s) left on this departure. Please reduce your traveler count or choose another date.');
+        }
+
+        // Departure locks the date and price — the client can't override these.
+        $travelDate = $departure['departure_date'];
+        $pricePerPerson = (float) $departure['price_per_person'];
+        $currency = $departure['currency'];
+        $estimatedTotal = $pricePerPerson * ($adults + $children);
+    }
+
     // Find or create the customer by email (simple match — no accounts/passwords).
     $customerStmt = db()->prepare('SELECT id FROM customers WHERE email = ? LIMIT 1');
     $customerStmt->execute([$email]);
@@ -116,11 +149,12 @@ try {
     }
 
     db()->prepare(
-        'INSERT INTO bookings (reference, safari_id, customer_id, travel_date, adults, children, estimated_total, currency, special_requests, status)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, "pending")'
+        'INSERT INTO bookings (reference, safari_id, departure_id, customer_id, travel_date, adults, children, estimated_total, currency, special_requests, status)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "pending")'
     )->execute([
         $reference,
         $safari ? $safari['id'] : null,
+        $departure ? $departure['id'] : null,
         $customerId,
         $travelDate ?: null,
         $adults,

@@ -27,6 +27,7 @@ declare(strict_types=1);
             <a href="<?= admin_base_url() ?>/safaris/index.php"<?= admin_nav_active('safaris') ?>>Safaris</a>
             <a href="<?= admin_base_url() ?>/bookings/index.php"<?= admin_nav_active('bookings') ?>>Bookings</a>
             <a href="<?= admin_base_url() ?>/customers/index.php"<?= admin_nav_active('customers') ?>>Customers</a>
+            <a href="<?= admin_base_url() ?>/departures/index.php"<?= admin_nav_active('departures') ?>>Group Departures</a>
         </nav>
         <div class="admin-sidebar-user">
             <div class="admin-user-name"><?= e(current_admin()['name'] ?? '') ?></div>
