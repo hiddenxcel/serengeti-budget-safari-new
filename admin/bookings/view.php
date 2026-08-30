@@ -102,7 +102,10 @@ require dirname(__DIR__) . '/includes/layout-head.php';
         <div>
             <span class="admin-badge <?= e($booking['status']) ?>" style="font-size:0.9rem;"><?= ucwords(str_replace('_', ' ', $booking['status'])) ?></span>
         </div>
-        <a href="<?= admin_base_url() ?>/bookings/index.php" class="admin-btn">← Back to Bookings</a>
+        <div>
+            <a href="<?= admin_base_url() ?>/bookings/invoice.php?id=<?= $id ?>" class="admin-btn" target="_blank">Download Invoice</a>
+            <a href="<?= admin_base_url() ?>/bookings/index.php" class="admin-btn">← Back to Bookings</a>
+        </div>
     </div>
 
     <div class="admin-form-row" style="margin-top:1.5rem;">
