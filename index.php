@@ -193,44 +193,46 @@ require __DIR__ . '/includes/header.php';
         </div>
     </div>
 
-    <section class="safari-types-section" aria-labelledby="offerTitle">
-        <div class="container">
-            <div class="section-title-left centered">
-                <span class="section-badge"><i class="fas fa-compass"></i> <?= e(t('safari_types_badge')) ?></span>
-                <h2 id="offerTitle"><?= e(t('safari_types_title')) ?></h2>
-                <p><?= e(t('safari_types_intro')) ?></p>
-            </div>
-
-            <div class="safari-types-slider" id="safariTypesSlider">
-                <div class="safari-types-track" id="safariTypesTrack">
-                    <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/wildlife/lion-pride-zebra-kill.jpg') ?>');">
-                        <span class="type-icon"><i class="fas fa-wallet"></i></span>
-                        <h3><?= e(t('safari_type_budget_title')) ?></h3>
-                        <p><?= e(t('safari_type_budget_desc')) ?></p>
-                    </a>
-                    <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/hero/male-lion-portrait-mane.jpg') ?>');">
-                        <span class="type-icon"><i class="fas fa-gem"></i></span>
-                        <h3><?= e(t('safari_type_luxury_title')) ?></h3>
-                        <p><?= e(t('safari_type_luxury_desc')) ?></p>
-                    </a>
-                    <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/guide-client-ngorongoro-viewpoint.jpg') ?>');">
-                        <span class="type-icon"><i class="fas fa-user-friends"></i></span>
-                        <h3><?= e(t('safari_type_private_title')) ?></h3>
-                        <p><?= e(t('safari_type_private_desc')) ?></p>
-                    </a>
-                    <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/ranger-clients-safari-vehicle-logo.jpg') ?>');">
-                        <span class="type-icon"><i class="fas fa-users"></i></span>
-                        <h3><?= e(t('safari_type_group_title')) ?></h3>
-                        <p><?= e(t('safari_type_group_desc')) ?></p>
-                    </a>
-                    <a href="<?= url('day-trips/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/client-with-maasai-village.jpg') ?>');">
-                        <span class="type-icon"><i class="fas fa-hiking"></i></span>
-                        <h3><?= e(t('safari_type_daytrips_title')) ?></h3>
-                        <p><?= e(t('safari_type_daytrips_desc')) ?></p>
-                    </a>
+    <section class="safari-types-section has-pin-scroll" id="safariTypesPinSection" aria-labelledby="offerTitle">
+        <div class="safari-types-pin-wrap">
+            <div class="container">
+                <div class="section-title-left centered">
+                    <span class="section-badge"><i class="fas fa-compass"></i> <?= e(t('safari_types_badge')) ?></span>
+                    <h2 id="offerTitle"><?= e(t('safari_types_title')) ?></h2>
+                    <p><?= e(t('safari_types_intro')) ?></p>
                 </div>
-                <button type="button" class="stories-slider-arrow prev" id="safariTypesPrev" aria-label="Previous safari type"><i class="fas fa-chevron-left"></i></button>
-                <button type="button" class="stories-slider-arrow next" id="safariTypesNext" aria-label="Next safari type"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="safari-types-slider" id="safariTypesSlider">
+                    <div class="safari-types-track" id="safariTypesTrack">
+                        <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/wildlife/lion-pride-zebra-kill.jpg') ?>');">
+                            <span class="type-icon"><i class="fas fa-wallet"></i></span>
+                            <h3><?= e(t('safari_type_budget_title')) ?></h3>
+                            <p><?= e(t('safari_type_budget_desc')) ?></p>
+                        </a>
+                        <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/hero/male-lion-portrait-mane.jpg') ?>');">
+                            <span class="type-icon"><i class="fas fa-gem"></i></span>
+                            <h3><?= e(t('safari_type_luxury_title')) ?></h3>
+                            <p><?= e(t('safari_type_luxury_desc')) ?></p>
+                        </a>
+                        <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/guide-client-ngorongoro-viewpoint.jpg') ?>');">
+                            <span class="type-icon"><i class="fas fa-user-friends"></i></span>
+                            <h3><?= e(t('safari_type_private_title')) ?></h3>
+                            <p><?= e(t('safari_type_private_desc')) ?></p>
+                        </a>
+                        <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/ranger-clients-safari-vehicle-logo.jpg') ?>');">
+                            <span class="type-icon"><i class="fas fa-users"></i></span>
+                            <h3><?= e(t('safari_type_group_title')) ?></h3>
+                            <p><?= e(t('safari_type_group_desc')) ?></p>
+                        </a>
+                        <a href="<?= url('day-trips/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/client-with-maasai-village.jpg') ?>');">
+                            <span class="type-icon"><i class="fas fa-hiking"></i></span>
+                            <h3><?= e(t('safari_type_daytrips_title')) ?></h3>
+                            <p><?= e(t('safari_type_daytrips_desc')) ?></p>
+                        </a>
+                    </div>
+                    <button type="button" class="stories-slider-arrow prev" id="safariTypesPrev" aria-label="Previous safari type"><i class="fas fa-chevron-left"></i></button>
+                    <button type="button" class="stories-slider-arrow next" id="safariTypesNext" aria-label="Next safari type"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
         </div>
     </section>

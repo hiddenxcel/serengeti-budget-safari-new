@@ -4791,6 +4791,49 @@ textarea:focus-visible,
     margin-bottom: 2rem;
 }
 
+/* Pin-and-scroll: on desktop/tablet the section is given extra scroll-track
+   height, and .safari-types-pin-wrap sticks to the viewport top while that
+   height scrolls past — main.js reads scroll progress through the section
+   and drives .safari-types-track's translateX directly (no CSS transition,
+   the scrollbar itself is the animation timeline). Below 577px this is
+   turned off entirely — the track reverts to its native touch-scroll
+   behavior (see the 576px media query) since fighting page-scroll on a
+   phone with a second pinned horizontal scroll is a bad experience. */
+.safari-types-section.has-pin-scroll {
+    height: 260vh;
+    padding: 0;
+    position: relative;
+}
+
+/* position:sticky can't be used here — body/html carry a site-wide
+   overflow-x:hidden (prevents horizontal scroll leaks from other
+   components) which disables sticky's containing block on ANY descendant,
+   not just this one. main.js toggles between .is-pinned (position:fixed,
+   while the section is mid-scroll) and .is-past (position:absolute,
+   bottom-anchored, once scrolled beyond) to fake the same effect. */
+.safari-types-pin-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 0;
+}
+
+.safari-types-pin-wrap.is-pinned {
+    position: fixed;
+    top: 0;
+}
+
+.safari-types-pin-wrap.is-past {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+}
+
 .safari-types-slider {
     position: relative;
     overflow: hidden;
@@ -4799,8 +4842,11 @@ textarea:focus-visible,
 .safari-types-track {
     display: flex;
     gap: 1.5rem;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform;
+}
+
+.safari-types-section.has-pin-scroll .safari-types-track {
+    transition: none;
 }
 
 .safari-type-card {
@@ -4869,6 +4915,10 @@ textarea:focus-visible,
     top: 50%;
 }
 
+.safari-types-section.has-pin-scroll .safari-types-slider .stories-slider-arrow {
+    display: none;
+}
+
 @media (max-width: 992px) {
     .safari-type-card {
         flex: 0 0 calc(50% - 0.75rem);
@@ -4880,6 +4930,18 @@ textarea:focus-visible,
 @media (max-width: 576px) {
     .safari-types-section {
         padding: 3.5rem 0;
+    }
+
+    /* Pin-and-scroll is desktop/tablet only — see the .has-pin-scroll rules
+       above and the isPinScrollMode() guard in main.js. */
+    .safari-types-section.has-pin-scroll {
+        height: auto;
+    }
+
+    .safari-types-pin-wrap {
+        position: static;
+        height: auto;
+        padding: 0;
     }
 
     /* Below the JS slider's smallest breakpoint the arrows are cramped and

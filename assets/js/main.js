@@ -943,6 +943,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const slider = document.getElementById('safariTypesSlider');
     if (!slider) return;
 
+    const pinSection = document.getElementById('safariTypesPinSection');
+    const pinWrap = document.querySelector('.safari-types-pin-wrap');
     const track = document.getElementById('safariTypesTrack');
     const cards = Array.from(track.children);
     const prevBtn = document.getElementById('safariTypesPrev');
@@ -953,6 +955,48 @@ document.addEventListener('DOMContentLoaded', function () {
     function isMobileScrollMode() {
         return window.innerWidth <= 576;
     }
+
+    // ---- Desktop/tablet: pin-and-scroll (vertical scroll drives horizontal
+    // translateX while the section's tall track scrolls past a sticky
+    // wrap — see .has-pin-scroll / .safari-types-pin-wrap in main.css). ----
+
+    function maxScrollX() {
+        return Math.max(0, track.scrollWidth - slider.clientWidth);
+    }
+
+    function updatePinScroll() {
+        if (!pinSection || !pinWrap) return;
+
+        if (isMobileScrollMode()) {
+            pinWrap.classList.remove('is-pinned', 'is-past');
+            return;
+        }
+
+        const rect = pinSection.getBoundingClientRect();
+        const scrollable = rect.height - window.innerHeight;
+        if (scrollable <= 0) return;
+
+        if (rect.top > 0) {
+            // Section hasn't reached the top of the viewport yet.
+            pinWrap.classList.remove('is-pinned', 'is-past');
+        } else if (rect.top <= 0 && rect.bottom > window.innerHeight) {
+            // Mid-scroll through the section — pin it in place.
+            pinWrap.classList.add('is-pinned');
+            pinWrap.classList.remove('is-past');
+        } else {
+            // Scrolled past — let it settle at the bottom of the (tall)
+            // section instead of staying fixed over the next section.
+            pinWrap.classList.remove('is-pinned');
+            pinWrap.classList.add('is-past');
+        }
+
+        const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
+        track.style.transform = 'translateX(-' + (progress * maxScrollX()) + 'px)';
+    }
+
+    // ---- Mobile: legacy tap-through-4-at-a-time behaviour, kept only as a
+    // fallback for browsers without native scroll-snap support — the CSS
+    // scroll-snap track (see the 576px media query) is the primary path. ----
 
     function visibleCount() {
         if (window.innerWidth <= 576) return 1;
@@ -981,17 +1025,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         track.classList.remove('js-transform-disabled');
         index = Math.min(Math.max(i, 0), maxIndex());
-        track.style.transform = 'translateX(-' + (index * cardStep()) + 'px)';
-        if (prevBtn) prevBtn.style.visibility = index === 0 ? 'hidden' : 'visible';
-        if (nextBtn) nextBtn.style.visibility = index >= maxIndex() ? 'hidden' : 'visible';
+        updatePinScroll();
     }
 
     if (prevBtn) prevBtn.addEventListener('click', function () { goTo(index - 1); });
     if (nextBtn) nextBtn.addEventListener('click', function () { goTo(index + 1); });
 
-    window.addEventListener('resize', function () { goTo(Math.min(index, maxIndex())); });
+    window.addEventListener('scroll', updatePinScroll, { passive: true });
+    window.addEventListener('resize', function () {
+        updatePinScroll();
+        goTo(Math.min(index, maxIndex()));
+    });
 
     goTo(0);
+    updatePinScroll();
 });
 
 
