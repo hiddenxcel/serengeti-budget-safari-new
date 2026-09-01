@@ -4472,11 +4472,25 @@ textarea:focus-visible,
    ============================================================ */
 
 .about-us-section {
+    position: relative;
     padding: 5rem 0;
-    background: var(--black);
+    background: var(--black) url('../images/gallery/savanna-sunrise-acacia-trees.jpg') center / cover no-repeat;
     overflow: hidden;
     width: 100%;
     max-width: 100%;
+    isolation: isolate;
+}
+
+.about-us-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Darkens the photo enough for white/gold text to stay readable, with
+       a slight warm gold cast (not flat black) so the section still reads
+       as a photo, not a solid panel. */
+    background:
+        linear-gradient(120deg, rgba(13, 13, 13, 0.94) 0%, rgba(13, 13, 13, 0.86) 45%, rgba(45, 33, 12, 0.82) 100%);
+    z-index: -1;
 }
 
 .about-us-wrapper {
