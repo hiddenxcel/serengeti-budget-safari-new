@@ -5,6 +5,10 @@ require_once dirname(__DIR__, 2) . '/config/config.php';
 require_once dirname(__DIR__, 2) . '/includes/functions.php';
 require_once dirname(__DIR__) . '/includes/auth.php';
 require_once dirname(__DIR__) . '/includes/safari-helpers.php';
+require_once dirname(__DIR__, 2) . '/includes/seo-helpers.php';
+require_once dirname(__DIR__, 2) . '/includes/groq.php';
+require_once dirname(__DIR__, 2) . '/includes/pdf-import.php';
+require_once dirname(__DIR__, 2) . '/includes/image-matcher.php';
 
 require_admin();
 
@@ -14,6 +18,38 @@ $days = [];
 $tiers = [];
 $pricingOptions = null;
 $errors = [];
+$pdfImportWarning = null;
+
+// PDF-import POST branch — handled first and completely separately from the
+// main safari-save handler below, since a file upload needs its own <form>
+// and shouldn't collide with (or be lost alongside) the rest of the big
+// save form. On success the structured result is stashed in the session and
+// the page redirects back to itself; the GET-load code further down merges
+// it in.
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['import_action'] ?? '') === 'pdf_import') {
+    if (!csrf_verify($_POST['csrf_token'] ?? null)) {
+        $errors[] = 'Your session expired, please try again.';
+    } elseif (!rate_limit_check('pdf_import', 10, 300)) {
+        $errors[] = 'Too many PDF imports in a short time — please wait a few minutes and try again.';
+    } else {
+        set_time_limit(90); // this one request can legitimately take longer than a normal page render
+        $importResult = pdf_import_run($_FILES['itinerary_pdf'] ?? null);
+
+        if ($importResult['ok']) {
+            $draftSize = strlen((string) json_encode($importResult['data']));
+            if ($draftSize > 50000) {
+                $errors[] = 'The extracted content was unexpectedly large — please fill the form manually.';
+            } else {
+                $_SESSION['pdf_import_draft'] = $importResult['data'];
+                $_SESSION['pdf_import_warning'] = $importResult['warning'];
+                header('Location: ' . admin_base_url() . '/safaris/edit.php' . ($id ? '?id=' . $id : ''));
+                exit;
+            }
+        } else {
+            $errors[] = $importResult['error'];
+        }
+    }
+}
 
 if ($id) {
     $stmt = db()->prepare('SELECT * FROM safaris WHERE id = ?');
@@ -36,6 +72,38 @@ if ($id) {
     $optStmt = db()->prepare('SELECT * FROM safari_pricing_options WHERE safari_id = ?');
     $optStmt->execute([$id]);
     $pricingOptions = $optStmt->fetch() ?: null;
+}
+
+$galleryImageCount = 0;
+if ($id) {
+    $galStmt = db()->prepare('SELECT COUNT(*) FROM safari_images WHERE safari_id = ?');
+    $galStmt->execute([$id]);
+    $galleryImageCount = (int) $galStmt->fetchColumn();
+}
+
+// Merge a PDF-import draft (from the session, set by the POST branch above
+// on a prior request) onto whatever was loaded from the DB, or onto empty
+// defaults for a brand-new safari. Unset immediately so a page refresh
+// doesn't reapply stale data. This overlay approach means the day-row/tier-
+// row rendering code further down needs no changes — it already just reads
+// from $safari/$days/$tiers regardless of where the values came from.
+if (isset($_SESSION['pdf_import_draft']) && is_array($_SESSION['pdf_import_draft'])) {
+    $draft = $_SESSION['pdf_import_draft'];
+    $pdfImportWarning = $_SESSION['pdf_import_warning'] ?? null;
+    unset($_SESSION['pdf_import_draft'], $_SESSION['pdf_import_warning']);
+
+    $safari = array_merge($safari ?? [], array_intersect_key($draft, array_flip([
+        'title_en', 'title_it', 'short_description_en', 'short_description_it',
+        'description_en', 'description_it', 'duration_days', 'safari_type',
+        'destination', 'start_location', 'end_location',
+    ])));
+
+    if (!empty($draft['days'])) {
+        $days = $draft['days'];
+    }
+    if (!empty($draft['tiers'])) {
+        $tiers = $draft['tiers'];
+    }
 }
 
 $pageTitle = $id ? 'Edit Safari' : 'Add Safari';
@@ -66,8 +134,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'slug' => $slug,
                 'title_en' => $titleEn,
                 'title_it' => $titleIt,
+                'meta_title_en' => trim((string) ($_POST['meta_title_en'] ?? '')) ?: null,
+                'meta_title_it' => trim((string) ($_POST['meta_title_it'] ?? '')) ?: null,
                 'short_description_en' => trim((string) ($_POST['short_description_en'] ?? '')),
                 'short_description_it' => trim((string) ($_POST['short_description_it'] ?? '')),
+                'meta_description_en' => trim((string) ($_POST['meta_description_en'] ?? '')) ?: null,
+                'meta_description_it' => trim((string) ($_POST['meta_description_it'] ?? '')) ?: null,
                 'description_en' => trim((string) ($_POST['description_en'] ?? '')),
                 'description_it' => trim((string) ($_POST['description_it'] ?? '')),
                 'duration_days' => $durationDays,
@@ -78,6 +150,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'main_image' => $mainImage ?: null,
                 'status' => $status,
             ];
+
+            // Auto image-matching: only runs when the admin left main_image
+            // blank, so a manually-chosen image is never overridden.
+            $autoMatchedImages = null;
+            if ($mainImage === '') {
+                $autoMatchedImages = image_matcher_suggest($fields);
+                $fields['main_image'] = $autoMatchedImages['main_image'];
+            }
 
             if ($id) {
                 $set = implode(', ', array_map(fn($k) => "$k = :$k", array_keys($fields)));
@@ -158,6 +238,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 db()->prepare('DELETE FROM safari_pricing_options WHERE safari_id = ?')->execute([$safariId]);
             }
 
+            // Gallery images: only touched here if auto-matching just ran
+            // (main_image was blank) AND this safari currently has zero
+            // safari_images rows — this "only if empty" guard prevents the
+            // auto-matcher from clobbering a gallery an admin has already
+            // curated manually. A manually-accepted "Suggest images" preview
+            // (suggested_gallery_images[]) takes precedence when present,
+            // using exactly what the admin confirmed in the browser instead
+            // of recomputing suggestions server-side.
+            $galCountStmt = db()->prepare('SELECT COUNT(*) FROM safari_images WHERE safari_id = ?');
+            $galCountStmt->execute([$safariId]);
+            $existingGalleryCount = (int) $galCountStmt->fetchColumn();
+
+            $manualGallerySelection = isset($_POST['suggested_gallery_images'])
+                ? image_matcher_filter_known_paths((array) $_POST['suggested_gallery_images'])
+                : null;
+
+            $galleryToInsert = null;
+            if ($manualGallerySelection !== null && $manualGallerySelection !== []) {
+                $galleryToInsert = $manualGallerySelection;
+            } elseif ($autoMatchedImages !== null && $existingGalleryCount === 0) {
+                $galleryToInsert = $autoMatchedImages['gallery'];
+            }
+
+            if ($galleryToInsert !== null) {
+                db()->prepare('DELETE FROM safari_images WHERE safari_id = ?')->execute([$safariId]);
+                $imgInsert = db()->prepare('INSERT INTO safari_images (safari_id, image_path, sort_order) VALUES (?, ?, ?)');
+                foreach (array_values($galleryToInsert) as $sortOrder => $imagePath) {
+                    $imgInsert->execute([$safariId, $imagePath, $sortOrder]);
+                }
+            }
+
             header('Location: ' . admin_base_url() . '/safaris/edit.php?id=' . $safariId . '&saved=1');
             exit;
         }
@@ -180,6 +291,8 @@ if (!$tiers) {
 if (!$pricingOptions) {
     $pricingOptions = ['child_price_per_person' => null, 'single_supplement' => null, 'private_supplement' => null];
 }
+
+$seoReport = seo_analyze_safari($safari ?? [], count($days), $galleryImageCount);
 
 require dirname(__DIR__) . '/includes/layout-head.php';
 ?>
@@ -268,7 +381,59 @@ require dirname(__DIR__) . '/includes/layout-head.php';
         </div>
         <div class="admin-form-group">
             <label for="main_image">Main Image path (relative to /assets/images/)</label>
-            <input type="text" id="main_image" name="main_image" value="<?= e($safari['main_image'] ?? '') ?>" placeholder="e.g. safaris/5-day-serengeti.jpg" />
+            <input type="text" id="main_image" name="main_image" value="<?= e($safari['main_image'] ?? '') ?>" placeholder="Leave blank to auto-match from the photo library" />
+            <button type="button" class="admin-btn" id="suggestImagesBtn" style="margin-top:0.5rem;">Suggest images</button>
+            <div id="suggestImagesResult" style="margin-top:0.75rem;"></div>
+            <div id="suggestedGalleryInputs"></div>
+        </div>
+    </div>
+
+    <div class="admin-card">
+        <h2 style="margin-top:0;font-size:1.05rem;">Import from PDF Itinerary</h2>
+        <p style="margin-top:0;color:var(--admin-muted,#666);">Upload a PDF itinerary and AI will extract the title, description, day-by-day plan, and pricing, then pre-fill the form below (English and Italian). Review everything before saving.</p>
+        <?php if ($pdfImportWarning): ?>
+            <div class="admin-error"><?= e($pdfImportWarning) ?></div>
+        <?php endif; ?>
+    </div>
+
+    <div class="admin-card">
+        <h2 style="margin-top:0;font-size:1.05rem;">SEO</h2>
+        <div class="admin-form-row">
+            <div class="admin-form-group">
+                <label for="meta_title_en">Meta Title (English)</label>
+                <input type="text" id="meta_title_en" name="meta_title_en" maxlength="70" value="<?= e($safari['meta_title_en'] ?? '') ?>" />
+            </div>
+            <div class="admin-form-group">
+                <label for="meta_title_it">Meta Title (Italian)</label>
+                <input type="text" id="meta_title_it" name="meta_title_it" maxlength="70" value="<?= e($safari['meta_title_it'] ?? '') ?>" />
+            </div>
+        </div>
+        <div class="admin-form-row">
+            <div class="admin-form-group">
+                <label for="meta_description_en">Meta Description (English)</label>
+                <textarea id="meta_description_en" name="meta_description_en" rows="2" maxlength="320"><?= e($safari['meta_description_en'] ?? '') ?></textarea>
+            </div>
+            <div class="admin-form-group">
+                <label for="meta_description_it">Meta Description (Italian)</label>
+                <textarea id="meta_description_it" name="meta_description_it" rows="2" maxlength="320"><?= e($safari['meta_description_it'] ?? '') ?></textarea>
+            </div>
+        </div>
+        <button type="button" class="admin-btn" id="suggestSeoBtn">Suggest meta tags with AI</button>
+
+        <div style="margin-top:1.25rem;">
+            <div style="font-size:2rem;font-weight:700;"><?= (int) $seoReport['score'] ?> / 100</div>
+            <p style="margin:0 0 0.75rem;color:var(--admin-muted,#666);font-size:0.85rem;">Score updates after you save.</p>
+            <ul style="list-style:none;padding:0;margin:0;">
+                <?php foreach ($seoReport['checks'] as $check): ?>
+                    <li style="padding:0.35rem 0;border-bottom:1px solid #eee;">
+                        <span class="admin-badge <?= $check['passed'] ? 'published' : 'draft' ?>"><?= $check['passed'] ? '✓' : '✗' ?></span>
+                        <strong><?= e($check['label']) ?></strong>
+                        <?php if (!$check['passed']): ?>
+                            <div style="font-size:0.85rem;color:var(--admin-muted,#666);"><?= e($check['message']) ?></div>
+                        <?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         </div>
     </div>
 
@@ -367,6 +532,15 @@ require dirname(__DIR__) . '/includes/layout-head.php';
     </div>
 </form>
 
+<form method="post" action="" enctype="multipart/form-data" style="margin-top:-1rem;">
+    <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>" />
+    <input type="hidden" name="import_action" value="pdf_import" />
+    <div class="admin-file-drop">
+        <input type="file" name="itinerary_pdf" accept=".pdf,application/pdf" required />
+        <button type="submit" class="admin-btn primary">Extract &amp; Pre-fill</button>
+    </div>
+</form>
+
 <script>
 document.getElementById('addTierRow').addEventListener('click', function () {
     var container = document.getElementById('tierRows');
@@ -382,6 +556,113 @@ document.getElementById('addDayRow').addEventListener('click', function () {
     row.querySelectorAll('input, textarea').forEach(function (el) { el.value = ''; });
     row.querySelector('.admin-day-card-title').textContent = 'Day ' + (rows.length + 1);
     container.appendChild(row);
+});
+
+var csrfToken = <?= json_encode(csrf_token()) ?>;
+
+document.getElementById('suggestImagesBtn').addEventListener('click', function () {
+    var btn = this;
+    var resultBox = document.getElementById('suggestImagesResult');
+    var hiddenInputsBox = document.getElementById('suggestedGalleryInputs');
+    btn.disabled = true;
+    resultBox.textContent = 'Thinking...';
+
+    var body = new URLSearchParams();
+    body.set('csrf_token', csrfToken);
+    body.set('title_en', document.getElementById('title_en').value);
+    body.set('destination', document.getElementById('destination').value);
+    body.set('short_description_en', document.getElementById('short_description_en').value);
+    body.set('description_en', document.getElementById('description_en').value);
+
+    fetch('suggest-images.php', { method: 'POST', body: body })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+            btn.disabled = false;
+            if (!json.ok) {
+                resultBox.textContent = json.error || 'Could not suggest images.';
+                return;
+            }
+            var allPaths = [json.data.main_image].concat(json.data.gallery);
+            hiddenInputsBox.innerHTML = '';
+            resultBox.innerHTML = '';
+
+            var mainLabel = document.createElement('div');
+            mainLabel.style.marginBottom = '0.5rem';
+            mainLabel.innerHTML = '<strong>Suggested main image:</strong> ' + json.data.main_image;
+            resultBox.appendChild(mainLabel);
+            document.getElementById('main_image').value = json.data.main_image;
+
+            var galleryLabel = document.createElement('div');
+            galleryLabel.innerHTML = '<strong>Suggested gallery (uncheck any to exclude):</strong>';
+            resultBox.appendChild(galleryLabel);
+
+            json.data.gallery.forEach(function (path) {
+                var wrap = document.createElement('label');
+                wrap.style.display = 'inline-block';
+                wrap.style.marginRight = '1rem';
+                wrap.style.marginTop = '0.5rem';
+
+                var cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.checked = true;
+                cb.dataset.path = path;
+                cb.addEventListener('change', updateHiddenInputs);
+
+                wrap.appendChild(cb);
+                wrap.appendChild(document.createTextNode(' ' + path));
+                resultBox.appendChild(wrap);
+            });
+
+            function updateHiddenInputs() {
+                hiddenInputsBox.innerHTML = '';
+                resultBox.querySelectorAll('input[type=checkbox]:checked').forEach(function (cb) {
+                    var hidden = document.createElement('input');
+                    hidden.type = 'hidden';
+                    hidden.name = 'suggested_gallery_images[]';
+                    hidden.value = cb.dataset.path;
+                    hiddenInputsBox.appendChild(hidden);
+                });
+            }
+            updateHiddenInputs();
+        })
+        .catch(function () {
+            btn.disabled = false;
+            resultBox.textContent = 'Could not reach the server.';
+        });
+});
+
+document.getElementById('suggestSeoBtn').addEventListener('click', function () {
+    var btn = this;
+    btn.disabled = true;
+    var originalText = btn.textContent;
+    btn.textContent = 'Thinking...';
+
+    var body = new URLSearchParams();
+    body.set('csrf_token', csrfToken);
+    body.set('title_en', document.getElementById('title_en').value);
+    body.set('destination', document.getElementById('destination').value);
+    body.set('short_description_en', document.getElementById('short_description_en').value);
+    body.set('duration_days', document.getElementById('duration_days').value);
+
+    fetch('suggest-seo.php', { method: 'POST', body: body })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+            btn.disabled = false;
+            btn.textContent = originalText;
+            if (!json.ok) {
+                alert(json.error || 'Could not suggest meta tags.');
+                return;
+            }
+            document.getElementById('meta_title_en').value = json.data.meta_title_en || '';
+            document.getElementById('meta_title_it').value = json.data.meta_title_it || '';
+            document.getElementById('meta_description_en').value = json.data.meta_description_en || '';
+            document.getElementById('meta_description_it').value = json.data.meta_description_it || '';
+        })
+        .catch(function () {
+            btn.disabled = false;
+            btn.textContent = originalText;
+            alert('Could not reach the server.');
+        });
 });
 </script>
 <?php require dirname(__DIR__) . '/includes/layout-foot.php'; ?>

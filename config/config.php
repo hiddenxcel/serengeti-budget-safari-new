@@ -35,6 +35,13 @@ define('DB_PASS', '');
 define('SITE_URL', 'http://serengeti.local:8080');
 define('BASE_PATH', dirname(__DIR__));
 
+// Optional local/server-only secrets (Groq API key etc). Gitignored — see
+// config/secrets.example.php. If missing, GROQ_API_KEY stays undefined and
+// AI-dependent admin features degrade to a friendly error instead of a fatal.
+if (is_file(__DIR__ . '/secrets.php')) {
+    require_once __DIR__ . '/secrets.php';
+}
+
 function db(): PDO
 {
     static $pdo = null;

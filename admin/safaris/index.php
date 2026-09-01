@@ -31,15 +31,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($safari) {
                 $newSlug = admin_unique_safari_slug($safari['slug'] . '-copy');
                 $insert = db()->prepare('INSERT INTO safaris
-                    (slug, title_en, title_it, short_description_en, short_description_it, description_en, description_it,
+                    (slug, title_en, title_it, meta_title_en, meta_title_it, short_description_en, short_description_it,
+                     meta_description_en, meta_description_it, description_en, description_it,
                      duration_days, safari_type, destination, start_location, end_location, main_image, status, created_by)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "draft", ?)');
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "draft", ?)');
                 $insert->execute([
                     $newSlug,
                     $safari['title_en'] . ' (Copy)',
                     $safari['title_it'] . ' (Copia)',
+                    $safari['meta_title_en'],
+                    $safari['meta_title_it'],
                     $safari['short_description_en'],
                     $safari['short_description_it'],
+                    $safari['meta_description_en'],
+                    $safari['meta_description_it'],
                     $safari['description_en'],
                     $safari['description_it'],
                     $safari['duration_days'],
@@ -70,6 +75,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $tierInsert = db()->prepare('INSERT INTO pricing_tiers (safari_id, up_to_travelers, price_per_person, currency) VALUES (?, ?, ?, ?)');
                 foreach ($tiers->fetchAll() as $tier) {
                     $tierInsert->execute([$newId, $tier['up_to_travelers'], $tier['price_per_person'], $tier['currency']]);
+                }
+
+                $images = db()->prepare('SELECT * FROM safari_images WHERE safari_id = ? ORDER BY sort_order');
+                $images->execute([$id]);
+                $imageInsert = db()->prepare('INSERT INTO safari_images (safari_id, image_path, sort_order) VALUES (?, ?, ?)');
+                foreach ($images->fetchAll() as $image) {
+                    $imageInsert->execute([$newId, $image['image_path'], $image['sort_order']]);
                 }
             }
         } elseif ($action === 'delete') {

@@ -252,6 +252,18 @@ table.admin-table { width: 100%; border-collapse: collapse; min-width: 640px; }
 .admin-error { background: #fbe0dd; color: var(--admin-danger); padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem; }
 .admin-success-msg { background: #d9f2e3; color: var(--admin-success); padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem; }
 
+.admin-file-drop {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: border-color 0.15s ease;
+}
+.admin-file-drop:hover { border-color: var(--admin-accent, #999); }
+
 .admin-login-page {
     display: flex;
     align-items: center;

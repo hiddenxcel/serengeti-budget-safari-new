@@ -21,6 +21,8 @@ A from-scratch rebuild of the Serengeti Budget Safari website: plain PHP (no fra
 
 Requires PHP + MySQL (e.g. via XAMPP). Point Apache's document root at this folder and visit `/en/` or `/it/`.
 
+Run `composer install` after cloning (PDF import for the admin panel depends on `smalot/pdfparser`). Copy `config/secrets.example.php` to `config/secrets.php` and fill in `GROQ_API_KEY` (and optionally `PAGESPEED_API_KEY`) — both are gitignored and never committed. Apply any new files under `database/migrations/` in order against the live database.
+
 ## Pages built so far
 
 Home, Safaris (packages listing + Group Joining Safaris), Parks (listing + Serengeti detail page), Trekking, Zanzibar.
