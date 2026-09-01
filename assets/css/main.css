@@ -6753,11 +6753,47 @@ textarea:focus-visible,
 }
 
 .comparison-grid {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     max-width: 920px;
     margin: 0 auto;
+}
+
+/* Wavy "vs" divider between the two cards — the stroke draws itself in as
+   this section scrolls through view (JS toggles .is-drawn, see main.js). */
+.comparison-divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.comparison-divider path {
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    transition: stroke-dashoffset 1.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.comparison-grid.is-drawn .comparison-divider path {
+    stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .comparison-divider path {
+        transition: none;
+        stroke-dashoffset: 0;
+    }
 }
 
 .comparison-card {
@@ -6916,6 +6952,10 @@ textarea:focus-visible,
     .comparison-grid {
         grid-template-columns: 1fr;
         max-width: 420px;
+    }
+
+    .comparison-divider {
+        display: none;
     }
 }
 

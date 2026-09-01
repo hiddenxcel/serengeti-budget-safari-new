@@ -883,6 +883,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // ============================================================
+// COMPARISON DIVIDER – wavy line draws in as the section scrolls into view
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    var grid = document.querySelector('.comparison-grid');
+    if (!grid || !grid.querySelector('.comparison-divider')) return;
+
+    if (!('IntersectionObserver' in window)) {
+        grid.classList.add('is-drawn');
+        return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                grid.classList.add('is-drawn');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.35 });
+
+    observer.observe(grid);
+});
+
+
+// ============================================================
 // SAFARI TYPES SLIDER – budget / luxury / private / group cards
 // ============================================================
 

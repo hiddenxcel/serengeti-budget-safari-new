@@ -241,6 +241,9 @@ require __DIR__ . '/includes/header.php';
                 <p><?= e(t('comparison_intro')) ?></p>
             </div>
             <div class="comparison-grid">
+                <svg class="comparison-divider" viewBox="0 0 40 400" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                    <path d="M20 0 C 34 60, 6 120, 20 180 C 34 240, 6 300, 20 360 C 26 380, 20 390, 20 400" />
+                </svg>
                 <div class="comparison-card">
                     <div class="comparison-card-head">
                         <span class="comparison-icon"><i class="fas fa-wallet"></i></span>
