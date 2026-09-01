@@ -158,7 +158,8 @@ return [
     'comparison_per_person' => '/ person',
 
     'destinations_badge' => 'Our destinations',
-    'destinations_title' => 'Most requested destinations',
+    'destinations_title_1' => 'Most requested',
+    'destinations_title_2' => 'destinations',
     'destinations_intro' => 'The parks our travellers choose most often.',
     'destinations_see_all' => 'See all parks',
 

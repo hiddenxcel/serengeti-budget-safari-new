@@ -158,7 +158,8 @@ return [
     'comparison_per_person' => '/ persona',
 
     'destinations_badge' => 'Le nostre destinazioni',
-    'destinations_title' => 'Destinazioni più richieste',
+    'destinations_title_1' => 'Destinazioni più',
+    'destinations_title_2' => 'richieste',
     'destinations_intro' => 'I parchi scelti più spesso dai nostri viaggiatori.',
     'destinations_see_all' => 'Vedi tutti i parchi',
 

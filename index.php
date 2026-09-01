@@ -290,29 +290,52 @@ require __DIR__ . '/includes/header.php';
             <div class="top-destinations-header">
                 <div class="section-title-left centered">
                     <span class="section-badge"><i class="fas fa-map-marked-alt"></i> <?= e(t('destinations_badge')) ?></span>
-                    <h2 id="destinationsTitle"><?= e(t('destinations_title')) ?></h2>
+                    <h2 id="destinationsTitle"><?= e(t('destinations_title_1')) ?> <span class="script-accent"><?= e(t('destinations_title_2')) ?></span></h2>
                     <p><?= e(t('destinations_intro')) ?></p>
                 </div>
-                <a href="<?= url('parks/') ?>" class="btn btn-outline"><?= e(t('destinations_see_all')) ?> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                <div class="destinations-slider-arrows">
+                    <button type="button" class="stories-slider-arrow prev" id="destinationsPrev" aria-label="Previous destination"><i class="fas fa-chevron-left"></i></button>
+                    <button type="button" class="stories-slider-arrow next" id="destinationsNext" aria-label="Next destination"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
 
-            <div class="destinations-grid">
-                <a href="<?= url('parks/serengeti-national-park.php') ?>" class="destination-card">
-                    <img src="<?= asset('images/wildlife/lion-pride-stalking-zebra.jpg') ?>" alt="Serengeti National Park" loading="lazy" width="900" height="600" />
-                    <div class="destination-body"><h3>Serengeti</h3></div>
-                </a>
-                <a href="<?= url('parks/ngorongoro-conservation-area.php') ?>" class="destination-card">
-                    <img src="<?= asset('images/hero/ngorongoro-crater-panorama.jpg') ?>" alt="Ngorongoro Crater" loading="lazy" width="900" height="600" />
-                    <div class="destination-body"><h3>Ngorongoro</h3></div>
-                </a>
-                <a href="<?= url('parks/tarangire-national-park.php') ?>" class="destination-card">
-                    <img src="<?= asset('images/hero/elephant-under-acacia-tree.jpg') ?>" alt="Elephant under an acacia tree" loading="lazy" width="900" height="600" />
-                    <div class="destination-body"><h3>Tarangire</h3></div>
-                </a>
-                <a href="<?= url('parks/serengeti-national-park.php') ?>#zones" class="destination-card">
-                    <img src="<?= asset('images/wildlife/cheetahs-resting-shade.jpg') ?>" alt="Cheetahs in the southern Serengeti" loading="lazy" width="900" height="600" />
-                    <div class="destination-body"><h3>Ndutu</h3></div>
-                </a>
+            <div class="destinations-slider" id="destinationsSlider">
+                <div class="destinations-track" id="destinationsTrack">
+                    <a href="<?= url('parks/serengeti-national-park.php') ?>" class="destination-card">
+                        <span class="destination-index">01</span>
+                        <img src="<?= asset('images/wildlife/lion-pride-stalking-zebra.jpg') ?>" alt="Serengeti National Park" loading="lazy" width="900" height="600" />
+                        <div class="destination-body"><h3>Serengeti</h3></div>
+                    </a>
+                    <a href="<?= url('parks/ngorongoro-conservation-area.php') ?>" class="destination-card">
+                        <span class="destination-index">02</span>
+                        <img src="<?= asset('images/hero/ngorongoro-crater-panorama.jpg') ?>" alt="Ngorongoro Crater" loading="lazy" width="900" height="600" />
+                        <div class="destination-body"><h3>Ngorongoro</h3></div>
+                    </a>
+                    <a href="<?= url('parks/tarangire-national-park.php') ?>" class="destination-card">
+                        <span class="destination-index">03</span>
+                        <img src="<?= asset('images/hero/elephant-under-acacia-tree.jpg') ?>" alt="Elephant under an acacia tree" loading="lazy" width="900" height="600" />
+                        <div class="destination-body"><h3>Tarangire</h3></div>
+                    </a>
+                    <a href="<?= url('parks/serengeti-national-park.php') ?>#zones" class="destination-card">
+                        <span class="destination-index">04</span>
+                        <img src="<?= asset('images/wildlife/cheetahs-resting-shade.jpg') ?>" alt="Cheetahs in the southern Serengeti" loading="lazy" width="900" height="600" />
+                        <div class="destination-body"><h3>Ndutu</h3></div>
+                    </a>
+                    <a href="<?= url('parks/arusha-national-park.php') ?>" class="destination-card">
+                        <span class="destination-index">05</span>
+                        <img src="<?= asset('images/wildlife/vervet-monkey-family.jpg') ?>" alt="Arusha National Park" loading="lazy" width="900" height="600" />
+                        <div class="destination-body"><h3>Arusha</h3></div>
+                    </a>
+                    <a href="<?= url('parks/lake-manyara-national-park.php') ?>" class="destination-card">
+                        <span class="destination-index">06</span>
+                        <img src="<?= asset('images/wildlife/spotted-hyena-savanna.jpg') ?>" alt="Lake Manyara National Park" loading="lazy" width="900" height="600" />
+                        <div class="destination-body"><h3>Lake Manyara</h3></div>
+                    </a>
+                    <a href="<?= url('parks/') ?>" class="destination-card destination-card-more">
+                        <span class="destination-more-icon"><i class="fas fa-arrow-right"></i></span>
+                        <h3><?= e(t('destinations_see_all')) ?></h3>
+                    </a>
+                </div>
             </div>
         </div>
     </section>

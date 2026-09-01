@@ -936,6 +936,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // ============================================================
+// DESTINATIONS SLIDER – top parks strip on the homepage
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.getElementById('destinationsSlider');
+    if (!slider) return;
+
+    const track = document.getElementById('destinationsTrack');
+    const cards = Array.from(track.children);
+    const prevBtn = document.getElementById('destinationsPrev');
+    const nextBtn = document.getElementById('destinationsNext');
+
+    let index = 0;
+
+    function isMobileScrollMode() {
+        return window.innerWidth <= 576;
+    }
+
+    function visibleCount() {
+        if (window.innerWidth <= 576) return 1;
+        if (window.innerWidth <= 992) return 2;
+        return 4;
+    }
+
+    function maxIndex() {
+        return Math.max(0, cards.length - visibleCount());
+    }
+
+    function cardStep() {
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.columnGap || style.gap) || 0;
+        return cards[0].getBoundingClientRect().width + gap;
+    }
+
+    function goTo(i) {
+        if (isMobileScrollMode()) {
+            track.classList.add('js-transform-disabled');
+            return;
+        }
+        track.classList.remove('js-transform-disabled');
+        index = Math.min(Math.max(i, 0), maxIndex());
+        track.style.transform = 'translateX(-' + (index * cardStep()) + 'px)';
+        if (prevBtn) prevBtn.style.visibility = index === 0 ? 'hidden' : 'visible';
+        if (nextBtn) nextBtn.style.visibility = index >= maxIndex() ? 'hidden' : 'visible';
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(index - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(index + 1); });
+
+    window.addEventListener('resize', function () { goTo(Math.min(index, maxIndex())); });
+
+    goTo(0);
+});
+
+
+// ============================================================
 // SAFARI TYPES SLIDER – budget / luxury / private / group cards
 // ============================================================
 
