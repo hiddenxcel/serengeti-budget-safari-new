@@ -936,6 +936,90 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // ============================================================
+// GALLERY – scroll reveal+stagger, hover zoom (CSS-only), and lightbox
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    var grid = document.getElementById('galleryGrid');
+    if (!grid) return;
+
+    var items = Array.from(grid.querySelectorAll('.gallery-grid-item'));
+
+    // ---- Reveal + stagger ----
+    items.forEach(function (item, i) {
+        item.style.setProperty('--reveal-delay', (i % 4) * 0.08 + 's');
+    });
+
+    if (!('IntersectionObserver' in window)) {
+        grid.classList.add('is-revealed');
+    } else {
+        var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    grid.classList.add('is-revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealObserver.observe(grid);
+    }
+
+    // ---- Lightbox ----
+    var lightbox = document.getElementById('galleryLightbox');
+    if (!lightbox) return;
+
+    var lightboxImg = document.getElementById('galleryLightboxImg');
+    var lightboxCaption = document.getElementById('galleryLightboxCaption');
+    var closeBtn = document.getElementById('galleryLightboxClose');
+    var prevBtn = document.getElementById('galleryLightboxPrev');
+    var nextBtn = document.getElementById('galleryLightboxNext');
+    var currentIndex = 0;
+    var lastFocused = null;
+
+    function show(index) {
+        currentIndex = (index + items.length) % items.length;
+        var item = items[currentIndex];
+        lightboxImg.src = item.getAttribute('data-full');
+        lightboxImg.alt = item.getAttribute('data-caption') || '';
+        lightboxCaption.textContent = item.getAttribute('data-caption') || '';
+    }
+
+    function open(index) {
+        lastFocused = document.activeElement;
+        show(index);
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+    }
+
+    function close() {
+        lightbox.hidden = true;
+        document.body.style.overflow = '';
+        if (lastFocused) lastFocused.focus();
+    }
+
+    items.forEach(function (item, i) {
+        item.addEventListener('click', function () { open(i); });
+    });
+
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', function () { show(currentIndex - 1); });
+    nextBtn.addEventListener('click', function () { show(currentIndex + 1); });
+
+    lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (lightbox.hidden) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(currentIndex - 1);
+        if (e.key === 'ArrowRight') show(currentIndex + 1);
+    });
+});
+
+
+// ============================================================
 // DESTINATIONS SLIDER – top parks strip on the homepage
 // ============================================================
 

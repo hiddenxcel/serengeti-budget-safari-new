@@ -559,56 +559,66 @@ require __DIR__ . '/includes/header.php';
                 <p><?= e(t('gallery_intro')) ?></p>
             </div>
 
-            <div class="gallery-grid">
-                <div class="gallery-grid-item">
+            <div class="gallery-grid" id="galleryGrid">
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/gallery/leopard-in-tree-wide-view.jpg') ?>" data-caption="Leopard in a tree">
                     <img src="<?= asset('images/gallery/leopard-in-tree-wide-view.jpg') ?>" alt="Leopard in a tree" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">Leopard in a tree</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/gallery/elephant-family-sunset-walk.jpg') ?>" data-caption="Elephant family at sunset">
                     <img src="<?= asset('images/gallery/elephant-family-sunset-walk.jpg') ?>" alt="Elephant family at sunset" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">Elephant family at sunset</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/wildlife/vervet-monkey-family.jpg') ?>" data-caption="Monkey family">
                     <img src="<?= asset('images/wildlife/vervet-monkey-family.jpg') ?>" alt="Vervet monkey family" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">Monkey family</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/gallery/lion-resting-near-waterhole.jpg') ?>" data-caption="King of the savannah">
                     <img src="<?= asset('images/gallery/lion-resting-near-waterhole.jpg') ?>" alt="Lion resting near a waterhole" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">King of the savannah</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/wildlife/spotted-hyena-savanna.jpg') ?>" data-caption="Hyena on the move">
                     <img src="<?= asset('images/wildlife/spotted-hyena-savanna.jpg') ?>" alt="Hyena in the savanna" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">Hyena on the move</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/gallery/zebras-savanna-plains.jpg') ?>" data-caption="Herd of zebras">
                     <img src="<?= asset('images/gallery/zebras-savanna-plains.jpg') ?>" alt="Zebras on the savanna plains" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">Herd of zebras</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/gallery/tourists-watching-hippos-river.jpg') ?>" data-caption="Watching hippos">
                     <img src="<?= asset('images/gallery/tourists-watching-hippos-river.jpg') ?>" alt="Guests watching hippos" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">Watching hippos</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/gallery/savanna-sunrise-acacia-trees.jpg') ?>" data-caption="Savanna sunrise">
                     <img src="<?= asset('images/gallery/savanna-sunrise-acacia-trees.jpg') ?>" alt="Savanna sunrise" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">Savanna sunrise</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/hero/elephant-close-up-portrait.jpg') ?>" data-caption="Elephant portrait">
                     <img src="<?= asset('images/hero/elephant-close-up-portrait.jpg') ?>" alt="Elephant close-up" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">Elephant portrait</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/wildlife/white-rhino-grazing.jpg') ?>" data-caption="White rhino">
                     <img src="<?= asset('images/wildlife/white-rhino-grazing.jpg') ?>" alt="White rhino grazing" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">White rhino</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/wildlife/cheetah-alert-grassland.jpg') ?>" data-caption="Cheetah on alert">
                     <img src="<?= asset('images/wildlife/cheetah-alert-grassland.jpg') ?>" alt="Cheetah in the grassland" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">Cheetah on alert</span></div>
-                </div>
-                <div class="gallery-grid-item">
+                </button>
+                <button type="button" class="gallery-grid-item" data-full="<?= asset('images/wildlife/zebra-herd-grazing-savanna.jpg') ?>" data-caption="Grazing zebras">
                     <img src="<?= asset('images/wildlife/zebra-herd-grazing-savanna.jpg') ?>" alt="Zebra herd grazing" loading="lazy" width="800" height="800" />
                     <div class="gallery-masonry-overlay"><span class="gallery-masonry-caption">Grazing zebras</span></div>
-                </div>
+                </button>
             </div>
+        </div>
+
+        <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" hidden>
+            <button type="button" class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close">&times;</button>
+            <button type="button" class="gallery-lightbox-nav prev" id="galleryLightboxPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+            <figure class="gallery-lightbox-figure">
+                <img src="" alt="" id="galleryLightboxImg" />
+                <figcaption id="galleryLightboxCaption"></figcaption>
+            </figure>
+            <button type="button" class="gallery-lightbox-nav next" id="galleryLightboxNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
