@@ -883,6 +883,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // ============================================================
+// TEXT MASK REVEAL – heading slides up out of an overflow-hidden mask
+// as it scrolls into view (.mask-reveal wrapper, reusable site-wide)
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    var reveals = document.querySelectorAll('.mask-reveal');
+    if (!reveals.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+        reveals.forEach(function (el) { el.classList.add('is-revealed'); });
+        return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    reveals.forEach(function (el) { observer.observe(el); });
+});
+
+
+// ============================================================
 // COMPARISON DIVIDER – wavy line draws in as the section scrolls into view
 // ============================================================
 

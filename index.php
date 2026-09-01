@@ -46,7 +46,9 @@ require __DIR__ . '/includes/header.php';
                 </div>
                 <div class="about-us-content">
                     <span class="story-badge"><i class="fas fa-compass"></i> <?= e(t('about_badge')) ?></span>
-                    <h2 id="aboutUsTitle"><?= e(t('about_title_1')) ?> <span><?= e(t('about_title_2')) ?></span></h2>
+                    <div class="mask-reveal">
+                        <h2 id="aboutUsTitle"><?= e(t('about_title_1')) ?> <span><?= e(t('about_title_2')) ?></span></h2>
+                    </div>
                     <p><?= e(t('about_p1')) ?></p>
                     <p><?= e(t('about_p2')) ?></p>
                     <div class="about-us-actions">

@@ -4523,6 +4523,29 @@ textarea:focus-visible,
     background: rgba(212, 168, 67, 0.16);
 }
 
+/* Generic text-mask-reveal wrapper — clips its child and slides it up into
+   view once .is-revealed is toggled by JS (see "TEXT MASK REVEAL" in
+   main.js). Reusable on any single heading, not just the about section. */
+.mask-reveal {
+    overflow: hidden;
+}
+
+.mask-reveal > * {
+    transform: translateY(110%);
+    transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.mask-reveal.is-revealed > * {
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mask-reveal > * {
+        transform: none;
+        transition: none;
+    }
+}
+
 .about-us-content h2 {
     font-family: var(--font-display);
     font-size: 2.3rem;
