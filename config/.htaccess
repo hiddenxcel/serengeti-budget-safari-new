@@ -1,0 +1,10 @@
+# Deny all direct web access to this folder — config.php/secrets.php hold DB
+# credentials and API keys and must never be requested directly, even though
+# PHP-FPM executing them produces no visible output today.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+</IfModule>
