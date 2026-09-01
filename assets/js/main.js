@@ -897,6 +897,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let index = 0;
 
+    function isMobileScrollMode() {
+        return window.innerWidth <= 576;
+    }
+
     function visibleCount() {
         if (window.innerWidth <= 576) return 1;
         if (window.innerWidth <= 992) return 2;
@@ -914,6 +918,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function goTo(i) {
+        if (isMobileScrollMode()) {
+            // Below 576px the track is a native horizontal scroller (see
+            // main.css) — swiping is the primary interaction, so the JS
+            // transform is dropped instead of fighting the browser's own
+            // scroll position.
+            track.classList.add('js-transform-disabled');
+            return;
+        }
+        track.classList.remove('js-transform-disabled');
         index = Math.min(Math.max(i, 0), maxIndex());
         track.style.transform = 'translateX(-' + (index * cardStep()) + 'px)';
         if (prevBtn) prevBtn.style.visibility = index === 0 ? 'hidden' : 'visible';

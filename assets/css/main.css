@@ -4859,10 +4859,36 @@ textarea:focus-visible,
         padding: 3.5rem 0;
     }
 
+    /* Below the JS slider's smallest breakpoint the arrows are cramped and
+       swiping is what mobile visitors actually try first — switch to native
+       horizontal scroll-snap instead of relying on transform + tap targets. */
+    .safari-types-slider {
+        overflow: visible;
+    }
+
+    .safari-types-track {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+        margin: 0 -1.25rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .safari-types-track.js-transform-disabled {
+        transform: none !important;
+    }
+
     .safari-type-card {
         flex: 0 0 78%;
         max-width: 78%;
         height: 260px;
+        scroll-snap-align: start;
+    }
+
+    .safari-types-slider .stories-slider-arrow {
+        display: none;
     }
 }
 
