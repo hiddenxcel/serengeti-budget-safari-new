@@ -1,5 +1,22 @@
 RewriteEngine On
 
+# ---- WebP content negotiation ----
+# When the browser accepts WebP and a .webp twin of the requested .jpg/.jpeg
+# exists next to it, serve the WebP transparently (same URL). Browsers that
+# don't send Accept: image/webp keep getting the original JPG. Only 44 of the
+# JPGs have a smaller .webp twin; the rest simply fall through to the JPG.
+RewriteCond %{HTTP_ACCEPT} image/webp
+RewriteCond %{REQUEST_FILENAME} (?i)(.+)\.(jpe?g)$
+RewriteCond %1.webp -f
+RewriteRule (?i)^(.+)\.(jpe?g)$ $1.webp [T=image/webp,L]
+
+<IfModule mod_headers.c>
+    # Caches must key on Accept so a WebP isn't served to a non-WebP client.
+    <FilesMatch "\.(jpe?g)$">
+        Header append Vary Accept
+    </FilesMatch>
+</IfModule>
+
 RewriteCond %{REQUEST_URI} ^/$
 RewriteRule ^$ /en/ [R=302,L]
 
