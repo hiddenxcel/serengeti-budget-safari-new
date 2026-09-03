@@ -30,23 +30,16 @@
 }
 
 .guide-hero {
-    background: linear-gradient(135deg, var(--black) 0%, var(--black-mid) 100%);
+    background:
+        linear-gradient(180deg, rgba(13, 41, 35, 0.72) 0%, rgba(13, 41, 35, 0.82) 100%),
+        url('../images/hero/safari-vehicle-jangwani-mountain.jpg') center / cover no-repeat;
     color: var(--white);
-    padding: 64px 0 44px;
+    padding: 90px 0;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
     position: relative;
     overflow: hidden;
-}
-
-.guide-hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45%;
-    height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><path fill="%23d4a843" opacity="0.06" d="M0 0l800 800H0z"/></svg>');
-    background-size: cover;
-    pointer-events: none;
 }
 
 .guide-hero .container {
@@ -69,6 +62,7 @@
     font-size: clamp(2rem, 4vw, 2.9rem);
     max-width: 820px;
     margin: 0.6rem 0 0.8rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .guide-hero .guide-price-highlight {
@@ -85,10 +79,13 @@
 }
 
 .guide-hero p.guide-intro {
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 1.08rem;
-    max-width: 680px;
-    margin: 0 auto 1.4rem;
+    font-family: 'Caveat', var(--font-display), cursive;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.65rem;
+    font-weight: 500;
+    line-height: 1.4;
+    max-width: 700px;
+    margin: 0 auto 0.4rem;
 }
 
 .guide-hero-actions {
@@ -156,6 +153,41 @@
 .guide-main {
     flex: 1;
     min-width: 0;
+}
+
+/* The site's global reset zeroes out padding on every element (including
+   <ul>/<ol>), which strips list markers and indentation from ordinary
+   prose lists inside the guide body. Restore normal list formatting here
+   so bullet lists read as lists instead of a wall of run-on lines. */
+.guide-main p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+
+.guide-main ul,
+.guide-main ol {
+    margin: 0 0 1.2rem 1.3rem;
+    padding: 0;
+}
+
+.guide-main ul {
+    list-style: disc;
+}
+
+.guide-main ol {
+    list-style: decimal;
+}
+
+.guide-main li {
+    margin-bottom: 0.45rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    padding-left: 0.3rem;
+}
+
+.guide-main li::marker {
+    color: var(--gold-dark);
 }
 
 .guide-toc {
@@ -980,5 +1012,195 @@
        covers the last paragraph or button of the page content. */
     .guide-main {
         padding-bottom: 76px;
+    }
+}
+
+/* ============================================================
+   INTRODUCTION SECTION — richer visual treatment
+   ============================================================ */
+.guide-intro-lead {
+    font-family: var(--font-playfair);
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--black);
+    margin-bottom: 1.4rem;
+}
+
+.guide-intro-lead strong {
+    color: var(--gold-dark);
+}
+
+.guide-intro-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    margin: 1.6rem 0 2rem;
+}
+
+.guide-intro-stat {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.1rem;
+    text-align: center;
+}
+
+.guide-intro-stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--black);
+}
+
+.guide-intro-stat span {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.guide-quote-card {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.8rem;
+    margin: 1.8rem 0;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.guide-quote-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+}
+
+.guide-quote-card .guide-quote-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(200, 155, 60, 0.12);
+    color: var(--gold-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.guide-quote-card p {
+    margin: 0;
+    font-size: 1.02rem;
+    color: var(--text-primary);
+}
+
+.guide-quote-card strong {
+    color: var(--black);
+}
+
+/* ============================================================
+   QUICK ANSWER — factor cards + big price-answer box
+   ============================================================ */
+.guide-price-answer {
+    background: linear-gradient(135deg, var(--black) 0%, var(--black-mid) 100%);
+    color: var(--white);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.8rem;
+    text-align: center;
+    margin: 1.4rem 0 1.8rem;
+}
+
+.guide-price-answer .guide-price-answer-figure {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--gold);
+}
+
+.guide-price-answer p {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0.4rem 0 0;
+    font-size: 0.95rem;
+}
+
+.guide-factor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 1.4rem 0 1.6rem;
+}
+
+.guide-factor-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1.1rem;
+}
+
+.guide-factor-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.guide-factor-card p strong {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gold-dark);
+    margin-bottom: 0.3rem;
+}
+
+/* ============================================================
+   PACKAGES INTRO — two-column checklist instead of a tall <ul>
+   ============================================================ */
+.guide-checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px 20px;
+    margin: 1.2rem 0 1.6rem;
+    list-style: none !important;
+}
+
+.guide-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+}
+
+.guide-checklist li::marker {
+    content: none;
+}
+
+.guide-checklist li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--gold-dark);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    .guide-checklist {
+        grid-template-columns: 1fr;
     }
 }

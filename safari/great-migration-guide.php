@@ -76,21 +76,8 @@ require dirname(__DIR__) . '/includes/header.php';
     <!-- ===== HERO ===== -->
     <section class="guide-hero">
         <div class="container guide-container">
-            <span class="hero-badge"><i class="fas fa-paw"></i> <?= e(t('mgg_badge')) ?></span>
             <h1><?= e(t('mgg_h1')) ?></h1>
-            <div class="guide-price-highlight"><?= e(t('mgg_price_highlight')) ?> <small><?= e(t('mgg_price_highlight_small')) ?></small></div>
             <p class="guide-intro"><?= e(t('mgg_hero_intro')) ?></p>
-            <div class="guide-hero-actions">
-                <a href="#packages" class="btn btn-primary"><?= e(t('mgg_hero_cta_packages')) ?></a>
-                <a href="#book" class="btn btn-light"><?= e(t('mgg_hero_cta_quote')) ?></a>
-            </div>
-            <div class="guide-hero-stats">
-                <div><strong>1.5M+</strong> <?= e(t('mgg_stat_wildebeest')) ?></div>
-                <div><strong>200K+</strong> <?= e(t('mgg_stat_zebras')) ?></div>
-                <div><strong>800+</strong> <?= e(t('mgg_stat_km')) ?></div>
-                <div><strong>15+</strong> <?= e(t('mgg_stat_years')) ?></div>
-                <div><strong>30+</strong> <?= e(t('mgg_stat_tips')) ?></div>
-            </div>
         </div>
     </section>
 
@@ -133,10 +120,13 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <!-- INTRODUCTION -->
                     <h2 id="introduction"><?= e(t('mgg_intro_title')) ?></h2>
-                    <p><?= t('mgg_intro_p1') ?></p>
+                    <p class="guide-intro-lead"><?= t('mgg_intro_p1') ?></p>
                     <p><?= t('mgg_intro_p2') ?></p>
                     <p><?= t('mgg_intro_p3') ?></p>
-                    <div class="guide-box highlight"><p><?= t('mgg_intro_box') ?></p></div>
+                    <div class="guide-quote-card">
+                        <span class="guide-quote-icon"><i class="fas fa-quote-left"></i></span>
+                        <p><?= t('mgg_intro_box') ?></p>
+                    </div>
 
                     <!-- ROUTE -->
                     <h2 id="route"><?= e(t('mgg_route_title')) ?></h2>
@@ -173,7 +163,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <!-- PACKAGES -->
                     <h2 id="packages"><?= e(t('mgg_packages_title')) ?></h2>
                     <p><?= e(t('mgg_packages_p1')) ?></p>
-                    <ul>
+                    <ul class="guide-checklist">
                         <li><?= e(t('mgg_packages_inc1')) ?></li>
                         <li><?= e(t('mgg_packages_inc2')) ?></li>
                         <li><?= e(t('mgg_packages_inc3')) ?></li>

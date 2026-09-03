@@ -76,21 +76,8 @@ require dirname(__DIR__) . '/includes/header.php';
     <!-- ===== HERO ===== -->
     <section class="guide-hero">
         <div class="container guide-container">
-            <span class="hero-badge"><i class="fas fa-gem"></i> <?= e(t('lsg_badge')) ?></span>
             <h1><?= e(t('lsg_h1')) ?></h1>
-            <div class="guide-price-highlight"><?= e(t('lsg_price_highlight')) ?> <small><?= e(t('lsg_price_highlight_small')) ?></small></div>
             <p class="guide-intro"><?= e(t('lsg_hero_intro')) ?></p>
-            <div class="guide-hero-actions">
-                <a href="#packages" class="btn btn-primary"><?= e(t('lsg_hero_cta_packages')) ?></a>
-                <a href="#book" class="btn btn-light"><?= e(t('lsg_hero_cta_quote')) ?></a>
-            </div>
-            <div class="guide-hero-stats">
-                <div><strong>200+</strong> <?= e(t('lsg_stat_travelers')) ?></div>
-                <div><strong>5.0★</strong> <?= e(t('lsg_stat_reviews')) ?></div>
-                <div><strong>100%</strong> <?= e(t('lsg_stat_local')) ?></div>
-                <div><strong>15+</strong> <?= e(t('lsg_stat_years')) ?></div>
-                <div><strong>6+</strong> <?= e(t('lsg_stat_parks')) ?></div>
-            </div>
         </div>
     </section>
 
@@ -131,28 +118,34 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <!-- INTRODUCTION -->
                     <h2 id="introduction"><?= e(t('lsg_intro_title')) ?></h2>
-                    <p><?= t('lsg_intro_p1') ?></p>
+                    <p class="guide-intro-lead"><?= t('lsg_intro_p1') ?></p>
                     <p><?= t('lsg_intro_p2') ?></p>
                     <p><?= t('lsg_intro_p3') ?></p>
-                    <div class="guide-box highlight"><p><?= t('lsg_intro_box') ?></p></div>
+                    <div class="guide-quote-card">
+                        <span class="guide-quote-icon"><i class="fas fa-quote-left"></i></span>
+                        <p><?= t('lsg_intro_box') ?></p>
+                    </div>
 
                     <!-- QUICK ANSWER -->
                     <h2 id="quick-answer"><?= e(t('lsg_quick_title')) ?></h2>
                     <p><?= t('lsg_quick_p1') ?></p>
-                    <ul>
-                        <li><?= t('lsg_quick_li1') ?></li>
-                        <li><?= t('lsg_quick_li2') ?></li>
-                        <li><?= t('lsg_quick_li3') ?></li>
-                        <li><?= t('lsg_quick_li4') ?></li>
-                        <li><?= t('lsg_quick_li5') ?></li>
-                    </ul>
-                    <p><?= t('lsg_quick_p2') ?></p>
+                    <div class="guide-factor-grid">
+                        <div class="guide-factor-card"><p><?= t('lsg_quick_li1') ?></p></div>
+                        <div class="guide-factor-card"><p><?= t('lsg_quick_li2') ?></p></div>
+                        <div class="guide-factor-card"><p><?= t('lsg_quick_li3') ?></p></div>
+                        <div class="guide-factor-card"><p><?= t('lsg_quick_li4') ?></p></div>
+                        <div class="guide-factor-card"><p><?= t('lsg_quick_li5') ?></p></div>
+                    </div>
+                    <div class="guide-price-answer">
+                        <div class="guide-price-answer-figure"><?= e(t('lsg_price_highlight')) ?></div>
+                        <p><?= t('lsg_quick_p2') ?></p>
+                    </div>
                     <div class="guide-box pro-tip"><p><?= t('lsg_quick_pro') ?></p></div>
 
                     <!-- PACKAGES -->
                     <h2 id="packages"><?= e(t('lsg_packages_title')) ?></h2>
                     <p><?= e(t('lsg_packages_p1')) ?></p>
-                    <ul>
+                    <ul class="guide-checklist">
                         <li><?= e(t('lsg_packages_inc1')) ?></li>
                         <li><?= e(t('lsg_packages_inc2')) ?></li>
                         <li><?= e(t('lsg_packages_inc3')) ?></li>

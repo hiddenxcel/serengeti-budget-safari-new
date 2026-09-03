@@ -5,3 +5,7 @@ config/secrets.php
 /vendor/
 storage/tmp_uploads/*
 !storage/tmp_uploads/.gitkeep
+
+# Claude Code local dev tooling — not part of the deployed site
+.claude/
+undefined/

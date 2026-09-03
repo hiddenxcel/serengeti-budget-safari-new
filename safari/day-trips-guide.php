@@ -76,20 +76,8 @@ require dirname(__DIR__) . '/includes/header.php';
     <!-- ===== HERO ===== -->
     <section class="guide-hero">
         <div class="container guide-container">
-            <span class="hero-badge"><i class="fas fa-map-marked-alt"></i> <?= e(t('dtg_badge')) ?></span>
             <h1><?= e(t('dtg_h1')) ?></h1>
-            <div class="guide-price-highlight"><?= e(t('dtg_price_highlight')) ?> <small><?= e(t('dtg_price_highlight_small')) ?></small></div>
             <p class="guide-intro"><?= e(t('dtg_hero_intro')) ?></p>
-            <div class="guide-hero-actions">
-                <a href="#packages" class="btn btn-primary"><?= e(t('dtg_hero_cta_packages')) ?></a>
-                <a href="#book" class="btn btn-light"><?= e(t('dtg_hero_cta_quote')) ?></a>
-            </div>
-            <div class="guide-hero-stats">
-                <div><strong>15+</strong> <?= e(t('dtg_stat_trips')) ?></div>
-                <div><strong>4.8★</strong> <?= e(t('dtg_stat_reviews')) ?></div>
-                <div><strong>100%</strong> <?= e(t('dtg_stat_local')) ?></div>
-                <div><strong>15+</strong> <?= e(t('dtg_stat_years')) ?></div>
-            </div>
         </div>
     </section>
 
@@ -129,9 +117,12 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <!-- INTRODUCTION -->
                     <h2 id="introduction"><?= e(t('dtg_intro_title')) ?></h2>
-                    <p><?= e(t('dtg_intro_p1')) ?></p>
+                    <p class="guide-intro-lead"><?= e(t('dtg_intro_p1')) ?></p>
                     <p><?= e(t('dtg_intro_p2')) ?></p>
-                    <div class="guide-box highlight"><p><?= t('dtg_intro_box') ?></p></div>
+                    <div class="guide-quote-card">
+                        <span class="guide-quote-icon"><i class="fas fa-quote-left"></i></span>
+                        <p><?= t('dtg_intro_box') ?></p>
+                    </div>
 
                     <!-- ALL TRIPS -->
                     <h2 id="trips"><?= e(t('dtg_trips_title')) ?></h2>
@@ -148,7 +139,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <!-- PACKAGES -->
                     <h2 id="packages"><?= e(t('dtg_packages_title')) ?></h2>
                     <p><?= e(t('dtg_packages_p1')) ?></p>
-                    <ul>
+                    <ul class="guide-checklist">
                         <li><?= e(t('dtg_packages_inc1')) ?></li>
                         <li><?= e(t('dtg_packages_inc2')) ?></li>
                         <li><?= e(t('dtg_packages_inc3')) ?></li>
