@@ -26,9 +26,9 @@ require dirname(__DIR__) . '/includes/header.php';
             <h1><?= e(t('blogvax_h1')) ?></h1>
             <p class="detail-hero-route"><?= e(t('blogvax_hero_sub')) ?></p>
             <div class="article-meta-bar">
-                <span><i class="fas fa-user-pen"></i> <?= e(t('blogvax_author')) ?></span>
-                <span><i class="fas fa-clock"></i> 7 <?= e(t('blog_min_read')) ?></span>
-                <span><i class="fas fa-calendar"></i> <?= e(t('blogvax_date')) ?></span>
+                <span><?= icon('user-pen') ?> <?= e(t('blogvax_author')) ?></span>
+                <span><?= icon('clock') ?> 7 <?= e(t('blog_min_read')) ?></span>
+                <span><?= icon('calendar') ?> <?= e(t('blogvax_date')) ?></span>
             </div>
         </div>
     </section>
@@ -39,12 +39,12 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><i class="fas fa-bolt"></i> <?= e(t('blogvax_quick_badge')) ?></span>
+                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogvax_quick_badge')) ?></span>
                     <h2><?= e(t('blogvax_quick_title')) ?></h2>
                     <p><?= e(t('blogvax_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-syringe"></i></span>
+                            <span class="qq-icon"><?= icon('syringe') ?></span>
                             <div><h4><?= e(t('blogvax_qq1_q')) ?></h4><p><?= e(t('blogvax_qq1_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
@@ -52,28 +52,28 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div><h4><?= e(t('blogvax_qq2_q')) ?></h4><p><?= e(t('blogvax_qq2_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-droplet"></i></span>
+                            <span class="qq-icon"><?= icon('droplet') ?></span>
                             <div><h4><?= e(t('blogvax_qq3_q')) ?></h4><p><?= e(t('blogvax_qq3_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-shield-halved"></i></span>
+                            <span class="qq-icon"><?= icon('shield-halved') ?></span>
                             <div><h4><?= e(t('blogvax_qq4_q')) ?></h4><p><?= e(t('blogvax_qq4_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-mountain-sun"></i></span>
+                            <span class="qq-icon"><?= icon('mountain-sun') ?></span>
                             <div><h4><?= e(t('blogvax_qq5_q')) ?></h4><p><?= e(t('blogvax_qq5_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-clock"></i></span>
+                            <span class="qq-icon"><?= icon('clock') ?></span>
                             <div><h4><?= e(t('blogvax_qq6_q')) ?></h4><p><?= e(t('blogvax_qq6_a')) ?></p></div>
                         </div>
                     </div>
-                    <a href="#faq" class="btn btn-outline btn-sm"><?= e(t('blogvax_see_faq')) ?> <i class="fas fa-arrow-right"></i></a>
+                    <a href="#faq" class="btn btn-outline btn-sm"><?= e(t('blogvax_see_faq')) ?> <?= icon('arrow-right') ?></a>
                 </div>
 
                 <!-- Table of contents -->
                 <nav class="article-toc" aria-label="Table of contents">
-                    <h3><i class="fas fa-list-ul"></i> <?= e(t('blogvax_toc_title')) ?></h3>
+                    <h3><?= icon('list-ul') ?> <?= e(t('blogvax_toc_title')) ?></h3>
                     <ul>
                         <li><a href="#disclaimer">⚠️ <?= e(t('blogvax_toc_1')) ?></a></li>
                         <li><a href="#vaccinations">💉 <?= e(t('blogvax_toc_2')) ?></a></li>
@@ -88,10 +88,10 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Disclaimer -->
                 <section id="disclaimer" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-triangle-exclamation"></i> <?= e(t('blogvax_s0_badge')) ?></span>
+                    <span class="section-badge"><?= icon('triangle-exclamation') ?> <?= e(t('blogvax_s0_badge')) ?></span>
                     <h2><?= e(t('blogvax_s0_title')) ?></h2>
                     <div class="migration-badge">
-                        <i class="fas fa-circle-info"></i>
+                        <?= icon('circle-info') ?>
                         <span><strong><?= e(t('blogvax_s0_warn_t')) ?></strong> <?= t('blogvax_s0_warn_d') ?></span>
                     </div>
                     <p><?= e(t('blogvax_s0_p1')) ?></p>
@@ -105,12 +105,12 @@ require dirname(__DIR__) . '/includes/header.php';
                         <strong><?= e(t('blogcost_cta_title')) ?></strong>
                         <em><?= e(t('blogcost_cta_price')) ?></em>
                     </div>
-                    <i class="fas fa-arrow-right" style="font-size:1.3rem;"></i>
+                    <?= icon('arrow-right', '', 'font-size:1.3rem;') ?>
                 </a>
 
                 <!-- Vaccinations -->
                 <section id="vaccinations" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-syringe"></i> <?= e(t('blogvax_s1_badge')) ?></span>
+                    <span class="section-badge"><?= icon('syringe') ?> <?= e(t('blogvax_s1_badge')) ?></span>
                     <h2><?= e(t('blogvax_s1_title')) ?></h2>
                     <h3><?= e(t('blogvax_s1_sub1')) ?></h3>
                     <p><?= t('blogvax_s1_p1') ?></p>
@@ -140,35 +140,35 @@ require dirname(__DIR__) . '/includes/header.php';
                     <h3><?= e(t('blogvax_s2_sub2')) ?></h3>
                     <p><?= e(t('blogvax_s2_p3')) ?></p>
                     <ul class="included-icon-list yes">
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s2_b1_t')) ?></strong> <?= e(t('blogvax_s2_b1_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s2_b2_t')) ?></strong> <?= e(t('blogvax_s2_b2_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s2_b3_t')) ?></strong> <?= e(t('blogvax_s2_b3_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s2_b4_t')) ?></strong> <?= e(t('blogvax_s2_b4_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s2_b1_t')) ?></strong> <?= e(t('blogvax_s2_b1_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s2_b2_t')) ?></strong> <?= e(t('blogvax_s2_b2_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s2_b3_t')) ?></strong> <?= e(t('blogvax_s2_b3_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s2_b4_t')) ?></strong> <?= e(t('blogvax_s2_b4_d')) ?></li>
                     </ul>
                     <div class="migration-badge" style="margin-top:1.4rem;">
-                        <i class="fas fa-triangle-exclamation"></i>
+                        <?= icon('triangle-exclamation') ?>
                         <span><strong><?= e(t('blogvax_s2_warn_t')) ?></strong> <?= e(t('blogvax_s2_warn_d')) ?></span>
                     </div>
                 </section>
 
                 <!-- Food & water -->
                 <section id="food-water" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-utensils"></i> <?= e(t('blogvax_s3_badge')) ?></span>
+                    <span class="section-badge"><?= icon('utensils') ?> <?= e(t('blogvax_s3_badge')) ?></span>
                     <h2><?= e(t('blogvax_s3_title')) ?></h2>
                     <ul class="included-icon-list yes">
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s3_i1_t')) ?></strong> <?= e(t('blogvax_s3_i1_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogvax_s3_i2')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogvax_s3_i3')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogvax_s3_i4')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogvax_s3_i5')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogvax_s3_i6')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s3_i1_t')) ?></strong> <?= e(t('blogvax_s3_i1_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogvax_s3_i2')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogvax_s3_i3')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogvax_s3_i4')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogvax_s3_i5')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogvax_s3_i6')) ?></li>
                     </ul>
                     <p><?= e(t('blogvax_s3_p1')) ?></p>
                 </section>
 
                 <!-- Altitude -->
                 <section id="altitude" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-lungs"></i> <?= e(t('blogvax_s4_badge')) ?></span>
+                    <span class="section-badge"><?= icon('lungs') ?> <?= e(t('blogvax_s4_badge')) ?></span>
                     <h2><?= e(t('blogvax_s4_title')) ?></h2>
                     <p><?= e(t('blogvax_s4_p1')) ?></p>
                     <p><?= e(t('blogvax_s4_p2')) ?></p>
@@ -177,64 +177,64 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Travel insurance -->
                 <section id="insurance" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-shield-halved"></i> <?= e(t('blogvax_s5_badge')) ?></span>
+                    <span class="section-badge"><?= icon('shield-halved') ?> <?= e(t('blogvax_s5_badge')) ?></span>
                     <h2><?= e(t('blogvax_s5_title')) ?></h2>
                     <p><?= e(t('blogvax_s5_p1')) ?></p>
                     <p><?= e(t('blogvax_s5_p2')) ?></p>
                     <ul class="included-icon-list yes">
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s5_i1_t')) ?></strong> <?= e(t('blogvax_s5_i1_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s5_i2')) ?></strong></li>
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s5_i3_t')) ?></strong> <?= e(t('blogvax_s5_i3_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogvax_s5_i4')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s5_i1_t')) ?></strong> <?= e(t('blogvax_s5_i1_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s5_i2')) ?></strong></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s5_i3_t')) ?></strong> <?= e(t('blogvax_s5_i3_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogvax_s5_i4')) ?></li>
                     </ul>
                     <p><?= t('blogvax_s5_p3') ?></p>
                 </section>
 
                 <!-- Other practical points -->
                 <section id="other" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-kit-medical"></i> <?= e(t('blogvax_s6_badge')) ?></span>
+                    <span class="section-badge"><?= icon('kit-medical') ?> <?= e(t('blogvax_s6_badge')) ?></span>
                     <h2><?= e(t('blogvax_s6_title')) ?></h2>
                     <ul class="included-icon-list yes">
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s6_i1_t')) ?></strong> <?= e(t('blogvax_s6_i1_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s6_i2_t')) ?></strong> <?= e(t('blogvax_s6_i2_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s6_i3_t')) ?></strong> <?= e(t('blogvax_s6_i3_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s6_i4_t')) ?></strong> <?= e(t('blogvax_s6_i4_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s6_i5_t')) ?></strong> <?= e(t('blogvax_s6_i5_d')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvax_s6_i6_t')) ?></strong> <?= e(t('blogvax_s6_i6_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s6_i1_t')) ?></strong> <?= e(t('blogvax_s6_i1_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s6_i2_t')) ?></strong> <?= e(t('blogvax_s6_i2_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s6_i3_t')) ?></strong> <?= e(t('blogvax_s6_i3_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s6_i4_t')) ?></strong> <?= e(t('blogvax_s6_i4_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s6_i5_t')) ?></strong> <?= e(t('blogvax_s6_i5_d')) ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s6_i6_t')) ?></strong> <?= e(t('blogvax_s6_i6_d')) ?></li>
                     </ul>
                 </section>
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-question-circle"></i> <?= e(t('blogvax_faq_badge')) ?></span>
+                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogvax_faq_badge')) ?></span>
                     <h2><?= e(t('blogvax_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a1')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a2')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a3')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a4')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q5')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a5')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q6')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a6')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q7')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a7')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q8')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a8')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q9')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a9')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q10')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a10')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q11')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a11')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q12')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a12')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q13')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a13')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a1')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a2')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a3')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a4')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q5')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a5')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q6')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a6')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q7')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a7')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q8')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a8')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q9')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a9')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q10')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a10')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q11')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a11')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q12')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a12')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q13')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a13')) ?></p></div></div>
                     </div>
                 </section>
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><i class="fas fa-link"></i> <?= e(t('blogvax_related_badge')) ?></span>
+                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogvax_related_badge')) ?></span>
                     <h2><?= e(t('blogvax_related_title')) ?></h2>
                     <div class="related-grid">
-                        <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><i class="fas fa-wallet"></i> <?= e(t('blog_art_cost_title')) ?></a>
+                        <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('wallet') ?> <?= e(t('blog_art_cost_title')) ?></a>
                         <a href="<?= url('blog/great-migration-month-by-month.php') ?>" class="related-link"><i class="fas fa-crow"></i> <?= e(t('blog_art_migration_title')) ?></a>
-                        <a href="<?= url('blog/') ?>" class="related-link"><i class="fas fa-book"></i> <?= e(t('blog_hero_title')) ?></a>
-                        <a href="<?= url('safari/') ?>" class="related-link"><i class="fas fa-binoculars"></i> <?= e(t('blogcost_related_itineraries')) ?></a>
-                        <a href="<?= url('contact.php') ?>" class="related-link"><i class="fas fa-envelope"></i> <?= e(t('blogvax_related_contact')) ?></a>
+                        <a href="<?= url('blog/') ?>" class="related-link"><?= icon('book') ?> <?= e(t('blog_hero_title')) ?></a>
+                        <a href="<?= url('safari/') ?>" class="related-link"><?= icon('binoculars') ?> <?= e(t('blogcost_related_itineraries')) ?></a>
+                        <a href="<?= url('contact.php') ?>" class="related-link"><?= icon('envelope') ?> <?= e(t('blogvax_related_contact')) ?></a>
                     </div>
                 </section>
 

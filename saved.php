@@ -19,7 +19,7 @@ require __DIR__ . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-heart"></i> <?= e(t('saved_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('heart') ?> <?= e(t('saved_hero_badge')) ?></span>
                 <h1><?= e(t('saved_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('saved_hero_sub')) ?></p>
             </div>
@@ -32,7 +32,7 @@ require __DIR__ . '/includes/header.php';
                 <div id="savedSafarisGrid" class="saved-safaris-grid"></div>
 
                 <div id="savedSafarisEmpty" class="saved-empty-state" style="display:none;">
-                    <i class="far fa-heart"></i>
+                    <?= icon('heart') ?>
                     <h2><?= e(t('saved_empty_title')) ?></h2>
                     <p><?= e(t('saved_empty_desc')) ?></p>
                     <a href="<?= url('safari/') ?>" class="btn btn-primary"><?= e(t('saved_empty_cta')) ?></a>

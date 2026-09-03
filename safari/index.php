@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-binoculars"></i> <?= e(t('safari_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('binoculars') ?> <?= e(t('safari_hero_badge')) ?></span>
                 <h1><?= e(t('safari_hero_title')) ?></h1>
                 <p class="hero-sub" id="listingResultsSub">10 <?= e(t('safari_results_found')) ?></p>
             </div>
@@ -40,7 +40,7 @@ require dirname(__DIR__) . '/includes/header.php';
                 </div>
 
                 <button type="button" class="more-filters-toggle" id="moreFiltersToggle">
-                    <?= e(t('safari_filter_label')) ?> <i class="fas fa-chevron-down"></i>
+                    <?= e(t('safari_filter_label')) ?> <?= icon('chevron-down') ?>
                 </button>
 
                 <div class="more-filters-panel" id="moreFiltersPanel">
@@ -77,10 +77,10 @@ require dirname(__DIR__) . '/includes/header.php';
                         <option value="6-8">6–8 days</option>
                         <option value="9-14">9–14 days</option>
                     </select>
-                    <button type="button" class="listing-sort" id="sortToggle"><i class="fas fa-arrow-down-wide-short"></i> <?= e(t('safari_sort')) ?></button>
+                    <button type="button" class="listing-sort" id="sortToggle"><?= icon('arrow-down-wide-short') ?> <?= e(t('safari_sort')) ?></button>
                 </div>
 
-                <p class="popular-packages-title"><i class="fas fa-fire"></i> Popular now</p>
+                <p class="popular-packages-title"><?= icon('fire') ?> Popular now</p>
                 <div class="popular-packages-grid">
                     <a href="<?= url('safari/3-day-serengeti-safari.php') ?>" class="popular-package-card">
                         <div class="popular-package-img">
@@ -92,7 +92,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-dest">Serengeti Central &amp; Ngorongoro</div>
                             <div class="popular-package-footer">
                                 <div class="price-tag">€1,000 <small>from · <?= e(t('safari_pp')) ?></small></div>
-                                <span class="popular-package-arrow"><i class="fas fa-arrow-right"></i></span>
+                                <span class="popular-package-arrow"><?= icon('arrow-right') ?></span>
                             </div>
                         </div>
                     </a>
@@ -106,7 +106,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-dest">Serengeti North + Ngorongoro</div>
                             <div class="popular-package-footer">
                                 <div class="price-tag">€1,100 <small>from · <?= e(t('safari_pp')) ?></small></div>
-                                <span class="popular-package-arrow"><i class="fas fa-arrow-right"></i></span>
+                                <span class="popular-package-arrow"><?= icon('arrow-right') ?></span>
                             </div>
                         </div>
                     </a>
@@ -120,7 +120,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-dest">Tarangire · Serengeti · Ngorongoro</div>
                             <div class="popular-package-footer">
                                 <div class="price-tag">€650 <small>from · <?= e(t('safari_pp')) ?></small></div>
-                                <span class="popular-package-arrow"><i class="fas fa-arrow-right"></i></span>
+                                <span class="popular-package-arrow"><?= icon('arrow-right') ?></span>
                             </div>
                         </div>
                     </a>
@@ -142,7 +142,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Elephants</span><span>Baobab</span><span>Birdwatching</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€200 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
                         </div>
                     </div>
@@ -159,7 +159,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Big Five</span><span>UNESCO</span><span>Rhino</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€650 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
                         </div>
                     </div>
@@ -176,7 +176,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Big Five</span><span>Predators</span><span>Private</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€1,000 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('safari/3-day-serengeti-safari.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('safari/3-day-serengeti-safari.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
                         </div>
                     </div>
@@ -193,7 +193,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Big Five</span><span>Complete</span><span>Private</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€1,250 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
                         </div>
                     </div>
@@ -210,7 +210,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Migration</span><span>Mara River</span><span>Photography</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€1,100 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
                         </div>
                     </div>
@@ -227,7 +227,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Fly-in</span><span>Luxury</span><span>Time-saving</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€1,800 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
                         </div>
                     </div>
@@ -244,7 +244,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Luxury</span><span>Private Suite</span><span>Spa</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€2,500 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
                         </div>
                     </div>
@@ -261,7 +261,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Migration</span><span>Mara River</span><span>Big Five</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€2,100 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
                         </div>
                     </div>
@@ -278,7 +278,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Safari</span><span>Beach</span><span>Relax</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€2,800 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
                         </div>
                     </div>
@@ -295,7 +295,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div class="pkg-tags"><span>Honeymoon</span><span>Bush Dinner</span><span>Spa</span></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€3,800 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
-                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><i class="fas fa-arrow-right"></i></a>
+                                <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
                         </div>
                     </div>
@@ -320,7 +320,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3>Serengeti</h3>
                             <p><?= e(t('safari_park_serengeti_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/ngorongoro-conservation-area.php') ?>" class="park-preview-card">
@@ -331,7 +331,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3>Ngorongoro</h3>
                             <p><?= e(t('safari_park_ngorongoro_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/tarangire-national-park.php') ?>" class="park-preview-card">
@@ -342,7 +342,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3>Tarangire</h3>
                             <p><?= e(t('safari_park_tarangire_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/lake-manyara-national-park.php') ?>" class="park-preview-card">
@@ -353,7 +353,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3>Lake Manyara</h3>
                             <p><?= e(t('safari_park_manyara_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                 </div>
@@ -370,7 +370,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3>Nyerere (Selous)</h3>
                             <p><?= e(t('safari_park_nyerere_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/ruaha-national-park.php') ?>" class="park-preview-card">
@@ -381,7 +381,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3>Ruaha</h3>
                             <p><?= e(t('safari_park_ruaha_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/mikumi-national-park.php') ?>" class="park-preview-card">
@@ -392,7 +392,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3>Mikumi</h3>
                             <p><?= e(t('safari_park_mikumi_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('safari_parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                 </div>
@@ -408,22 +408,22 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div>
                         <h3><?= e(t('safari_included_heading')) ?></h3>
                         <ul class="included-icon-list yes">
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('safari_included_1')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('safari_included_2')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('safari_included_3')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('safari_included_4')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('safari_included_5')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('safari_included_6')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('safari_included_1')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('safari_included_2')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('safari_included_3')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('safari_included_4')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('safari_included_5')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('safari_included_6')) ?></li>
                         </ul>
                     </div>
                     <div>
                         <h3><?= e(t('safari_excluded_heading')) ?></h3>
                         <ul class="included-icon-list no">
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('safari_excluded_1')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('safari_excluded_2')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('safari_excluded_3')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('safari_excluded_4')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('safari_excluded_5')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('safari_excluded_1')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('safari_excluded_2')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('safari_excluded_3')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('safari_excluded_4')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('safari_excluded_5')) ?></li>
                         </ul>
                     </div>
                 </div>
@@ -432,7 +432,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
         <section class="detail-section">
             <div class="container text-center">
-                <a href="<?= url('parks/') ?>" class="btn btn-outline"><?= e(t('safari_parks_compare_all')) ?> <i class="fas fa-arrow-right"></i></a>
+                <a href="<?= url('parks/') ?>" class="btn btn-outline"><?= e(t('safari_parks_compare_all')) ?> <?= icon('arrow-right') ?></a>
             </div>
         </section>
 
@@ -441,19 +441,19 @@ require dirname(__DIR__) . '/includes/header.php';
                 <h2 class="section-title"><?= e(t('safari_faq_title')) ?></h2>
                 <div class="faq-column">
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('safari_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('safari_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('safari_faq_a1')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('safari_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('safari_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('safari_faq_a2')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('safari_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('safari_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('safari_faq_a3')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('safari_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('safari_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('safari_faq_a4')) ?></p></div>
                     </div>
                 </div>

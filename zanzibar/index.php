@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-umbrella-beach"></i> <?= e(t('zanzibar_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('umbrella-beach') ?> <?= e(t('zanzibar_hero_badge')) ?></span>
                 <h1><span><?= e(t('zanzibar_hero_title_1')) ?></span> <?= e(t('zanzibar_hero_title_2')) ?></h1>
                 <p class="hero-sub"><?= e(t('zanzibar_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -33,19 +33,19 @@ require dirname(__DIR__) . '/includes/header.php';
     <div class="container">
         <div class="glance-strip">
             <div class="glance-item">
-                <i class="fas fa-moon"></i>
+                <?= icon('moon') ?>
                 <div><strong><?= e(t('zanzibar_glance_duration')) ?></strong><span><?= e(t('zanzibar_glance_duration_label')) ?></span></div>
             </div>
             <div class="glance-item">
-                <i class="fas fa-plane"></i>
+                <?= icon('plane') ?>
                 <div><strong><?= e(t('zanzibar_glance_flight')) ?></strong><span><?= e(t('zanzibar_glance_flight_label')) ?></span></div>
             </div>
             <div class="glance-item">
-                <i class="fas fa-sun"></i>
+                <?= icon('sun') ?>
                 <div><strong><?= e(t('zanzibar_glance_temp')) ?></strong><span><?= e(t('zanzibar_glance_temp_label')) ?></span></div>
             </div>
             <div class="glance-item">
-                <i class="fas fa-link"></i>
+                <?= icon('link') ?>
                 <div><strong><?= e(t('zanzibar_glance_pairs')) ?></strong><span><?= e(t('zanzibar_glance_pairs_label')) ?></span></div>
             </div>
         </div>
@@ -55,23 +55,23 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-heart"></i> <?= e(t('zanzibar_why_badge')) ?></span>
+                    <span class="section-badge"><?= icon('heart') ?> <?= e(t('zanzibar_why_badge')) ?></span>
                     <h2><?= e(t('zanzibar_why_title')) ?></h2>
                 </div>
 
                 <div class="why-add-grid">
                     <div class="why-add-item">
-                        <span class="why-add-icon"><i class="fas fa-arrows-left-right"></i></span>
+                        <span class="why-add-icon"><?= icon('arrows-left-right') ?></span>
                         <h3><?= e(t('zanzibar_why_1_title')) ?></h3>
                         <p><?= e(t('zanzibar_why_1_desc')) ?></p>
                     </div>
                     <div class="why-add-item">
-                        <span class="why-add-icon"><i class="fas fa-earth-africa"></i></span>
+                        <span class="why-add-icon"><?= icon('earth-africa') ?></span>
                         <h3><?= e(t('zanzibar_why_2_title')) ?></h3>
                         <p><?= e(t('zanzibar_why_2_desc')) ?></p>
                     </div>
                     <div class="why-add-item">
-                        <span class="why-add-icon"><i class="fas fa-suitcase-rolling"></i></span>
+                        <span class="why-add-icon"><?= icon('suitcase-rolling') ?></span>
                         <h3><?= e(t('zanzibar_why_3_title')) ?></h3>
                         <p><?= e(t('zanzibar_why_3_desc')) ?></p>
                     </div>
@@ -82,7 +82,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-camera-retro"></i> <?= e(t('zanzibar_gallery_badge')) ?></span>
+                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('zanzibar_gallery_badge')) ?></span>
                     <h2><?= e(t('zanzibar_gallery_title')) ?></h2>
                 </div>
                 <div class="gallery-grid">
@@ -111,7 +111,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-water"></i> <?= e(t('zanzibar_beaches_badge')) ?></span>
+                    <span class="section-badge"><?= icon('water') ?> <?= e(t('zanzibar_beaches_badge')) ?></span>
                     <h2><?= e(t('zanzibar_beaches_title')) ?></h2>
                     <p><?= e(t('zanzibar_beaches_intro')) ?></p>
                 </div>
@@ -161,12 +161,12 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-compass"></i> <?= e(t('zanzibar_excursions_badge')) ?></span>
+                    <span class="section-badge"><?= icon('compass') ?> <?= e(t('zanzibar_excursions_badge')) ?></span>
                     <h2><?= e(t('zanzibar_excursions_title')) ?></h2>
                 </div>
                 <div class="grid-3">
                     <div class="info-card">
-                        <span class="icon-wrap"><i class="fas fa-city"></i></span>
+                        <span class="icon-wrap"><?= icon('city') ?></span>
                         <h3><?= e(t('zanzibar_exc_stonetown_title')) ?></h3>
                         <p><?= e(t('zanzibar_exc_stonetown_desc')) ?></p>
                     </div>
@@ -176,17 +176,17 @@ require dirname(__DIR__) . '/includes/header.php';
                         <p><?= e(t('zanzibar_exc_spice_desc')) ?></p>
                     </div>
                     <div class="info-card">
-                        <span class="icon-wrap"><i class="fas fa-sailboat"></i></span>
+                        <span class="icon-wrap"><?= icon('sailboat') ?></span>
                         <h3><?= e(t('zanzibar_exc_safariblue_title')) ?></h3>
                         <p><?= e(t('zanzibar_exc_safariblue_desc')) ?></p>
                     </div>
                     <div class="info-card">
-                        <span class="icon-wrap"><i class="fas fa-tree"></i></span>
+                        <span class="icon-wrap"><?= icon('tree') ?></span>
                         <h3><?= e(t('zanzibar_exc_jozani_title')) ?></h3>
                         <p><?= e(t('zanzibar_exc_jozani_desc')) ?></p>
                     </div>
                     <div class="info-card">
-                        <span class="icon-wrap"><i class="fas fa-fish"></i></span>
+                        <span class="icon-wrap"><?= icon('fish') ?></span>
                         <h3><?= e(t('zanzibar_exc_mnemba_title')) ?></h3>
                         <p><?= e(t('zanzibar_exc_mnemba_desc')) ?></p>
                     </div>
@@ -202,7 +202,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-calendar-alt"></i> <?= e(t('zanzibar_when_badge')) ?></span>
+                    <span class="section-badge"><?= icon('calendar-alt') ?> <?= e(t('zanzibar_when_badge')) ?></span>
                     <h2><?= e(t('zanzibar_when_title')) ?></h2>
                 </div>
                 <div class="month-card-grid">
@@ -247,7 +247,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <h3><?= e(t('zanzibar_featured_title')) ?></h3>
                         <p><?= e(t('zanzibar_featured_desc')) ?></p>
                         <div class="featured-package-price"><?= e(t('zanzibar_featured_price')) ?></div>
-                        <a href="<?= url('safari/') ?>" class="btn btn-primary"><?= e(t('zanzibar_featured_cta')) ?> <i class="fas fa-arrow-right"></i></a>
+                        <a href="<?= url('safari/') ?>" class="btn btn-primary"><?= e(t('zanzibar_featured_cta')) ?> <?= icon('arrow-right') ?></a>
                     </div>
                 </div>
             </div>
@@ -256,7 +256,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-circle-info"></i> <?= e(t('zanzibar_practical_badge')) ?></span>
+                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('zanzibar_practical_badge')) ?></span>
                     <h2><?= e(t('zanzibar_practical_title')) ?></h2>
                 </div>
                 <div class="grid-2">
@@ -285,19 +285,19 @@ require dirname(__DIR__) . '/includes/header.php';
                 <h2 class="section-title"><?= e(t('zanzibar_faq_title')) ?></h2>
                 <div class="faq-column">
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('zanzibar_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('zanzibar_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('zanzibar_faq_a1')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('zanzibar_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('zanzibar_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('zanzibar_faq_a2')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('zanzibar_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('zanzibar_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('zanzibar_faq_a3')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('zanzibar_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('zanzibar_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('zanzibar_faq_a4')) ?></p></div>
                     </div>
                 </div>

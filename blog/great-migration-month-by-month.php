@@ -28,9 +28,9 @@ require dirname(__DIR__) . '/includes/header.php';
             <h1><?= e(t('blogmig_h1')) ?></h1>
             <p class="detail-hero-route"><?= e(t('blogmig_hero_sub')) ?></p>
             <div class="article-meta-bar">
-                <span><i class="fas fa-user-pen"></i> <?= e(t('blogcost_author')) ?></span>
-                <span><i class="fas fa-clock"></i> 9 <?= e(t('blog_min_read')) ?></span>
-                <span><i class="fas fa-calendar"></i> <?= e(t('blogcost_date')) ?></span>
+                <span><?= icon('user-pen') ?> <?= e(t('blogcost_author')) ?></span>
+                <span><?= icon('clock') ?> 9 <?= e(t('blog_min_read')) ?></span>
+                <span><?= icon('calendar') ?> <?= e(t('blogcost_date')) ?></span>
             </div>
         </div>
     </section>
@@ -41,41 +41,41 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><i class="fas fa-bolt"></i> <?= e(t('blogmig_quick_badge')) ?></span>
+                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogmig_quick_badge')) ?></span>
                     <h2><?= e(t('blogmig_quick_title')) ?></h2>
                     <p><?= e(t('blogmig_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-calendar-days"></i></span>
+                            <span class="qq-icon"><?= icon('calendar-days') ?></span>
                             <div><h4><?= e(t('blogmig_qq1_q')) ?></h4><p><?= e(t('blogmig_qq1_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-baby"></i></span>
+                            <span class="qq-icon"><?= icon('baby') ?></span>
                             <div><h4><?= e(t('blogmig_qq2_q')) ?></h4><p><?= e(t('blogmig_qq2_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-water"></i></span>
+                            <span class="qq-icon"><?= icon('water') ?></span>
                             <div><h4><?= e(t('blogmig_qq3_q')) ?></h4><p><?= e(t('blogmig_qq3_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-bed"></i></span>
+                            <span class="qq-icon"><?= icon('bed') ?></span>
                             <div><h4><?= e(t('blogmig_qq4_q')) ?></h4><p><?= e(t('blogmig_qq4_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-clock"></i></span>
+                            <span class="qq-icon"><?= icon('clock') ?></span>
                             <div><h4><?= e(t('blogmig_qq5_q')) ?></h4><p><?= e(t('blogmig_qq5_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-circle-exclamation"></i></span>
+                            <span class="qq-icon"><?= icon('circle-exclamation') ?></span>
                             <div><h4><?= e(t('blogmig_qq6_q')) ?></h4><p><?= e(t('blogmig_qq6_a')) ?></p></div>
                         </div>
                     </div>
-                    <a href="#faq" class="btn btn-outline btn-sm"><?= e(t('blogcost_see_faq')) ?> <i class="fas fa-arrow-right"></i></a>
+                    <a href="#faq" class="btn btn-outline btn-sm"><?= e(t('blogcost_see_faq')) ?> <?= icon('arrow-right') ?></a>
                 </div>
 
                 <!-- Table of contents -->
                 <nav class="article-toc" aria-label="Table of contents">
-                    <h3><i class="fas fa-list-ul"></i> <?= e(t('blogmig_toc_title')) ?></h3>
+                    <h3><?= icon('list-ul') ?> <?= e(t('blogmig_toc_title')) ?></h3>
                     <ul>
                         <li><a href="#what-it-is">📖 <?= e(t('blogmig_toc_1')) ?></a></li>
                         <li><a href="#month-by-month">📅 <?= e(t('blogmig_toc_2')) ?></a></li>
@@ -90,7 +90,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- What it is -->
                 <section id="what-it-is" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-circle-info"></i> <?= e(t('blogmig_s1_badge')) ?></span>
+                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('blogmig_s1_badge')) ?></span>
                     <h2><?= e(t('blogmig_s1_title')) ?></h2>
                     <p><?= t('blogmig_s1_p1') ?></p>
                     <p><?= t('blogmig_s1_p2') ?></p>
@@ -113,12 +113,12 @@ require dirname(__DIR__) . '/includes/header.php';
                         <strong><?= e(t('blogcost_cta_title')) ?></strong>
                         <em><?= e(t('blogcost_cta_price')) ?></em>
                     </div>
-                    <i class="fas fa-arrow-right" style="font-size:1.3rem;"></i>
+                    <?= icon('arrow-right', '', 'font-size:1.3rem;') ?>
                 </a>
 
                 <!-- Month by month -->
                 <section id="month-by-month" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-calendar-days"></i> <?= e(t('blogmig_s2_badge')) ?></span>
+                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('blogmig_s2_badge')) ?></span>
                     <h2><?= e(t('blogmig_s2_title')) ?></h2>
                     <p><?= e(t('blogmig_s2_intro')) ?></p>
                     <div class="article-table-wrap">
@@ -142,7 +142,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Calving -->
                 <section id="calving" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-baby"></i> <?= e(t('blogmig_s3_badge')) ?></span>
+                    <span class="section-badge"><?= icon('baby') ?> <?= e(t('blogmig_s3_badge')) ?></span>
                     <h2><?= e(t('blogmig_s3_title')) ?></h2>
                     <p><?= t('blogmig_s3_p1') ?></p>
                     <h3><?= e(t('blogmig_s3_sub1')) ?></h3>
@@ -152,14 +152,14 @@ require dirname(__DIR__) . '/includes/header.php';
                     <h3><?= e(t('blogmig_s3_sub3')) ?></h3>
                     <p><?= e(t('blogmig_s3_p4')) ?></p>
                     <div class="migration-badge">
-                        <i class="fas fa-star"></i>
+                        <?= icon('star') ?>
                         <span><strong><?= e(t('blogmig_s3_note_t')) ?></strong> <?= e(t('blogmig_s3_note_d')) ?></span>
                     </div>
                 </section>
 
                 <!-- River crossings -->
                 <section id="river-crossings" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-water"></i> <?= e(t('blogmig_s4_badge')) ?></span>
+                    <span class="section-badge"><?= icon('water') ?> <?= e(t('blogmig_s4_badge')) ?></span>
                     <h2><?= e(t('blogmig_s4_title')) ?></h2>
                     <p><?= t('blogmig_s4_p1') ?></p>
                     <h3><?= e(t('blogmig_s4_sub1')) ?></h3>
@@ -168,7 +168,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <h3><?= e(t('blogmig_s4_sub2')) ?></h3>
                     <p><?= t('blogmig_s4_p4') ?></p>
                     <div class="migration-badge">
-                        <i class="fas fa-triangle-exclamation"></i>
+                        <?= icon('triangle-exclamation') ?>
                         <span><strong><?= e(t('blogmig_s4_note_t')) ?></strong> <?= e(t('blogmig_s4_note_d')) ?></span>
                     </div>
                     <h3 style="margin-top:1.4rem;"><?= e(t('blogmig_s4_sub3')) ?></h3>
@@ -188,7 +188,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Where to stay -->
                 <section id="where-to-stay" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-bed"></i> <?= e(t('blogmig_s5_badge')) ?></span>
+                    <span class="section-badge"><?= icon('bed') ?> <?= e(t('blogmig_s5_badge')) ?></span>
                     <h2><?= e(t('blogmig_s5_title')) ?></h2>
                     <p><?= e(t('blogmig_s5_p1')) ?></p>
                     <div class="article-table-wrap">
@@ -205,12 +205,12 @@ require dirname(__DIR__) . '/includes/header.php';
                     </div>
                     <h3><?= e(t('blogmig_s5_sub1')) ?></h3>
                     <p><?= e(t('blogmig_s5_p2')) ?></p>
-                    <p><a href="<?= url('contact.php') ?>" class="btn btn-primary btn-sm"><?= e(t('blogmig_s5_link')) ?> <i class="fas fa-arrow-right"></i></a></p>
+                    <p><a href="<?= url('contact.php') ?>" class="btn btn-primary btn-sm"><?= e(t('blogmig_s5_link')) ?> <?= icon('arrow-right') ?></a></p>
                 </section>
 
                 <!-- Planning -->
                 <section id="planning" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-route"></i> <?= e(t('blogmig_s6_badge')) ?></span>
+                    <span class="section-badge"><?= icon('route') ?> <?= e(t('blogmig_s6_badge')) ?></span>
                     <h2><?= e(t('blogmig_s6_title')) ?></h2>
                     <h3><?= e(t('blogmig_s6_step1_t')) ?></h3>
                     <p><?= e(t('blogmig_s6_step1_d')) ?></p>
@@ -236,7 +236,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Myths -->
                 <section id="myths" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-circle-exclamation"></i> <?= e(t('blogmig_s7_badge')) ?></span>
+                    <span class="section-badge"><?= icon('circle-exclamation') ?> <?= e(t('blogmig_s7_badge')) ?></span>
                     <h2><?= e(t('blogmig_s7_title')) ?></h2>
                     <h3>1. "<?= e(t('blogmig_s7_myth1_t')) ?>"</h3>
                     <p><?= t('blogmig_s7_myth1_d') ?></p>
@@ -252,31 +252,31 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-question-circle"></i> <?= e(t('blogcost_faq_badge')) ?></span>
+                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogcost_faq_badge')) ?></span>
                     <h2><?= e(t('blogmig_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a1')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a2')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a3')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a4')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q5')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a5')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q6')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a6')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q7')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a7')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q8')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a8')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a1')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a2')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a3')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a4')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q5')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a5')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q6')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a6')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q7')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a7')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q8')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a8')) ?></p></div></div>
                     </div>
                 </section>
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><i class="fas fa-link"></i> <?= e(t('blogcost_related_badge')) ?></span>
+                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogcost_related_badge')) ?></span>
                     <h2><?= e(t('blogcost_related_title')) ?></h2>
                     <div class="related-grid">
-                        <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><i class="fas fa-money-bill-wave"></i> <?= e(t('blog_art_cost_title')) ?></a>
-                        <a href="<?= url('contact.php') ?>" class="related-link"><i class="fas fa-calendar-days"></i> <?= e(t('blog_art_besttime_title')) ?></a>
-                        <a href="<?= url('contact.php') ?>" class="related-link"><i class="fas fa-bed"></i> <?= e(t('blog_art_stay_title')) ?></a>
+                        <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('money-bill-wave') ?> <?= e(t('blog_art_cost_title')) ?></a>
+                        <a href="<?= url('contact.php') ?>" class="related-link"><?= icon('calendar-days') ?> <?= e(t('blog_art_besttime_title')) ?></a>
+                        <a href="<?= url('contact.php') ?>" class="related-link"><?= icon('bed') ?> <?= e(t('blog_art_stay_title')) ?></a>
                         <a href="<?= url('parks/serengeti-national-park.php') ?>" class="related-link"><i class="fas fa-paw"></i> <?= e(t('nav_safaris_featured_title')) ?></a>
-                        <a href="<?= url('blog/') ?>" class="related-link"><i class="fas fa-book"></i> <?= e(t('blog_hero_title')) ?></a>
-                        <a href="<?= url('safari/') ?>" class="related-link"><i class="fas fa-binoculars"></i> <?= e(t('blogcost_related_itineraries')) ?></a>
+                        <a href="<?= url('blog/') ?>" class="related-link"><?= icon('book') ?> <?= e(t('blog_hero_title')) ?></a>
+                        <a href="<?= url('safari/') ?>" class="related-link"><?= icon('binoculars') ?> <?= e(t('blogcost_related_itineraries')) ?></a>
                     </div>
                 </section>
 

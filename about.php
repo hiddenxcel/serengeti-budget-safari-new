@@ -55,7 +55,7 @@ require __DIR__ . '/includes/header.php';
                         <img class="about-us-photo-secondary" src="<?= asset('images/wildlife/lion-pride-stalking-zebra.jpg') ?>" alt="Lion pride Tarangire" loading="lazy" width="900" height="1200" />
                     </div>
                     <div class="about-us-content">
-                        <span class="story-badge"><i class="fas fa-compass"></i> <?= e(t('about_intro_badge')) ?></span>
+                        <span class="story-badge"><?= icon('compass') ?> <?= e(t('about_intro_badge')) ?></span>
                         <h2 id="aboutIntroTitle"><?= e(t('about_intro_title')) ?></h2>
                         <p><?= e(t('about_intro_p1')) ?></p>
                     </div>
@@ -67,7 +67,7 @@ require __DIR__ . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-heart"></i> <?= e(t('about_story_badge')) ?></span>
+                    <span class="section-badge"><?= icon('heart') ?> <?= e(t('about_story_badge')) ?></span>
                     <h2><?= e(t('about_story_title')) ?></h2>
                     <p><?= e(t('about_story_intro')) ?></p>
                 </div>
@@ -104,16 +104,16 @@ require __DIR__ . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-star"></i> <?= e(t('about_why_badge')) ?></span>
+                    <span class="section-badge"><?= icon('star') ?> <?= e(t('about_why_badge')) ?></span>
                     <h2><?= e(t('about_why_title')) ?></h2>
                 </div>
                 <div class="trust-grid">
-                    <div class="trust-item"><i class="fas fa-earth-africa"></i><div><strong><?= e(t('about_why_1_title')) ?></strong><p><?= e(t('about_why_1_desc')) ?></p></div></div>
-                    <div class="trust-item"><i class="fas fa-compass"></i><div><strong><?= e(t('about_why_2_title')) ?></strong><p><?= e(t('about_why_2_desc')) ?></p></div></div>
-                    <div class="trust-item"><i class="fas fa-user-tie"></i><div><strong><?= e(t('about_why_3_title')) ?></strong><p><?= e(t('about_why_3_desc')) ?></p></div></div>
-                    <div class="trust-item"><i class="fas fa-tag"></i><div><strong><?= e(t('about_why_4_title')) ?></strong><p><?= e(t('about_why_4_desc')) ?></p></div></div>
-                    <div class="trust-item"><i class="fas fa-headset"></i><div><strong><?= e(t('about_why_5_title')) ?></strong><p><?= e(t('about_why_5_desc')) ?></p></div></div>
-                    <div class="trust-item"><i class="fas fa-seedling"></i><div><strong><?= e(t('about_why_6_title')) ?></strong><p><?= e(t('about_why_6_desc')) ?></p></div></div>
+                    <div class="trust-item"><?= icon('earth-africa') ?><div><strong><?= e(t('about_why_1_title')) ?></strong><p><?= e(t('about_why_1_desc')) ?></p></div></div>
+                    <div class="trust-item"><?= icon('compass') ?><div><strong><?= e(t('about_why_2_title')) ?></strong><p><?= e(t('about_why_2_desc')) ?></p></div></div>
+                    <div class="trust-item"><?= icon('user-tie') ?><div><strong><?= e(t('about_why_3_title')) ?></strong><p><?= e(t('about_why_3_desc')) ?></p></div></div>
+                    <div class="trust-item"><?= icon('tag') ?><div><strong><?= e(t('about_why_4_title')) ?></strong><p><?= e(t('about_why_4_desc')) ?></p></div></div>
+                    <div class="trust-item"><?= icon('headset') ?><div><strong><?= e(t('about_why_5_title')) ?></strong><p><?= e(t('about_why_5_desc')) ?></p></div></div>
+                    <div class="trust-item"><?= icon('seedling') ?><div><strong><?= e(t('about_why_6_title')) ?></strong><p><?= e(t('about_why_6_desc')) ?></p></div></div>
                 </div>
             </div>
         </section>
@@ -122,7 +122,7 @@ require __DIR__ . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-people-group"></i> <?= e(t('about_team_badge')) ?></span>
+                    <span class="section-badge"><?= icon('people-group') ?> <?= e(t('about_team_badge')) ?></span>
                     <h2><?= e(t('about_team_title')) ?></h2>
                     <p><?= e(t('about_team_intro')) ?></p>
                 </div>
@@ -147,7 +147,7 @@ require __DIR__ . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-map-location-dot"></i> <?= e(t('about_home_badge')) ?></span>
+                    <span class="section-badge"><?= icon('map-location-dot') ?> <?= e(t('about_home_badge')) ?></span>
                     <h2><?= e(t('about_home_title')) ?></h2>
                     <p><?= e(t('about_home_intro')) ?></p>
                 </div>
@@ -192,16 +192,16 @@ require __DIR__ . '/includes/header.php';
                 </div>
 
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-flag"></i> <?= e(t('about_mission_badge')) ?></span>
+                    <span class="section-badge"><?= icon('flag') ?> <?= e(t('about_mission_badge')) ?></span>
                     <h2><?= e(t('about_mission_title')) ?></h2>
                     <p><?= e(t('about_mission_text')) ?></p>
                 </div>
 
                 <ul class="love-list" style="max-width:560px;margin:1.5rem auto 0;">
-                    <li><i class="fas fa-check-circle"></i> <?= e(t('about_promise_1')) ?></li>
-                    <li><i class="fas fa-check-circle"></i> <?= e(t('about_promise_2')) ?></li>
-                    <li><i class="fas fa-check-circle"></i> <?= e(t('about_promise_3')) ?></li>
-                    <li><i class="fas fa-check-circle"></i> <?= e(t('about_promise_4')) ?></li>
+                    <li><?= icon('check-circle') ?> <?= e(t('about_promise_1')) ?></li>
+                    <li><?= icon('check-circle') ?> <?= e(t('about_promise_2')) ?></li>
+                    <li><?= icon('check-circle') ?> <?= e(t('about_promise_3')) ?></li>
+                    <li><?= icon('check-circle') ?> <?= e(t('about_promise_4')) ?></li>
                 </ul>
             </div>
         </section>

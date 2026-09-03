@@ -78,7 +78,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-suitcase-rolling"></i> <?= e(t('mytrip_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('suitcase-rolling') ?> <?= e(t('mytrip_hero_badge')) ?></span>
                 <h1><?= e(t('mytrip_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('mytrip_hero_sub')) ?></p>
             </div>
@@ -134,7 +134,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <strong>Day <?= (int) $day['day_number'] ?>: <?= e($lang === 'it' ? $day['title_it'] : $day['title_en']) ?></strong>
                         <p style="margin:0.5rem 0 0;color:#555;"><?= e($lang === 'it' ? $day['description_it'] : $day['description_en']) ?></p>
                         <?php if (!empty($day['accommodation'])): ?>
-                        <p style="margin:0.5rem 0 0;color:#888;font-size:0.85rem;"><i class="fas fa-bed"></i> <?= e($day['accommodation']) ?></p>
+                        <p style="margin:0.5rem 0 0;color:#888;font-size:0.85rem;"><?= icon('bed') ?> <?= e($day['accommodation']) ?></p>
                         <?php endif; ?>
                     </div>
                     <?php endforeach; ?>

@@ -30,7 +30,7 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-star"></i> <?= e(t('pkg3d_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('star') ?> <?= e(t('pkg3d_hero_badge')) ?></span>
                 <h1><?= e(t('pkg3d_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('pkg3d_hero_sub')) ?></p>
             </div>
@@ -52,7 +52,7 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
                 <div class="grid-2" style="grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: start;">
                     <div>
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-route"></i> <?= e(t('pkg3d_itinerary_badge')) ?></span>
+                            <span class="section-badge"><?= icon('route') ?> <?= e(t('pkg3d_itinerary_badge')) ?></span>
                             <h2><?= e(t('pkg3d_itinerary_title')) ?></h2>
                         </div>
 
@@ -104,22 +104,22 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
                     <div>
                         <h3><?= e(t('pkg3d_included_heading')) ?></h3>
                         <ul class="included-icon-list yes">
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg3d_included_1')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg3d_included_2')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg3d_included_3')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg3d_included_4')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg3d_included_5')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg3d_included_6')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg3d_included_1')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg3d_included_2')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg3d_included_3')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg3d_included_4')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg3d_included_5')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg3d_included_6')) ?></li>
                         </ul>
                     </div>
                     <div>
                         <h3><?= e(t('pkg3d_excluded_heading')) ?></h3>
                         <ul class="included-icon-list no">
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('pkg3d_excluded_1')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('pkg3d_excluded_2')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('pkg3d_excluded_3')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('pkg3d_excluded_4')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('pkg3d_excluded_5')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('pkg3d_excluded_1')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('pkg3d_excluded_2')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('pkg3d_excluded_3')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('pkg3d_excluded_4')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('pkg3d_excluded_5')) ?></li>
                         </ul>
                     </div>
                 </div>
@@ -129,7 +129,7 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-camera-retro"></i> <?= e(t('pkg3d_gallery_badge')) ?></span>
+                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('pkg3d_gallery_badge')) ?></span>
                     <h2><?= e(t('pkg3d_gallery_title')) ?></h2>
                 </div>
                 <div class="gallery-grid">
@@ -160,15 +160,15 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
                 <h2 class="section-title"><?= e(t('pkg3d_faq_title')) ?></h2>
                 <div class="faq-column">
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('pkg3d_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('pkg3d_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('pkg3d_faq_a1')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('pkg3d_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('pkg3d_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('pkg3d_faq_a2')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('pkg3d_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('pkg3d_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('pkg3d_faq_a3')) ?></p></div>
                     </div>
                 </div>

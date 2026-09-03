@@ -1,5 +1,5 @@
     <a href="<?= url('saved.php') ?>" class="saved-safaris-pill" id="savedSafarisPill">
-        <i class="fas fa-heart"></i> <?= e(t('saved_safaris_count')) ?> (<span class="saved-safaris-count">0</span>)
+        <?= icon('heart') ?> <?= e(t('saved_safaris_count')) ?> (<span class="saved-safaris-count">0</span>)
     </a>
 
     <a href="https://wa.me/255697612865?text=<?= urlencode($waMessage ?? t('whatsapp_default_message')) ?>" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -76,10 +76,10 @@
                 <div class="mega-footer-col">
                     <h4><?= e(t('footer_contact')) ?></h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Arusha, Tanzania</li>
+                        <li><?= icon('map-marker-alt') ?> Arusha, Tanzania</li>
                         <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/255697612865" target="_blank" rel="noopener">+255 697 612 865</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:serengetibudgetsafari@gmail.com">serengetibudgetsafari@gmail.com</a></li>
-                        <li><i class="fas fa-clock"></i> Mon&ndash;Sun 07:00&ndash;21:00</li>
+                        <li><?= icon('envelope') ?> <a href="mailto:serengetibudgetsafari@gmail.com">serengetibudgetsafari@gmail.com</a></li>
+                        <li><?= icon('clock') ?> Mon&ndash;Sun 07:00&ndash;21:00</li>
                     </ul>
                 </div>
             </div>

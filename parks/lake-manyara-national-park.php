@@ -34,7 +34,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-circle-info"></i> <?= e(t('manyara_intro_badge')) ?></span>
+                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('manyara_intro_badge')) ?></span>
                     <h2><?= e(t('manyara_intro_title')) ?></h2>
                 </div>
                 <p><?= e(t('manyara_intro_p1')) ?></p>
@@ -57,7 +57,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-layer-group"></i> <?= e(t('manyara_zones_badge')) ?></span>
+                    <span class="section-badge"><?= icon('layer-group') ?> <?= e(t('manyara_zones_badge')) ?></span>
                     <h2><?= e(t('manyara_zones_title')) ?></h2>
                     <p><?= e(t('manyara_zones_intro')) ?></p>
                 </div>
@@ -102,7 +102,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-calendar-days"></i> <?= e(t('manyara_when_badge')) ?></span>
+                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('manyara_when_badge')) ?></span>
                     <h2><?= e(t('manyara_when_title')) ?></h2>
                     <p><?= e(t('manyara_when_intro')) ?></p>
                 </div>
@@ -114,7 +114,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-bed"></i> <?= e(t('manyara_stay_badge')) ?></span>
+                    <span class="section-badge"><?= icon('bed') ?> <?= e(t('manyara_stay_badge')) ?></span>
                     <h2><?= e(t('manyara_stay_title')) ?></h2>
                     <p><?= e(t('manyara_stay_intro')) ?></p>
                 </div>
@@ -122,7 +122,7 @@ require dirname(__DIR__) . '/includes/header.php';
                 <div class="comparison-grid">
                     <div class="comparison-card">
                         <div class="comparison-card-head">
-                            <div class="comparison-icon"><i class="fas fa-campground"></i></div>
+                            <div class="comparison-icon"><?= icon('campground') ?></div>
                             <h3><?= e(t('manyara_stay_budget_title')) ?></h3>
                             <p class="comparison-tagline"><?= e(t('manyara_stay_budget_price')) ?></p>
                         </div>
@@ -130,7 +130,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     </div>
                     <div class="comparison-card featured">
                         <div class="comparison-card-head">
-                            <div class="comparison-icon"><i class="fas fa-hotel"></i></div>
+                            <div class="comparison-icon"><?= icon('hotel') ?></div>
                             <h3><?= e(t('manyara_stay_mid_title')) ?></h3>
                             <p class="comparison-tagline"><?= e(t('manyara_stay_mid_price')) ?></p>
                         </div>
@@ -138,7 +138,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     </div>
                     <div class="comparison-card">
                         <div class="comparison-card-head">
-                            <div class="comparison-icon"><i class="fas fa-star"></i></div>
+                            <div class="comparison-icon"><?= icon('star') ?></div>
                             <h3><?= e(t('manyara_stay_luxury_title')) ?></h3>
                             <p class="comparison-tagline"><?= e(t('manyara_stay_luxury_price')) ?></p>
                         </div>
@@ -153,7 +153,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-money-bill-wave"></i> <?= e(t('manyara_fees_badge')) ?></span>
+                    <span class="section-badge"><?= icon('money-bill-wave') ?> <?= e(t('manyara_fees_badge')) ?></span>
                     <h2><?= e(t('manyara_fees_title')) ?></h2>
                     <p><?= e(t('manyara_fees_intro')) ?></p>
                 </div>
@@ -181,7 +181,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-camera-retro"></i> <?= e(t('manyara_gallery_badge')) ?></span>
+                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('manyara_gallery_badge')) ?></span>
                     <h2><?= e(t('manyara_gallery_title')) ?></h2>
                 </div>
 
@@ -216,47 +216,47 @@ require dirname(__DIR__) . '/includes/header.php';
 
         <section class="detail-section">
             <div class="container text-center">
-                <a href="<?= url('parks/') ?>" class="btn btn-outline"><?= e(t('manyara_back_to_parks')) ?> <i class="fas fa-arrow-right"></i></a>
+                <a href="<?= url('parks/') ?>" class="btn btn-outline"><?= e(t('manyara_back_to_parks')) ?> <?= icon('arrow-right') ?></a>
             </div>
         </section>
 
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-question-circle"></i> <?= e(t('manyara_faq_badge')) ?></span>
+                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('manyara_faq_badge')) ?></span>
                     <h2><?= e(t('manyara_faq_title')) ?></h2>
                 </div>
                 <div class="faq-column">
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('manyara_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('manyara_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('manyara_faq_a1')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('manyara_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('manyara_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('manyara_faq_a2')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('manyara_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('manyara_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('manyara_faq_a3')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('manyara_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('manyara_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('manyara_faq_a4')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('manyara_faq_q5')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('manyara_faq_q5')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('manyara_faq_a5')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('manyara_faq_q6')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('manyara_faq_q6')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('manyara_faq_a6')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('manyara_faq_q7')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('manyara_faq_q7')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('manyara_faq_a7')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('manyara_faq_q8')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('manyara_faq_q8')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('manyara_faq_a8')) ?></p></div>
                     </div>
                 </div>

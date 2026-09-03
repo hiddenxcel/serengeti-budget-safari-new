@@ -5629,8 +5629,12 @@ textarea:focus-visible,
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     margin: 0 auto 0.9rem;
+}
+
+.trust-stat .trust-icon .icon {
+    stroke-width: 1.75;
 }
 
 .trust-stat .trust-number {
@@ -11843,4 +11847,19 @@ body.home-page .faq-item {
 
 body.home-page .testimonial-card {
     background-color: rgba(250, 247, 240, 0.6);
+}
+
+/* ============================================================
+   LUCIDE ICONS (Phase 2)
+   Inline SVGs from assets/icons/, rendered via the icon() helper.
+   Sized/colored like the Font Awesome <i> tags they replace: 1em box
+   that follows the current font-size and text color.
+   ============================================================ */
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    flex-shrink: 0;
+    stroke: currentColor;
 }

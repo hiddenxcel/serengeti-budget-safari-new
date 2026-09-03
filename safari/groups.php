@@ -58,12 +58,12 @@ if ($isUsingRealDepartures) {
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-users"></i> <?= e(t('groups_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('users') ?> <?= e(t('groups_hero_badge')) ?></span>
                 <h1><span><?= e(t('groups_hero_title_1')) ?></span> <?= e(t('groups_hero_title_2')) ?></h1>
                 <p class="hero-sub"><?= e(t('groups_hero_sub')) ?></p>
                 <div class="page-hero-actions">
                     <a href="https://wa.me/255697612865" class="btn btn-primary" target="_blank" rel="noopener"><?= e(t('groups_hero_cta_quote')) ?></a>
-                    <a href="<?= url('contact.php') ?>" class="btn btn-success"><i class="fas fa-envelope"></i> <?= e(t('nav_contact')) ?></a>
+                    <a href="<?= url('contact.php') ?>" class="btn btn-success"><?= icon('envelope') ?> <?= e(t('nav_contact')) ?></a>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@ if ($isUsingRealDepartures) {
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-diagram-project"></i> <?= e(t('groups_how_badge')) ?></span>
+                    <span class="section-badge"><?= icon('diagram-project') ?> <?= e(t('groups_how_badge')) ?></span>
                     <h2><?= e(t('groups_how_title')) ?></h2>
                 </div>
 
@@ -105,22 +105,22 @@ if ($isUsingRealDepartures) {
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-heart"></i> <?= e(t('groups_why_badge')) ?></span>
+                    <span class="section-badge"><?= icon('heart') ?> <?= e(t('groups_why_badge')) ?></span>
                     <h2><?= e(t('groups_why_title')) ?></h2>
                 </div>
                 <div class="why-add-grid">
                     <div class="why-add-item">
-                        <span class="why-add-icon"><i class="fas fa-coins"></i></span>
+                        <span class="why-add-icon"><?= icon('coins') ?></span>
                         <h3><?= e(t('groups_why_1_title')) ?></h3>
                         <p><?= e(t('groups_why_1_desc')) ?></p>
                     </div>
                     <div class="why-add-item">
-                        <span class="why-add-icon"><i class="fas fa-user-group"></i></span>
+                        <span class="why-add-icon"><?= icon('user-group') ?></span>
                         <h3><?= e(t('groups_why_2_title')) ?></h3>
                         <p><?= e(t('groups_why_2_desc')) ?></p>
                     </div>
                     <div class="why-add-item">
-                        <span class="why-add-icon"><i class="fas fa-medal"></i></span>
+                        <span class="why-add-icon"><?= icon('medal') ?></span>
                         <h3><?= e(t('groups_why_3_title')) ?></h3>
                         <p><?= e(t('groups_why_3_desc')) ?></p>
                     </div>
@@ -131,7 +131,7 @@ if ($isUsingRealDepartures) {
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-calendar-days"></i> <?= e(t('groups_departures_badge')) ?></span>
+                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('groups_departures_badge')) ?></span>
                     <h2><?= e(t('groups_departures_title')) ?></h2>
                     <p><?= e(t('groups_departures_intro')) ?></p>
                 </div>
@@ -155,7 +155,7 @@ if ($isUsingRealDepartures) {
                                 <td><?= e($dep['price']) ?></td>
                                 <td>
                                     <span class="departure-seats <?= e($dep['status']) ?>">
-                                        <i class="fas fa-circle"></i>
+                                        <?= icon('circle') ?>
                                         <?= e(t('groups_seats_' . $dep['status'])) ?>
                                     </span>
                                 </td>
@@ -173,7 +173,7 @@ if ($isUsingRealDepartures) {
                         </tbody>
                     </table>
                 </div>
-                <p class="departures-note"><i class="fas fa-circle-info"></i> <?= e($isUsingRealDepartures ? t('groups_departures_note_real') : t('groups_departures_note')) ?></p>
+                <p class="departures-note"><?= icon('circle-info') ?> <?= e($isUsingRealDepartures ? t('groups_departures_note_real') : t('groups_departures_note')) ?></p>
             </div>
         </section>
 
@@ -209,19 +209,19 @@ if ($isUsingRealDepartures) {
                 <h2 class="section-title"><?= e(t('groups_faq_title')) ?></h2>
                 <div class="faq-column">
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('groups_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('groups_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('groups_faq_a1')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('groups_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('groups_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('groups_faq_a2')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('groups_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('groups_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('groups_faq_a3')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('groups_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('groups_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('groups_faq_a4')) ?></p></div>
                     </div>
                 </div>

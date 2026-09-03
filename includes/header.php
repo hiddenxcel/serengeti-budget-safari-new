@@ -74,17 +74,17 @@
                     <li><a href="<?= url('') ?>" class="<?= $page === 'home' ? 'active' : '' ?>"><?= e(t('nav_home')) ?></a></li>
 
                     <li class="has-mega">
-                        <button type="button" class="mega-trigger" aria-expanded="false"><?= e(t('nav_safaris')) ?> <i class="fas fa-chevron-down"></i></button>
+                        <button type="button" class="mega-trigger" aria-expanded="false"><?= e(t('nav_safaris')) ?> <?= icon('chevron-down') ?></button>
                         <div class="mega-panel">
                             <div class="mega-panel-inner">
                                 <div class="mega-col">
                                     <span class="mega-col-heading"><?= e(t('nav_safaris_by_style_heading')) ?></span>
                                     <a href="<?= url('safari/budget-safari-guide.php') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><i class="fas fa-wallet"></i></span>
+                                        <span class="mega-link-icon"><?= icon('wallet') ?></span>
                                         <span><strong><?= e(t('nav_safari_budget')) ?></strong><small><?= e(t('nav_safari_budget_desc')) ?></small></span>
                                     </a>
                                     <a href="<?= url('safari/luxury-safari-guide.php') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><i class="fas fa-gem"></i></span>
+                                        <span class="mega-link-icon"><?= icon('gem') ?></span>
                                         <span><strong><?= e(t('nav_safari_luxury')) ?></strong><small><?= e(t('nav_safari_luxury_desc')) ?></small></span>
                                     </a>
                                     <a href="<?= url('safari/great-migration-guide.php') ?>" class="mega-link">
@@ -92,25 +92,25 @@
                                         <span><strong><?= e(t('nav_safari_migration')) ?></strong><small><?= e(t('nav_safari_migration_desc')) ?></small></span>
                                     </a>
                                     <a href="<?= url('safari/groups.php') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><i class="fas fa-users"></i></span>
+                                        <span class="mega-link-icon"><?= icon('users') ?></span>
                                         <span><strong><?= e(t('nav_safari_family')) ?></strong><small><?= e(t('nav_safari_family_desc')) ?></small></span>
                                     </a>
                                 </div>
                                 <div class="mega-col">
                                     <span class="mega-col-heading"><?= e(t('nav_safaris_more_heading')) ?></span>
                                     <a href="<?= url('safari/day-trips-guide.php') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><i class="fas fa-hiking"></i></span>
+                                        <span class="mega-link-icon"><?= icon('hiking') ?></span>
                                         <span><strong><?= e(t('nav_day_trips')) ?></strong><small><?= e(t('nav_day_trips_desc')) ?></small></span>
                                     </a>
                                     <a href="<?= url('trekking/') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><i class="fas fa-mountain"></i></span>
+                                        <span class="mega-link-icon"><?= icon('mountain') ?></span>
                                         <span><strong><?= e(t('nav_trekking')) ?></strong><small><?= e(t('nav_trekking_desc')) ?></small></span>
                                     </a>
                                     <a href="<?= url('zanzibar/') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><i class="fas fa-umbrella-beach"></i></span>
+                                        <span class="mega-link-icon"><?= icon('umbrella-beach') ?></span>
                                         <span><strong><?= e(t('nav_zanzibar')) ?></strong><small><?= e(t('nav_zanzibar_desc')) ?></small></span>
                                     </a>
-                                    <a href="<?= url('safari/') ?>" class="mega-cta"><?= e(t('nav_safaris_cta')) ?> <i class="fas fa-arrow-right"></i></a>
+                                    <a href="<?= url('safari/') ?>" class="mega-cta"><?= e(t('nav_safaris_cta')) ?> <?= icon('arrow-right') ?></a>
                                 </div>
                                 <a href="<?= url('safari/') ?>" class="mega-feature">
                                     <img src="<?= asset('images/wildlife/lion-pride-zebra-kill.jpg') ?>" alt="<?= e(t('nav_safaris_featured_title')) ?>" loading="lazy" />
@@ -126,7 +126,7 @@
                     </li>
 
                     <li class="has-mega">
-                        <button type="button" class="mega-trigger" aria-expanded="false"><?= e(t('nav_parks')) ?> <i class="fas fa-chevron-down"></i></button>
+                        <button type="button" class="mega-trigger" aria-expanded="false"><?= e(t('nav_parks')) ?> <?= icon('chevron-down') ?></button>
                         <div class="mega-panel">
                             <div class="mega-panel-inner">
                                 <div class="mega-col">
@@ -143,7 +143,7 @@
                                     <a href="<?= url('parks/nyerere-national-park.php') ?>" class="mega-link-plain">Nyerere (Selous)</a>
                                     <a href="<?= url('parks/ruaha-national-park.php') ?>" class="mega-link-plain">Ruaha</a>
                                     <a href="<?= url('parks/mikumi-national-park.php') ?>" class="mega-link-plain">Mikumi</a>
-                                    <a href="<?= url('parks/') ?>" class="mega-cta"><?= e(t('nav_destinations_cta')) ?> <i class="fas fa-arrow-right"></i></a>
+                                    <a href="<?= url('parks/') ?>" class="mega-cta"><?= e(t('nav_destinations_cta')) ?> <?= icon('arrow-right') ?></a>
                                 </div>
                                 <a href="<?= url('parks/serengeti-national-park.php') ?>" class="mega-feature">
                                     <img src="<?= asset('images/hero/ngorongoro-crater-panorama.jpg') ?>" alt="<?= e(t('nav_destinations_featured_title')) ?>" loading="lazy" />
@@ -166,7 +166,7 @@
             </nav>
             <div class="header-right">
                 <div class="header-phone">
-                    <span class="header-phone-icon" aria-hidden="true"><i class="fas fa-phone-alt"></i></span>
+                    <span class="header-phone-icon" aria-hidden="true"><?= icon('phone-alt') ?></span>
                     <span class="header-phone-text">
                         <span class="header-phone-label"><?= e(t('nav_call_anytime')) ?></span>
                         <a href="tel:+255697612865" class="header-phone-number">+255 697 612 865</a>

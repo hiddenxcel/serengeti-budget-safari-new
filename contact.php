@@ -19,7 +19,7 @@ require __DIR__ . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-comments"></i> <?= e(t('contact_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('comments') ?> <?= e(t('contact_hero_badge')) ?></span>
                 <h1><?= e(t('contact_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('contact_hero_sub')) ?></p>
             </div>
@@ -33,7 +33,7 @@ require __DIR__ . '/includes/header.php';
                     <div class="contact-form-card">
 
                         <div class="contact-success" id="contactSuccess">
-                            <i class="fas fa-circle-check"></i>
+                            <?= icon('circle-check') ?>
                             <h2><?= e(t('contact_form_success_title')) ?></h2>
                             <p><?= e(t('contact_form_success_desc')) ?></p>
                             <a href="https://wa.me/255697612865" class="btn btn-success" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -110,7 +110,7 @@ require __DIR__ . '/includes/header.php';
                                 </div>
                             </div>
                             <div class="contact-info-item">
-                                <span class="contact-info-icon"><i class="fas fa-envelope"></i></span>
+                                <span class="contact-info-icon"><?= icon('envelope') ?></span>
                                 <div>
                                     <strong><?= e(t('contact_info_email')) ?></strong>
                                     <a href="mailto:serengetibudgetsafari@gmail.com">serengetibudgetsafari@gmail.com</a>
@@ -118,7 +118,7 @@ require __DIR__ . '/includes/header.php';
                                 </div>
                             </div>
                             <div class="contact-info-item">
-                                <span class="contact-info-icon"><i class="fas fa-phone-alt"></i></span>
+                                <span class="contact-info-icon"><?= icon('phone-alt') ?></span>
                                 <div>
                                     <strong><?= e(t('contact_info_phone')) ?></strong>
                                     <a href="tel:+255697612865">+255 697 612 865</a>
@@ -126,14 +126,14 @@ require __DIR__ . '/includes/header.php';
                                 </div>
                             </div>
                             <div class="contact-info-item">
-                                <span class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span class="contact-info-icon"><?= icon('map-marker-alt') ?></span>
                                 <div>
                                     <strong><?= e(t('contact_info_office')) ?></strong>
                                     <p style="margin-top:0.15rem;"><?= e(t('contact_info_office_desc')) ?></p>
                                 </div>
                             </div>
                             <div class="contact-info-item">
-                                <span class="contact-info-icon"><i class="fas fa-clock"></i></span>
+                                <span class="contact-info-icon"><?= icon('clock') ?></span>
                                 <div>
                                     <strong><?= e(t('contact_info_hours')) ?></strong>
                                     <p style="margin-top:0.15rem;"><?= e(t('contact_info_hours_desc')) ?></p>
@@ -150,15 +150,15 @@ require __DIR__ . '/includes/header.php';
                 <h2 class="section-title"><?= e(t('contact_faq_title')) ?></h2>
                 <div class="faq-column">
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('contact_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('contact_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('contact_faq_a1')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('contact_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('contact_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('contact_faq_a2')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('contact_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('contact_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('contact_faq_a3')) ?></p></div>
                     </div>
                 </div>

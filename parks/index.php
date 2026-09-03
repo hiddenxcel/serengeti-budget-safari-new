@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-map"></i> <?= e(t('parks_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('map') ?> <?= e(t('parks_hero_badge')) ?></span>
                 <h1><?= e(t('parks_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('parks_hero_sub')) ?></p>
             </div>
@@ -30,7 +30,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-map-marked-alt"></i> <?= e(t('parks_northern_badge')) ?></span>
+                    <span class="section-badge"><?= icon('map-marked-alt') ?> <?= e(t('parks_northern_badge')) ?></span>
                     <h2><?= e(t('parks_northern_title')) ?></h2>
                     <p><?= e(t('parks_northern_intro')) ?></p>
                 </div>
@@ -44,7 +44,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3><?= e(t('parks_serengeti_name')) ?></h3>
                             <p><?= e(t('parks_serengeti_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/ngorongoro-conservation-area.php') ?>" class="park-preview-card">
@@ -55,7 +55,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3><?= e(t('parks_ngorongoro_name')) ?></h3>
                             <p><?= e(t('parks_ngorongoro_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/tarangire-national-park.php') ?>" class="park-preview-card">
@@ -66,7 +66,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3><?= e(t('parks_tarangire_name')) ?></h3>
                             <p><?= e(t('parks_tarangire_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/lake-manyara-national-park.php') ?>" class="park-preview-card">
@@ -77,7 +77,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3><?= e(t('parks_manyara_name')) ?></h3>
                             <p><?= e(t('parks_manyara_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/arusha-national-park.php') ?>" class="park-preview-card">
@@ -88,7 +88,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3><?= e(t('parks_arusha_name')) ?></h3>
                             <p><?= e(t('parks_arusha_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/kilimanjaro-national-park.php') ?>" class="park-preview-card">
@@ -99,7 +99,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3><?= e(t('parks_kilimanjaro_name')) ?></h3>
                             <p><?= e(t('parks_kilimanjaro_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                 </div>
@@ -109,7 +109,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-compass"></i> <?= e(t('parks_southern_badge')) ?></span>
+                    <span class="section-badge"><?= icon('compass') ?> <?= e(t('parks_southern_badge')) ?></span>
                     <h2><?= e(t('parks_southern_title')) ?></h2>
                     <p><?= e(t('parks_southern_intro')) ?></p>
                 </div>
@@ -123,7 +123,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3><?= e(t('parks_nyerere_name')) ?></h3>
                             <p><?= e(t('parks_nyerere_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/ruaha-national-park.php') ?>" class="park-preview-card">
@@ -134,7 +134,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3><?= e(t('parks_ruaha_name')) ?></h3>
                             <p><?= e(t('parks_ruaha_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                     <a href="<?= url('parks/mikumi-national-park.php') ?>" class="park-preview-card">
@@ -145,7 +145,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="park-preview-body">
                             <h3><?= e(t('parks_mikumi_name')) ?></h3>
                             <p><?= e(t('parks_mikumi_desc')) ?></p>
-                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <i class="fas fa-arrow-right"></i></span>
+                            <span class="park-preview-link"><?= e(t('parks_full_guide')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </a>
                 </div>
@@ -155,7 +155,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-table-columns"></i> <?= e(t('parks_compare_badge')) ?></span>
+                    <span class="section-badge"><?= icon('table-columns') ?> <?= e(t('parks_compare_badge')) ?></span>
                     <h2><?= e(t('parks_compare_title')) ?></h2>
                     <p><?= e(t('parks_compare_intro')) ?></p>
                 </div>
@@ -192,7 +192,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-circle-question"></i> <?= e(t('parks_which_badge')) ?></span>
+                    <span class="section-badge"><?= icon('circle-question') ?> <?= e(t('parks_which_badge')) ?></span>
                     <h2><?= e(t('parks_which_title')) ?></h2>
                     <p><?= e(t('parks_which_intro')) ?></p>
                 </div>
@@ -221,55 +221,55 @@ require dirname(__DIR__) . '/includes/header.php';
 
         <section class="detail-section">
             <div class="container text-center">
-                <a href="<?= url('safari/') ?>" class="btn btn-outline"><?= e(t('parks_see_safaris')) ?> <i class="fas fa-arrow-right"></i></a>
+                <a href="<?= url('safari/') ?>" class="btn btn-outline"><?= e(t('parks_see_safaris')) ?> <?= icon('arrow-right') ?></a>
             </div>
         </section>
 
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-question-circle"></i> <?= e(t('parks_faq_badge')) ?></span>
+                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('parks_faq_badge')) ?></span>
                     <h2><?= e(t('parks_faq_title')) ?></h2>
                 </div>
                 <div class="faq-column">
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('parks_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('parks_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('parks_faq_a1')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('parks_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('parks_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('parks_faq_a2')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('parks_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('parks_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('parks_faq_a3')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('parks_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('parks_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('parks_faq_a4')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('parks_faq_q5')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('parks_faq_q5')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('parks_faq_a5')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('parks_faq_q6')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('parks_faq_q6')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('parks_faq_a6')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('parks_faq_q7')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('parks_faq_q7')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('parks_faq_a7')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('parks_faq_q8')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('parks_faq_q8')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('parks_faq_a8')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('parks_faq_q9')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('parks_faq_q9')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('parks_faq_a9')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('parks_faq_q10')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('parks_faq_q10')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('parks_faq_a10')) ?></p></div>
                     </div>
                 </div>

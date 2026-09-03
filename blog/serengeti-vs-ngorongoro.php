@@ -26,9 +26,9 @@ require dirname(__DIR__) . '/includes/header.php';
             <h1><?= e(t('blogsvn_h1')) ?></h1>
             <p class="detail-hero-route"><?= e(t('blogsvn_hero_sub')) ?></p>
             <div class="article-meta-bar">
-                <span><i class="fas fa-user-pen"></i> <?= e(t('blogcost_author')) ?></span>
-                <span><i class="fas fa-clock"></i> 6 <?= e(t('blog_min_read')) ?></span>
-                <span><i class="fas fa-calendar"></i> <?= e(t('blogcost_date')) ?></span>
+                <span><?= icon('user-pen') ?> <?= e(t('blogcost_author')) ?></span>
+                <span><?= icon('clock') ?> 6 <?= e(t('blog_min_read')) ?></span>
+                <span><?= icon('calendar') ?> <?= e(t('blogcost_date')) ?></span>
             </div>
         </div>
     </section>
@@ -39,12 +39,12 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><i class="fas fa-bolt"></i> <?= e(t('blogsvn_quick_badge')) ?></span>
+                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogsvn_quick_badge')) ?></span>
                     <h2><?= e(t('blogsvn_quick_title')) ?></h2>
                     <p><?= e(t('blogsvn_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-ruler-combined"></i></span>
+                            <span class="qq-icon"><?= icon('ruler-combined') ?></span>
                             <div><h4><?= e(t('blogsvn_qq1_q')) ?></h4><p><?= e(t('blogsvn_qq1_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
@@ -56,24 +56,24 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div><h4><?= e(t('blogsvn_qq3_q')) ?></h4><p><?= e(t('blogsvn_qq3_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-clock"></i></span>
+                            <span class="qq-icon"><?= icon('clock') ?></span>
                             <div><h4><?= e(t('blogsvn_qq4_q')) ?></h4><p><?= e(t('blogsvn_qq4_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-money-bill-wave"></i></span>
+                            <span class="qq-icon"><?= icon('money-bill-wave') ?></span>
                             <div><h4><?= e(t('blogsvn_qq5_q')) ?></h4><p><?= e(t('blogsvn_qq5_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-check-double"></i></span>
+                            <span class="qq-icon"><?= icon('check-double') ?></span>
                             <div><h4><?= e(t('blogsvn_qq6_q')) ?></h4><p><?= e(t('blogsvn_qq6_a')) ?></p></div>
                         </div>
                     </div>
-                    <a href="#faq" class="btn btn-outline btn-sm"><?= e(t('blogsvn_see_faq')) ?> <i class="fas fa-arrow-right"></i></a>
+                    <a href="#faq" class="btn btn-outline btn-sm"><?= e(t('blogsvn_see_faq')) ?> <?= icon('arrow-right') ?></a>
                 </div>
 
                 <!-- Table of contents -->
                 <nav class="article-toc" aria-label="Table of contents">
-                    <h3><i class="fas fa-list-ul"></i> <?= e(t('blogsvn_toc_title')) ?></h3>
+                    <h3><?= icon('list-ul') ?> <?= e(t('blogsvn_toc_title')) ?></h3>
                     <ul>
                         <li><a href="#short-answer">💡 <?= e(t('blogsvn_toc_1')) ?></a></li>
                         <li><a href="#side-by-side">📊 <?= e(t('blogsvn_toc_2')) ?></a></li>
@@ -86,7 +86,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Short answer -->
                 <section id="short-answer" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-circle-info"></i> <?= e(t('blogsvn_s1_badge')) ?></span>
+                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('blogsvn_s1_badge')) ?></span>
                     <h2><?= e(t('blogsvn_s1_title')) ?></h2>
                     <p><?= t('blogsvn_s1_p1') ?></p>
                     <p><?= e(t('blogsvn_s1_p2')) ?></p>
@@ -100,12 +100,12 @@ require dirname(__DIR__) . '/includes/header.php';
                         <strong><?= e(t('blogcost_cta_title')) ?></strong>
                         <em><?= e(t('blogcost_cta_price')) ?></em>
                     </div>
-                    <i class="fas fa-arrow-right" style="font-size:1.3rem;"></i>
+                    <?= icon('arrow-right', '', 'font-size:1.3rem;') ?>
                 </a>
 
                 <!-- Side by side -->
                 <section id="side-by-side" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-scale-balanced"></i> <?= e(t('blogsvn_s2_badge')) ?></span>
+                    <span class="section-badge"><?= icon('scale-balanced') ?> <?= e(t('blogsvn_s2_badge')) ?></span>
                     <h2><?= e(t('blogsvn_s2_title')) ?></h2>
                     <div class="article-table-wrap">
                         <table class="article-table">
@@ -131,25 +131,25 @@ require dirname(__DIR__) . '/includes/header.php';
                     <h2><?= e(t('blogsvn_s3_title')) ?></h2>
                     <p><?= t('blogsvn_s3_p1') ?></p>
                     <ul class="included-icon-list yes">
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogsvn_s3_i1')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogsvn_s3_i2')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogsvn_s3_i3')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogsvn_s3_i1')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogsvn_s3_i2')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogsvn_s3_i3')) ?></li>
                     </ul>
                     <p><?= e(t('blogsvn_s3_p2')) ?> <a href="<?= url('parks/serengeti-national-park.php') ?>"><?= e(t('blogsvn_s3_link')) ?> →</a></p>
                 </section>
 
                 <!-- Ngorongoro -->
                 <section id="ngorongoro" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-mountain"></i> <?= e(t('blogsvn_s4_badge')) ?></span>
+                    <span class="section-badge"><?= icon('mountain') ?> <?= e(t('blogsvn_s4_badge')) ?></span>
                     <h2><?= e(t('blogsvn_s4_title')) ?></h2>
                     <p><?= t('blogsvn_s4_p1') ?></p>
                     <ul class="included-icon-list yes">
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogsvn_s4_i1')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogsvn_s4_i2')) ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= e(t('blogsvn_s4_i3')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogsvn_s4_i1')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogsvn_s4_i2')) ?></li>
+                        <li><?= icon('check-circle') ?> <?= e(t('blogsvn_s4_i3')) ?></li>
                     </ul>
                     <div class="migration-badge">
-                        <i class="fas fa-triangle-exclamation"></i>
+                        <?= icon('triangle-exclamation') ?>
                         <span><strong><?= e(t('blogsvn_s4_warn_t')) ?></strong> <?= e(t('blogsvn_s4_warn_d')) ?></span>
                     </div>
                     <p style="margin-top:1rem;"><?= e(t('blogsvn_s4_p2')) ?> <a href="<?= url('parks/ngorongoro-conservation-area.php') ?>"><?= e(t('blogsvn_s4_link')) ?> →</a></p>
@@ -157,7 +157,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Together -->
                 <section id="together" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-route"></i> <?= e(t('blogsvn_s5_badge')) ?></span>
+                    <span class="section-badge"><?= icon('route') ?> <?= e(t('blogsvn_s5_badge')) ?></span>
                     <h2><?= e(t('blogsvn_s5_title')) ?></h2>
                     <p><?= t('blogsvn_s5_p1') ?></p>
                     <p><?= e(t('blogsvn_s5_p2')) ?></p>
@@ -165,29 +165,29 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-question-circle"></i> <?= e(t('blogsvn_faq_badge')) ?></span>
+                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogsvn_faq_badge')) ?></span>
                     <h2><?= e(t('blogsvn_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a1')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a2')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a3')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a4')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q5')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a5')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q6')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a6')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a1')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a2')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a3')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a4')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q5')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a5')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q6')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a6')) ?></p></div></div>
                     </div>
                 </section>
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><i class="fas fa-link"></i> <?= e(t('blogcost_related_badge')) ?></span>
+                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogcost_related_badge')) ?></span>
                     <h2><?= e(t('blogcost_related_title')) ?></h2>
                     <div class="related-grid">
-                        <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><i class="fas fa-wallet"></i> <?= e(t('blog_art_cost_title')) ?></a>
+                        <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('wallet') ?> <?= e(t('blog_art_cost_title')) ?></a>
                         <a href="<?= url('blog/great-migration-month-by-month.php') ?>" class="related-link"><i class="fas fa-kiwi-bird"></i> <?= e(t('blog_art_migration_title')) ?></a>
                         <a href="<?= url('blog/big-five-tanzania.php') ?>" class="related-link"><i class="fas fa-paw"></i> <?= e(t('blog_art_bigfive_title')) ?></a>
-                        <a href="<?= url('parks/') ?>" class="related-link"><i class="fas fa-map"></i> <?= e(t('blogsvn_related_parks')) ?></a>
-                        <a href="<?= url('blog/') ?>" class="related-link"><i class="fas fa-book"></i> <?= e(t('blog_hero_title')) ?></a>
-                        <a href="<?= url('safari/') ?>" class="related-link"><i class="fas fa-binoculars"></i> <?= e(t('blogcost_related_itineraries')) ?></a>
+                        <a href="<?= url('parks/') ?>" class="related-link"><?= icon('map') ?> <?= e(t('blogsvn_related_parks')) ?></a>
+                        <a href="<?= url('blog/') ?>" class="related-link"><?= icon('book') ?> <?= e(t('blog_hero_title')) ?></a>
+                        <a href="<?= url('safari/') ?>" class="related-link"><?= icon('binoculars') ?> <?= e(t('blogcost_related_itineraries')) ?></a>
                     </div>
                 </section>
 

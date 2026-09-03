@@ -17,8 +17,8 @@ require dirname(__DIR__) . '/includes/header.php';
 ?>
 
     <div id="guide-progress-bar"></div>
-    <button id="guide-back-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-    <button id="guide-floating-cta" class="show"><i class="fas fa-paper-plane"></i> <?= e(t('bsg_hero_cta_quote')) ?></button>
+    <button id="guide-back-top" aria-label="Back to top"><?= icon('arrow-up') ?></button>
+    <button id="guide-floating-cta" class="show"><?= icon('paper-plane') ?> <?= e(t('bsg_hero_cta_quote')) ?></button>
     <div class="guide-toast" id="guide-toast"></div>
 
     <!-- ===== BOOKING MODAL ===== -->
@@ -83,12 +83,12 @@ require dirname(__DIR__) . '/includes/header.php';
 
     <div class="container guide-container">
         <div class="guide-trust-badges">
-            <span class="guide-trust-badge"><i class="fas fa-check-circle"></i> <?= e(t('bsg_trust_1')) ?></span>
-            <span class="guide-trust-badge"><i class="fas fa-tags"></i> <?= e(t('bsg_trust_2')) ?></span>
-            <span class="guide-trust-badge"><i class="fas fa-shield-alt"></i> <?= e(t('bsg_trust_3')) ?></span>
-            <span class="guide-trust-badge"><i class="fas fa-truck-monster"></i> <?= e(t('bsg_trust_4')) ?></span>
-            <span class="guide-trust-badge"><i class="fas fa-globe-africa"></i> <?= e(t('bsg_trust_5')) ?></span>
-            <span class="guide-trust-badge"><i class="fas fa-clipboard-list"></i> <?= e(t('bsg_trust_6')) ?></span>
+            <span class="guide-trust-badge"><?= icon('check-circle') ?> <?= e(t('bsg_trust_1')) ?></span>
+            <span class="guide-trust-badge"><?= icon('tags') ?> <?= e(t('bsg_trust_2')) ?></span>
+            <span class="guide-trust-badge"><?= icon('shield-alt') ?> <?= e(t('bsg_trust_3')) ?></span>
+            <span class="guide-trust-badge"><?= icon('truck-monster') ?> <?= e(t('bsg_trust_4')) ?></span>
+            <span class="guide-trust-badge"><?= icon('globe-africa') ?> <?= e(t('bsg_trust_5')) ?></span>
+            <span class="guide-trust-badge"><?= icon('clipboard-list') ?> <?= e(t('bsg_trust_6')) ?></span>
         </div>
     </div>
 
@@ -123,7 +123,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <p><?= t('bsg_intro_p2') ?></p>
                     <p><?= t('bsg_intro_p3') ?></p>
                     <div class="guide-quote-card">
-                        <span class="guide-quote-icon"><i class="fas fa-quote-left"></i></span>
+                        <span class="guide-quote-icon"><?= icon('quote-left') ?></span>
                         <p><?= t('bsg_intro_box') ?></p>
                     </div>
 
@@ -182,7 +182,7 @@ require dirname(__DIR__) . '/includes/header.php';
                                 <li><?= t('bsg_pkg' . $i . '_f3') ?></li>
                                 <li><?= t('bsg_pkg' . $i . '_f4') ?></li>
                             </ul>
-                            <span class="guide-trust-small"><i class="fas fa-fire"></i> <?= e(t('bsg_pkg' . $i . '_trust')) ?></span>
+                            <span class="guide-trust-small"><?= icon('fire') ?> <?= e(t('bsg_pkg' . $i . '_trust')) ?></span>
                             <button type="button" class="btn btn-primary" data-package="<?= e(t('bsg_pkg' . $i . '_name')) ?>" data-price="<?= e(t('bsg_pkg' . $i . '_price')) ?>"><?= e(t('bsg_book_now')) ?></button>
                             <div class="guide-guarantee"><?= e(t('bsg_guarantee')) ?></div>
                         </div>
@@ -236,7 +236,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="guide-item-card">
                             <h4><?= t('bsg_acc' . $i . '_name') ?></h4>
                             <p><strong><?= t('bsg_acc' . $i . '_price') ?></strong></p>
-                            <p><i class="fas fa-map-marker-alt"></i> <?= t('bsg_acc' . $i . '_loc') ?></p>
+                            <p><?= icon('map-marker-alt') ?> <?= t('bsg_acc' . $i . '_loc') ?></p>
                             <p><?= t('bsg_acc' . $i . '_desc') ?></p>
                         </div>
                         <?php endfor; ?>
@@ -288,7 +288,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="faq-column">
                         <?php for ($i = 1; $i <= 8; $i++): ?>
                         <div class="faq-item-acc">
-                            <div class="faq-question-acc"><?= e(t('bsg_faq_q' . $i)) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                            <div class="faq-question-acc"><?= e(t('bsg_faq_q' . $i)) ?> <span><?= icon('chevron-down') ?></span></div>
                             <div class="faq-answer-acc"><p><?= e(t('bsg_faq_a' . $i)) ?></p></div>
                         </div>
                         <?php endfor; ?>
@@ -312,9 +312,9 @@ require dirname(__DIR__) . '/includes/header.php';
                             <span><?= e(t('bsg_share_label')) ?></span>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" target="_blank" rel="noopener" class="guide-share-btn"><i class="fab fa-facebook-f"></i> Facebook</a>
                             <a href="https://twitter.com/intent/tweet?url=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" target="_blank" rel="noopener" class="guide-share-btn"><i class="fab fa-twitter"></i> Twitter</a>
-                            <a href="mailto:?subject=<?= rawurlencode(t('bsg_h1')) ?>&amp;body=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" class="guide-share-btn"><i class="fas fa-envelope"></i> Email</a>
+                            <a href="mailto:?subject=<?= rawurlencode(t('bsg_h1')) ?>&amp;body=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" class="guide-share-btn"><?= icon('envelope') ?> Email</a>
                         </div>
-                        <button type="button" class="guide-print-btn"><i class="fas fa-print"></i> <?= e(t('bsg_print')) ?></button>
+                        <button type="button" class="guide-print-btn"><?= icon('print') ?> <?= e(t('bsg_print')) ?></button>
                     </div>
 
                 </div>

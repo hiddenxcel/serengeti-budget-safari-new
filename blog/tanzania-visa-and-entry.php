@@ -26,9 +26,9 @@ require dirname(__DIR__) . '/includes/header.php';
             <h1><?= e(t('blogvisa_h1')) ?></h1>
             <p class="detail-hero-route"><?= e(t('blogvisa_hero_sub')) ?></p>
             <div class="article-meta-bar">
-                <span><i class="fas fa-user-pen"></i> <?= e(t('blogvisa_author')) ?></span>
-                <span><i class="fas fa-clock"></i> 5 <?= e(t('blog_min_read')) ?></span>
-                <span><i class="fas fa-calendar"></i> <?= e(t('blogvisa_date')) ?></span>
+                <span><?= icon('user-pen') ?> <?= e(t('blogvisa_author')) ?></span>
+                <span><?= icon('clock') ?> 5 <?= e(t('blog_min_read')) ?></span>
+                <span><?= icon('calendar') ?> <?= e(t('blogvisa_date')) ?></span>
             </div>
         </div>
     </section>
@@ -39,41 +39,41 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><i class="fas fa-bolt"></i> <?= e(t('blogvisa_quick_badge')) ?></span>
+                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogvisa_quick_badge')) ?></span>
                     <h2><?= e(t('blogvisa_quick_title')) ?></h2>
                     <p><?= e(t('blogvisa_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-money-bill-wave"></i></span>
+                            <span class="qq-icon"><?= icon('money-bill-wave') ?></span>
                             <div><h4><?= e(t('blogvisa_qq1_q')) ?></h4><p><?= e(t('blogvisa_qq1_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-globe"></i></span>
+                            <span class="qq-icon"><?= icon('globe') ?></span>
                             <div><h4><?= e(t('blogvisa_qq2_q')) ?></h4><p><?= e(t('blogvisa_qq2_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-clock"></i></span>
+                            <span class="qq-icon"><?= icon('clock') ?></span>
                             <div><h4><?= e(t('blogvisa_qq3_q')) ?></h4><p><?= e(t('blogvisa_qq3_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-passport"></i></span>
+                            <span class="qq-icon"><?= icon('passport') ?></span>
                             <div><h4><?= e(t('blogvisa_qq4_q')) ?></h4><p><?= e(t('blogvisa_qq4_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-umbrella-beach"></i></span>
+                            <span class="qq-icon"><?= icon('umbrella-beach') ?></span>
                             <div><h4><?= e(t('blogvisa_qq5_q')) ?></h4><p><?= e(t('blogvisa_qq5_a')) ?></p></div>
                         </div>
                         <div class="quick-question-item">
-                            <span class="qq-icon"><i class="fas fa-syringe"></i></span>
+                            <span class="qq-icon"><?= icon('syringe') ?></span>
                             <div><h4><?= e(t('blogvisa_qq6_q')) ?></h4><p><?= e(t('blogvisa_qq6_a')) ?></p></div>
                         </div>
                     </div>
-                    <a href="#faq" class="btn btn-outline btn-sm"><?= e(t('blogvisa_see_faq')) ?> <i class="fas fa-arrow-right"></i></a>
+                    <a href="#faq" class="btn btn-outline btn-sm"><?= e(t('blogvisa_see_faq')) ?> <?= icon('arrow-right') ?></a>
                 </div>
 
                 <!-- Table of contents -->
                 <nav class="article-toc" aria-label="Table of contents">
-                    <h3><i class="fas fa-list-ul"></i> <?= e(t('blogvisa_toc_title')) ?></h3>
+                    <h3><?= icon('list-ul') ?> <?= e(t('blogvisa_toc_title')) ?></h3>
                     <ul>
                         <li><a href="#two-routes">🛂 <?= e(t('blogvisa_toc_1')) ?></a></li>
                         <li><a href="#requirements">📋 <?= e(t('blogvisa_toc_2')) ?></a></li>
@@ -85,7 +85,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- The two routes -->
                 <section id="two-routes" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-passport"></i> <?= e(t('blogvisa_s1_badge')) ?></span>
+                    <span class="section-badge"><?= icon('passport') ?> <?= e(t('blogvisa_s1_badge')) ?></span>
                     <h2><?= e(t('blogvisa_s1_title')) ?></h2>
                     <p><?= t('blogvisa_s1_p1') ?></p>
 
@@ -96,7 +96,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <p><?= e(t('blogvisa_s1_p3')) ?></p>
 
                     <div class="migration-badge">
-                        <i class="fas fa-triangle-exclamation"></i>
+                        <?= icon('triangle-exclamation') ?>
                         <span><strong><?= e(t('blogvisa_s1_warn_t')) ?></strong> <?= t('blogvisa_s1_warn_d') ?></span>
                     </div>
                 </section>
@@ -109,19 +109,19 @@ require dirname(__DIR__) . '/includes/header.php';
                         <strong><?= e(t('blogcost_cta_title')) ?></strong>
                         <em><?= e(t('blogcost_cta_price')) ?></em>
                     </div>
-                    <i class="fas fa-arrow-right" style="font-size:1.3rem;"></i>
+                    <?= icon('arrow-right', '', 'font-size:1.3rem;') ?>
                 </a>
 
                 <!-- Requirements -->
                 <section id="requirements" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-clipboard-check"></i> <?= e(t('blogvisa_s2_badge')) ?></span>
+                    <span class="section-badge"><?= icon('clipboard-check') ?> <?= e(t('blogvisa_s2_badge')) ?></span>
                     <h2><?= e(t('blogvisa_s2_title')) ?></h2>
                     <ul class="included-icon-list yes">
-                        <li><i class="fas fa-check-circle"></i> <strong><?= e(t('blogvisa_s2_i1_t')) ?></strong> <?= t('blogvisa_s2_i1_d') ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= t('blogvisa_s2_i2') ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= t('blogvisa_s2_i3') ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= t('blogvisa_s2_i4') ?></li>
-                        <li><i class="fas fa-check-circle"></i> <?= t('blogvisa_s2_i5') ?></li>
+                        <li><?= icon('check-circle') ?> <strong><?= e(t('blogvisa_s2_i1_t')) ?></strong> <?= t('blogvisa_s2_i1_d') ?></li>
+                        <li><?= icon('check-circle') ?> <?= t('blogvisa_s2_i2') ?></li>
+                        <li><?= icon('check-circle') ?> <?= t('blogvisa_s2_i3') ?></li>
+                        <li><?= icon('check-circle') ?> <?= t('blogvisa_s2_i4') ?></li>
+                        <li><?= icon('check-circle') ?> <?= t('blogvisa_s2_i5') ?></li>
                     </ul>
 
                     <h3><?= e(t('blogvisa_s2_sub1')) ?></h3>
@@ -130,7 +130,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Zanzibar -->
                 <section id="zanzibar" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-umbrella-beach"></i> <?= e(t('blogvisa_s3_badge')) ?></span>
+                    <span class="section-badge"><?= icon('umbrella-beach') ?> <?= e(t('blogvisa_s3_badge')) ?></span>
                     <h2><?= e(t('blogvisa_s3_title')) ?></h2>
                     <p><?= t('blogvisa_s3_p1') ?></p>
                     <p><?= t('blogvisa_s3_p2') ?></p>
@@ -139,7 +139,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Yellow fever -->
                 <section id="yellow-fever" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-syringe"></i> <?= e(t('blogvisa_s4_badge')) ?></span>
+                    <span class="section-badge"><?= icon('syringe') ?> <?= e(t('blogvisa_s4_badge')) ?></span>
                     <h2><?= e(t('blogvisa_s4_title')) ?></h2>
                     <p><?= t('blogvisa_s4_p1') ?></p>
                     <p><?= t('blogvisa_s4_p2') ?></p>
@@ -148,36 +148,36 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-question-circle"></i> <?= e(t('blogvisa_faq_badge')) ?></span>
+                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogvisa_faq_badge')) ?></span>
                     <h2><?= e(t('blogvisa_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a1')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a2')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a3')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a4')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q5')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a5')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q6')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a6')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q7')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a7')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q8')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a8')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q9')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a9')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q10')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a10')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q11')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a11')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q12')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a12')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q13')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a13')) ?></p></div></div>
-                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q14')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a14')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a1')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a2')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a3')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a4')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q5')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a5')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q6')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a6')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q7')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a7')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q8')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a8')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q9')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a9')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q10')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a10')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q11')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a11')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q12')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a12')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q13')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a13')) ?></p></div></div>
+                        <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q14')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a14')) ?></p></div></div>
                     </div>
                 </section>
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><i class="fas fa-link"></i> <?= e(t('blogvisa_related_badge')) ?></span>
+                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogvisa_related_badge')) ?></span>
                     <h2><?= e(t('blogvisa_related_title')) ?></h2>
                     <div class="related-grid">
-                        <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><i class="fas fa-money-bill-wave"></i> <?= e(t('blog_art_cost_title')) ?></a>
+                        <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('money-bill-wave') ?> <?= e(t('blog_art_cost_title')) ?></a>
                         <a href="<?= url('blog/great-migration-month-by-month.php') ?>" class="related-link"><i class="fas fa-kiwi-bird"></i> <?= e(t('blog_art_migration_title')) ?></a>
-                        <a href="<?= url('blog/') ?>" class="related-link"><i class="fas fa-book"></i> <?= e(t('blog_hero_title')) ?></a>
-                        <a href="<?= url('safari/') ?>" class="related-link"><i class="fas fa-binoculars"></i> <?= e(t('blogcost_related_itineraries')) ?></a>
-                        <a href="<?= url('contact.php') ?>" class="related-link"><i class="fas fa-envelope"></i> <?= e(t('blogvisa_related_contact')) ?></a>
+                        <a href="<?= url('blog/') ?>" class="related-link"><?= icon('book') ?> <?= e(t('blog_hero_title')) ?></a>
+                        <a href="<?= url('safari/') ?>" class="related-link"><?= icon('binoculars') ?> <?= e(t('blogcost_related_itineraries')) ?></a>
+                        <a href="<?= url('contact.php') ?>" class="related-link"><?= icon('envelope') ?> <?= e(t('blogvisa_related_contact')) ?></a>
                     </div>
                 </section>
 

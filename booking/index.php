@@ -82,7 +82,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-calendar-check"></i> <?= e(t('booking_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('calendar-check') ?> <?= e(t('booking_hero_badge')) ?></span>
                 <h1><?= e(t('booking_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e($displayTitle) ?></p>
             </div>
@@ -96,7 +96,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="contact-form-card">
 
                         <div class="contact-success" id="bookingSuccess">
-                            <i class="fas fa-circle-check"></i>
+                            <?= icon('circle-check') ?>
                             <h2 id="bookingSuccessTitle"><?= e(t('booking_success_title')) ?></h2>
                             <p id="bookingSuccessRef"></p>
                             <p><?= e(t('booking_success_desc')) ?></p>

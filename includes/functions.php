@@ -1,6 +1,53 @@
 <?php
 declare(strict_types=1);
 
+/**
+ * Render a Lucide icon (assets/icons/<name>.svg) inline, sized to the
+ * current font-size via 1em so it drops in wherever a Font Awesome <i>
+ * used to sit. $class is appended for any extra styling/JS hooks the
+ * call site needs (mirrors the old "fa-x extra-class" pattern). $style
+ * covers the handful of call sites that set an inline color/margin
+ * directly on the old <i> tag — stroke follows CSS `color`, so an inline
+ * `color:` in $style tints the icon the same way it tinted the font glyph.
+ */
+function icon(string $name, string $class = '', string $style = ''): string
+{
+    static $cache = [];
+
+    if (!isset($cache[$name])) {
+        $file = BASE_PATH . '/assets/icons/' . $name . '.svg';
+        if (!is_file($file)) {
+            $cache[$name] = '';
+        } else {
+            $svg = (string) file_get_contents($file);
+            $svg = preg_replace('/<!--.*?-->\s*/s', '', $svg) ?? $svg;
+            $svg = preg_replace('/\s(width|height|class)="[^"]*"/', '', $svg) ?? $svg;
+            $svg = preg_replace(
+                '/<svg/',
+                '<svg class="icon icon-' . e($name) . '" width="1em" height="1em"',
+                $svg,
+                1
+            ) ?? $svg;
+            $cache[$name] = trim($svg);
+        }
+    }
+
+    $markup = $cache[$name];
+    if ($markup === '') {
+        return '';
+    }
+
+    if ($class !== '') {
+        $markup = preg_replace('/class="icon /', 'class="icon ' . e($class) . ' ', $markup, 1) ?? $markup;
+    }
+
+    if ($style !== '') {
+        $markup = preg_replace('/<svg /', '<svg style="' . e($style) . '" ', $markup, 1) ?? $markup;
+    }
+
+    return $markup;
+}
+
 function base_url(): string
 {
     static $base = null;

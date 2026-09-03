@@ -45,17 +45,17 @@ require dirname(__DIR__) . '/includes/header.php';
                 <span><?= e(t('pkg5d_budget')) ?></span>
             </div>
             <h1><?= e(t('pkg5d_hero_title')) ?></h1>
-            <p class="detail-hero-route"><i class="fas fa-location-dot"></i> <?= e(t('pkg5d_hero_route')) ?></p>
+            <p class="detail-hero-route"><?= icon('location-dot') ?> <?= e(t('pkg5d_hero_route')) ?></p>
             <div class="detail-hero-price">
                 <?= e(t('pkg5d_hero_from')) ?>
                 <strong>€650 <small style="font-size:1rem;font-weight:500;"><?= e(t('pkg5d_hero_pp')) ?></small></strong>
             </div>
             <div class="detail-hero-quickfacts">
-                <span><i class="fas fa-calendar-days"></i> <?= e(t('pkg5d_qf_days')) ?></span>
-                <span><i class="fas fa-user-shield"></i> <?= e(t('pkg5d_qf_private')) ?></span>
-                <span><i class="fas fa-truck-monster"></i> <?= e(t('pkg5d_qf_jeep')) ?></span>
-                <span><i class="fas fa-users"></i> <?= e(t('pkg5d_qf_max')) ?></span>
-                <span><i class="fas fa-language"></i> <?= e(t('pkg5d_qf_guide')) ?></span>
+                <span><?= icon('calendar-days') ?> <?= e(t('pkg5d_qf_days')) ?></span>
+                <span><?= icon('user-shield') ?> <?= e(t('pkg5d_qf_private')) ?></span>
+                <span><?= icon('truck-monster') ?> <?= e(t('pkg5d_qf_jeep')) ?></span>
+                <span><?= icon('users') ?> <?= e(t('pkg5d_qf_max')) ?></span>
+                <span><?= icon('language') ?> <?= e(t('pkg5d_qf_guide')) ?></span>
             </div>
             <div class="btn-group" style="margin-top:1.4rem;">
                 <a href="#booking" class="btn btn-primary btn-lg"><?= e(t('pkg5d_hero_book')) ?></a>
@@ -67,7 +67,7 @@ require dirname(__DIR__) . '/includes/header.php';
                         data-safari-url="<?= e(url('safari/5-day-serengeti-ngorongoro-safari.php')) ?>"
                         data-safari-image="<?= e(asset('images/hero/ngorongoro-crater-panorama.jpg')) ?>"
                         data-saved-text="<?= e(t('save_safari_saved')) ?>">
-                    <i class="far fa-heart"></i> <span class="save-safari-label"><?= e(t('save_safari_add')) ?></span>
+                    <?= icon('heart') ?> <span class="save-safari-label"><?= e(t('save_safari_add')) ?></span>
                 </button>
             </div>
         </div>
@@ -101,7 +101,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-circle-info"></i> <?= e(t('pkg5d_overview_badge')) ?></span>
+                            <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('pkg5d_overview_badge')) ?></span>
                             <h2><?= e(t('pkg5d_overview_title')) ?></h2>
                         </div>
                         <p><?= e(t('pkg5d_overview_p1')) ?></p>
@@ -109,36 +109,36 @@ require dirname(__DIR__) . '/includes/header.php';
 
                         <h3 style="margin-top:1.5rem;"><?= e(t('pkg5d_love_title')) ?></h3>
                         <ul class="love-list">
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_love_1')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_love_2')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_love_3')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_love_4')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_love_5')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_love_6')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg5d_love_1')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg5d_love_2')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg5d_love_3')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg5d_love_4')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg5d_love_5')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('pkg5d_love_6')) ?></li>
                         </ul>
                     </section>
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-route"></i> <?= e(t('pkg5d_route_badge')) ?></span>
+                            <span class="section-badge"><?= icon('route') ?> <?= e(t('pkg5d_route_badge')) ?></span>
                             <h2><?= e(t('pkg5d_route_title')) ?></h2>
                         </div>
                         <div class="route-strip">
-                            <div class="route-strip-stop"><span class="route-strip-dot"><i class="fas fa-plane-arrival"></i></span><span><?= e(t('pkg5d_route_arusha')) ?></span></div>
-                            <i class="fas fa-arrow-right route-strip-arrow"></i>
+                            <div class="route-strip-stop"><span class="route-strip-dot"><?= icon('plane-arrival') ?></span><span><?= e(t('pkg5d_route_arusha')) ?></span></div>
+                            <?= icon('arrow-right', 'route-strip-arrow') ?>
                             <a href="<?= url('parks/tarangire-national-park.php') ?>" class="route-strip-stop linked"><span class="route-strip-dot"><i class="fas fa-paw"></i></span><span><?= e(t('pkg5d_route_tarangire')) ?></span></a>
-                            <i class="fas fa-arrow-right route-strip-arrow"></i>
+                            <?= icon('arrow-right', 'route-strip-arrow') ?>
                             <a href="<?= url('parks/serengeti-national-park.php') ?>" class="route-strip-stop linked"><span class="route-strip-dot"><i class="fas fa-crow"></i></span><span><?= e(t('pkg5d_route_serengeti')) ?></span></a>
-                            <i class="fas fa-arrow-right route-strip-arrow"></i>
-                            <a href="<?= url('parks/ngorongoro-conservation-area.php') ?>" class="route-strip-stop linked"><span class="route-strip-dot"><i class="fas fa-mountain"></i></span><span><?= e(t('pkg5d_route_ngorongoro')) ?></span></a>
-                            <i class="fas fa-arrow-right route-strip-arrow"></i>
-                            <div class="route-strip-stop"><span class="route-strip-dot"><i class="fas fa-flag-checkered"></i></span><span><?= e(t('pkg5d_route_arusha')) ?></span></div>
+                            <?= icon('arrow-right', 'route-strip-arrow') ?>
+                            <a href="<?= url('parks/ngorongoro-conservation-area.php') ?>" class="route-strip-stop linked"><span class="route-strip-dot"><?= icon('mountain') ?></span><span><?= e(t('pkg5d_route_ngorongoro')) ?></span></a>
+                            <?= icon('arrow-right', 'route-strip-arrow') ?>
+                            <div class="route-strip-stop"><span class="route-strip-dot"><?= icon('flag-checkered') ?></span><span><?= e(t('pkg5d_route_arusha')) ?></span></div>
                         </div>
                     </section>
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-calendar-days"></i> <?= e(t('pkg5d_itinerary_badge')) ?></span>
+                            <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('pkg5d_itinerary_badge')) ?></span>
                             <h2><?= e(t('pkg5d_itinerary_title')) ?></h2>
                             <p><?= e(t('pkg5d_itinerary_intro')) ?></p>
                         </div>
@@ -155,18 +155,18 @@ require dirname(__DIR__) . '/includes/header.php';
                                         <strong>Day <?= $d ?></strong>
                                         <small><?= e(t('pkg5d_day' . $d . '_title')) ?></small>
                                     </span>
-                                    <i class="fas fa-chevron-down"></i>
+                                    <?= icon('chevron-down') ?>
                                 </button>
                                 <div class="itinerary-day-body">
                                     <div class="itinerary-day-tags">
-                                        <span><i class="fas fa-route"></i> <?= e(t('pkg5d_day' . $d . '_drive')) ?></span>
-                                        <span><i class="fas fa-utensils"></i> <?= e(t('pkg5d_day' . $d . '_meals')) ?></span>
-                                        <span><i class="fas fa-campground"></i> <?= e(t('pkg5d_day' . $d . '_stay')) ?></span>
+                                        <span><?= icon('route') ?> <?= e(t('pkg5d_day' . $d . '_drive')) ?></span>
+                                        <span><?= icon('utensils') ?> <?= e(t('pkg5d_day' . $d . '_meals')) ?></span>
+                                        <span><?= icon('campground') ?> <?= e(t('pkg5d_day' . $d . '_stay')) ?></span>
                                     </div>
                                     <p><?= e(t('pkg5d_day' . $d . '_desc')) ?></p>
                                     <div class="itinerary-day-tags">
-                                        <span><i class="fas fa-binoculars"></i> <?= e(t('pkg5d_day' . $d . '_act1')) ?></span>
-                                        <span><i class="fas fa-check"></i> <?= e(t('pkg5d_day' . $d . '_act2')) ?></span>
+                                        <span><?= icon('binoculars') ?> <?= e(t('pkg5d_day' . $d . '_act1')) ?></span>
+                                        <span><?= icon('check') ?> <?= e(t('pkg5d_day' . $d . '_act2')) ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -176,13 +176,13 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-campground"></i> <?= e(t('pkg5d_accommodation_badge')) ?></span>
+                            <span class="section-badge"><?= icon('campground') ?> <?= e(t('pkg5d_accommodation_badge')) ?></span>
                             <h2><?= e(t('pkg5d_accommodation_title')) ?></h2>
                         </div>
                         <div class="itinerary-accordion">
                             <?php foreach ([1, 2, 3, 4] as $d): ?>
                             <div class="itinerary-day-accommodation">
-                                <i class="fas fa-bed"></i>
+                                <?= icon('bed') ?>
                                 <div>
                                     <strong>Day <?= $d ?> — <?= e(t('pkg5d_day' . $d . '_stay')) ?></strong>
                                     <div style="font-size:0.8rem;color:var(--text-secondary);"><?= e(t('pkg5d_accommodation_tier')) ?> · <?= e(t('pkg5d_day' . $d . '_meals')) ?></div>
@@ -194,24 +194,24 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-list-check"></i> <?= e(t('pkg5d_features_badge')) ?></span>
+                            <span class="section-badge"><?= icon('list-check') ?> <?= e(t('pkg5d_features_badge')) ?></span>
                             <h2><?= e(t('pkg5d_features_title')) ?></h2>
                         </div>
                         <div class="features-grid">
-                            <div class="feature-tile"><i class="fas fa-user-shield"></i><div><span><?= e(t('pkg5d_feature_type')) ?></span><strong><?= e(t('pkg5d_feature_type_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-calendar-days"></i><div><span><?= e(t('pkg5d_feature_duration')) ?></span><strong><?= e(t('pkg5d_feature_duration_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-truck-monster"></i><div><span><?= e(t('pkg5d_feature_transport')) ?></span><strong><?= e(t('pkg5d_feature_transport_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-users"></i><div><span><?= e(t('pkg5d_feature_group')) ?></span><strong><?= e(t('pkg5d_feature_group_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-language"></i><div><span><?= e(t('pkg5d_feature_guide')) ?></span><strong><?= e(t('pkg5d_feature_guide_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-campground"></i><div><span><?= e(t('pkg5d_feature_accommodation')) ?></span><strong><?= e(t('pkg5d_feature_accommodation_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-calendar-check"></i><div><span><?= e(t('pkg5d_feature_start')) ?></span><strong><?= e(t('pkg5d_feature_start_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-child-reaching"></i><div><span><?= e(t('pkg5d_feature_age')) ?></span><strong><?= e(t('pkg5d_feature_age_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('user-shield') ?><div><span><?= e(t('pkg5d_feature_type')) ?></span><strong><?= e(t('pkg5d_feature_type_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('calendar-days') ?><div><span><?= e(t('pkg5d_feature_duration')) ?></span><strong><?= e(t('pkg5d_feature_duration_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('truck-monster') ?><div><span><?= e(t('pkg5d_feature_transport')) ?></span><strong><?= e(t('pkg5d_feature_transport_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('users') ?><div><span><?= e(t('pkg5d_feature_group')) ?></span><strong><?= e(t('pkg5d_feature_group_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('language') ?><div><span><?= e(t('pkg5d_feature_guide')) ?></span><strong><?= e(t('pkg5d_feature_guide_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('campground') ?><div><span><?= e(t('pkg5d_feature_accommodation')) ?></span><strong><?= e(t('pkg5d_feature_accommodation_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('calendar-check') ?><div><span><?= e(t('pkg5d_feature_start')) ?></span><strong><?= e(t('pkg5d_feature_start_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('child-reaching') ?><div><span><?= e(t('pkg5d_feature_age')) ?></span><strong><?= e(t('pkg5d_feature_age_val')) ?></strong></div></div>
                         </div>
                     </section>
 
                     <section id="pricing" style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-calculator"></i> <?= e(t('pkg5d_pricing_badge')) ?></span>
+                            <span class="section-badge"><?= icon('calculator') ?> <?= e(t('pkg5d_pricing_badge')) ?></span>
                             <h2><?= e(t('pkg5d_pricing_title')) ?></h2>
                             <p><?= e(t('pkg5d_pricing_intro')) ?></p>
                         </div>
@@ -248,24 +248,24 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div>
                                 <h3><?= e(t('pkg5d_included_heading')) ?></h3>
                                 <ul class="included-icon-list yes">
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_included_1')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_included_2')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_included_3')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_included_4')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_included_5')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_included_6')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('pkg5d_included_7')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('pkg5d_included_1')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('pkg5d_included_2')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('pkg5d_included_3')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('pkg5d_included_4')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('pkg5d_included_5')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('pkg5d_included_6')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('pkg5d_included_7')) ?></li>
                                 </ul>
                             </div>
                             <div>
                                 <h3><?= e(t('pkg5d_excluded_heading')) ?></h3>
                                 <ul class="included-icon-list no">
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('pkg5d_excluded_1')) ?></li>
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('pkg5d_excluded_2')) ?></li>
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('pkg5d_excluded_3')) ?></li>
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('pkg5d_excluded_4')) ?></li>
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('pkg5d_excluded_5')) ?></li>
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('pkg5d_excluded_6')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('pkg5d_excluded_1')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('pkg5d_excluded_2')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('pkg5d_excluded_3')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('pkg5d_excluded_4')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('pkg5d_excluded_5')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('pkg5d_excluded_6')) ?></li>
                                 </ul>
                             </div>
                         </div>
@@ -287,10 +287,10 @@ require dirname(__DIR__) . '/includes/header.php';
                         </div>
                         <h3><?= e(t('pkg5d_activities_heading')) ?></h3>
                         <div class="tag-cloud">
-                            <span><i class="fas fa-binoculars"></i> <?= e(t('pkg5d_activity_gamedrives')) ?></span>
-                            <span><i class="fas fa-camera"></i> <?= e(t('pkg5d_activity_photo')) ?></span>
-                            <span><i class="fas fa-sun"></i> <?= e(t('pkg5d_activity_sunrise')) ?></span>
-                            <span><i class="fas fa-moon"></i> <?= e(t('pkg5d_activity_sunset')) ?></span>
+                            <span><?= icon('binoculars') ?> <?= e(t('pkg5d_activity_gamedrives')) ?></span>
+                            <span><?= icon('camera') ?> <?= e(t('pkg5d_activity_photo')) ?></span>
+                            <span><?= icon('sun') ?> <?= e(t('pkg5d_activity_sunrise')) ?></span>
+                            <span><?= icon('moon') ?> <?= e(t('pkg5d_activity_sunset')) ?></span>
                         </div>
                         <?php if ($isMigrationSeason): ?>
                         <div class="migration-badge">
@@ -308,38 +308,38 @@ require dirname(__DIR__) . '/includes/header.php';
                     <section style="margin-bottom:2.5rem;">
                         <h2 class="section-title"><?= e(t('pkg5d_faq_title')) ?></h2>
                         <div class="faq-column">
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a1')) ?></p></div></div>
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a2')) ?></p></div></div>
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a3')) ?></p></div></div>
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a4')) ?></p></div></div>
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q5')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a5')) ?></p></div></div>
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q6')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a6')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a1')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a2')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a3')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a4')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q5')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a5')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('pkg5d_faq_q6')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('pkg5d_faq_a6')) ?></p></div></div>
                         </div>
                     </section>
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-map-location-dot"></i> <?= e(t('pkg5d_getting_badge')) ?></span>
+                            <span class="section-badge"><?= icon('map-location-dot') ?> <?= e(t('pkg5d_getting_badge')) ?></span>
                             <h2><?= e(t('pkg5d_getting_title')) ?></h2>
                         </div>
                         <div class="getting-there-grid">
-                            <div class="getting-there-item"><i class="fas fa-plane-arrival"></i><strong><?= e(t('pkg5d_getting_start')) ?></strong><span><?= e(t('pkg5d_getting_start_val')) ?></span></div>
-                            <div class="getting-there-item"><i class="fas fa-flag-checkered"></i><strong><?= e(t('pkg5d_getting_end')) ?></strong><span><?= e(t('pkg5d_getting_end_val')) ?></span></div>
-                            <div class="getting-there-item"><i class="fas fa-plane"></i><strong><?= e(t('pkg5d_getting_airport')) ?></strong><span><?= e(t('pkg5d_getting_airport_val')) ?></span></div>
+                            <div class="getting-there-item"><?= icon('plane-arrival') ?><strong><?= e(t('pkg5d_getting_start')) ?></strong><span><?= e(t('pkg5d_getting_start_val')) ?></span></div>
+                            <div class="getting-there-item"><?= icon('flag-checkered') ?><strong><?= e(t('pkg5d_getting_end')) ?></strong><span><?= e(t('pkg5d_getting_end_val')) ?></span></div>
+                            <div class="getting-there-item"><?= icon('plane') ?><strong><?= e(t('pkg5d_getting_airport')) ?></strong><span><?= e(t('pkg5d_getting_airport_val')) ?></span></div>
                         </div>
                     </section>
 
                     <section>
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-medal"></i> <?= e(t('pkg5d_why_badge')) ?></span>
+                            <span class="section-badge"><?= icon('medal') ?> <?= e(t('pkg5d_why_badge')) ?></span>
                             <h2><?= e(t('pkg5d_why_title')) ?></h2>
                         </div>
                         <div class="trust-grid">
-                            <div class="trust-item"><i class="fas fa-user-tie"></i><div><strong><?= e(t('pkg5d_why_1_title')) ?></strong><p><?= e(t('pkg5d_why_1_desc')) ?></p></div></div>
-                            <div class="trust-item"><i class="fas fa-tag"></i><div><strong><?= e(t('pkg5d_why_2_title')) ?></strong><p><?= e(t('pkg5d_why_2_desc')) ?></p></div></div>
-                            <div class="trust-item"><i class="fas fa-sliders"></i><div><strong><?= e(t('pkg5d_why_3_title')) ?></strong><p><?= e(t('pkg5d_why_3_desc')) ?></p></div></div>
-                            <div class="trust-item"><i class="fas fa-headset"></i><div><strong><?= e(t('pkg5d_why_4_title')) ?></strong><p><?= e(t('pkg5d_why_4_desc')) ?></p></div></div>
-                            <div class="trust-item"><i class="fas fa-shield-halved"></i><div><strong><?= e(t('pkg5d_why_5_title')) ?></strong><p><?= e(t('pkg5d_why_5_desc')) ?></p></div></div>
+                            <div class="trust-item"><?= icon('user-tie') ?><div><strong><?= e(t('pkg5d_why_1_title')) ?></strong><p><?= e(t('pkg5d_why_1_desc')) ?></p></div></div>
+                            <div class="trust-item"><?= icon('tag') ?><div><strong><?= e(t('pkg5d_why_2_title')) ?></strong><p><?= e(t('pkg5d_why_2_desc')) ?></p></div></div>
+                            <div class="trust-item"><?= icon('sliders') ?><div><strong><?= e(t('pkg5d_why_3_title')) ?></strong><p><?= e(t('pkg5d_why_3_desc')) ?></p></div></div>
+                            <div class="trust-item"><?= icon('headset') ?><div><strong><?= e(t('pkg5d_why_4_title')) ?></strong><p><?= e(t('pkg5d_why_4_desc')) ?></p></div></div>
+                            <div class="trust-item"><?= icon('shield-halved') ?><div><strong><?= e(t('pkg5d_why_5_title')) ?></strong><p><?= e(t('pkg5d_why_5_desc')) ?></p></div></div>
                         </div>
                     </section>
 

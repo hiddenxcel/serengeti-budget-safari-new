@@ -36,7 +36,7 @@ require dirname(__DIR__) . '/includes/header.php';
                 <span><?= e(t('daytrip_tarangire_budget')) ?></span>
             </div>
             <h1><?= e(t('daytrip_tarangire_hero_title')) ?></h1>
-            <p class="detail-hero-route"><i class="fas fa-location-dot"></i> <?= e(t('daytrip_tarangire_hero_route')) ?></p>
+            <p class="detail-hero-route"><?= icon('location-dot') ?> <?= e(t('daytrip_tarangire_hero_route')) ?></p>
             <div class="detail-hero-price">
                 <?= e(t('daytrip_hero_from')) ?>
                 <strong>€300 <small style="font-size:1rem;font-weight:500;"><?= e(t('daytrip_hero_pp')) ?></small></strong>
@@ -50,11 +50,11 @@ require dirname(__DIR__) . '/includes/header.php';
 
     <div class="container">
         <div class="quick-info-bar">
-            <div class="quick-info-item"><i class="fas fa-location-dot"></i><span><?= e(t('daytrip_qi_start')) ?></span><strong><?= e(t('daytrip_tarangire_start_val')) ?></strong></div>
-            <div class="quick-info-item"><i class="fas fa-clock"></i><span><?= e(t('daytrip_qi_duration')) ?></span><strong><?= e(t('daytrips_1day')) ?></strong></div>
-            <div class="quick-info-item"><i class="fas fa-truck-monster"></i><span><?= e(t('daytrip_qi_transport')) ?></span><strong><?= e(t('daytrip_qi_transport_val')) ?></strong></div>
-            <div class="quick-info-item"><i class="fas fa-users"></i><span><?= e(t('daytrip_qi_group')) ?></span><strong><?= e(t('daytrip_qi_group_val')) ?></strong></div>
-            <div class="quick-info-item"><i class="fas fa-calendar-check"></i><span><?= e(t('daytrip_qi_availability')) ?></span><strong><?= e(t('daytrip_qi_availability_val')) ?></strong></div>
+            <div class="quick-info-item"><?= icon('location-dot') ?><span><?= e(t('daytrip_qi_start')) ?></span><strong><?= e(t('daytrip_tarangire_start_val')) ?></strong></div>
+            <div class="quick-info-item"><?= icon('clock') ?><span><?= e(t('daytrip_qi_duration')) ?></span><strong><?= e(t('daytrips_1day')) ?></strong></div>
+            <div class="quick-info-item"><?= icon('truck-monster') ?><span><?= e(t('daytrip_qi_transport')) ?></span><strong><?= e(t('daytrip_qi_transport_val')) ?></strong></div>
+            <div class="quick-info-item"><?= icon('users') ?><span><?= e(t('daytrip_qi_group')) ?></span><strong><?= e(t('daytrip_qi_group_val')) ?></strong></div>
+            <div class="quick-info-item"><?= icon('calendar-check') ?><span><?= e(t('daytrip_qi_availability')) ?></span><strong><?= e(t('daytrip_qi_availability_val')) ?></strong></div>
         </div>
     </div>
 
@@ -86,37 +86,37 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-circle-info"></i> <?= e(t('daytrip_overview_badge')) ?></span>
+                            <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('daytrip_overview_badge')) ?></span>
                             <h2><?= e(t('daytrip_tarangire_overview_title')) ?></h2>
                         </div>
                         <p><?= e(t('daytrip_tarangire_overview_p1')) ?></p>
 
                         <h3 style="margin-top:1.5rem;"><?= e(t('daytrip_love_title')) ?></h3>
                         <ul class="love-list">
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_tarangire_love_1')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_tarangire_love_2')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_tarangire_love_3')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_tarangire_love_4')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_tarangire_love_5')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('daytrip_tarangire_love_1')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('daytrip_tarangire_love_2')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('daytrip_tarangire_love_3')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('daytrip_tarangire_love_4')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('daytrip_tarangire_love_5')) ?></li>
                         </ul>
                     </section>
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-binoculars"></i> <?= e(t('daytrip_experience_badge')) ?></span>
+                            <span class="section-badge"><?= icon('binoculars') ?> <?= e(t('daytrip_experience_badge')) ?></span>
                             <h2><?= e(t('daytrip_experience_title')) ?></h2>
                         </div>
                         <div class="features-grid">
                             <div class="feature-tile"><i class="fas fa-paw"></i><div><span><?= e(t('daytrip_exp_wildlife')) ?></span><strong><?= e(t('daytrip_tarangire_exp_wildlife_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-tree"></i><div><span><?= e(t('daytrip_exp_landscape')) ?></span><strong><?= e(t('daytrip_tarangire_exp_landscape_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-truck-monster"></i><div><span><?= e(t('daytrip_exp_drive')) ?></span><strong><?= e(t('daytrip_exp_drive_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-camera"></i><div><span><?= e(t('daytrip_exp_photo')) ?></span><strong><?= e(t('daytrip_exp_photo_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('tree') ?><div><span><?= e(t('daytrip_exp_landscape')) ?></span><strong><?= e(t('daytrip_tarangire_exp_landscape_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('truck-monster') ?><div><span><?= e(t('daytrip_exp_drive')) ?></span><strong><?= e(t('daytrip_exp_drive_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('camera') ?><div><span><?= e(t('daytrip_exp_photo')) ?></span><strong><?= e(t('daytrip_exp_photo_val')) ?></strong></div></div>
                         </div>
                     </section>
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-clock"></i> <?= e(t('daytrip_timeline_badge')) ?></span>
+                            <span class="section-badge"><?= icon('clock') ?> <?= e(t('daytrip_timeline_badge')) ?></span>
                             <h2><?= e(t('daytrip_timeline_title')) ?></h2>
                         </div>
                         <div class="day-timeline">
@@ -161,15 +161,15 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-route"></i> <?= e(t('daytrip_route_badge')) ?></span>
+                            <span class="section-badge"><?= icon('route') ?> <?= e(t('daytrip_route_badge')) ?></span>
                             <h2><?= e(t('daytrip_route_title')) ?></h2>
                         </div>
                         <div class="route-strip">
-                            <div class="route-strip-stop"><span class="route-strip-dot"><i class="fas fa-plane-arrival"></i></span><span><?= e(t('daytrip_tarangire_start_val')) ?></span></div>
-                            <i class="fas fa-arrow-right route-strip-arrow"></i>
+                            <div class="route-strip-stop"><span class="route-strip-dot"><?= icon('plane-arrival') ?></span><span><?= e(t('daytrip_tarangire_start_val')) ?></span></div>
+                            <?= icon('arrow-right', 'route-strip-arrow') ?>
                             <a href="<?= url('parks/tarangire-national-park.php') ?>" class="route-strip-stop linked"><span class="route-strip-dot"><i class="fas fa-paw"></i></span><span><?= e(t('daytrip_tarangire_route_park')) ?></span></a>
-                            <i class="fas fa-arrow-right route-strip-arrow"></i>
-                            <div class="route-strip-stop"><span class="route-strip-dot"><i class="fas fa-flag-checkered"></i></span><span><?= e(t('daytrip_tarangire_start_val')) ?></span></div>
+                            <?= icon('arrow-right', 'route-strip-arrow') ?>
+                            <div class="route-strip-stop"><span class="route-strip-dot"><?= icon('flag-checkered') ?></span><span><?= e(t('daytrip_tarangire_start_val')) ?></span></div>
                         </div>
                     </section>
 
@@ -178,22 +178,22 @@ require dirname(__DIR__) . '/includes/header.php';
                             <div>
                                 <h3><?= e(t('daytrip_included_heading')) ?></h3>
                                 <ul class="included-icon-list yes">
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_included_1')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_included_2')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_included_3')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_included_4')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_included_5')) ?></li>
-                                    <li><i class="fas fa-check-circle"></i> <?= e(t('daytrip_included_6')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('daytrip_included_1')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('daytrip_included_2')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('daytrip_included_3')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('daytrip_included_4')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('daytrip_included_5')) ?></li>
+                                    <li><?= icon('check-circle') ?> <?= e(t('daytrip_included_6')) ?></li>
                                 </ul>
                             </div>
                             <div>
                                 <h3><?= e(t('daytrip_excluded_heading')) ?></h3>
                                 <ul class="included-icon-list no">
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('daytrip_excluded_1')) ?></li>
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('daytrip_excluded_2')) ?></li>
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('daytrip_excluded_3')) ?></li>
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('daytrip_excluded_4')) ?></li>
-                                    <li><i class="fas fa-times-circle"></i> <?= e(t('daytrip_excluded_5')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('daytrip_excluded_1')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('daytrip_excluded_2')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('daytrip_excluded_3')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('daytrip_excluded_4')) ?></li>
+                                    <li><?= icon('times-circle') ?> <?= e(t('daytrip_excluded_5')) ?></li>
                                 </ul>
                             </div>
                         </div>
@@ -201,16 +201,16 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-list-check"></i> <?= e(t('daytrip_features_badge')) ?></span>
+                            <span class="section-badge"><?= icon('list-check') ?> <?= e(t('daytrip_features_badge')) ?></span>
                             <h2><?= e(t('daytrip_features_title')) ?></h2>
                         </div>
                         <div class="features-grid">
-                            <div class="feature-tile"><i class="fas fa-user-shield"></i><div><span><?= e(t('daytrip_feature_type')) ?></span><strong><?= e(t('daytrip_feature_type_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-calendar-check"></i><div><span><?= e(t('daytrip_feature_start')) ?></span><strong><?= e(t('daytrip_qi_availability_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-bed"></i><div><span><?= e(t('daytrip_feature_accommodation')) ?></span><strong><?= e(t('daytrip_feature_accommodation_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-user-tie"></i><div><span><?= e(t('daytrip_feature_guide')) ?></span><strong><?= e(t('daytrip_feature_guide_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-truck-monster"></i><div><span><?= e(t('daytrip_feature_transport')) ?></span><strong><?= e(t('daytrip_qi_transport_val')) ?></strong></div></div>
-                            <div class="feature-tile"><i class="fas fa-child"></i><div><span><?= e(t('daytrip_feature_family')) ?></span><strong><?= e(t('daytrip_feature_family_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('user-shield') ?><div><span><?= e(t('daytrip_feature_type')) ?></span><strong><?= e(t('daytrip_feature_type_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('calendar-check') ?><div><span><?= e(t('daytrip_feature_start')) ?></span><strong><?= e(t('daytrip_qi_availability_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('bed') ?><div><span><?= e(t('daytrip_feature_accommodation')) ?></span><strong><?= e(t('daytrip_feature_accommodation_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('user-tie') ?><div><span><?= e(t('daytrip_feature_guide')) ?></span><strong><?= e(t('daytrip_feature_guide_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('truck-monster') ?><div><span><?= e(t('daytrip_feature_transport')) ?></span><strong><?= e(t('daytrip_qi_transport_val')) ?></strong></div></div>
+                            <div class="feature-tile"><?= icon('child') ?><div><span><?= e(t('daytrip_feature_family')) ?></span><strong><?= e(t('daytrip_feature_family_val')) ?></strong></div></div>
                         </div>
                     </section>
 
@@ -232,7 +232,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section id="pricing" style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-calculator"></i> <?= e(t('daytrip_pricing_badge')) ?></span>
+                            <span class="section-badge"><?= icon('calculator') ?> <?= e(t('daytrip_pricing_badge')) ?></span>
                             <h2><?= e(t('daytrip_pricing_title')) ?></h2>
                             <p><?= e(t('daytrip_pricing_intro')) ?></p>
                         </div>
@@ -266,46 +266,46 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-map-location-dot"></i> <?= e(t('daytrip_pickup_badge')) ?></span>
+                            <span class="section-badge"><?= icon('map-location-dot') ?> <?= e(t('daytrip_pickup_badge')) ?></span>
                             <h2><?= e(t('daytrip_pickup_title2')) ?></h2>
                         </div>
                         <div class="getting-there-grid">
-                            <div class="getting-there-item"><i class="fas fa-hotel"></i><strong><?= e(t('daytrip_pickup_where')) ?></strong><span><?= e(t('daytrip_pickup_where_val')) ?></span></div>
-                            <div class="getting-there-item"><i class="fas fa-clock"></i><strong><?= e(t('daytrip_pickup_time')) ?></strong><span>06:30 AM</span></div>
-                            <div class="getting-there-item"><i class="fas fa-flag-checkered"></i><strong><?= e(t('daytrip_pickup_return')) ?></strong><span>~19:00</span></div>
+                            <div class="getting-there-item"><?= icon('hotel') ?><strong><?= e(t('daytrip_pickup_where')) ?></strong><span><?= e(t('daytrip_pickup_where_val')) ?></span></div>
+                            <div class="getting-there-item"><?= icon('clock') ?><strong><?= e(t('daytrip_pickup_time')) ?></strong><span>06:30 AM</span></div>
+                            <div class="getting-there-item"><?= icon('flag-checkered') ?><strong><?= e(t('daytrip_pickup_return')) ?></strong><span>~19:00</span></div>
                         </div>
                     </section>
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-suitcase"></i> <?= e(t('daytrip_bring_badge')) ?></span>
+                            <span class="section-badge"><?= icon('suitcase') ?> <?= e(t('daytrip_bring_badge')) ?></span>
                             <h2><?= e(t('daytrip_bring_title2')) ?></h2>
                         </div>
                         <div class="tag-cloud">
-                            <span><i class="fas fa-passport"></i> <?= e(t('daytrip_bring_1')) ?></span>
-                            <span><i class="fas fa-shirt"></i> <?= e(t('daytrip_bring_2')) ?></span>
+                            <span><?= icon('passport') ?> <?= e(t('daytrip_bring_1')) ?></span>
+                            <span><?= icon('shirt') ?> <?= e(t('daytrip_bring_2')) ?></span>
                             <span><i class="fas fa-hat-cowboy"></i> <?= e(t('daytrip_bring_3')) ?></span>
-                            <span><i class="fas fa-glasses"></i> <?= e(t('daytrip_bring_4')) ?></span>
+                            <span><?= icon('glasses') ?> <?= e(t('daytrip_bring_4')) ?></span>
                             <span><i class="fas fa-pump-soap"></i> <?= e(t('daytrip_bring_5')) ?></span>
-                            <span><i class="fas fa-camera"></i> <?= e(t('daytrip_bring_6')) ?></span>
-                            <span><i class="fas fa-shoe-prints"></i> <?= e(t('daytrip_bring_7')) ?></span>
+                            <span><?= icon('camera') ?> <?= e(t('daytrip_bring_6')) ?></span>
+                            <span><?= icon('shoe-prints') ?> <?= e(t('daytrip_bring_7')) ?></span>
                         </div>
                     </section>
 
                     <section style="margin-bottom:2.5rem;">
                         <h2 class="section-title"><?= e(t('daytrip_faq_title')) ?></h2>
                         <div class="faq-column">
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('daytrip_tarangire_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('daytrip_tarangire_faq_a1')) ?></p></div></div>
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('daytrip_tarangire_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('daytrip_tarangire_faq_a2')) ?></p></div></div>
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('daytrip_tarangire_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('daytrip_tarangire_faq_a3')) ?></p></div></div>
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('daytrip_tarangire_faq_q4')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('daytrip_tarangire_faq_a4')) ?></p></div></div>
-                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('daytrip_tarangire_faq_q5')) ?> <span><i class="fas fa-chevron-down"></i></span></div><div class="faq-answer-acc"><p><?= e(t('daytrip_tarangire_faq_a5')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('daytrip_tarangire_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('daytrip_tarangire_faq_a1')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('daytrip_tarangire_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('daytrip_tarangire_faq_a2')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('daytrip_tarangire_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('daytrip_tarangire_faq_a3')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('daytrip_tarangire_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('daytrip_tarangire_faq_a4')) ?></p></div></div>
+                            <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('daytrip_tarangire_faq_q5')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('daytrip_tarangire_faq_a5')) ?></p></div></div>
                         </div>
                     </section>
 
                     <section>
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-compass"></i> <?= e(t('daytrip_related_badge')) ?></span>
+                            <span class="section-badge"><?= icon('compass') ?> <?= e(t('daytrip_related_badge')) ?></span>
                             <h2><?= e(t('daytrip_related_title')) ?></h2>
                         </div>
                         <div class="grid-3">
@@ -318,7 +318,7 @@ require dirname(__DIR__) . '/includes/header.php';
                                     <h3><?= e(t('daytrip_ngorongoro_title')) ?></h3>
                                     <div class="day-trip-card-footer">
                                         <div class="price-tag">€230 <small><?= e(t('daytrips_from_pp')) ?></small></div>
-                                        <span class="popular-package-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        <span class="popular-package-arrow"><?= icon('arrow-right') ?></span>
                                     </div>
                                 </div>
                             </a>
@@ -331,7 +331,7 @@ require dirname(__DIR__) . '/includes/header.php';
                                     <h3><?= e(t('daytrip_manyara_title')) ?></h3>
                                     <div class="day-trip-card-footer">
                                         <div class="price-tag"><?= e(t('daytrips_ask_price')) ?></div>
-                                        <span class="popular-package-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        <span class="popular-package-arrow"><?= icon('arrow-right') ?></span>
                                     </div>
                                 </div>
                             </a>
@@ -344,7 +344,7 @@ require dirname(__DIR__) . '/includes/header.php';
                                     <h3><?= e(t('daytrip_arushanp_title')) ?></h3>
                                     <div class="day-trip-card-footer">
                                         <div class="price-tag"><?= e(t('daytrips_ask_price')) ?></div>
-                                        <span class="popular-package-arrow"><i class="fas fa-arrow-right"></i></span>
+                                        <span class="popular-package-arrow"><?= icon('arrow-right') ?></span>
                                     </div>
                                 </div>
                             </a>

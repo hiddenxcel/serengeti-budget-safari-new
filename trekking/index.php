@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-mountain"></i> <?= e(t('trekking_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('mountain') ?> <?= e(t('trekking_hero_badge')) ?></span>
                 <h1><span><?= e(t('trekking_hero_title_1')) ?></span> <?= e(t('trekking_hero_title_2')) ?></h1>
                 <p class="hero-sub"><?= e(t('trekking_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -34,7 +34,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-route"></i> <?= e(t('trekking_routes_badge')) ?></span>
+                    <span class="section-badge"><?= icon('route') ?> <?= e(t('trekking_routes_badge')) ?></span>
                     <h2><?= e(t('trekking_routes_title')) ?></h2>
                     <p><?= e(t('trekking_routes_intro')) ?></p>
                 </div>
@@ -118,23 +118,23 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div>
                         <h3><?= e(t('trekking_included_heading')) ?></h3>
                         <ul class="included-icon-list yes">
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('trekking_included_1')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('trekking_included_2')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('trekking_included_3')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('trekking_included_4')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('trekking_included_5')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('trekking_included_6')) ?></li>
-                            <li><i class="fas fa-check-circle"></i> <?= e(t('trekking_included_7')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('trekking_included_1')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('trekking_included_2')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('trekking_included_3')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('trekking_included_4')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('trekking_included_5')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('trekking_included_6')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('trekking_included_7')) ?></li>
                         </ul>
                     </div>
                     <div>
                         <h3><?= e(t('trekking_excluded_heading')) ?></h3>
                         <ul class="included-icon-list no">
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('trekking_excluded_1')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('trekking_excluded_2')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('trekking_excluded_3')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('trekking_excluded_4')) ?></li>
-                            <li><i class="fas fa-times-circle"></i> <?= e(t('trekking_excluded_5')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('trekking_excluded_1')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('trekking_excluded_2')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('trekking_excluded_3')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('trekking_excluded_4')) ?></li>
+                            <li><?= icon('times-circle') ?> <?= e(t('trekking_excluded_5')) ?></li>
                         </ul>
                     </div>
                 </div>
@@ -144,7 +144,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-mountain-sun"></i> <?= e(t('trekking_other_badge')) ?></span>
+                    <span class="section-badge"><?= icon('mountain-sun') ?> <?= e(t('trekking_other_badge')) ?></span>
                     <h2><?= e(t('trekking_other_title')) ?></h2>
                 </div>
                 <div class="grid-3">
@@ -182,7 +182,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-book-open"></i> <?= e(t('trekking_guide_badge')) ?></span>
+                    <span class="section-badge"><?= icon('book-open') ?> <?= e(t('trekking_guide_badge')) ?></span>
                     <h2><?= e(t('trekking_guide_title')) ?></h2>
                     <p><?= e(t('trekking_guide_intro')) ?></p>
                 </div>
@@ -191,13 +191,13 @@ require dirname(__DIR__) . '/includes/header.php';
                         <span class="badge"><?= e(t('trekking_guide_kili_badge')) ?></span>
                         <h3 style="margin-top:.6rem;"><?= e(t('trekking_guide_kili_title')) ?></h3>
                         <p><?= e(t('trekking_guide_kili_desc')) ?></p>
-                        <a href="<?= url('parks/kilimanjaro-national-park.php') ?>" class="btn btn-primary btn-sm"><?= e(t('trekking_guide_kili_cta')) ?> <i class="fas fa-arrow-right"></i></a>
+                        <a href="<?= url('parks/kilimanjaro-national-park.php') ?>" class="btn btn-primary btn-sm"><?= e(t('trekking_guide_kili_cta')) ?> <?= icon('arrow-right') ?></a>
                     </article>
                     <article class="card">
                         <span class="badge"><?= e(t('trekking_guide_meru_badge')) ?></span>
                         <h3 style="margin-top:.6rem;"><?= e(t('trekking_guide_meru_title')) ?></h3>
                         <p><?= e(t('trekking_guide_meru_desc')) ?></p>
-                        <a href="<?= url('parks/arusha-national-park.php') ?>" class="btn btn-primary btn-sm"><?= e(t('trekking_guide_meru_cta')) ?> <i class="fas fa-arrow-right"></i></a>
+                        <a href="<?= url('parks/arusha-national-park.php') ?>" class="btn btn-primary btn-sm"><?= e(t('trekking_guide_meru_cta')) ?> <?= icon('arrow-right') ?></a>
                     </article>
                 </div>
             </div>
@@ -208,15 +208,15 @@ require dirname(__DIR__) . '/includes/header.php';
                 <h2 class="section-title"><?= e(t('trekking_faq_title')) ?></h2>
                 <div class="faq-column">
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('trekking_faq_q1')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('trekking_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('trekking_faq_a1')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('trekking_faq_q2')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('trekking_faq_q2')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('trekking_faq_a2')) ?></p></div>
                     </div>
                     <div class="faq-item-acc">
-                        <div class="faq-question-acc"><?= e(t('trekking_faq_q3')) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                        <div class="faq-question-acc"><?= e(t('trekking_faq_q3')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('trekking_faq_a3')) ?></p></div>
                     </div>
                 </div>

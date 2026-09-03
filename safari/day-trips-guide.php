@@ -17,8 +17,8 @@ require dirname(__DIR__) . '/includes/header.php';
 ?>
 
     <div id="guide-progress-bar"></div>
-    <button id="guide-back-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-    <button id="guide-floating-cta" class="show"><i class="fas fa-paper-plane"></i> <?= e(t('dtg_hero_cta_quote')) ?></button>
+    <button id="guide-back-top" aria-label="Back to top"><?= icon('arrow-up') ?></button>
+    <button id="guide-floating-cta" class="show"><?= icon('paper-plane') ?> <?= e(t('dtg_hero_cta_quote')) ?></button>
     <div class="guide-toast" id="guide-toast"></div>
 
     <!-- ===== BOOKING MODAL ===== -->
@@ -83,12 +83,12 @@ require dirname(__DIR__) . '/includes/header.php';
 
     <div class="container guide-container">
         <div class="guide-trust-badges">
-            <span class="guide-trust-badge"><i class="fas fa-check-circle"></i> <?= e(t('dtg_trust_1')) ?></span>
-            <span class="guide-trust-badge"><i class="fas fa-tags"></i> <?= e(t('dtg_trust_2')) ?></span>
-            <span class="guide-trust-badge"><i class="fas fa-shield-alt"></i> <?= e(t('dtg_trust_3')) ?></span>
-            <span class="guide-trust-badge"><i class="fas fa-truck-monster"></i> <?= e(t('dtg_trust_4')) ?></span>
-            <span class="guide-trust-badge"><i class="fas fa-globe-africa"></i> <?= e(t('dtg_trust_5')) ?></span>
-            <span class="guide-trust-badge"><i class="fas fa-clipboard-list"></i> <?= e(t('dtg_trust_6')) ?></span>
+            <span class="guide-trust-badge"><?= icon('check-circle') ?> <?= e(t('dtg_trust_1')) ?></span>
+            <span class="guide-trust-badge"><?= icon('tags') ?> <?= e(t('dtg_trust_2')) ?></span>
+            <span class="guide-trust-badge"><?= icon('shield-alt') ?> <?= e(t('dtg_trust_3')) ?></span>
+            <span class="guide-trust-badge"><?= icon('truck-monster') ?> <?= e(t('dtg_trust_4')) ?></span>
+            <span class="guide-trust-badge"><?= icon('globe-africa') ?> <?= e(t('dtg_trust_5')) ?></span>
+            <span class="guide-trust-badge"><?= icon('clipboard-list') ?> <?= e(t('dtg_trust_6')) ?></span>
         </div>
     </div>
 
@@ -120,7 +120,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <p class="guide-intro-lead"><?= e(t('dtg_intro_p1')) ?></p>
                     <p><?= e(t('dtg_intro_p2')) ?></p>
                     <div class="guide-quote-card">
-                        <span class="guide-quote-icon"><i class="fas fa-quote-left"></i></span>
+                        <span class="guide-quote-icon"><?= icon('quote-left') ?></span>
                         <p><?= t('dtg_intro_box') ?></p>
                     </div>
 
@@ -175,7 +175,7 @@ require dirname(__DIR__) . '/includes/header.php';
                                 <li><?= t('dtg_pkg' . $i . '_f3') ?></li>
                                 <li><?= t('dtg_pkg' . $i . '_f4') ?></li>
                             </ul>
-                            <span class="guide-trust-small"><i class="fas fa-fire"></i> <?= e(t('dtg_pkg' . $i . '_trust')) ?></span>
+                            <span class="guide-trust-small"><?= icon('fire') ?> <?= e(t('dtg_pkg' . $i . '_trust')) ?></span>
                             <button type="button" class="btn btn-primary" data-package="<?= e(t('dtg_pkg' . $i . '_name')) ?>" data-price="<?= e(t('dtg_pkg' . $i . '_price')) ?>"><?= e(t('dtg_book_now')) ?></button>
                             <div class="guide-guarantee"><?= e(t('dtg_guarantee')) ?></div>
                         </div>
@@ -241,7 +241,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="faq-column">
                         <?php for ($i = 1; $i <= 8; $i++): ?>
                         <div class="faq-item-acc">
-                            <div class="faq-question-acc"><?= e(t('dtg_faq_q' . $i)) ?> <span><i class="fas fa-chevron-down"></i></span></div>
+                            <div class="faq-question-acc"><?= e(t('dtg_faq_q' . $i)) ?> <span><?= icon('chevron-down') ?></span></div>
                             <div class="faq-answer-acc"><p><?= e(t('dtg_faq_a' . $i)) ?></p></div>
                         </div>
                         <?php endfor; ?>
@@ -265,9 +265,9 @@ require dirname(__DIR__) . '/includes/header.php';
                             <span><?= e(t('dtg_share_label')) ?></span>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" target="_blank" rel="noopener" class="guide-share-btn"><i class="fab fa-facebook-f"></i> Facebook</a>
                             <a href="https://twitter.com/intent/tweet?url=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" target="_blank" rel="noopener" class="guide-share-btn"><i class="fab fa-twitter"></i> Twitter</a>
-                            <a href="mailto:?subject=<?= rawurlencode(t('dtg_h1')) ?>&amp;body=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" class="guide-share-btn"><i class="fas fa-envelope"></i> Email</a>
+                            <a href="mailto:?subject=<?= rawurlencode(t('dtg_h1')) ?>&amp;body=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" class="guide-share-btn"><?= icon('envelope') ?> Email</a>
                         </div>
-                        <button type="button" class="guide-print-btn"><i class="fas fa-print"></i> <?= e(t('dtg_print')) ?></button>
+                        <button type="button" class="guide-print-btn"><?= icon('print') ?> <?= e(t('dtg_print')) ?></button>
                     </div>
 
                 </div>

@@ -102,7 +102,7 @@ $trips = [
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-sun"></i> <?= e(t('daytrips_hero_badge')) ?></span>
+                <span class="hero-badge"><?= icon('sun') ?> <?= e(t('daytrips_hero_badge')) ?></span>
                 <h1><?= e(t('daytrips_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('daytrips_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -117,7 +117,7 @@ $trips = [
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-list"></i> <?= e(t('daytrips_grid_badge')) ?></span>
+                    <span class="section-badge"><?= icon('list') ?> <?= e(t('daytrips_grid_badge')) ?></span>
                     <h2><?= e(t('daytrips_grid_title')) ?></h2>
                     <p><?= e(t('daytrips_grid_intro')) ?></p>
                 </div>
@@ -138,7 +138,7 @@ $trips = [
                                 <?php else: ?>
                                 <div class="price-tag"><?= e(t('daytrips_ask_price')) ?></div>
                                 <?php endif; ?>
-                                <span class="popular-package-arrow"><i class="fas fa-arrow-right"></i></span>
+                                <span class="popular-package-arrow"><?= icon('arrow-right') ?></span>
                             </div>
                         </div>
                     </a>
@@ -150,7 +150,7 @@ $trips = [
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-circle-info"></i> <?= e(t('daytrips_know_badge')) ?></span>
+                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('daytrips_know_badge')) ?></span>
                     <h2><?= e(t('daytrips_know_title')) ?></h2>
                 </div>
                 <div class="grid-2">
