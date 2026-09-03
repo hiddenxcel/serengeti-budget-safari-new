@@ -8,6 +8,7 @@ $lang = current_lang();
 $strings = load_lang($lang);
 $page = 'home';
 $altPath = '';
+$bodyClass = 'home-page';
 
 $testimonials = db()->query(
     "SELECT * FROM testimonials WHERE status = 'published' ORDER BY sort_order ASC, created_at DESC LIMIT 9"
@@ -615,7 +616,7 @@ require __DIR__ . '/includes/header.php';
             <button type="button" class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close">&times;</button>
             <button type="button" class="gallery-lightbox-nav prev" id="galleryLightboxPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
             <figure class="gallery-lightbox-figure">
-                <img src="" alt="" id="galleryLightboxImg" />
+                <img loading="lazy" src="" alt="" id="galleryLightboxImg" />
                 <figcaption id="galleryLightboxCaption"></figcaption>
             </figure>
             <button type="button" class="gallery-lightbox-nav next" id="galleryLightboxNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>

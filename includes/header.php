@@ -55,6 +55,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <link rel="stylesheet" href="<?= asset('css/main.css') ?>">
+<?php foreach ($extraStyles ?? [] as $href): ?>
+    <link rel="stylesheet" href="<?= asset($href) ?>">
+<?php endforeach; ?>
     <link rel="icon" href="<?= asset('images/logo.svg') ?>" type="image/svg+xml" />
 </head>
 
@@ -76,15 +79,15 @@
                             <div class="mega-panel-inner">
                                 <div class="mega-col">
                                     <span class="mega-col-heading"><?= e(t('nav_safaris_by_style_heading')) ?></span>
-                                    <a href="<?= url('safari/') ?>" class="mega-link">
+                                    <a href="<?= url('safari/budget-safari-guide.php') ?>" class="mega-link">
                                         <span class="mega-link-icon"><i class="fas fa-wallet"></i></span>
                                         <span><strong><?= e(t('nav_safari_budget')) ?></strong><small><?= e(t('nav_safari_budget_desc')) ?></small></span>
                                     </a>
-                                    <a href="<?= url('safari/') ?>" class="mega-link">
+                                    <a href="<?= url('safari/luxury-safari-guide.php') ?>" class="mega-link">
                                         <span class="mega-link-icon"><i class="fas fa-gem"></i></span>
                                         <span><strong><?= e(t('nav_safari_luxury')) ?></strong><small><?= e(t('nav_safari_luxury_desc')) ?></small></span>
                                     </a>
-                                    <a href="<?= url('safari/') ?>" class="mega-link">
+                                    <a href="<?= url('safari/great-migration-guide.php') ?>" class="mega-link">
                                         <span class="mega-link-icon"><i class="fas fa-kiwi-bird"></i></span>
                                         <span><strong><?= e(t('nav_safari_migration')) ?></strong><small><?= e(t('nav_safari_migration_desc')) ?></small></span>
                                     </a>
@@ -95,7 +98,7 @@
                                 </div>
                                 <div class="mega-col">
                                     <span class="mega-col-heading"><?= e(t('nav_safaris_more_heading')) ?></span>
-                                    <a href="<?= url('day-trips/') ?>" class="mega-link">
+                                    <a href="<?= url('safari/day-trips-guide.php') ?>" class="mega-link">
                                         <span class="mega-link-icon"><i class="fas fa-hiking"></i></span>
                                         <span><strong><?= e(t('nav_day_trips')) ?></strong><small><?= e(t('nav_day_trips_desc')) ?></small></span>
                                     </a>

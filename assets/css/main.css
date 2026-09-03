@@ -221,7 +221,7 @@ body:not(.hero-behind-header) .hamburger span {
     justify-content: center;
     font-size: 1rem;
     flex-shrink: 0;
-    box-shadow: 0 4px 16px rgba(212, 168, 67, 0.35);
+    box-shadow: 0 4px 16px rgba(200, 155, 60, 0.35);
 }
 
 .header-phone-text {
@@ -269,14 +269,14 @@ body:not(.hero-behind-header) .hamburger span {
     border-radius: 60px;
     white-space: nowrap;
     transition: var(--transition);
-    box-shadow: 0 6px 22px rgba(212, 168, 67, 0.3);
+    box-shadow: 0 6px 22px rgba(200, 155, 60, 0.3);
 }
 
 .header-cta:hover {
     background: var(--gold-dark);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(212, 168, 67, 0.4);
+    box-shadow: 0 10px 28px rgba(200, 155, 60, 0.4);
 }
 
 /* ============================================================
@@ -312,7 +312,7 @@ body:not(.hero-behind-header) .hamburger span {
 }
 
 .lang-toggle:hover {
-    background: rgba(212, 168, 67, 0.9);
+    background: rgba(200, 155, 60, 0.9);
     border-color: var(--gold);
     color: var(--black);
 }
@@ -329,7 +329,7 @@ body:not(.hero-behind-header) .hamburger span {
 }
 
 .scrolled .lang-toggle:hover {
-    background: rgba(212, 168, 67, 0.15);
+    background: rgba(200, 155, 60, 0.15);
     border-color: var(--gold);
 }
 
@@ -343,7 +343,7 @@ body:not(.hero-behind-header) .hamburger span {
     top: calc(100% + 8px);
     right: 0;
     background: var(--white);
-    border: 1px solid rgba(212, 168, 67, 0.3);
+    border: 1px solid rgba(200, 155, 60, 0.3);
     border-radius: var(--radius-sm);
     padding: 0.4rem 0;
     min-width: 160px;
@@ -373,7 +373,7 @@ body:not(.hero-behind-header) .hamburger span {
 
 .lang-dropdown li a:hover,
 .lang-dropdown li a.active {
-    background: rgba(212, 168, 67, 0.08);
+    background: rgba(200, 155, 60, 0.08);
     color: var(--gold-dark);
 }
 
@@ -639,27 +639,32 @@ body:not(.hero-behind-header) .hamburger span {
 }
 
 :root {
-    /* — Primary palette: Black & Gold — */
-    --black: #0d0d0d;
-    --black-light: #1a1a1a;
-    --black-mid: #2a2a2a;
-    --gold: #d4a843;
-    --gold-light: #f0d080;
-    --gold-dark: #b8922f;
-    --gold-glow: rgba(212, 168, 67, 0.25);
+    /* — Primary palette: African Earth Tones + Luxury Neutrals —
+       Deep Forest replaces the old near-black; Safari Gold and Ivory
+       replace the old gold/cream. Kept under the same --black/--gold/
+       --cream variable names so every rule already written against them
+       (and the long alias list below) repaints automatically. */
+    --black: #173F35;
+    --black-light: #1F4D41;
+    --black-mid: #0D2923;
+    --gold: #C89B3C;
+    --gold-light: #E7D2A3;
+    --gold-dark: #A97F2C;
+    --gold-glow: rgba(200, 155, 60, 0.25);
 
     /* — Neutrals — */
     --white: #ffffff;
-    --cream: #faf7f0;
+    --cream: #FAF8F2;
+    --cream-secondary: #F1EBDD;
     --gray-100: #f5f5f5;
     --gray-200: #e8e8e8;
     --gray-300: #d0d0d0;
-    --gray-600: #6b6b6b;
-    --gray-800: #2e2e2e;
+    --gray-600: #6F756F;
+    --gray-800: #202622;
 
     /* — Semantic — */
     --bg-body: var(--cream);
-    --text-primary: var(--black);
+    --text-primary: #202622;
     --text-secondary: var(--gray-600);
     --accent: var(--gold);
     --accent-hover: var(--gold-dark);
@@ -845,7 +850,7 @@ table {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--gold);
-    background: rgba(212, 168, 67, 0.12);
+    background: rgba(200, 155, 60, 0.12);
     padding: 0.25rem 1rem;
     border-radius: 40px;
     margin-bottom: 0.5rem;
@@ -972,7 +977,7 @@ table {
     align-items: center !important;
     gap: 0.5rem !important;
     padding: 0.8rem 1.5rem 0.8rem 1.2rem !important;
-    background: rgba(10, 26, 43, 0.9) !important;
+    background: rgba(23, 63, 53, 0.9) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     border: 2px solid #d4a843 !important;
@@ -994,11 +999,11 @@ table {
 
 /* Hover */
 .jump-to-top:hover {
-    background: rgba(212, 168, 67, 0.2) !important;
+    background: rgba(200, 155, 60, 0.2) !important;
     border-color: #f0d080 !important;
     color: #ffffff !important;
     transform: translateY(-4px) scale(1.03) !important;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 168, 67, 0.1) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(200, 155, 60, 0.1) !important;
 }
 
 .jump-to-top i {
@@ -1034,7 +1039,7 @@ table {
         min-width: 52px !important;
         min-height: 52px !important;
         justify-content: center !important;
-        background: rgba(10, 26, 43, 0.95) !important;
+        background: rgba(23, 63, 53, 0.95) !important;
     }
     
     .jump-to-top .jump-label {
@@ -1312,7 +1317,7 @@ section {
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    background: rgba(212, 168, 67, 0.14);
+    background: rgba(200, 155, 60, 0.14);
     color: var(--gold-dark);
     white-space: nowrap;
 }
@@ -1429,9 +1434,9 @@ section {
     inset: 0;
     z-index: 1;
     background: linear-gradient(180deg,
-            rgba(13, 13, 13, 0.55) 0%,
-            rgba(13, 13, 13, 0.62) 45%,
-            rgba(13, 13, 13, 0.85) 100%);
+            rgba(23, 63, 53, 0.55) 0%,
+            rgba(23, 63, 53, 0.62) 45%,
+            rgba(23, 63, 53, 0.85) 100%);
 }
 
 [class$="-hero-container"],
@@ -1476,9 +1481,9 @@ section {
     gap: 0.5rem;
     padding: 0.35rem 1.1rem;
     margin-bottom: 1.1rem;
-    border: 1px solid rgba(212, 168, 67, 0.5);
+    border: 1px solid rgba(200, 155, 60, 0.5);
     border-radius: 40px;
-    background: rgba(212, 168, 67, 0.14);
+    background: rgba(200, 155, 60, 0.14);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: var(--gold-light);
@@ -1578,7 +1583,7 @@ section {
     margin-bottom: 1.4rem;
     border-radius: var(--radius-sm);
     background: rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(212, 168, 67, 0.4);
+    border: 1px solid rgba(200, 155, 60, 0.4);
 }
 
 .hero-price .from {
@@ -1875,7 +1880,7 @@ section {
     width: 46px;
     height: 46px;
     border-radius: 14px;
-    background: rgba(212, 168, 67, 0.14);
+    background: rgba(200, 155, 60, 0.14);
     color: var(--gold-dark);
     font-size: 1.15rem;
 }
@@ -2145,7 +2150,7 @@ section {
 
 .month-tag.mid,
 .season.mid {
-    background: rgba(212, 168, 67, 0.18);
+    background: rgba(200, 155, 60, 0.18);
     color: var(--gold-dark);
 }
 
@@ -2597,8 +2602,8 @@ table.safari-table {
     align-items: center;
     justify-content: space-between;
     gap: 1.2rem;
-    background: rgba(212, 168, 67, 0.1);
-    border: 1px solid rgba(212, 168, 67, 0.35);
+    background: rgba(200, 155, 60, 0.1);
+    border: 1px solid rgba(200, 155, 60, 0.35);
     border-radius: var(--radius);
     padding: 1.4rem 1.6rem;
     margin: 2rem 0;
@@ -2683,7 +2688,7 @@ table.safari-table {
     background: var(--black);
     color: var(--gray-300);
     padding: 4.5rem 0 1.5rem;
-    border-top: 1px solid rgba(212, 168, 67, 0.12);
+    border-top: 1px solid rgba(200, 155, 60, 0.12);
     position: relative;
 }
 
@@ -2691,7 +2696,7 @@ table.safari-table {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(212, 168, 67, 0.05) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(rgba(200, 155, 60, 0.05) 1.5px, transparent 1.5px);
     background-size: 26px 26px;
     -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 60%);
     mask-image: linear-gradient(180deg, #000 0%, transparent 60%);
@@ -2834,7 +2839,7 @@ table.safari-table {
     display: none;
     justify-content: space-around;
     padding: 0.5rem 0.5rem;
-    border-top: 1px solid rgba(212, 168, 67, 0.25);
+    border-top: 1px solid rgba(200, 155, 60, 0.25);
     z-index: 999;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
 }
@@ -2880,13 +2885,13 @@ table.safari-table {
 
 /* Safari button – subtle dark on ivory */
 .sticky-btn.safari {
-    background: rgba(10, 26, 43, 0.08);
+    background: rgba(23, 63, 53, 0.08);
     color: var(--black);
-    border: 1px solid rgba(10, 26, 43, 0.1);
+    border: 1px solid rgba(23, 63, 53, 0.1);
 }
 
 .sticky-btn.safari:hover {
-    background: rgba(10, 26, 43, 0.15);
+    background: rgba(23, 63, 53, 0.15);
     transform: scale(1.02);
 }
 
@@ -2995,7 +3000,7 @@ table.safari-table {
 
 .lang-option:hover,
 .lang-option.active {
-    background: rgba(212, 168, 67, .12);
+    background: rgba(200, 155, 60, .12);
     color: var(--gold-dark);
 }
 
@@ -3062,7 +3067,7 @@ table.safari-table {
     padding: 1.3rem 1.5rem;
     border-left: 4px solid var(--gold);
     border-radius: var(--radius-sm);
-    background: rgba(212, 168, 67, .09);
+    background: rgba(200, 155, 60, .09);
 }
 
 .key-box p:last-child,
@@ -3273,7 +3278,7 @@ table.safari-table {
     display: inline-block;
     padding: .18rem .8rem;
     border-radius: 40px;
-    background: rgba(212, 168, 67, .16);
+    background: rgba(200, 155, 60, .16);
     color: var(--gold-dark);
     font-size: .72rem;
     font-weight: 700;
@@ -3369,7 +3374,7 @@ table.safari-table {
     padding: .5rem 1.1rem;
     border-radius: var(--radius-sm);
     background: rgba(0, 0, 0, .45);
-    border: 1px solid rgba(212, 168, 67, .4);
+    border: 1px solid rgba(200, 155, 60, .4);
     color: var(--gold);
     font-weight: 800;
 }
@@ -3481,7 +3486,7 @@ table.safari-table {
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: rgba(212, 168, 67, .14);
+    background: rgba(200, 155, 60, .14);
     color: var(--gold-dark);
     flex-shrink: 0;
 }
@@ -3785,7 +3790,7 @@ textarea:focus-visible,
     height: 100%;
     object-fit: cover;
     display: block;  /* Ensure video is visible */
-    background: #0a1a2b;  /* Fallback color while loading */
+    background: var(--black-mid);  /* Fallback color while loading */
 }
 
 /* Poster image shows while video loads */
@@ -3809,7 +3814,7 @@ textarea:focus-visible,
     z-index: 1;
     pointer-events: none;
     background: 
-        linear-gradient(135deg, rgba(10, 26, 43, 0.2) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(23, 63, 53, 0.2) 0%, transparent 50%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
 }
 
@@ -3868,7 +3873,7 @@ textarea:focus-visible,
     font-size: 1rem;
     padding: 1rem 2.4rem;
     border-radius: 60px;
-    box-shadow: 0 10px 34px rgba(212, 168, 67, 0.35);
+    box-shadow: 0 10px 34px rgba(200, 155, 60, 0.35);
     transition: var(--transition);
 }
 
@@ -3876,7 +3881,7 @@ textarea:focus-visible,
     background: var(--gold-dark);
     color: var(--white);
     transform: translateY(-3px);
-    box-shadow: 0 16px 44px rgba(212, 168, 67, 0.45);
+    box-shadow: 0 16px 44px rgba(200, 155, 60, 0.45);
 }
 
 .hero-cta i {
@@ -3914,10 +3919,10 @@ textarea:focus-visible,
 }
 
 .glass-content {
-    background: rgba(13, 13, 13, 0.6);
+    background: rgba(23, 63, 53, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(212, 168, 67, 0.2);
+    border: 1px solid rgba(200, 155, 60, 0.2);
     border-radius: 16px;
     padding: 1.5rem 1.8rem;
     box-shadow: 
@@ -3936,7 +3941,7 @@ textarea:focus-visible,
     inset: -1px;
     border-radius: 16px;
     padding: 1px;
-    background: linear-gradient(135deg, transparent 40%, rgba(212, 168, 67, 0.3), transparent 60%);
+    background: linear-gradient(135deg, transparent 40%, rgba(200, 155, 60, 0.3), transparent 60%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -3962,11 +3967,11 @@ textarea:focus-visible,
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--gold);
-    background: rgba(212, 168, 67, 0.12);
+    background: rgba(200, 155, 60, 0.12);
     padding: 0.15rem 0.8rem;
     border-radius: 30px;
     margin-bottom: 0.6rem;
-    border: 1px solid rgba(212, 168, 67, 0.08);
+    border: 1px solid rgba(200, 155, 60, 0.08);
     font-weight: 600;
 }
 
@@ -4034,14 +4039,14 @@ textarea:focus-visible,
     background: var(--gold);
     color: var(--black);
     border-color: var(--gold);
-    box-shadow: 0 4px 20px rgba(212, 168, 67, 0.2);
+    box-shadow: 0 4px 20px rgba(200, 155, 60, 0.2);
 }
 
 .glass-actions .btn-primary:hover {
     background: var(--gold-dark);
     border-color: var(--gold-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(212, 168, 67, 0.3);
+    box-shadow: 0 8px 30px rgba(200, 155, 60, 0.3);
 }
 
 .glass-actions .btn-outline {
@@ -4082,7 +4087,7 @@ textarea:focus-visible,
 
 .hero-scroll-indicator i {
     font-size: 0.7rem;
-    color: rgba(212, 168, 67, 0.6);
+    color: rgba(200, 155, 60, 0.6);
 }
 
 @keyframes bounceDown {
@@ -4279,7 +4284,7 @@ textarea:focus-visible,
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--gold);
-    background: rgba(212, 168, 67, 0.12);
+    background: rgba(200, 155, 60, 0.12);
     padding: 0.2rem 1rem;
     border-radius: 40px;
     margin-bottom: 0.8rem;
@@ -4383,7 +4388,7 @@ textarea:focus-visible,
 
 /* ---------- Guide quote – fix overflow ---------- */
 .guide-quote {
-    background: rgba(212, 168, 67, 0.06);
+    background: rgba(200, 155, 60, 0.06);
     padding: 1.2rem 1.8rem;
     border-radius: var(--radius-sm);
     border-left: 4px solid var(--gold);
@@ -4489,7 +4494,7 @@ textarea:focus-visible,
        a slight warm gold cast (not flat black) so the section still reads
        as a photo, not a solid panel. */
     background:
-        linear-gradient(120deg, rgba(13, 13, 13, 0.94) 0%, rgba(13, 13, 13, 0.86) 45%, rgba(45, 33, 12, 0.82) 100%);
+        linear-gradient(120deg, rgba(23, 63, 53, 0.94) 0%, rgba(23, 63, 53, 0.86) 45%, rgba(84, 63, 22, 0.82) 100%);
     z-index: -1;
 }
 
@@ -4534,7 +4539,7 @@ textarea:focus-visible,
 }
 
 .about-us-content .story-badge {
-    background: rgba(212, 168, 67, 0.16);
+    background: rgba(200, 155, 60, 0.16);
 }
 
 /* Generic text-mask-reveal wrapper — clips its child and slides it up into
@@ -4886,13 +4891,13 @@ textarea:focus-visible,
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(13, 13, 13, 0.15) 0%, rgba(13, 13, 13, 0.55) 55%, rgba(13, 13, 13, 0.92) 100%);
+    background: linear-gradient(180deg, rgba(23, 63, 53, 0.15) 0%, rgba(23, 63, 53, 0.55) 55%, rgba(23, 63, 53, 0.92) 100%);
     z-index: -1;
     transition: background 0.3s;
 }
 
 .safari-type-card:hover::before {
-    background: linear-gradient(180deg, rgba(212, 168, 67, 0.15) 0%, rgba(13, 13, 13, 0.55) 55%, rgba(13, 13, 13, 0.92) 100%);
+    background: linear-gradient(180deg, rgba(200, 155, 60, 0.15) 0%, rgba(23, 63, 53, 0.55) 55%, rgba(23, 63, 53, 0.92) 100%);
 }
 
 .safari-type-card .type-icon {
@@ -5054,7 +5059,7 @@ textarea:focus-visible,
     position: absolute;
     top: 12px;
     left: 12px;
-    background: rgba(13, 13, 13, 0.75);
+    background: rgba(23, 63, 53, 0.75);
     color: var(--gold-light);
     font-size: 0.68rem;
     font-weight: 700;
@@ -5151,7 +5156,7 @@ textarea:focus-visible,
 .story-modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(13, 13, 13, 0.72);
+    background: rgba(23, 63, 53, 0.72);
     z-index: 1000;
     display: none;
     align-items: center;
@@ -5513,8 +5518,8 @@ textarea:focus-visible,
 }
 
 .faq-item.active .faq-question {
-    background: rgba(212, 168, 67, 0.05);
-    border-bottom: 1px solid rgba(212, 168, 67, 0.15);
+    background: rgba(200, 155, 60, 0.05);
+    border-bottom: 1px solid rgba(200, 155, 60, 0.15);
 }
 
 .faq-answer {
@@ -5555,7 +5560,7 @@ textarea:focus-visible,
 .trust-authority {
     padding: 4.5rem 0 5rem;
     background-color: var(--cream);
-    background-image: radial-gradient(rgba(212, 168, 67, 0.35) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(rgba(200, 155, 60, 0.35) 1.5px, transparent 1.5px);
     background-size: 16px 16px;
     position: relative;
     overflow: hidden;
@@ -5576,7 +5581,7 @@ textarea:focus-visible,
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--gold-dark);
-    background: rgba(212, 168, 67, 0.12);
+    background: rgba(200, 155, 60, 0.12);
     padding: 0.3rem 1.1rem;
     border-radius: 40px;
     margin-bottom: 1rem;
@@ -5619,7 +5624,7 @@ textarea:focus-visible,
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: rgba(212, 168, 67, 0.14);
+    background: rgba(200, 155, 60, 0.14);
     color: var(--gold-dark);
     display: flex;
     align-items: center;
@@ -5785,7 +5790,7 @@ textarea:focus-visible,
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(13, 13, 13, 0) 40%, rgba(13, 13, 13, 0.88) 100%);
+    background: linear-gradient(180deg, rgba(23, 63, 53, 0) 40%, rgba(23, 63, 53, 0.88) 100%);
     z-index: -1;
 }
 
@@ -5944,10 +5949,23 @@ textarea:focus-visible,
    ============================================================ */
 
 .best-packages-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     padding: 4.5rem 0;
     background: var(--black);
     color: var(--white);
     overflow: hidden;
+}
+
+.best-packages-section > .container {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .best-packages-section {
+        min-height: auto;
+    }
 }
 
 .best-packages-section .container {
@@ -5978,7 +5996,7 @@ textarea:focus-visible,
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--gold);
-    background: rgba(212, 168, 67, 0.16);
+    background: rgba(200, 155, 60, 0.16);
     padding: 0.3rem 1.1rem;
     border-radius: 40px;
     margin-bottom: 1rem;
@@ -6066,7 +6084,7 @@ textarea:focus-visible,
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(13, 13, 13, 0) 35%, rgba(13, 13, 13, 0.55) 70%, rgba(13, 13, 13, 0.92) 100%);
+    background: linear-gradient(180deg, rgba(23, 63, 53, 0) 35%, rgba(23, 63, 53, 0.55) 70%, rgba(23, 63, 53, 0.92) 100%);
     z-index: 2;
 }
 
@@ -6233,7 +6251,7 @@ textarea:focus-visible,
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(212, 168, 67, 0.16) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(rgba(200, 155, 60, 0.16) 1.5px, transparent 1.5px);
     background-size: 26px 26px;
     -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, transparent 72%);
     mask-image: radial-gradient(ellipse at center, #000 0%, transparent 72%);
@@ -6245,7 +6263,7 @@ textarea:focus-visible,
 }
 
 .ai-planner .section-title-left .section-badge {
-    background: rgba(212, 168, 67, 0.14);
+    background: rgba(200, 155, 60, 0.14);
 }
 
 .ai-planner .section-title-left h2 {
@@ -6263,7 +6281,7 @@ textarea:focus-visible,
     border-radius: 28px;
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
     overflow: hidden;
-    border: 1px solid rgba(212, 168, 67, 0.25);
+    border: 1px solid rgba(200, 155, 60, 0.25);
 }
 
 .planner-chat-header {
@@ -6339,7 +6357,7 @@ textarea:focus-visible,
 
 .planner-progress-dot.current {
     background: var(--gold);
-    box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.25);
+    box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.25);
 }
 
 .planner-chat-thread {
@@ -6801,7 +6819,7 @@ textarea:focus-visible,
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background: rgba(13, 13, 13, 0.94);
+    background: rgba(23, 63, 53, 0.94);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6975,7 +6993,7 @@ textarea:focus-visible,
     text-align: center;
     padding: 2rem 1.2rem;
     background: var(--cream);
-    border: 1px solid rgba(212, 168, 67, 0.12);
+    border: 1px solid rgba(200, 155, 60, 0.12);
     border-radius: var(--radius);
     transition: var(--transition);
 }
@@ -6992,7 +7010,7 @@ textarea:focus-visible,
     height: 64px;
     margin: 0 auto 1.1rem;
     border-radius: 50%;
-    background: rgba(212, 168, 67, 0.1);
+    background: rgba(200, 155, 60, 0.1);
     color: var(--gold);
     display: flex;
     align-items: center;
@@ -7168,7 +7186,7 @@ textarea:focus-visible,
     padding: 0.35rem 1.1rem;
     border-radius: 40px;
     white-space: nowrap;
-    box-shadow: 0 6px 14px rgba(212, 168, 67, 0.35);
+    box-shadow: 0 6px 14px rgba(200, 155, 60, 0.35);
 }
 
 .comparison-card-head {
@@ -7187,7 +7205,7 @@ textarea:focus-visible,
     height: 52px;
     margin: 0 auto 0.9rem;
     border-radius: 50%;
-    background: rgba(212, 168, 67, 0.12);
+    background: rgba(200, 155, 60, 0.12);
     color: var(--gold);
     display: flex;
     align-items: center;
@@ -7424,8 +7442,8 @@ textarea:focus-visible,
     color: var(--white);
     text-align: center;
     position: relative;
-    border-top: 2px solid rgba(212, 168, 67, 0.2);
-    border-bottom: 2px solid rgba(212, 168, 67, 0.2);
+    border-top: 2px solid rgba(200, 155, 60, 0.2);
+    border-bottom: 2px solid rgba(200, 155, 60, 0.2);
 }
 
 .final-cta-content {
@@ -7452,7 +7470,7 @@ textarea:focus-visible,
     font-family: Georgia, serif;
     font-size: 3.5rem;
     font-style: normal;
-    color: rgba(212, 168, 67, 0.35);
+    color: rgba(200, 155, 60, 0.35);
     line-height: 1;
     margin-bottom: -0.5rem;
 }
@@ -7558,7 +7576,7 @@ textarea:focus-visible,
     font-size: 0.7rem;
     font-weight: 700;
     color: var(--gold);
-    background: rgba(212, 168, 67, 0.12);
+    background: rgba(200, 155, 60, 0.12);
     padding: 0.2rem 0.8rem;
     border-radius: 40px;
     letter-spacing: 0.05em;
@@ -7757,12 +7775,12 @@ textarea:focus-visible,
     background: var(--gold);
     border-radius: 50%;
     border: 3px solid var(--white);
-    box-shadow: 0 0 0 4px rgba(212, 168, 67, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 4px rgba(200, 155, 60, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: var(--transition);
 }
 
 .map-marker:hover .marker-dot {
-    box-shadow: 0 0 0 6px rgba(212, 168, 67, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 6px rgba(200, 155, 60, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .marker-label {
@@ -7799,7 +7817,7 @@ textarea:focus-visible,
     opacity: 0;
     pointer-events: none;
     transition: var(--transition);
-    border: 1px solid rgba(212, 168, 67, 0.2);
+    border: 1px solid rgba(200, 155, 60, 0.2);
 }
 
 .map-marker:hover .marker-popup {
@@ -7873,9 +7891,9 @@ textarea:focus-visible,
 .youtube-shorts-section {
     padding: 5rem 0;
     background:
-        radial-gradient(ellipse 900px 500px at 15% 0%, rgba(212, 168, 67, 0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 900px 500px at 15% 0%, rgba(200, 155, 60, 0.10) 0%, transparent 60%),
         radial-gradient(ellipse 700px 500px at 100% 100%, rgba(255, 0, 0, 0.08) 0%, transparent 60%),
-        linear-gradient(160deg, #0d1f33 0%, #0a1a2b 45%, #081321 100%);
+        linear-gradient(160deg, #173F35 0%, #123028 45%, #0D2923 100%);
     color: #ffffff;
     position: relative;
     overflow: hidden;
@@ -7910,7 +7928,7 @@ textarea:focus-visible,
 
 .youtube-shorts-bg-icons i {
     position: absolute;
-    color: rgba(212, 168, 67, 0.10);
+    color: rgba(200, 155, 60, 0.10);
 }
 
 .youtube-shorts-bg-icons i:nth-child(1) { top: 6%;  left: 6%;   font-size: 2.6rem; transform: rotate(-12deg); }
@@ -7994,7 +8012,7 @@ textarea:focus-visible,
     border-radius: 16px;
     overflow: hidden;
     aspect-ratio: 9/16;
-    background: #1a1a2e;
+    background: var(--black-mid);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 1px solid rgba(255, 255, 255, 0.06);
@@ -8004,7 +8022,7 @@ textarea:focus-visible,
 .short-item:hover {
     transform: scale(1.03) translateY(-6px);
     box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
-    border-color: rgba(212, 168, 67, 0.2);
+    border-color: rgba(200, 155, 60, 0.2);
 }
 
 /* Thumbnail wrapper – covers entire card */
@@ -8093,7 +8111,7 @@ textarea:focus-visible,
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    border: 1px solid rgba(212, 168, 67, 0.15);
+    border: 1px solid rgba(200, 155, 60, 0.15);
     z-index: 10;
     pointer-events: none;
 }
@@ -10482,8 +10500,8 @@ textarea:focus-visible,
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(212, 168, 67, 0.12);
-    border: 1px solid rgba(212, 168, 67, 0.35);
+    background: rgba(200, 155, 60, 0.12);
+    border: 1px solid rgba(200, 155, 60, 0.35);
     border-radius: 12px;
     padding: 0.7rem 1rem;
     font-size: 0.85rem;
@@ -11642,7 +11660,7 @@ textarea:focus-visible,
     padding: 1.3rem 1.5rem;
     border-left: 4px solid var(--gold);
     border-radius: var(--radius-sm);
-    background: rgba(212, 168, 67, 0.09);
+    background: rgba(200, 155, 60, 0.09);
 }
 
 .legal-note {
@@ -11766,4 +11784,63 @@ textarea:focus-visible,
     .booking-step-actions { flex-direction: column-reverse; align-items: stretch; }
     .booking-step-actions .btn { width: 100%; }
     .booking-review-row { flex-direction: column; gap: 0.15rem; }
+}
+
+/* ============================================================
+   HOMEPAGE BACKGROUND PATTERN
+   A subtle repeating paper/parchment texture is pinned to the viewport
+   (background-attachment: fixed) behind every section — it does not scroll
+   with the page. Light sections (Stories, Safari Types, Comparison,
+   Destinations, Trust, Journey Steps, Testimonials, FAQ, Experiences) get a
+   near-opaque light tint over it so the grain reads faintly; the plain-black
+   sections (Best Packages, AI Planner) get a much lighter dark tint so the
+   paper grain still shows through against black. Hero, About Us (has its
+   own photo background) and the footer are left untouched on purpose.
+   Declared at the end of the file so it wins the cascade over the sections'
+   own `background` shorthand rules declared earlier.
+   ============================================================ */
+body.home-page {
+    background: var(--cream) url('../images/patterns/paper-texture.jpg') repeat fixed center / 300px auto;
+}
+
+body.home-page .safari-types-section,
+body.home-page .top-destinations-section,
+body.home-page .testimonials-section,
+body.home-page .experiences-slider-section {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+body.home-page .stories-grid-section,
+body.home-page .comparison,
+body.home-page .trust-authority,
+body.home-page .journey-steps-section,
+body.home-page .faq-mega {
+    background-color: rgba(250, 247, 240, 0.75);
+}
+
+body.home-page .best-packages-section,
+body.home-page .ai-planner {
+    background-color: rgba(23, 63, 53, 0.8);
+}
+
+@media (max-width: 768px) {
+    body.home-page {
+        background-attachment: scroll;
+        background-size: 200px auto;
+    }
+}
+
+/* Let the paper texture show through the homepage's white/cream cards
+   (Stories, Testimonials, FAQ) instead of hiding it behind an opaque card
+   background. Trust-number boxes are excluded — they sit on their own solid
+   black band, not on the page's paper background, so lowering their
+   opacity just muddies the black/white contrast instead of showing paper
+   grain. */
+body.home-page .story-preview-card,
+body.home-page .faq-item {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+body.home-page .testimonial-card {
+    background-color: rgba(250, 247, 240, 0.6);
 }
