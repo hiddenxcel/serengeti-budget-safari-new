@@ -86,9 +86,26 @@ function url(string $path): string
     return base_url() . '/' . $lang . '/' . $path;
 }
 
+/**
+ * Builds an /assets/... URL with an automatic cache-busting query string
+ * (?v=<file mtime>), so a browser that cached an old main.css/main.js from
+ * before a deploy is forced to re-fetch it the moment the file's content
+ * actually changes on disk — no manual version bump, no separate build
+ * step. Falls back to a plain URL (no ?v=) if the file can't be stat'd
+ * (e.g. a typo'd path), matching the old behaviour rather than erroring.
+ */
 function asset(string $path): string
 {
-    return base_url() . '/assets/' . ltrim($path, '/');
+    $path = ltrim($path, '/');
+    $url = base_url() . '/assets/' . $path;
+
+    $fullPath = BASE_PATH . '/assets/' . $path;
+    $mtime = @filemtime($fullPath);
+    if ($mtime !== false) {
+        $url .= '?v=' . $mtime;
+    }
+
+    return $url;
 }
 
 function e(string $value): string

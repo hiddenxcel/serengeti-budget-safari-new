@@ -26,3 +26,21 @@ RewriteCond %{REQUEST_URI} !\.php$
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ $1.php [L]
+
+# ---- Cache policy ----
+# Static assets are always requested with a ?v=<mtime> query string (see
+# asset() in includes/functions.php), so it's safe to cache them
+# aggressively — the URL itself changes the moment the file's content
+# does, which busts any cache automatically without a manual version bump.
+# PHP-rendered pages (the actual HTML) must never be cached: every visit
+# has to hit the server and see whatever was deployed most recently.
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|jpg|jpeg|png|webp|svg|gif|mp4|woff2?|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(php|html)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
