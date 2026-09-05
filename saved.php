@@ -19,7 +19,7 @@ require __DIR__ . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('heart') ?> <?= e(t('saved_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(badge_tagline('saved_hero_badge')) ?></span>
                 <h1><?= e(t('saved_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('saved_hero_sub')) ?></p>
             </div>

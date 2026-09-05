@@ -39,7 +39,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogpack_quick_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogpack_quick_badge')) ?></span>
                     <h2><?= e(t('blogpack_quick_title')) ?></h2>
                     <p><?= e(t('blogpack_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
@@ -87,7 +87,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- The one rule -->
                 <section id="principle" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('layer-group') ?> <?= e(t('blogpack_s1_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogpack_s1_badge')) ?></span>
                     <h2><?= e(t('blogpack_s1_title')) ?></h2>
                     <p><?= t('blogpack_s1_p1') ?></p>
                     <p><?= t('blogpack_s1_p2') ?></p>
@@ -106,7 +106,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Clothing -->
                 <section id="clothing" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('shirt') ?> <?= e(t('blogpack_s2_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogpack_s2_badge')) ?></span>
                     <h2><?= e(t('blogpack_s2_title')) ?></h2>
                     <ul class="included-icon-list yes">
                         <li><?= icon('check-circle') ?> <strong><?= e(t('blogpack_s2_i1_t')) ?></strong> — <?= e(t('blogpack_s2_i1_d')) ?></li>
@@ -132,7 +132,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Medical kit -->
                 <section id="health-kit" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('kit-medical') ?> <?= e(t('blogpack_s3_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogpack_s3_badge')) ?></span>
                     <h2><?= e(t('blogpack_s3_title')) ?></h2>
                     <ul class="included-icon-list yes">
                         <li><?= icon('check-circle') ?> <strong><?= e(t('blogpack_s3_i1_t')) ?></strong>, <?= e(t('blogpack_s3_i1_d')) ?></li>
@@ -149,7 +149,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Photography -->
                 <section id="photography" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('camera') ?> <?= e(t('blogpack_s4_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogpack_s4_badge')) ?></span>
                     <h2><?= e(t('blogpack_s4_title')) ?></h2>
                     <div class="tag-cloud">
                         <span><?= icon('binoculars') ?> <?= e(t('blogpack_tag_binoculars')) ?></span>
@@ -165,7 +165,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Documents & money -->
                 <section id="documents" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('passport') ?> <?= e(t('blogpack_s5_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogpack_s5_badge')) ?></span>
                     <h2><?= e(t('blogpack_s5_title')) ?></h2>
                     <ul class="included-icon-list yes">
                         <li><?= icon('check-circle') ?> <strong><?= e(t('blogpack_s5_i1_t')) ?></strong>, <?= e(t('blogpack_s5_i1_d')) ?></li>
@@ -181,7 +181,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- What to leave at home -->
                 <section id="leave-behind" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('ban') ?> <?= e(t('blogpack_s6_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogpack_s6_badge')) ?></span>
                     <h2><?= e(t('blogpack_s6_title')) ?></h2>
                     <ul class="included-icon-list no">
                         <li><?= icon('times-circle') ?> <strong><?= e(t('blogpack_s6_i1_t')) ?></strong>, <?= e(t('blogpack_s6_i1_d')) ?></li>
@@ -200,7 +200,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogpack_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogpack_faq_badge')) ?></span>
                     <h2><?= e(t('blogpack_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
                         <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogpack_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogpack_faq_a1')) ?></p></div></div>
@@ -221,7 +221,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogpack_related_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogpack_related_badge')) ?></span>
                     <h2><?= e(t('blogpack_related_title')) ?></h2>
                     <div class="related-grid">
                         <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('coins') ?> <?= e(t('blog_art_cost_title')) ?></a>

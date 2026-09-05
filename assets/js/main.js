@@ -1,6 +1,23 @@
 (function () {
     'use strict';
 
+    // ===== PAGE PRELOADER =====
+    // Hidden on window "load" (images/fonts settled), not DOMContentLoaded,
+    // so it actually covers the slow part of the first paint. A hard
+    // safety-net timeout unhides it regardless, in case a slow third-party
+    // asset (e.g. a font) never fires "load".
+    (function () {
+        var preloader = document.getElementById('pagePreloader');
+        if (!preloader) return;
+
+        function hide() {
+            preloader.classList.add('is-hidden');
+        }
+
+        window.addEventListener('load', hide);
+        setTimeout(hide, 4000);
+    })();
+
     // ===== FAQ ACCORDION (.faq-item-acc, used across safari/park/day-trip/blog pages) =====
     document.querySelectorAll('.faq-question-acc').forEach(function (question) {
         question.addEventListener('click', function () {
@@ -144,6 +161,50 @@
                 if (trigger) trigger.setAttribute('aria-expanded', 'false');
             });
         }
+    });
+
+    // ===== MEGA MENU — HOVER-PREVIEW PANELS =====
+    // Swaps the title/description/link/photo on the right side of a
+    // .mega-panel-preview to match whichever .mega-preview-item the
+    // visitor is hovering, focusing (keyboard) or has tapped (touch).
+    document.querySelectorAll('[data-preview-panel]').forEach(function (panel) {
+        const items = panel.querySelectorAll('.mega-preview-item');
+        const title = panel.querySelector('[data-preview-title]');
+        const desc = panel.querySelector('[data-preview-desc]');
+        const link = panel.querySelector('[data-preview-link]');
+        const photo = panel.querySelector('[data-preview-photo]');
+        if (!items.length || !title || !desc || !link || !photo) return;
+
+        function show(item) {
+            items.forEach(function (i) { i.classList.remove('active'); });
+            item.classList.add('active');
+            title.textContent = item.getAttribute('data-title') || '';
+            desc.textContent = item.getAttribute('data-desc') || '';
+            const href = item.getAttribute('data-href');
+            if (href) link.setAttribute('href', href);
+            const img = item.getAttribute('data-img');
+            if (img) photo.style.backgroundImage = "url('" + img + "')";
+        }
+
+        items.forEach(function (item) {
+            item.addEventListener('mouseenter', function () { show(item); });
+            item.addEventListener('focus', function () { show(item); });
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const href = item.getAttribute('data-href');
+                if (window.matchMedia('(max-width: 992px)').matches) {
+                    // Touch/narrow screens: first tap previews, second tap on
+                    // the already-active item follows through to the page.
+                    if (item.classList.contains('active') && href) {
+                        window.location.href = href;
+                    } else {
+                        show(item);
+                    }
+                } else if (href) {
+                    window.location.href = href;
+                }
+            });
+        });
     });
 
     // ===== HEADER SCROLL =====

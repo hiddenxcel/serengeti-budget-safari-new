@@ -96,9 +96,9 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="container guide-container">
             <div class="guide-layout guide-page">
 
-                <!-- ===== TOC SIDEBAR ===== -->
-                <aside class="guide-toc">
-                    <h3><?= e(t('dtg_toc_title')) ?></h3>
+                <!-- ===== TOC SIDEBAR (accordion on mobile, static sticky rail on desktop) ===== -->
+                <details class="guide-toc" open>
+                    <summary><?= icon('list') ?> <span class="guide-toc-summary-title"><?= e(t('dtg_toc_title')) ?></span> <span class="guide-toc-mobile-label"><?= e(t('bsg_toc_jump')) ?></span> <?= icon('chevron-down', 'guide-toc-chevron') ?></summary>
                     <ul>
                         <li><a href="#introduction"><?= e(t('dtg_toc_intro')) ?></a></li>
                         <li><a href="#trips"><?= e(t('dtg_toc_trips')) ?></a></li>
@@ -110,23 +110,36 @@ require dirname(__DIR__) . '/includes/header.php';
                         <li><a href="#faq"><?= e(t('dtg_toc_faq')) ?></a></li>
                         <li><a href="#book"><?= e(t('dtg_toc_book')) ?></a></li>
                     </ul>
-                </aside>
+                </details>
 
                 <!-- ===== MAIN CONTENT ===== -->
                 <div class="guide-main">
 
                     <!-- INTRODUCTION -->
-                    <h2 id="introduction"><?= e(t('dtg_intro_title')) ?></h2>
-                    <p class="guide-intro-lead"><?= e(t('dtg_intro_p1')) ?></p>
-                    <p><?= e(t('dtg_intro_p2')) ?></p>
-                    <div class="guide-quote-card">
-                        <span class="guide-quote-icon"><?= icon('quote-left') ?></span>
-                        <p><?= t('dtg_intro_box') ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="introduction"><?= e(t('dtg_intro_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('introduction')) ?></span>
+                        <p class="guide-intro-lead"><?= e(t('dtg_intro_p1')) ?></p>
                     </div>
+                    <details class="guide-expandable-text">
+                        <p><?= e(t('dtg_intro_p2')) ?></p>
+                        <div class="guide-quote-card">
+                            <span class="guide-quote-icon"><?= icon('quote-left') ?></span>
+                            <p><?= t('dtg_intro_box') ?></p>
+                        </div>
+                        <summary class="guide-expand-toggle">
+                            <span class="expand-label-more"><?= e(t('bsg_read_more')) ?></span>
+                            <span class="expand-label-less"><?= e(t('bsg_read_less')) ?></span>
+                            <?= icon('chevron-down') ?>
+                        </summary>
+                    </details>
 
                     <!-- ALL TRIPS -->
-                    <h2 id="trips"><?= e(t('dtg_trips_title')) ?></h2>
-                    <p><?= e(t('dtg_trips_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="trips"><?= e(t('dtg_trips_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('trips')) ?></span>
+                        <p><?= e(t('dtg_trips_p1')) ?></p>
+                    </div>
                     <div class="guide-item-grid">
                         <?php for ($i = 1; $i <= 4; $i++): ?>
                         <div class="guide-item-card">
@@ -137,8 +150,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     </div>
 
                     <!-- PACKAGES -->
-                    <h2 id="packages"><?= e(t('dtg_packages_title')) ?></h2>
-                    <p><?= e(t('dtg_packages_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="packages"><?= e(t('dtg_packages_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('packages')) ?></span>
+                        <p><?= e(t('dtg_packages_p1')) ?></p>
+                    </div>
                     <ul class="guide-checklist">
                         <li><?= e(t('dtg_packages_inc1')) ?></li>
                         <li><?= e(t('dtg_packages_inc2')) ?></li>
@@ -185,15 +201,26 @@ require dirname(__DIR__) . '/includes/header.php';
                     <p style="text-align:center;"><strong><?= sprintf(t('dtg_packages_custom'), url('contact.php')) ?></strong></p>
 
                     <!-- LOCAL TIPS -->
-                    <h2 id="local-tips"><?= e(t('dtg_tips_title')) ?></h2>
-                    <p><?= e(t('dtg_tips_p1')) ?></p>
-                    <?php for ($i = 1; $i <= 8; $i++): ?>
-                        <div class="guide-tip"><p><?= t('dtg_tip' . $i) ?></p></div>
+                    <div class="guide-section-head">
+                        <h2 id="local-tips"><?= e(t('dtg_tips_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('local-tips')) ?></span>
+                        <p><?= e(t('dtg_tips_p1')) ?></p>
+                    </div>
+                    <?php for ($i = 1; $i <= 8; $i++):
+                        [$tipSummary, $tipBody] = guide_split_tip(t('dtg_tip' . $i));
+                    ?>
+                        <details class="guide-tip">
+                            <summary><span><span class="tip-number"><?= $i ?>.</span> <?= $tipSummary ?></span> <?= icon('chevron-down', 'tip-chevron') ?></summary>
+                            <p><?= $tipBody ?></p>
+                        </details>
                     <?php endfor; ?>
 
                     <!-- PRICE GUIDE -->
-                    <h2 id="prices"><?= e(t('dtg_prices_title')) ?></h2>
-                    <p><?= e(t('dtg_prices_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="prices"><?= e(t('dtg_prices_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('prices')) ?></span>
+                        <p><?= e(t('dtg_prices_p1')) ?></p>
+                    </div>
                     <div class="guide-table-wrap">
                         <table>
                             <thead>
@@ -213,8 +240,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="guide-box insider"><p><?= t('dtg_prices_insider') ?></p></div>
 
                     <!-- BEST TIME -->
-                    <h2 id="best-time"><?= e(t('dtg_best_time_title')) ?></h2>
-                    <p><?= e(t('dtg_best_time_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="best-time"><?= e(t('dtg_best_time_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('best-time')) ?></span>
+                        <p><?= e(t('dtg_best_time_p1')) ?></p>
+                    </div>
                     <ul>
                         <li><?= t('dtg_best_time_li1') ?></li>
                         <li><?= t('dtg_best_time_li2') ?></li>
@@ -224,8 +254,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="guide-box highlight"><p><?= t('dtg_best_time_box') ?></p></div>
 
                     <!-- PACKING -->
-                    <h2 id="packing"><?= e(t('dtg_packing_title')) ?></h2>
-                    <p><?= e(t('dtg_packing_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="packing"><?= e(t('dtg_packing_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('packing')) ?></span>
+                        <p><?= e(t('dtg_packing_p1')) ?></p>
+                    </div>
                     <ul>
                         <li><?= e(t('dtg_packing_li1')) ?></li>
                         <li><?= e(t('dtg_packing_li2')) ?></li>
@@ -237,7 +270,10 @@ require dirname(__DIR__) . '/includes/header.php';
                     </ul>
 
                     <!-- FAQ -->
-                    <h2 id="faq"><?= e(t('dtg_faq_title')) ?></h2>
+                    <div class="guide-section-head">
+                        <h2 id="faq"><?= e(t('dtg_faq_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('faq')) ?></span>
+                    </div>
                     <div class="faq-column">
                         <?php for ($i = 1; $i <= 8; $i++): ?>
                         <div class="faq-item-acc">
@@ -248,8 +284,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     </div>
 
                     <!-- BOOKING FORM -->
-                    <h2 id="book"><?= e(t('dtg_book_title')) ?></h2>
-                    <p><?= e(t('dtg_book_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="book"><?= e(t('dtg_book_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('book')) ?></span>
+                        <p><?= e(t('dtg_book_p1')) ?></p>
+                    </div>
                     <div class="guide-cta-box">
                         <h3><?= e(t('dtg_cta_title')) ?></h3>
                         <p><?= e(t('dtg_cta_p')) ?></p>

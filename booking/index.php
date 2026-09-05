@@ -82,7 +82,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('calendar-check') ?> <?= e(t('booking_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(badge_tagline('booking_hero_badge')) ?></span>
                 <h1><?= e(t('booking_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e($displayTitle) ?></p>
             </div>

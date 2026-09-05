@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-paw"></i> <?= e(t('serengeti_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(park_tagline('serengeti_hero_badge')) ?></span>
                 <h1><?= e(t('serengeti_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('serengeti_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -34,7 +34,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('serengeti_intro_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('serengeti_intro_badge')) ?></span>
                     <h2><?= e(t('serengeti_intro_title')) ?></h2>
                 </div>
                 <p><?= e(t('serengeti_intro_p1')) ?></p>
@@ -57,7 +57,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('compass') ?> <?= e(t('serengeti_regions_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('serengeti_regions_badge')) ?></span>
                     <h2><?= e(t('serengeti_regions_title')) ?></h2>
                     <p><?= e(t('serengeti_regions_intro')) ?></p>
                 </div>
@@ -79,7 +79,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('arrows-turn-right') ?> <?= e(t('serengeti_migration_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('serengeti_migration_badge')) ?></span>
                     <h2><?= e(t('serengeti_migration_title')) ?></h2>
                     <p><?= e(t('serengeti_migration_intro')) ?></p>
                 </div>
@@ -109,7 +109,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-paw"></i> <?= e(t('serengeti_wildlife_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('serengeti_wildlife_badge')) ?></span>
                     <h2><?= e(t('serengeti_wildlife_title')) ?></h2>
                     <p><?= e(t('serengeti_wildlife_intro')) ?></p>
                 </div>
@@ -134,7 +134,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('serengeti_when_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('serengeti_when_badge')) ?></span>
                     <h2><?= e(t('serengeti_when_title')) ?></h2>
                     <p><?= e(t('serengeti_when_intro')) ?></p>
                 </div>
@@ -146,7 +146,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('bed') ?> <?= e(t('serengeti_stay_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('serengeti_stay_badge')) ?></span>
                     <h2><?= e(t('serengeti_stay_title')) ?></h2>
                     <p><?= e(t('serengeti_stay_intro')) ?></p>
                 </div>
@@ -185,7 +185,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('money-bill-wave') ?> <?= e(t('serengeti_fees_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('serengeti_fees_badge')) ?></span>
                     <h2><?= e(t('serengeti_fees_title')) ?></h2>
                     <p><?= e(t('serengeti_fees_intro')) ?></p>
                 </div>
@@ -213,7 +213,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('serengeti_gallery_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('serengeti_gallery_badge')) ?></span>
                     <h2><?= e(t('serengeti_gallery_title')) ?></h2>
                 </div>
 
@@ -255,7 +255,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('serengeti_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('serengeti_faq_badge')) ?></span>
                     <h2><?= e(t('serengeti_faq_title')) ?></h2>
                 </div>
                 <div class="faq-column">

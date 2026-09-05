@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('binoculars') ?> <?= e(t('safari_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(badge_tagline('safari_hero_badge')) ?></span>
                 <h1><?= e(t('safari_hero_title')) ?></h1>
                 <p class="hero-sub" id="listingResultsSub">10 <?= e(t('safari_results_found')) ?></p>
             </div>
@@ -39,9 +39,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     <button type="button" class="quick-filter-chip" data-quick-type="zanzibar">Zanzibar</button>
                 </div>
 
-                <button type="button" class="more-filters-toggle" id="moreFiltersToggle">
-                    <?= e(t('safari_filter_label')) ?> <?= icon('chevron-down') ?>
-                </button>
+                <div class="text-center">
+                    <button type="button" class="more-filters-toggle" id="moreFiltersToggle">
+                        <?= e(t('safari_filter_label')) ?> <?= icon('chevron-down') ?>
+                    </button>
+                </div>
 
                 <div class="more-filters-panel" id="moreFiltersPanel">
                     <select class="listing-select" id="filterExperience" aria-label="<?= e(t('safari_filter_experience')) ?>">
@@ -139,11 +141,18 @@ require dirname(__DIR__) . '/includes/header.php';
                             <h3>1 Day Tarangire Safari</h3>
                             <div class="pkg-dest">Tarangire National Park</div>
                             <div class="pkg-rating"><span class="review-stars">★★★★★</span> (206)</div>
-                            <div class="pkg-tags"><span>Elephants</span><span>Baobab</span><span>Birdwatching</span></div>
+                            <ul class="pkg-features">
+                                <li><?= icon('check') ?> Full-day game drive, elephants &amp; baobabs</li>
+                                <li><?= icon('check') ?> Picnic lunch inside the park</li>
+                                <li><?= icon('check') ?> Park fees included</li>
+                            </ul>
+                            <div class="pkg-social-proof"><?= icon('users') ?> 206+ <?= e(t('safari_booked_suffix')) ?></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€200 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
                                 <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
+                            <a href="<?= url('contact.php') ?>" class="pkg-book-btn"><?= e(t('safari_book_now')) ?></a>
+                            <p class="pkg-guarantee"><?= e(t('safari_guarantee')) ?></p>
                         </div>
                     </div>
 
@@ -156,11 +165,18 @@ require dirname(__DIR__) . '/includes/header.php';
                             <h3>2 Days Tarangire &amp; Ngorongoro Safari</h3>
                             <div class="pkg-dest">Ngorongoro Crater</div>
                             <div class="pkg-rating"><span class="review-stars">★★★★★</span> (187)</div>
-                            <div class="pkg-tags"><span>Big Five</span><span>UNESCO</span><span>Rhino</span></div>
+                            <ul class="pkg-features">
+                                <li><?= icon('check') ?> 1 night camping / budget lodge</li>
+                                <li><?= icon('check') ?> Full-day crater descent, Big Five &amp; rhino</li>
+                                <li><?= icon('check') ?> All meals + drinking water</li>
+                            </ul>
+                            <div class="pkg-social-proof"><?= icon('users') ?> 187+ <?= e(t('safari_booked_suffix')) ?></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€650 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
                                 <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
+                            <a href="<?= url('contact.php') ?>" class="pkg-book-btn"><?= e(t('safari_book_now')) ?></a>
+                            <p class="pkg-guarantee"><?= e(t('safari_guarantee')) ?></p>
                         </div>
                     </div>
 
@@ -173,11 +189,18 @@ require dirname(__DIR__) . '/includes/header.php';
                             <h3>3 Days Serengeti Safari</h3>
                             <div class="pkg-dest">Serengeti Central &amp; Ngorongoro</div>
                             <div class="pkg-rating"><span class="review-stars">★★★★★</span> (191)</div>
-                            <div class="pkg-tags"><span>Big Five</span><span>Predators</span><span>Private</span></div>
+                            <ul class="pkg-features">
+                                <li><?= icon('check') ?> 2 nights tented camp</li>
+                                <li><?= icon('check') ?> Big Five &amp; predator tracking</li>
+                                <li><?= icon('check') ?> Professional driver-guide</li>
+                            </ul>
+                            <div class="pkg-social-proof"><?= icon('users') ?> 191+ <?= e(t('safari_booked_suffix')) ?></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€1,000 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
                                 <a href="<?= url('safari/3-day-serengeti-safari.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
+                            <a href="<?= url('safari/3-day-serengeti-safari.php') ?>" class="pkg-book-btn"><?= e(t('safari_book_now')) ?></a>
+                            <p class="pkg-guarantee"><?= e(t('safari_guarantee')) ?></p>
                         </div>
                     </div>
 
@@ -190,11 +213,18 @@ require dirname(__DIR__) . '/includes/header.php';
                             <h3>4 Days Big Five Safari</h3>
                             <div class="pkg-dest">Tarangire + Ngorongoro + Serengeti</div>
                             <div class="pkg-rating"><span class="review-stars">★★★★★</span> (193)</div>
-                            <div class="pkg-tags"><span>Big Five</span><span>Complete</span><span>Private</span></div>
+                            <ul class="pkg-features">
+                                <li><?= icon('check') ?> 3 nights lodge / tented camp</li>
+                                <li><?= icon('check') ?> Full Big Five circuit</li>
+                                <li><?= icon('check') ?> All meals + drinking water</li>
+                            </ul>
+                            <div class="pkg-social-proof"><?= icon('users') ?> 193+ <?= e(t('safari_booked_suffix')) ?></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€1,250 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
                                 <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
+                            <a href="<?= url('contact.php') ?>" class="pkg-book-btn"><?= e(t('safari_book_now')) ?></a>
+                            <p class="pkg-guarantee"><?= e(t('safari_guarantee')) ?></p>
                         </div>
                     </div>
 
@@ -207,11 +237,18 @@ require dirname(__DIR__) . '/includes/header.php';
                             <h3>5 Days Migration Safari</h3>
                             <div class="pkg-dest">Serengeti North + Ngorongoro</div>
                             <div class="pkg-rating"><span class="review-stars">★★★★★</span> (164)</div>
-                            <div class="pkg-tags"><span>Migration</span><span>Mara River</span><span>Photography</span></div>
+                            <ul class="pkg-features">
+                                <li><?= icon('check') ?> 4 nights tented camp</li>
+                                <li><?= icon('check') ?> Full migration season coverage</li>
+                                <li><?= icon('check') ?> Mara River crossing points</li>
+                            </ul>
+                            <div class="pkg-social-proof"><?= icon('users') ?> 164+ <?= e(t('safari_booked_suffix')) ?></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€1,100 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
                                 <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
+                            <a href="<?= url('contact.php') ?>" class="pkg-book-btn"><?= e(t('safari_book_now')) ?></a>
+                            <p class="pkg-guarantee"><?= e(t('safari_guarantee')) ?></p>
                         </div>
                     </div>
 
@@ -224,11 +261,18 @@ require dirname(__DIR__) . '/includes/header.php';
                             <h3>6 Days Fly-in Safari</h3>
                             <div class="pkg-dest">Serengeti + Ngorongoro</div>
                             <div class="pkg-rating"><span class="review-stars">★★★★★</span> (142)</div>
-                            <div class="pkg-tags"><span>Fly-in</span><span>Luxury</span><span>Time-saving</span></div>
+                            <ul class="pkg-features">
+                                <li><?= icon('check') ?> Light-aircraft transfers, no long drives</li>
+                                <li><?= icon('check') ?> 5 nights lodge accommodation</li>
+                                <li><?= icon('check') ?> All park fees included</li>
+                            </ul>
+                            <div class="pkg-social-proof"><?= icon('users') ?> 142+ <?= e(t('safari_booked_suffix')) ?></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€1,800 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
                                 <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
+                            <a href="<?= url('contact.php') ?>" class="pkg-book-btn"><?= e(t('safari_book_now')) ?></a>
+                            <p class="pkg-guarantee"><?= e(t('safari_guarantee')) ?></p>
                         </div>
                     </div>
 
@@ -241,11 +285,18 @@ require dirname(__DIR__) . '/includes/header.php';
                             <h3>7 Days Luxury Safari</h3>
                             <div class="pkg-dest">Full Northern Circuit</div>
                             <div class="pkg-rating"><span class="review-stars">★★★★★</span> (98)</div>
-                            <div class="pkg-tags"><span>Luxury</span><span>Private Suite</span><span>Spa</span></div>
+                            <ul class="pkg-features">
+                                <li><?= icon('check') ?> 6 nights private suite lodges</li>
+                                <li><?= icon('check') ?> Private vehicle &amp; guide</li>
+                                <li><?= icon('check') ?> Spa &amp; sundowner experiences</li>
+                            </ul>
+                            <div class="pkg-social-proof"><?= icon('users') ?> 98+ <?= e(t('safari_booked_suffix')) ?></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€2,500 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
                                 <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
+                            <a href="<?= url('contact.php') ?>" class="pkg-book-btn"><?= e(t('safari_book_now')) ?></a>
+                            <p class="pkg-guarantee"><?= e(t('safari_guarantee')) ?></p>
                         </div>
                     </div>
 
@@ -258,11 +309,18 @@ require dirname(__DIR__) . '/includes/header.php';
                             <h3>8 Days Great Migration Safari</h3>
                             <div class="pkg-dest">Serengeti North + Central</div>
                             <div class="pkg-rating"><span class="review-stars">★★★★★</span> (176)</div>
-                            <div class="pkg-tags"><span>Migration</span><span>Mara River</span><span>Big Five</span></div>
+                            <ul class="pkg-features">
+                                <li><?= icon('check') ?> 7 nights tented camp</li>
+                                <li><?= icon('check') ?> Northern + Central Serengeti circuit</li>
+                                <li><?= icon('check') ?> Mara River crossings &amp; Big Five</li>
+                            </ul>
+                            <div class="pkg-social-proof"><?= icon('users') ?> 176+ <?= e(t('safari_booked_suffix')) ?></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€2,100 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
                                 <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
+                            <a href="<?= url('contact.php') ?>" class="pkg-book-btn"><?= e(t('safari_book_now')) ?></a>
+                            <p class="pkg-guarantee"><?= e(t('safari_guarantee')) ?></p>
                         </div>
                     </div>
 
@@ -275,11 +333,18 @@ require dirname(__DIR__) . '/includes/header.php';
                             <h3>10 Days Safari + Zanzibar</h3>
                             <div class="pkg-dest">Serengeti + Ngorongoro + Zanzibar</div>
                             <div class="pkg-rating"><span class="review-stars">★★★★★</span> (121)</div>
-                            <div class="pkg-tags"><span>Safari</span><span>Beach</span><span>Relax</span></div>
+                            <ul class="pkg-features">
+                                <li><?= icon('check') ?> 6 days safari + 4 days beach</li>
+                                <li><?= icon('check') ?> Domestic flights to Zanzibar included</li>
+                                <li><?= icon('check') ?> Beachfront lodge stay</li>
+                            </ul>
+                            <div class="pkg-social-proof"><?= icon('users') ?> 121+ <?= e(t('safari_booked_suffix')) ?></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€2,800 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
                                 <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
+                            <a href="<?= url('contact.php') ?>" class="pkg-book-btn"><?= e(t('safari_book_now')) ?></a>
+                            <p class="pkg-guarantee"><?= e(t('safari_guarantee')) ?></p>
                         </div>
                     </div>
 
@@ -292,11 +357,18 @@ require dirname(__DIR__) . '/includes/header.php';
                             <h3>14 Days Honeymoon Safari</h3>
                             <div class="pkg-dest">Northern Circuit + Zanzibar</div>
                             <div class="pkg-rating"><span class="review-stars">★★★★★</span> (87)</div>
-                            <div class="pkg-tags"><span>Honeymoon</span><span>Bush Dinner</span><span>Spa</span></div>
+                            <ul class="pkg-features">
+                                <li><?= icon('check') ?> Private suite lodges, Northern Circuit + Zanzibar</li>
+                                <li><?= icon('check') ?> Private bush dinner under the stars</li>
+                                <li><?= icon('check') ?> Couples spa treatment</li>
+                            </ul>
+                            <div class="pkg-social-proof"><?= icon('users') ?> 87+ <?= e(t('safari_booked_suffix')) ?></div>
                             <div class="pkg-footer">
                                 <div class="price-tag">€3,800 <small>from &middot; <?= e(t('safari_pp')) ?></small></div>
                                 <a href="<?= url('contact.php') ?>" class="pkg-arrow" aria-label="<?= e(t('safari_view_details')) ?>"><?= icon('arrow-right') ?></a>
                             </div>
+                            <a href="<?= url('contact.php') ?>" class="pkg-book-btn"><?= e(t('safari_book_now')) ?></a>
+                            <p class="pkg-guarantee"><?= e(t('safari_guarantee')) ?></p>
                         </div>
                     </div>
 
@@ -307,7 +379,7 @@ require dirname(__DIR__) . '/includes/header.php';
         </section>
 
         <section class="detail-section">
-            <div class="container">
+            <div class="container text-center">
                 <h2 class="section-title"><?= e(t('safari_parks_title')) ?></h2>
                 <p class="subtitle"><?= e(t('safari_parks_subtitle')) ?></p>
 
@@ -400,7 +472,7 @@ require dirname(__DIR__) . '/includes/header.php';
         </section>
 
         <section class="detail-section bg-light">
-            <div class="container">
+            <div class="container text-center">
                 <h2 class="section-title"><?= e(t('safari_included_title')) ?></h2>
                 <p class="subtitle"><?= e(t('safari_included_subtitle')) ?></p>
 
@@ -437,7 +509,7 @@ require dirname(__DIR__) . '/includes/header.php';
         </section>
 
         <section class="detail-section bg-light">
-            <div class="container">
+            <div class="container text-center">
                 <h2 class="section-title"><?= e(t('safari_faq_title')) ?></h2>
                 <div class="faq-column">
                     <div class="faq-item-acc">

@@ -9,6 +9,8 @@ $strings = load_lang($lang);
 $page = 'home';
 $altPath = '';
 $bodyClass = 'home-page';
+$useGsap = true;
+$extraScripts = ['js/home-animations.js'];
 
 $testimonials = db()->query(
     "SELECT * FROM testimonials WHERE status = 'published' ORDER BY sort_order ASC, created_at DESC LIMIT 9"
@@ -71,6 +73,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="section-title-left centered">
                 <span class="section-badge"><?= icon('book-open') ?> <?= e(t('stories_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('stories_tagline')) ?></span>
                 <h2 id="storiesTitle"><?= e(t('stories_title')) ?></h2>
             </div>
 
@@ -199,6 +202,7 @@ require __DIR__ . '/includes/header.php';
             <div class="container">
                 <div class="section-title-left centered">
                     <span class="section-badge"><?= icon('compass') ?> <?= e(t('safari_types_badge')) ?></span>
+                    <span class="section-tagline"><?= e(t('safari_types_tagline')) ?></span>
                     <h2 id="offerTitle"><?= e(t('safari_types_title')) ?></h2>
                     <p><?= e(t('safari_types_intro')) ?></p>
                 </div>
@@ -242,6 +246,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="section-title-left centered">
                 <span class="section-badge"><?= icon('balance-scale') ?> <?= e(t('comparison_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('comparison_tagline')) ?></span>
                 <h2 id="comparisonTitle"><?= e(t('comparison_title')) ?></h2>
                 <p><?= e(t('comparison_intro')) ?></p>
             </div>
@@ -345,6 +350,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="trust-authority-intro centered">
                 <span class="section-badge"><?= icon('medal') ?> <?= e(t('trust_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('trust_tagline')) ?></span>
                 <h2 id="trustTitle"><?= e(t('trust_title')) ?></h2>
             </div>
             <div class="trust-authority-panel">
@@ -378,6 +384,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="best-packages-intro centered">
                 <span class="section-badge"><?= icon('star') ?> <?= e(t('packages_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('packages_tagline')) ?></span>
                 <h2 id="packagesTitle"><?= e(t('packages_title')) ?></h2>
                 <p><?= e(t('packages_intro')) ?></p>
                 <a href="<?= url('safari/') ?>" class="btn btn-primary"><?= e(t('packages_see_all')) ?></a>
@@ -444,6 +451,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="section-title-left centered">
                 <span class="section-badge"><?= icon('wand-magic-sparkles') ?> <?= e(t('planner_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('planner_tagline')) ?></span>
                 <h2 id="plannerTitle"><?= e(t('planner_title')) ?></h2>
                 <p><?= e(t('planner_intro')) ?></p>
             </div>
@@ -515,6 +523,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="section-title-left centered">
                 <span class="section-badge"><?= icon('calendar-alt') ?> <?= e(t('when_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('when_tagline')) ?></span>
                 <h2 id="whenTitle"><?= e(t('when_title')) ?></h2>
                 <p><?= e(t('when_intro')) ?></p>
             </div>
@@ -556,6 +565,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="section-title-left centered">
                 <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('gallery_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('gallery_tagline')) ?></span>
                 <h2 id="galleryTitle"><?= e(t('gallery_title')) ?></h2>
                 <p><?= e(t('gallery_intro')) ?></p>
             </div>
@@ -627,6 +637,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="section-title-left centered">
                 <span class="section-badge"><?= icon('book-open') ?> <?= e(t('journey_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('journey_tagline')) ?></span>
                 <h2 id="storyTitle"><?= e(t('journey_title')) ?></h2>
                 <p><?= e(t('journey_intro')) ?></p>
             </div>
@@ -689,6 +700,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="section-title-left centered">
                 <span class="section-badge"><i class="fab fa-youtube"></i> <?= e(t('shorts_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('shorts_tagline')) ?></span>
                 <h2 id="shortsTitle"><?= e(t('shorts_title')) ?></h2>
                 <p><?= e(t('shorts_intro')) ?></p>
             </div>
@@ -782,6 +794,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="section-title-left centered">
                 <span class="section-badge"><?= icon('quote-left') ?> <?= e(t('testimonials_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('testimonials_tagline')) ?></span>
                 <h2 id="testimonialsTitle"><?= e(t('testimonials_title')) ?></h2>
                 <p><?= e(t('testimonials_intro')) ?></p>
             </div>
@@ -817,6 +830,7 @@ require __DIR__ . '/includes/header.php';
         <div class="container">
             <div class="section-title-left centered">
                 <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('faq_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('faq_tagline')) ?></span>
                 <h2 id="faqTitle"><?= e(t('faq_title')) ?></h2>
                 <p><?= e(t('faq_intro')) ?></p>
             </div>
@@ -858,6 +872,7 @@ require __DIR__ . '/includes/header.php';
             <div class="experiences-slider-header">
                 <div class="section-title-left centered">
                     <span class="section-badge"><?= icon('spa') ?> <?= e(t('experiences_badge')) ?></span>
+                    <span class="section-tagline"><?= e(t('experiences_tagline')) ?></span>
                     <h2 id="experiencesTitle"><?= e(t('experiences_title')) ?></h2>
                     <p><?= e(t('experiences_intro')) ?></p>
                 </div>

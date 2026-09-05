@@ -205,13 +205,27 @@
     font-size: 0.85rem;
 }
 
-.guide-toc h3 {
+.guide-toc summary {
+    list-style: none;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: 0.85rem;
     margin: 0 0 0.6rem;
     color: var(--black);
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+}
+
+.guide-toc summary::-webkit-details-marker {
+    display: none;
+}
+
+.guide-toc-mobile-label,
+.guide-toc-chevron {
+    display: none;
 }
 
 .guide-toc ul {
@@ -261,12 +275,82 @@
         top: 0;
         max-height: none;
         margin-bottom: 1.6rem;
+        padding: 0.9rem 1.2rem;
+    }
+
+    .guide-toc:not([open]) {
+        padding-bottom: 0.9rem;
+    }
+
+    .guide-toc summary {
+        cursor: pointer;
+        margin: 0;
+        justify-content: space-between;
+    }
+
+    .guide-toc-summary-title {
+        display: none;
+    }
+
+    .guide-toc-mobile-label {
+        display: block;
+        flex: 1;
+    }
+
+    .guide-toc-chevron {
+        display: block;
+        flex-shrink: 0;
+        transition: transform var(--transition);
+    }
+
+    .guide-toc[open] .guide-toc-chevron {
+        transform: rotate(180deg);
+    }
+
+    .guide-toc ul {
+        margin-top: 0.8rem;
     }
 }
 
 /* Guide section headings — always centered per site convention */
 .guide-main h2 {
     scroll-margin-top: 100px;
+}
+
+/* Centered section head: H2 + script tagline + short lead paragraph.
+   Used at the top of every major guide section instead of a plain
+   left-aligned H2, per the site's "titles are always centered" rule. */
+.guide-section-head {
+    text-align: center;
+    max-width: 760px;
+    margin: 3rem auto 2rem;
+    scroll-margin-top: 100px;
+}
+
+.guide-section-head:first-child {
+    margin-top: 0;
+}
+
+.guide-section-head h2 {
+    margin: 0 0 0.2rem;
+    scroll-margin-top: 100px;
+}
+
+.guide-section-tagline {
+    display: block;
+    font-family: 'Caveat', var(--font-display), cursive;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    margin-bottom: 0.7rem;
+}
+
+.guide-section-head .guide-intro-lead,
+.guide-section-head > p {
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .guide-main .section-title-left {
@@ -552,21 +636,131 @@
     margin-right: 6px;
 }
 
-/* Local tips */
+/* Park cards: teaser always visible, full description expands in place */
+.guide-item-card .guide-item-teaser {
+    margin-bottom: 0.2rem;
+}
+
+.guide-item-card .guide-item-more {
+    margin-top: 0.5rem;
+}
+
+.guide-item-card .guide-item-more[open] summary {
+    margin-bottom: 0.5rem;
+}
+
+.guide-item-card summary.guide-item-toggle {
+    list-style: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--gold-dark);
+    font-weight: 700;
+    font-size: 0.82rem;
+}
+
+.guide-item-card summary.guide-item-toggle::-webkit-details-marker {
+    display: none;
+}
+
+.guide-item-card summary.guide-item-toggle svg {
+    width: 12px;
+    height: 12px;
+    transition: transform var(--transition);
+}
+
+.guide-item-card .guide-item-more[open] summary.guide-item-toggle svg {
+    transform: rotate(180deg);
+}
+
+.guide-item-more[open] .guide-item-toggle .expand-label-more,
+.guide-item-more:not([open]) .guide-item-toggle .expand-label-less {
+    display: none;
+}
+
+/* Local tips — collapsed accordion (native <details>) */
 .guide-tip {
     background: var(--cream);
-    padding: 1rem 1.5rem;
     border-radius: var(--radius-sm);
     border-left: 6px solid var(--gold);
-    margin: 1rem 0;
+    margin: 0.7rem 0;
+    overflow: hidden;
+}
+
+.guide-tip summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.guide-tip summary::-webkit-details-marker {
+    display: none;
+}
+
+.guide-tip summary .tip-number {
+    color: var(--gold-dark);
+    font-weight: 800;
+    margin-right: 8px;
+}
+
+.guide-tip summary .tip-chevron {
+    flex-shrink: 0;
+    transition: transform var(--transition);
+    color: var(--gold-dark);
+}
+
+.guide-tip[open] summary .tip-chevron {
+    transform: rotate(180deg);
 }
 
 .guide-tip p {
     margin: 0;
+    padding: 0 1.5rem 1.1rem;
+    color: var(--text-primary);
 }
 
 .guide-tip strong {
     color: var(--black);
+}
+
+/* Expandable intro text */
+.guide-expandable-text[open] .guide-expand-toggle .expand-label-more {
+    display: none;
+}
+
+.guide-expandable-text:not([open]) .guide-expand-toggle .expand-label-less {
+    display: none;
+}
+
+.guide-expand-toggle {
+    list-style: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gold-dark);
+    font-weight: 700;
+    font-size: 0.92rem;
+    margin-top: 0.2rem;
+}
+
+.guide-expand-toggle::-webkit-details-marker {
+    display: none;
+}
+
+.guide-expand-toggle svg {
+    transition: transform var(--transition);
+}
+
+.guide-expandable-text[open] .guide-expand-toggle svg {
+    transform: rotate(180deg);
 }
 
 /* Seasonal month grid */
@@ -1131,6 +1325,18 @@
     color: rgba(255, 255, 255, 0.85);
     margin: 0.4rem 0 0;
     font-size: 0.95rem;
+}
+
+.guide-price-answer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 0.9rem;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .guide-factor-grid {

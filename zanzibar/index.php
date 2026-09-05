@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('umbrella-beach') ?> <?= e(t('zanzibar_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(badge_tagline('zanzibar_hero_badge')) ?></span>
                 <h1><span><?= e(t('zanzibar_hero_title_1')) ?></span> <?= e(t('zanzibar_hero_title_2')) ?></h1>
                 <p class="hero-sub"><?= e(t('zanzibar_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -55,7 +55,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('heart') ?> <?= e(t('zanzibar_why_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('zanzibar_why_badge')) ?></span>
                     <h2><?= e(t('zanzibar_why_title')) ?></h2>
                 </div>
 
@@ -82,7 +82,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('zanzibar_gallery_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('zanzibar_gallery_badge')) ?></span>
                     <h2><?= e(t('zanzibar_gallery_title')) ?></h2>
                 </div>
                 <div class="gallery-grid">
@@ -111,7 +111,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('water') ?> <?= e(t('zanzibar_beaches_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('zanzibar_beaches_badge')) ?></span>
                     <h2><?= e(t('zanzibar_beaches_title')) ?></h2>
                     <p><?= e(t('zanzibar_beaches_intro')) ?></p>
                 </div>
@@ -161,7 +161,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('compass') ?> <?= e(t('zanzibar_excursions_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('zanzibar_excursions_badge')) ?></span>
                     <h2><?= e(t('zanzibar_excursions_title')) ?></h2>
                 </div>
                 <div class="grid-3">
@@ -202,7 +202,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('calendar-alt') ?> <?= e(t('zanzibar_when_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('zanzibar_when_badge')) ?></span>
                     <h2><?= e(t('zanzibar_when_title')) ?></h2>
                 </div>
                 <div class="month-card-grid">
@@ -256,7 +256,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('zanzibar_practical_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('zanzibar_practical_badge')) ?></span>
                     <h2><?= e(t('zanzibar_practical_title')) ?></h2>
                 </div>
                 <div class="grid-2">

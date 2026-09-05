@@ -86,7 +86,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('daytrip_overview_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('daytrip_overview_badge')) ?></span>
                             <h2><?= e(t('daytrip_tarangire_overview_title')) ?></h2>
                         </div>
                         <p><?= e(t('daytrip_tarangire_overview_p1')) ?></p>
@@ -103,7 +103,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('binoculars') ?> <?= e(t('daytrip_experience_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('daytrip_experience_badge')) ?></span>
                             <h2><?= e(t('daytrip_experience_title')) ?></h2>
                         </div>
                         <div class="features-grid">
@@ -116,7 +116,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('clock') ?> <?= e(t('daytrip_timeline_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('daytrip_timeline_badge')) ?></span>
                             <h2><?= e(t('daytrip_timeline_title')) ?></h2>
                         </div>
                         <div class="day-timeline">
@@ -161,7 +161,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('route') ?> <?= e(t('daytrip_route_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('daytrip_route_badge')) ?></span>
                             <h2><?= e(t('daytrip_route_title')) ?></h2>
                         </div>
                         <div class="route-strip">
@@ -201,7 +201,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('list-check') ?> <?= e(t('daytrip_features_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('daytrip_features_badge')) ?></span>
                             <h2><?= e(t('daytrip_features_title')) ?></h2>
                         </div>
                         <div class="features-grid">
@@ -216,7 +216,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-paw"></i> <?= e(t('daytrip_wildlife_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('daytrip_wildlife_badge')) ?></span>
                             <h2><?= e(t('daytrip_wildlife_title')) ?></h2>
                             <p><?= e(t('daytrip_wildlife_note')) ?></p>
                         </div>
@@ -232,7 +232,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section id="pricing" style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('calculator') ?> <?= e(t('daytrip_pricing_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('daytrip_pricing_badge')) ?></span>
                             <h2><?= e(t('daytrip_pricing_title')) ?></h2>
                             <p><?= e(t('daytrip_pricing_intro')) ?></p>
                         </div>
@@ -266,7 +266,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('map-location-dot') ?> <?= e(t('daytrip_pickup_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('daytrip_pickup_badge')) ?></span>
                             <h2><?= e(t('daytrip_pickup_title2')) ?></h2>
                         </div>
                         <div class="getting-there-grid">
@@ -278,7 +278,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('suitcase') ?> <?= e(t('daytrip_bring_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('daytrip_bring_badge')) ?></span>
                             <h2><?= e(t('daytrip_bring_title2')) ?></h2>
                         </div>
                         <div class="tag-cloud">
@@ -305,7 +305,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section>
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('compass') ?> <?= e(t('daytrip_related_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('daytrip_related_badge')) ?></span>
                             <h2><?= e(t('daytrip_related_title')) ?></h2>
                         </div>
                         <div class="grid-3">

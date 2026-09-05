@@ -63,6 +63,11 @@
 
 <body class="hero-behind-header <?= e($bodyClass ?? '') ?>">
 
+    <div id="pagePreloader" class="page-preloader" aria-hidden="true">
+        <span class="page-preloader-spinner"></span>
+    </div>
+    <noscript><style>.page-preloader{display:none!important;}</style></noscript>
+
     <header class="site-header" id="siteHeader">
         <div class="container header-container">
             <a href="<?= url('') ?>" class="logo" aria-label="Serengeti Budget Safari - Home">
@@ -75,84 +80,187 @@
 
                     <li class="has-mega">
                         <button type="button" class="mega-trigger" aria-expanded="false"><?= e(t('nav_safaris')) ?> <?= icon('chevron-down') ?></button>
-                        <div class="mega-panel">
-                            <div class="mega-panel-inner">
-                                <div class="mega-col">
-                                    <span class="mega-col-heading"><?= e(t('nav_safaris_by_style_heading')) ?></span>
-                                    <a href="<?= url('safari/budget-safari-guide.php') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><?= icon('wallet') ?></span>
-                                        <span><strong><?= e(t('nav_safari_budget')) ?></strong><small><?= e(t('nav_safari_budget_desc')) ?></small></span>
-                                    </a>
-                                    <a href="<?= url('safari/luxury-safari-guide.php') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><?= icon('gem') ?></span>
-                                        <span><strong><?= e(t('nav_safari_luxury')) ?></strong><small><?= e(t('nav_safari_luxury_desc')) ?></small></span>
-                                    </a>
-                                    <a href="<?= url('safari/great-migration-guide.php') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><i class="fas fa-kiwi-bird"></i></span>
-                                        <span><strong><?= e(t('nav_safari_migration')) ?></strong><small><?= e(t('nav_safari_migration_desc')) ?></small></span>
-                                    </a>
-                                    <a href="<?= url('safari/groups.php') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><?= icon('users') ?></span>
-                                        <span><strong><?= e(t('nav_safari_family')) ?></strong><small><?= e(t('nav_safari_family_desc')) ?></small></span>
-                                    </a>
+                        <div class="mega-panel mega-panel-preview" data-preview-panel>
+                            <div class="mega-preview-grid">
+                                <ul class="mega-preview-list">
+                                    <li>
+                                        <button type="button" class="mega-preview-item active"
+                                            data-title="<?= e(t('nav_safari_budget')) ?>"
+                                            data-desc="<?= e(t('nav_safari_budget_long')) ?>"
+                                            data-img="<?= asset('images/wildlife/lion-pride-stalking-zebra.jpg') ?>"
+                                            data-href="<?= url('safari/budget-safari-guide.php') ?>">
+                                            <strong><?= e(t('nav_safari_budget')) ?></strong>
+                                            <span><?= e(t('nav_safari_budget_desc')) ?></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('nav_safari_luxury')) ?>"
+                                            data-desc="<?= e(t('nav_safari_luxury_long')) ?>"
+                                            data-img="<?= asset('images/gallery/savanna-sunrise-acacia-trees.jpg') ?>"
+                                            data-href="<?= url('safari/luxury-safari-guide.php') ?>">
+                                            <strong><?= e(t('nav_safari_luxury')) ?></strong>
+                                            <span><?= e(t('nav_safari_luxury_desc')) ?></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('nav_safari_migration')) ?>"
+                                            data-desc="<?= e(t('nav_safari_migration_long')) ?>"
+                                            data-img="<?= asset('images/wildlife/zebra-herd-grazing-savanna.jpg') ?>"
+                                            data-href="<?= url('safari/great-migration-guide.php') ?>">
+                                            <strong><?= e(t('nav_safari_migration')) ?></strong>
+                                            <span><?= e(t('nav_safari_migration_desc')) ?></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('nav_safari_family')) ?>"
+                                            data-desc="<?= e(t('nav_safari_family_long')) ?>"
+                                            data-img="<?= asset('images/team/guide-client-ngorongoro-viewpoint.jpg') ?>"
+                                            data-href="<?= url('safari/groups.php') ?>">
+                                            <strong><?= e(t('nav_safari_family')) ?></strong>
+                                            <span><?= e(t('nav_safari_family_desc')) ?></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('nav_day_trips')) ?>"
+                                            data-desc="<?= e(t('nav_day_trips_long')) ?>"
+                                            data-img="<?= asset('images/hero/elephant-under-acacia-tree.jpg') ?>"
+                                            data-href="<?= url('safari/day-trips-guide.php') ?>">
+                                            <strong><?= e(t('nav_day_trips')) ?></strong>
+                                            <span><?= e(t('nav_day_trips_desc')) ?></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('nav_trekking')) ?>"
+                                            data-desc="<?= e(t('nav_trekking_long')) ?>"
+                                            data-img="<?= asset('images/hero/male-lion-portrait-mane.jpg') ?>"
+                                            data-href="<?= url('trekking/') ?>">
+                                            <strong><?= e(t('nav_trekking')) ?></strong>
+                                            <span><?= e(t('nav_trekking_desc')) ?></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('nav_zanzibar')) ?>"
+                                            data-desc="<?= e(t('nav_zanzibar_long')) ?>"
+                                            data-img="<?= asset('images/gallery/elephant-family-sunset-walk.jpg') ?>"
+                                            data-href="<?= url('zanzibar/') ?>">
+                                            <strong><?= e(t('nav_zanzibar')) ?></strong>
+                                            <span><?= e(t('nav_zanzibar_desc')) ?></span>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="mega-preview-stage">
+                                    <div class="mega-preview-body">
+                                        <h4 data-preview-title><?= e(t('nav_safari_budget')) ?></h4>
+                                        <p data-preview-desc><?= e(t('nav_safari_budget_long')) ?></p>
+                                        <a href="<?= url('safari/budget-safari-guide.php') ?>" class="mega-cta" data-preview-link><?= e(t('nav_preview_explore')) ?> <?= icon('arrow-right') ?></a>
+                                    </div>
+                                    <div class="mega-preview-photo" data-preview-photo style="background-image:url('<?= asset('images/wildlife/lion-pride-stalking-zebra.jpg') ?>');"></div>
                                 </div>
-                                <div class="mega-col">
-                                    <span class="mega-col-heading"><?= e(t('nav_safaris_more_heading')) ?></span>
-                                    <a href="<?= url('safari/day-trips-guide.php') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><?= icon('hiking') ?></span>
-                                        <span><strong><?= e(t('nav_day_trips')) ?></strong><small><?= e(t('nav_day_trips_desc')) ?></small></span>
-                                    </a>
-                                    <a href="<?= url('trekking/') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><?= icon('mountain') ?></span>
-                                        <span><strong><?= e(t('nav_trekking')) ?></strong><small><?= e(t('nav_trekking_desc')) ?></small></span>
-                                    </a>
-                                    <a href="<?= url('zanzibar/') ?>" class="mega-link">
-                                        <span class="mega-link-icon"><?= icon('umbrella-beach') ?></span>
-                                        <span><strong><?= e(t('nav_zanzibar')) ?></strong><small><?= e(t('nav_zanzibar_desc')) ?></small></span>
-                                    </a>
-                                    <a href="<?= url('safari/') ?>" class="mega-cta"><?= e(t('nav_safaris_cta')) ?> <?= icon('arrow-right') ?></a>
-                                </div>
-                                <a href="<?= url('safari/') ?>" class="mega-feature">
-                                    <img src="<?= asset('images/wildlife/lion-pride-zebra-kill.jpg') ?>" alt="<?= e(t('nav_safaris_featured_title')) ?>" loading="lazy" />
-                                    <span class="mega-feature-badge"><?= e(t('nav_safaris_featured')) ?></span>
-                                    <span class="mega-feature-body">
-                                        <strong><?= e(t('nav_safaris_featured_title')) ?></strong>
-                                        <small><?= e(t('nav_safaris_featured_desc')) ?></small>
-                                        <span class="mega-feature-price"><?= e(t('nav_safaris_featured_price')) ?></span>
-                                    </span>
-                                </a>
                             </div>
                         </div>
                     </li>
 
                     <li class="has-mega">
                         <button type="button" class="mega-trigger" aria-expanded="false"><?= e(t('nav_parks')) ?> <?= icon('chevron-down') ?></button>
-                        <div class="mega-panel">
-                            <div class="mega-panel-inner">
-                                <div class="mega-col">
-                                    <span class="mega-col-heading"><?= e(t('nav_destinations_north_heading')) ?></span>
-                                    <a href="<?= url('parks/serengeti-national-park.php') ?>" class="mega-link-plain">Serengeti</a>
-                                    <a href="<?= url('parks/ngorongoro-conservation-area.php') ?>" class="mega-link-plain">Ngorongoro</a>
-                                    <a href="<?= url('parks/tarangire-national-park.php') ?>" class="mega-link-plain">Tarangire</a>
-                                    <a href="<?= url('parks/lake-manyara-national-park.php') ?>" class="mega-link-plain">Lake Manyara</a>
-                                    <a href="<?= url('parks/arusha-national-park.php') ?>" class="mega-link-plain">Arusha NP</a>
-                                    <a href="<?= url('parks/kilimanjaro-national-park.php') ?>" class="mega-link-plain">Kilimanjaro</a>
+                        <div class="mega-panel mega-panel-preview" data-preview-panel>
+                            <div class="mega-preview-grid">
+                                <ul class="mega-preview-list">
+                                    <li>
+                                        <button type="button" class="mega-preview-item active"
+                                            data-title="<?= e(t('parks_serengeti_name')) ?>"
+                                            data-desc="<?= e(t('parks_serengeti_desc')) ?>"
+                                            data-img="<?= asset('images/wildlife/lion-pride-stalking-zebra.jpg') ?>"
+                                            data-href="<?= url('parks/serengeti-national-park.php') ?>">
+                                            <strong><?= e(t('parks_serengeti_name')) ?></strong>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('parks_ngorongoro_name')) ?>"
+                                            data-desc="<?= e(t('parks_ngorongoro_desc')) ?>"
+                                            data-img="<?= asset('images/hero/ngorongoro-crater-panorama.jpg') ?>"
+                                            data-href="<?= url('parks/ngorongoro-conservation-area.php') ?>">
+                                            <strong><?= e(t('parks_ngorongoro_name')) ?></strong>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('parks_tarangire_name')) ?>"
+                                            data-desc="<?= e(t('parks_tarangire_desc')) ?>"
+                                            data-img="<?= asset('images/hero/elephant-under-acacia-tree.jpg') ?>"
+                                            data-href="<?= url('parks/tarangire-national-park.php') ?>">
+                                            <strong><?= e(t('parks_tarangire_name')) ?></strong>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('parks_manyara_name')) ?>"
+                                            data-desc="<?= e(t('parks_manyara_desc')) ?>"
+                                            data-img="<?= asset('images/wildlife/spotted-hyena-savanna.jpg') ?>"
+                                            data-href="<?= url('parks/lake-manyara-national-park.php') ?>">
+                                            <strong><?= e(t('parks_manyara_name')) ?></strong>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('parks_arusha_name')) ?>"
+                                            data-desc="<?= e(t('parks_arusha_desc')) ?>"
+                                            data-img="<?= asset('images/wildlife/cheetahs-resting-shade.jpg') ?>"
+                                            data-href="<?= url('parks/arusha-national-park.php') ?>">
+                                            <strong><?= e(t('parks_arusha_name')) ?></strong>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('parks_kilimanjaro_name')) ?>"
+                                            data-desc="<?= e(t('parks_kilimanjaro_desc')) ?>"
+                                            data-img="<?= asset('images/hero/male-lion-portrait-mane.jpg') ?>"
+                                            data-href="<?= url('parks/kilimanjaro-national-park.php') ?>">
+                                            <strong><?= e(t('parks_kilimanjaro_name')) ?></strong>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('parks_nyerere_name')) ?>"
+                                            data-desc="<?= e(t('parks_nyerere_desc')) ?>"
+                                            data-img="<?= asset('images/wildlife/white-rhino-grazing.jpg') ?>"
+                                            data-href="<?= url('parks/nyerere-national-park.php') ?>">
+                                            <strong><?= e(t('parks_nyerere_name')) ?></strong>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('parks_ruaha_name')) ?>"
+                                            data-desc="<?= e(t('parks_ruaha_desc')) ?>"
+                                            data-img="<?= asset('images/wildlife/lion-pride-zebra-kill.jpg') ?>"
+                                            data-href="<?= url('parks/ruaha-national-park.php') ?>">
+                                            <strong><?= e(t('parks_ruaha_name')) ?></strong>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="mega-preview-item"
+                                            data-title="<?= e(t('parks_mikumi_name')) ?>"
+                                            data-desc="<?= e(t('parks_mikumi_desc')) ?>"
+                                            data-img="<?= asset('images/wildlife/zebra-herd-grazing-savanna.jpg') ?>"
+                                            data-href="<?= url('parks/mikumi-national-park.php') ?>">
+                                            <strong><?= e(t('parks_mikumi_name')) ?></strong>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="mega-preview-stage">
+                                    <div class="mega-preview-body">
+                                        <h4 data-preview-title><?= e(t('parks_serengeti_name')) ?></h4>
+                                        <p data-preview-desc><?= e(t('parks_serengeti_desc')) ?></p>
+                                        <a href="<?= url('parks/serengeti-national-park.php') ?>" class="mega-cta" data-preview-link><?= e(t('nav_preview_explore')) ?> <?= icon('arrow-right') ?></a>
+                                    </div>
+                                    <div class="mega-preview-photo" data-preview-photo style="background-image:url('<?= asset('images/wildlife/lion-pride-stalking-zebra.jpg') ?>');"></div>
                                 </div>
-                                <div class="mega-col">
-                                    <span class="mega-col-heading"><?= e(t('nav_destinations_south_heading')) ?></span>
-                                    <a href="<?= url('parks/nyerere-national-park.php') ?>" class="mega-link-plain">Nyerere (Selous)</a>
-                                    <a href="<?= url('parks/ruaha-national-park.php') ?>" class="mega-link-plain">Ruaha</a>
-                                    <a href="<?= url('parks/mikumi-national-park.php') ?>" class="mega-link-plain">Mikumi</a>
-                                    <a href="<?= url('parks/') ?>" class="mega-cta"><?= e(t('nav_destinations_cta')) ?> <?= icon('arrow-right') ?></a>
-                                </div>
-                                <a href="<?= url('parks/serengeti-national-park.php') ?>" class="mega-feature">
-                                    <img src="<?= asset('images/hero/ngorongoro-crater-panorama.jpg') ?>" alt="<?= e(t('nav_destinations_featured_title')) ?>" loading="lazy" />
-                                    <span class="mega-feature-badge"><?= e(t('nav_destinations_featured')) ?></span>
-                                    <span class="mega-feature-body">
-                                        <strong><?= e(t('nav_destinations_featured_title')) ?></strong>
-                                        <small><?= e(t('nav_destinations_featured_desc')) ?></small>
-                                    </span>
-                                </a>
                             </div>
                         </div>
                     </li>
@@ -184,7 +292,7 @@
                         <li><a href="<?= base_url() ?>/it/<?= e($altPath ?? '') ?>" class="lang-option <?= $lang === 'it' ? 'active' : '' ?>" data-lang="it"><span class="lang-name">Italiano</span><span class="lang-code">IT</span></a></li>
                     </ul>
                 </div>
-                <a href="<?= url('contact.php') ?>" class="header-cta"><?= e(t('nav_book_safari')) ?></a>
+                <a href="<?= url('contact.php') ?>" class="header-cta" aria-label="<?= e(t('nav_book_safari')) ?>"><?= e(t('nav_book_safari')) ?></a>
                 <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>

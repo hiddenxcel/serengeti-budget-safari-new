@@ -67,7 +67,7 @@ require __DIR__ . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('heart') ?> <?= e(t('about_story_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('about_story_badge')) ?></span>
                     <h2><?= e(t('about_story_title')) ?></h2>
                     <p><?= e(t('about_story_intro')) ?></p>
                 </div>
@@ -104,7 +104,7 @@ require __DIR__ . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('star') ?> <?= e(t('about_why_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('about_why_badge')) ?></span>
                     <h2><?= e(t('about_why_title')) ?></h2>
                 </div>
                 <div class="trust-grid">
@@ -122,7 +122,7 @@ require __DIR__ . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('people-group') ?> <?= e(t('about_team_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('about_team_badge')) ?></span>
                     <h2><?= e(t('about_team_title')) ?></h2>
                     <p><?= e(t('about_team_intro')) ?></p>
                 </div>
@@ -147,7 +147,7 @@ require __DIR__ . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('map-location-dot') ?> <?= e(t('about_home_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('about_home_badge')) ?></span>
                     <h2><?= e(t('about_home_title')) ?></h2>
                     <p><?= e(t('about_home_intro')) ?></p>
                 </div>
@@ -192,7 +192,7 @@ require __DIR__ . '/includes/header.php';
                 </div>
 
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('flag') ?> <?= e(t('about_mission_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('about_mission_badge')) ?></span>
                     <h2><?= e(t('about_mission_title')) ?></h2>
                     <p><?= e(t('about_mission_text')) ?></p>
                 </div>

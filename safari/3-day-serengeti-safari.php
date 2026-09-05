@@ -30,7 +30,7 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('star') ?> <?= e(t('pkg3d_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(badge_tagline('pkg3d_hero_badge')) ?></span>
                 <h1><?= e(t('pkg3d_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('pkg3d_hero_sub')) ?></p>
             </div>
@@ -52,7 +52,7 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
                 <div class="grid-2" style="grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: start;">
                     <div>
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('route') ?> <?= e(t('pkg3d_itinerary_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('pkg3d_itinerary_badge')) ?></span>
                             <h2><?= e(t('pkg3d_itinerary_title')) ?></h2>
                         </div>
 
@@ -129,7 +129,7 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('pkg3d_gallery_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('pkg3d_gallery_badge')) ?></span>
                     <h2><?= e(t('pkg3d_gallery_title')) ?></h2>
                 </div>
                 <div class="gallery-grid">

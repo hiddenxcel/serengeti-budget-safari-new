@@ -96,9 +96,9 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="container guide-container">
             <div class="guide-layout guide-page">
 
-                <!-- ===== TOC SIDEBAR ===== -->
-                <aside class="guide-toc">
-                    <h3><?= e(t('lsg_toc_title')) ?></h3>
+                <!-- ===== TOC SIDEBAR (accordion on mobile, static sticky rail on desktop) ===== -->
+                <details class="guide-toc" open>
+                    <summary><?= icon('list') ?> <span class="guide-toc-summary-title"><?= e(t('lsg_toc_title')) ?></span> <span class="guide-toc-mobile-label"><?= e(t('bsg_toc_jump')) ?></span> <?= icon('chevron-down', 'guide-toc-chevron') ?></summary>
                     <ul>
                         <li><a href="#introduction"><?= e(t('lsg_toc_intro')) ?></a></li>
                         <li><a href="#quick-answer"><?= e(t('lsg_toc_quick_answer')) ?></a></li>
@@ -111,24 +111,37 @@ require dirname(__DIR__) . '/includes/header.php';
                         <li><a href="#faq"><?= e(t('lsg_toc_faq')) ?></a></li>
                         <li><a href="#book"><?= e(t('lsg_toc_book')) ?></a></li>
                     </ul>
-                </aside>
+                </details>
 
                 <!-- ===== MAIN CONTENT ===== -->
                 <div class="guide-main">
 
                     <!-- INTRODUCTION -->
-                    <h2 id="introduction"><?= e(t('lsg_intro_title')) ?></h2>
-                    <p class="guide-intro-lead"><?= t('lsg_intro_p1') ?></p>
-                    <p><?= t('lsg_intro_p2') ?></p>
-                    <p><?= t('lsg_intro_p3') ?></p>
-                    <div class="guide-quote-card">
-                        <span class="guide-quote-icon"><?= icon('quote-left') ?></span>
-                        <p><?= t('lsg_intro_box') ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="introduction"><?= e(t('lsg_intro_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('introduction')) ?></span>
+                        <p class="guide-intro-lead"><?= t('lsg_intro_p1') ?></p>
                     </div>
+                    <details class="guide-expandable-text">
+                        <p><?= t('lsg_intro_p2') ?></p>
+                        <p><?= t('lsg_intro_p3') ?></p>
+                        <div class="guide-quote-card">
+                            <span class="guide-quote-icon"><?= icon('quote-left') ?></span>
+                            <p><?= t('lsg_intro_box') ?></p>
+                        </div>
+                        <summary class="guide-expand-toggle">
+                            <span class="expand-label-more"><?= e(t('bsg_read_more')) ?></span>
+                            <span class="expand-label-less"><?= e(t('bsg_read_less')) ?></span>
+                            <?= icon('chevron-down') ?>
+                        </summary>
+                    </details>
 
                     <!-- QUICK ANSWER -->
-                    <h2 id="quick-answer"><?= e(t('lsg_quick_title')) ?></h2>
-                    <p><?= t('lsg_quick_p1') ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="quick-answer"><?= e(t('lsg_quick_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('quick-answer')) ?></span>
+                        <p><?= t('lsg_quick_p1') ?></p>
+                    </div>
                     <div class="guide-factor-grid">
                         <div class="guide-factor-card"><p><?= t('lsg_quick_li1') ?></p></div>
                         <div class="guide-factor-card"><p><?= t('lsg_quick_li2') ?></p></div>
@@ -139,12 +152,16 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="guide-price-answer">
                         <div class="guide-price-answer-figure"><?= e(t('lsg_price_highlight')) ?></div>
                         <p><?= t('lsg_quick_p2') ?></p>
+                        <a href="#cost-breakdown" class="guide-price-answer-link"><?= e(t('bsg_quick_see_breakdown')) ?> <?= icon('arrow-right') ?></a>
                     </div>
                     <div class="guide-box pro-tip"><p><?= t('lsg_quick_pro') ?></p></div>
 
                     <!-- PACKAGES -->
-                    <h2 id="packages"><?= e(t('lsg_packages_title')) ?></h2>
-                    <p><?= e(t('lsg_packages_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="packages"><?= e(t('lsg_packages_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('packages')) ?></span>
+                        <p><?= e(t('lsg_packages_p1')) ?></p>
+                    </div>
                     <ul class="guide-checklist">
                         <li><?= e(t('lsg_packages_inc1')) ?></li>
                         <li><?= e(t('lsg_packages_inc2')) ?></li>
@@ -191,8 +208,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     <p style="text-align:center;"><strong><?= sprintf(t('lsg_packages_custom'), url('contact.php')) ?></strong></p>
 
                     <!-- COST BREAKDOWN -->
-                    <h2 id="cost-breakdown"><?= e(t('lsg_cost_title')) ?></h2>
-                    <p><?= e(t('lsg_cost_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="cost-breakdown"><?= e(t('lsg_cost_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('cost-breakdown')) ?></span>
+                        <p><?= e(t('lsg_cost_p1')) ?></p>
+                    </div>
                     <div class="guide-table-wrap">
                         <table>
                             <thead>
@@ -212,30 +232,51 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="guide-box insider"><p><?= t('lsg_cost_insider') ?></p></div>
 
                     <!-- LODGES -->
-                    <h2 id="lodges"><?= e(t('lsg_lodges_title')) ?></h2>
-                    <p><?= e(t('lsg_lodges_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="lodges"><?= e(t('lsg_lodges_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('lodges')) ?></span>
+                        <p><?= e(t('lsg_lodges_p1')) ?></p>
+                    </div>
                     <div class="guide-item-grid">
                         <?php for ($i = 1; $i <= 6; $i++): ?>
                         <div class="guide-item-card">
                             <h4><?= t('lsg_lodge' . $i . '_name') ?> <span class="guide-tier-tag lodge-rating">★★★★★</span></h4>
                             <p><span class="guide-fee-pill"><?= e(t('lsg_lodge' . $i . '_fee')) ?></span></p>
-                            <p><?= t('lsg_lodge' . $i . '_desc') ?></p>
-                            <p><small><?= t('lsg_lodge' . $i . '_best') ?></small></p>
+                            <details class="guide-item-more">
+                                <p><?= t('lsg_lodge' . $i . '_desc') ?></p>
+                                <p><small><?= t('lsg_lodge' . $i . '_best') ?></small></p>
+                                <summary class="guide-item-toggle">
+                                    <span class="expand-label-more"><?= e(t('bsg_read_more')) ?></span>
+                                    <span class="expand-label-less"><?= e(t('bsg_read_less')) ?></span>
+                                    <?= icon('chevron-down') ?>
+                                </summary>
+                            </details>
                         </div>
                         <?php endfor; ?>
                     </div>
 
                     <!-- EXPERIENCES -->
-                    <h2 id="experiences"><?= e(t('lsg_exp_title')) ?></h2>
-                    <p><?= e(t('lsg_exp_p1')) ?></p>
-                    <?php for ($i = 1; $i <= 6; $i++): ?>
-                        <div class="guide-tip"><p><?= t('lsg_exp' . $i) ?></p></div>
+                    <div class="guide-section-head">
+                        <h2 id="experiences"><?= e(t('lsg_exp_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('experiences')) ?></span>
+                        <p><?= e(t('lsg_exp_p1')) ?></p>
+                    </div>
+                    <?php for ($i = 1; $i <= 6; $i++):
+                        [$expSummary, $expBody] = guide_split_tip(t('lsg_exp' . $i));
+                    ?>
+                        <details class="guide-tip">
+                            <summary><span><span class="tip-number"><?= $i ?>.</span> <?= $expSummary ?></span> <?= icon('chevron-down', 'tip-chevron') ?></summary>
+                            <p><?= $expBody ?></p>
+                        </details>
                     <?php endfor; ?>
                     <div class="guide-box highlight"><p><?= t('lsg_exp_box') ?></p></div>
 
                     <!-- BEST TIME -->
-                    <h2 id="best-time"><?= e(t('lsg_best_time_title')) ?></h2>
-                    <p><?= e(t('lsg_best_time_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="best-time"><?= e(t('lsg_best_time_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('best-time')) ?></span>
+                        <p><?= e(t('lsg_best_time_p1')) ?></p>
+                    </div>
                     <div class="guide-month-grid">
                         <?php
                         $months = [
@@ -255,8 +296,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="guide-box highlight"><p><?= t('lsg_best_time_box') ?></p></div>
 
                     <!-- ITINERARIES -->
-                    <h2 id="itineraries"><?= e(t('lsg_itin_title')) ?></h2>
-                    <p><?= e(t('lsg_itin_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="itineraries"><?= e(t('lsg_itin_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('itineraries')) ?></span>
+                        <p><?= e(t('lsg_itin_p1')) ?></p>
+                    </div>
                     <?php for ($i = 1; $i <= 2; $i++): ?>
                     <div class="guide-itinerary-card">
                         <h4><?= t('lsg_itin' . $i . '_name') ?> <span class="guide-itinerary-days"><?= e(t('lsg_itin' . $i . '_days')) ?></span></h4>
@@ -267,7 +311,10 @@ require dirname(__DIR__) . '/includes/header.php';
                     <?php endfor; ?>
 
                     <!-- FAQ -->
-                    <h2 id="faq"><?= e(t('lsg_faq_title')) ?></h2>
+                    <div class="guide-section-head">
+                        <h2 id="faq"><?= e(t('lsg_faq_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('faq')) ?></span>
+                    </div>
                     <div class="faq-column">
                         <?php for ($i = 1; $i <= 8; $i++): ?>
                         <div class="faq-item-acc">
@@ -278,8 +325,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     </div>
 
                     <!-- BOOKING FORM -->
-                    <h2 id="book"><?= e(t('lsg_book_title')) ?></h2>
-                    <p><?= e(t('lsg_book_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="book"><?= e(t('lsg_book_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('book')) ?></span>
+                        <p><?= e(t('lsg_book_p1')) ?></p>
+                    </div>
                     <div class="guide-cta-box">
                         <h3><?= e(t('lsg_cta_title')) ?></h3>
                         <p><?= e(t('lsg_cta_p')) ?></p>

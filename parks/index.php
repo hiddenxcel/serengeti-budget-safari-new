@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('map') ?> <?= e(t('parks_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(badge_tagline('parks_hero_badge')) ?></span>
                 <h1><?= e(t('parks_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('parks_hero_sub')) ?></p>
             </div>
@@ -30,7 +30,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('map-marked-alt') ?> <?= e(t('parks_northern_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('parks_northern_badge')) ?></span>
                     <h2><?= e(t('parks_northern_title')) ?></h2>
                     <p><?= e(t('parks_northern_intro')) ?></p>
                 </div>
@@ -109,7 +109,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('compass') ?> <?= e(t('parks_southern_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('parks_southern_badge')) ?></span>
                     <h2><?= e(t('parks_southern_title')) ?></h2>
                     <p><?= e(t('parks_southern_intro')) ?></p>
                 </div>
@@ -155,7 +155,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('table-columns') ?> <?= e(t('parks_compare_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('parks_compare_badge')) ?></span>
                     <h2><?= e(t('parks_compare_title')) ?></h2>
                     <p><?= e(t('parks_compare_intro')) ?></p>
                 </div>
@@ -192,7 +192,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('circle-question') ?> <?= e(t('parks_which_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('parks_which_badge')) ?></span>
                     <h2><?= e(t('parks_which_title')) ?></h2>
                     <p><?= e(t('parks_which_intro')) ?></p>
                 </div>
@@ -228,7 +228,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('parks_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('parks_faq_badge')) ?></span>
                     <h2><?= e(t('parks_faq_title')) ?></h2>
                 </div>
                 <div class="faq-column">

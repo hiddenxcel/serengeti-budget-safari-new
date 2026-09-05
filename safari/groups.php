@@ -58,7 +58,7 @@ if ($isUsingRealDepartures) {
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('users') ?> <?= e(t('groups_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(badge_tagline('groups_hero_badge')) ?></span>
                 <h1><span><?= e(t('groups_hero_title_1')) ?></span> <?= e(t('groups_hero_title_2')) ?></h1>
                 <p class="hero-sub"><?= e(t('groups_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -73,7 +73,7 @@ if ($isUsingRealDepartures) {
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('diagram-project') ?> <?= e(t('groups_how_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('groups_how_badge')) ?></span>
                     <h2><?= e(t('groups_how_title')) ?></h2>
                 </div>
 
@@ -105,7 +105,7 @@ if ($isUsingRealDepartures) {
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('heart') ?> <?= e(t('groups_why_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('groups_why_badge')) ?></span>
                     <h2><?= e(t('groups_why_title')) ?></h2>
                 </div>
                 <div class="why-add-grid">
@@ -131,7 +131,7 @@ if ($isUsingRealDepartures) {
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('groups_departures_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('groups_departures_badge')) ?></span>
                     <h2><?= e(t('groups_departures_title')) ?></h2>
                     <p><?= e(t('groups_departures_intro')) ?></p>
                 </div>

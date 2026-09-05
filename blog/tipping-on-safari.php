@@ -39,7 +39,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogtip_quick_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogtip_quick_badge')) ?></span>
                     <h2><?= e(t('blogtip_quick_title')) ?></h2>
                     <p><?= e(t('blogtip_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
@@ -85,7 +85,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Why it matters -->
                 <section id="why" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('blogtip_s1_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogtip_s1_badge')) ?></span>
                     <h2><?= e(t('blogtip_s1_title')) ?></h2>
                     <p><?= e(t('blogtip_s1_p1')) ?></p>
                     <p><?= e(t('blogtip_s1_p2')) ?></p>
@@ -104,7 +104,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Safari tipping -->
                 <section id="safari-tips" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('binoculars') ?> <?= e(t('blogtip_s2_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogtip_s2_badge')) ?></span>
                     <h2><?= e(t('blogtip_s2_title')) ?></h2>
                     <div class="article-table-wrap">
                         <table class="article-table">
@@ -130,7 +130,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Kilimanjaro tipping -->
                 <section id="kilimanjaro-tips" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('mountain-sun') ?> <?= e(t('blogtip_s3_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogtip_s3_badge')) ?></span>
                     <h2><?= e(t('blogtip_s3_title')) ?></h2>
                     <p><?= t('blogtip_s3_p1') ?></p>
 
@@ -158,7 +158,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Practical points -->
                 <section id="practical" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('hand-holding-dollar') ?> <?= e(t('blogtip_s4_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogtip_s4_badge')) ?></span>
                     <h2><?= e(t('blogtip_s4_title')) ?></h2>
                     <ul class="included-icon-list yes">
                         <li><?= icon('check-circle') ?> <strong><?= e(t('blogtip_s4_i1_t')) ?></strong> — <?= e(t('blogtip_s4_i1_d')) ?></li>
@@ -172,7 +172,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogtip_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogtip_faq_badge')) ?></span>
                     <h2><?= e(t('blogtip_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
                         <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogtip_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogtip_faq_a1')) ?></p></div></div>
@@ -192,7 +192,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogtip_related_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogtip_related_badge')) ?></span>
                     <h2><?= e(t('blogtip_related_title')) ?></h2>
                     <div class="related-grid">
                         <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('money-bill-wave') ?> <?= e(t('blog_art_cost_title')) ?></a>

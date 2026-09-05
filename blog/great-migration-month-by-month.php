@@ -41,7 +41,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogmig_quick_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogmig_quick_badge')) ?></span>
                     <h2><?= e(t('blogmig_quick_title')) ?></h2>
                     <p><?= e(t('blogmig_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
@@ -90,7 +90,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- What it is -->
                 <section id="what-it-is" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('blogmig_s1_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogmig_s1_badge')) ?></span>
                     <h2><?= e(t('blogmig_s1_title')) ?></h2>
                     <p><?= t('blogmig_s1_p1') ?></p>
                     <p><?= t('blogmig_s1_p2') ?></p>
@@ -118,7 +118,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Month by month -->
                 <section id="month-by-month" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('blogmig_s2_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogmig_s2_badge')) ?></span>
                     <h2><?= e(t('blogmig_s2_title')) ?></h2>
                     <p><?= e(t('blogmig_s2_intro')) ?></p>
                     <div class="article-table-wrap">
@@ -142,7 +142,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Calving -->
                 <section id="calving" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('baby') ?> <?= e(t('blogmig_s3_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogmig_s3_badge')) ?></span>
                     <h2><?= e(t('blogmig_s3_title')) ?></h2>
                     <p><?= t('blogmig_s3_p1') ?></p>
                     <h3><?= e(t('blogmig_s3_sub1')) ?></h3>
@@ -159,7 +159,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- River crossings -->
                 <section id="river-crossings" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('water') ?> <?= e(t('blogmig_s4_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogmig_s4_badge')) ?></span>
                     <h2><?= e(t('blogmig_s4_title')) ?></h2>
                     <p><?= t('blogmig_s4_p1') ?></p>
                     <h3><?= e(t('blogmig_s4_sub1')) ?></h3>
@@ -188,7 +188,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Where to stay -->
                 <section id="where-to-stay" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('bed') ?> <?= e(t('blogmig_s5_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogmig_s5_badge')) ?></span>
                     <h2><?= e(t('blogmig_s5_title')) ?></h2>
                     <p><?= e(t('blogmig_s5_p1')) ?></p>
                     <div class="article-table-wrap">
@@ -210,7 +210,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Planning -->
                 <section id="planning" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('route') ?> <?= e(t('blogmig_s6_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogmig_s6_badge')) ?></span>
                     <h2><?= e(t('blogmig_s6_title')) ?></h2>
                     <h3><?= e(t('blogmig_s6_step1_t')) ?></h3>
                     <p><?= e(t('blogmig_s6_step1_d')) ?></p>
@@ -236,7 +236,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Myths -->
                 <section id="myths" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('circle-exclamation') ?> <?= e(t('blogmig_s7_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogmig_s7_badge')) ?></span>
                     <h2><?= e(t('blogmig_s7_title')) ?></h2>
                     <h3>1. "<?= e(t('blogmig_s7_myth1_t')) ?>"</h3>
                     <p><?= t('blogmig_s7_myth1_d') ?></p>
@@ -252,7 +252,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogcost_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogcost_faq_badge')) ?></span>
                     <h2><?= e(t('blogmig_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
                         <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogmig_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogmig_faq_a1')) ?></p></div></div>
@@ -268,7 +268,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogcost_related_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogcost_related_badge')) ?></span>
                     <h2><?= e(t('blogcost_related_title')) ?></h2>
                     <div class="related-grid">
                         <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('money-bill-wave') ?> <?= e(t('blog_art_cost_title')) ?></a>

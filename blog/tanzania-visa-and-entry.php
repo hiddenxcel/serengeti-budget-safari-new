@@ -39,7 +39,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogvisa_quick_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvisa_quick_badge')) ?></span>
                     <h2><?= e(t('blogvisa_quick_title')) ?></h2>
                     <p><?= e(t('blogvisa_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
@@ -85,7 +85,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- The two routes -->
                 <section id="two-routes" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('passport') ?> <?= e(t('blogvisa_s1_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvisa_s1_badge')) ?></span>
                     <h2><?= e(t('blogvisa_s1_title')) ?></h2>
                     <p><?= t('blogvisa_s1_p1') ?></p>
 
@@ -114,7 +114,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Requirements -->
                 <section id="requirements" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('clipboard-check') ?> <?= e(t('blogvisa_s2_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvisa_s2_badge')) ?></span>
                     <h2><?= e(t('blogvisa_s2_title')) ?></h2>
                     <ul class="included-icon-list yes">
                         <li><?= icon('check-circle') ?> <strong><?= e(t('blogvisa_s2_i1_t')) ?></strong> <?= t('blogvisa_s2_i1_d') ?></li>
@@ -130,7 +130,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Zanzibar -->
                 <section id="zanzibar" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('umbrella-beach') ?> <?= e(t('blogvisa_s3_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvisa_s3_badge')) ?></span>
                     <h2><?= e(t('blogvisa_s3_title')) ?></h2>
                     <p><?= t('blogvisa_s3_p1') ?></p>
                     <p><?= t('blogvisa_s3_p2') ?></p>
@@ -139,7 +139,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Yellow fever -->
                 <section id="yellow-fever" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('syringe') ?> <?= e(t('blogvisa_s4_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvisa_s4_badge')) ?></span>
                     <h2><?= e(t('blogvisa_s4_title')) ?></h2>
                     <p><?= t('blogvisa_s4_p1') ?></p>
                     <p><?= t('blogvisa_s4_p2') ?></p>
@@ -148,7 +148,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogvisa_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvisa_faq_badge')) ?></span>
                     <h2><?= e(t('blogvisa_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
                         <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvisa_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvisa_faq_a1')) ?></p></div></div>
@@ -170,7 +170,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogvisa_related_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvisa_related_badge')) ?></span>
                     <h2><?= e(t('blogvisa_related_title')) ?></h2>
                     <div class="related-grid">
                         <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('money-bill-wave') ?> <?= e(t('blog_art_cost_title')) ?></a>

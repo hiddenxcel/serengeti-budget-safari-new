@@ -39,7 +39,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogbest_quick_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbest_quick_badge')) ?></span>
                     <h2><?= e(t('blogbest_quick_title')) ?></h2>
                     <p><?= e(t('blogbest_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
@@ -86,7 +86,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Short answer -->
                 <section id="short-answer" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('blogbest_s1_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbest_s1_badge')) ?></span>
                     <h2><?= e(t('blogbest_s1_title')) ?></h2>
                     <p><?= t('blogbest_s1_p1') ?></p>
                     <p><?= e(t('blogbest_s1_p2')) ?></p>
@@ -116,7 +116,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- The two rainy seasons -->
                 <section id="seasons" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('cloud-rain') ?> <?= e(t('blogbest_s2_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbest_s2_badge')) ?></span>
                     <h2><?= e(t('blogbest_s2_title')) ?></h2>
                     <p><?= e(t('blogbest_s2_p1')) ?></p>
 
@@ -134,7 +134,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Month by month -->
                 <section id="month-by-month" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('blogbest_s3_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbest_s3_badge')) ?></span>
                     <h2><?= e(t('blogbest_s3_title')) ?></h2>
                     <div class="article-table-wrap">
                         <table class="article-table">
@@ -159,7 +159,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Best time by what you want -->
                 <section id="by-interest" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('circle-question') ?> <?= e(t('blogbest_s4_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbest_s4_badge')) ?></span>
                     <h2><?= e(t('blogbest_s4_title')) ?></h2>
                     <div class="article-table-wrap">
                         <table class="article-table">
@@ -182,7 +182,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Temperatures -->
                 <section id="temperatures" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('temperature-half') ?> <?= e(t('blogbest_s5_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbest_s5_badge')) ?></span>
                     <h2><?= e(t('blogbest_s5_title')) ?></h2>
                     <p><?= e(t('blogbest_s5_p1')) ?></p>
                     <div class="article-table-wrap">
@@ -203,7 +203,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogbest_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbest_faq_badge')) ?></span>
                     <h2><?= e(t('blogbest_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
                         <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogbest_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogbest_faq_a1')) ?></p></div></div>
@@ -225,7 +225,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogbest_related_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbest_related_badge')) ?></span>
                     <h2><?= e(t('blogbest_related_title')) ?></h2>
                     <div class="related-grid">
                         <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('money-bill-wave') ?> <?= e(t('blog_art_cost_title')) ?></a>

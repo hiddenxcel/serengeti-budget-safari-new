@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('mountain-sun') ?> <?= e(t('kilimanjaro_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(park_tagline('kilimanjaro_hero_badge')) ?></span>
                 <h1><?= e(t('kilimanjaro_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('kilimanjaro_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -34,7 +34,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('kilimanjaro_intro_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('kilimanjaro_intro_badge')) ?></span>
                     <h2><?= e(t('kilimanjaro_intro_title')) ?></h2>
                 </div>
                 <p><?= e(t('kilimanjaro_intro_p1')) ?></p>
@@ -57,7 +57,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('route') ?> <?= e(t('kilimanjaro_routes_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('kilimanjaro_routes_badge')) ?></span>
                     <h2><?= e(t('kilimanjaro_routes_title')) ?></h2>
                     <p><?= e(t('kilimanjaro_routes_intro')) ?></p>
                 </div>
@@ -79,7 +79,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('table-columns') ?> <?= e(t('kilimanjaro_compare_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('kilimanjaro_compare_badge')) ?></span>
                     <h2><?= e(t('kilimanjaro_compare_title')) ?></h2>
                     <p><?= e(t('kilimanjaro_compare_intro')) ?></p>
                 </div>
@@ -111,7 +111,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-paw"></i> <?= e(t('kilimanjaro_wildlife_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('kilimanjaro_wildlife_badge')) ?></span>
                     <h2><?= e(t('kilimanjaro_wildlife_title')) ?></h2>
                     <p><?= e(t('kilimanjaro_wildlife_intro')) ?></p>
                 </div>
@@ -135,7 +135,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('kilimanjaro_when_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('kilimanjaro_when_badge')) ?></span>
                     <h2><?= e(t('kilimanjaro_when_title')) ?></h2>
                     <p><?= e(t('kilimanjaro_when_intro')) ?></p>
                 </div>
@@ -147,7 +147,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('campground') ?> <?= e(t('kilimanjaro_stay_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('kilimanjaro_stay_badge')) ?></span>
                     <h2><?= e(t('kilimanjaro_stay_title')) ?></h2>
                     <p><?= e(t('kilimanjaro_stay_intro')) ?></p>
                 </div>
@@ -186,7 +186,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('money-bill-wave') ?> <?= e(t('kilimanjaro_fees_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('kilimanjaro_fees_badge')) ?></span>
                     <h2><?= e(t('kilimanjaro_fees_title')) ?></h2>
                     <p><?= e(t('kilimanjaro_fees_intro')) ?></p>
                 </div>
@@ -217,7 +217,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('kilimanjaro_gallery_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('kilimanjaro_gallery_badge')) ?></span>
                     <h2><?= e(t('kilimanjaro_gallery_title')) ?></h2>
                 </div>
 
@@ -247,7 +247,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('kilimanjaro_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('kilimanjaro_faq_badge')) ?></span>
                     <h2><?= e(t('kilimanjaro_faq_title')) ?></h2>
                 </div>
                 <div class="faq-column">

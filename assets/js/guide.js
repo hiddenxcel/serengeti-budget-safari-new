@@ -8,6 +8,12 @@
     var page = document.querySelector('.guide-page');
     if (!page) return;
 
+    // ===== TOC: collapsed by default on mobile, open on desktop =====
+    var tocDetails = document.querySelector('.guide-toc');
+    if (tocDetails && window.matchMedia('(max-width: 1024px)').matches) {
+        tocDetails.removeAttribute('open');
+    }
+
     // ===== PROGRESS BAR =====
     var progressBar = document.getElementById('guide-progress-bar');
     if (progressBar) {

@@ -39,7 +39,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogstay_quick_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogstay_quick_badge')) ?></span>
                     <h2><?= e(t('blogstay_quick_title')) ?></h2>
                     <p><?= e(t('blogstay_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
@@ -85,7 +85,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- The five types -->
                 <section id="types" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('bed') ?> <?= e(t('blogstay_s1_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogstay_s1_badge')) ?></span>
                     <h2><?= e(t('blogstay_s1_title')) ?></h2>
                     <p><?= e(t('blogstay_s1_p1')) ?></p>
                     <div class="article-table-wrap">
@@ -140,7 +140,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Inside or outside -->
                 <section id="inside-outside" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('scale-balanced') ?> <?= e(t('blogstay_s2_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogstay_s2_badge')) ?></span>
                     <h2><?= e(t('blogstay_s2_title')) ?></h2>
                     <p><?= e(t('blogstay_s2_p1')) ?></p>
 
@@ -171,7 +171,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- What each is really like -->
                 <section id="what-its-like" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('eye') ?> <?= e(t('blogstay_s3_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogstay_s3_badge')) ?></span>
                     <h2><?= e(t('blogstay_s3_title')) ?></h2>
 
                     <h3><?= e(t('blogstay_s3_sub1')) ?></h3>
@@ -190,7 +190,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- How to choose -->
                 <section id="choosing" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('circle-question') ?> <?= e(t('blogstay_s4_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogstay_s4_badge')) ?></span>
                     <h2><?= e(t('blogstay_s4_title')) ?></h2>
                     <div class="article-table-wrap">
                         <table class="article-table">
@@ -220,7 +220,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogstay_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogstay_faq_badge')) ?></span>
                     <h2><?= e(t('blogstay_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
                         <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogstay_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogstay_faq_a1')) ?></p></div></div>
@@ -241,7 +241,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogstay_related_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogstay_related_badge')) ?></span>
                     <h2><?= e(t('blogstay_related_title')) ?></h2>
                     <div class="related-grid">
                         <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('money-bill-wave') ?> <?= e(t('blog_art_cost_title')) ?></a>

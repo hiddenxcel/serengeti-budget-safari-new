@@ -110,7 +110,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('book') ?> <?= e(t('blog_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(badge_tagline('blog_hero_badge')) ?></span>
                 <h1><?= e(t('blog_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('blog_hero_sub')) ?></p>
             </div>
@@ -154,7 +154,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('newspaper') ?> <?= e(t('blog_latest_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blog_latest_badge')) ?></span>
                     <h2><?= e(t('blog_latest_title')) ?></h2>
                 </div>
                 <div class="grid-3">
@@ -179,7 +179,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <!-- Plan your safari CTA -->
         <section class="detail-section bg-light">
             <div class="container" style="text-align:center;max-width:640px;">
-                <span class="section-badge"><?= icon('compass') ?> <?= e(t('blog_plan_badge')) ?></span>
+                <span class="section-tagline"><?= e(badge_tagline('blog_plan_badge')) ?></span>
                 <h2><?= e(t('blog_plan_title')) ?></h2>
                 <p><?= e(t('blog_plan_intro')) ?></p>
                 <a href="<?= url('safari/') ?>" class="btn btn-primary btn-lg" style="margin-top:0.8rem;"><?= e(t('blog_plan_cta')) ?></a>
@@ -190,7 +190,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('fire') ?> <?= e(t('blog_popular_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blog_popular_badge')) ?></span>
                     <h2><?= e(t('blog_popular_title')) ?></h2>
                 </div>
                 <div class="popular-guides-list">
@@ -208,7 +208,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('map-location-dot') ?> <?= e(t('blog_explore_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blog_explore_badge')) ?></span>
                     <h2><?= e(t('blog_explore_title')) ?></h2>
                 </div>
                 <div class="about-destinations-grid">
@@ -240,7 +240,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('list-check') ?> <?= e(t('blog_before_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blog_before_badge')) ?></span>
                     <h2><?= e(t('blog_before_title')) ?></h2>
                 </div>
                 <div class="tip-links-grid">
@@ -258,7 +258,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="newsletter-card">
-                    <span class="section-badge"><?= icon('envelope-open-text') ?> <?= e(t('blog_newsletter_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blog_newsletter_badge')) ?></span>
                     <h2><?= e(t('blog_newsletter_title')) ?></h2>
                     <p><?= e(t('blog_newsletter_intro')) ?></p>
                     <form class="newsletter-form" onsubmit="return false;">

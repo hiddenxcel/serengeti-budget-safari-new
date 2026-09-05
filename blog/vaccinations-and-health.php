@@ -39,7 +39,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogvax_quick_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvax_quick_badge')) ?></span>
                     <h2><?= e(t('blogvax_quick_title')) ?></h2>
                     <p><?= e(t('blogvax_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
@@ -88,7 +88,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Disclaimer -->
                 <section id="disclaimer" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('triangle-exclamation') ?> <?= e(t('blogvax_s0_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvax_s0_badge')) ?></span>
                     <h2><?= e(t('blogvax_s0_title')) ?></h2>
                     <div class="migration-badge">
                         <?= icon('circle-info') ?>
@@ -110,7 +110,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Vaccinations -->
                 <section id="vaccinations" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('syringe') ?> <?= e(t('blogvax_s1_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvax_s1_badge')) ?></span>
                     <h2><?= e(t('blogvax_s1_title')) ?></h2>
                     <h3><?= e(t('blogvax_s1_sub1')) ?></h3>
                     <p><?= t('blogvax_s1_p1') ?></p>
@@ -132,7 +132,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Malaria -->
                 <section id="malaria" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-mosquito"></i> <?= e(t('blogvax_s2_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvax_s2_badge')) ?></span>
                     <h2><?= e(t('blogvax_s2_title')) ?></h2>
                     <p><?= t('blogvax_s2_p1') ?></p>
                     <h3><?= e(t('blogvax_s2_sub1')) ?></h3>
@@ -153,7 +153,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Food & water -->
                 <section id="food-water" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('utensils') ?> <?= e(t('blogvax_s3_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvax_s3_badge')) ?></span>
                     <h2><?= e(t('blogvax_s3_title')) ?></h2>
                     <ul class="included-icon-list yes">
                         <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s3_i1_t')) ?></strong> <?= e(t('blogvax_s3_i1_d')) ?></li>
@@ -168,7 +168,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Altitude -->
                 <section id="altitude" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('lungs') ?> <?= e(t('blogvax_s4_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvax_s4_badge')) ?></span>
                     <h2><?= e(t('blogvax_s4_title')) ?></h2>
                     <p><?= e(t('blogvax_s4_p1')) ?></p>
                     <p><?= e(t('blogvax_s4_p2')) ?></p>
@@ -177,7 +177,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Travel insurance -->
                 <section id="insurance" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('shield-halved') ?> <?= e(t('blogvax_s5_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvax_s5_badge')) ?></span>
                     <h2><?= e(t('blogvax_s5_title')) ?></h2>
                     <p><?= e(t('blogvax_s5_p1')) ?></p>
                     <p><?= e(t('blogvax_s5_p2')) ?></p>
@@ -192,7 +192,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Other practical points -->
                 <section id="other" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('kit-medical') ?> <?= e(t('blogvax_s6_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvax_s6_badge')) ?></span>
                     <h2><?= e(t('blogvax_s6_title')) ?></h2>
                     <ul class="included-icon-list yes">
                         <li><?= icon('check-circle') ?> <strong><?= e(t('blogvax_s6_i1_t')) ?></strong> <?= e(t('blogvax_s6_i1_d')) ?></li>
@@ -206,7 +206,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogvax_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvax_faq_badge')) ?></span>
                     <h2><?= e(t('blogvax_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
                         <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogvax_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogvax_faq_a1')) ?></p></div></div>
@@ -227,7 +227,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogvax_related_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogvax_related_badge')) ?></span>
                     <h2><?= e(t('blogvax_related_title')) ?></h2>
                     <div class="related-grid">
                         <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('wallet') ?> <?= e(t('blog_art_cost_title')) ?></a>

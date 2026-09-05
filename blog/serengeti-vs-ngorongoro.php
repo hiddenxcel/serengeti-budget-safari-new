@@ -39,7 +39,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogsvn_quick_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogsvn_quick_badge')) ?></span>
                     <h2><?= e(t('blogsvn_quick_title')) ?></h2>
                     <p><?= e(t('blogsvn_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
@@ -86,7 +86,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Short answer -->
                 <section id="short-answer" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('blogsvn_s1_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogsvn_s1_badge')) ?></span>
                     <h2><?= e(t('blogsvn_s1_title')) ?></h2>
                     <p><?= t('blogsvn_s1_p1') ?></p>
                     <p><?= e(t('blogsvn_s1_p2')) ?></p>
@@ -105,7 +105,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Side by side -->
                 <section id="side-by-side" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('scale-balanced') ?> <?= e(t('blogsvn_s2_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogsvn_s2_badge')) ?></span>
                     <h2><?= e(t('blogsvn_s2_title')) ?></h2>
                     <div class="article-table-wrap">
                         <table class="article-table">
@@ -127,7 +127,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Serengeti -->
                 <section id="serengeti" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-paw"></i> <?= e(t('blogsvn_s3_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogsvn_s3_badge')) ?></span>
                     <h2><?= e(t('blogsvn_s3_title')) ?></h2>
                     <p><?= t('blogsvn_s3_p1') ?></p>
                     <ul class="included-icon-list yes">
@@ -140,7 +140,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Ngorongoro -->
                 <section id="ngorongoro" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('mountain') ?> <?= e(t('blogsvn_s4_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogsvn_s4_badge')) ?></span>
                     <h2><?= e(t('blogsvn_s4_title')) ?></h2>
                     <p><?= t('blogsvn_s4_p1') ?></p>
                     <ul class="included-icon-list yes">
@@ -157,7 +157,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Together -->
                 <section id="together" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('route') ?> <?= e(t('blogsvn_s5_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogsvn_s5_badge')) ?></span>
                     <h2><?= e(t('blogsvn_s5_title')) ?></h2>
                     <p><?= t('blogsvn_s5_p1') ?></p>
                     <p><?= e(t('blogsvn_s5_p2')) ?></p>
@@ -165,7 +165,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogsvn_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogsvn_faq_badge')) ?></span>
                     <h2><?= e(t('blogsvn_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
                         <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogsvn_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogsvn_faq_a1')) ?></p></div></div>
@@ -179,7 +179,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogcost_related_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogcost_related_badge')) ?></span>
                     <h2><?= e(t('blogcost_related_title')) ?></h2>
                     <div class="related-grid">
                         <a href="<?= url('blog/how-much-does-a-safari-cost.php') ?>" class="related-link"><?= icon('wallet') ?> <?= e(t('blog_art_cost_title')) ?></a>

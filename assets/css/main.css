@@ -1,4 +1,49 @@
 /* ================================================================
+   SERENGETI BUDGET SAFARI – PAGE PRELOADER
+   Full-page overlay shown while the page's images/fonts finish
+   loading, faded out by main.js on window "load". Kept at the very
+   top of the stylesheet so it applies before the rest of the CSS
+   (and everything else on the page) has necessarily painted.
+   ================================================================ */
+.page-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #173F35;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.page-preloader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.page-preloader-spinner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid rgba(200, 155, 60, 0.25);
+    border-top-color: #C89B3C;
+    animation: page-preloader-spin 0.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-preloader-spinner {
+        animation-duration: 2s;
+    }
+}
+
+@keyframes page-preloader-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================================================================
    SERENGETI BUDGET SAFARI – HEADER CSS
    Floating pill navigation: transparent bar over the hero, logo on
    the bare left, white rounded nav capsule in the middle, phone +
@@ -567,7 +612,7 @@ body:not(.hero-behind-header) .hamburger span {
     }
 
     .header-right {
-        gap: 0.6rem;
+        gap: 0.4rem;
     }
 
     .logo {
@@ -584,12 +629,15 @@ body:not(.hero-behind-header) .hamburger span {
     }
 
     .header-cta {
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
+        padding: 0.5rem 0.85rem;
+        font-size: 0.7rem;
     }
 
     .lang-toggle {
-        padding: 0.3rem 0.6rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .lang-toggle .lang-current-code {
         font-size: 0.7rem;
     }
 
@@ -611,17 +659,43 @@ body:not(.hero-behind-header) .hamburger span {
     }
 }
 
-/* Very small screens – drop the CTA label to keep the bar on one line */
-@media (max-width: 400px) {
-    .header-cta {
-        padding: 0.45rem 0.85rem;
-        font-size: 0.7rem;
-    }
-
+/* Small screens – the logo wordmark, lang toggle, CTA and hamburger no
+   longer all fit on one line, so the wordmark goes first. */
+@media (max-width: 560px) {
     .logo span {
         display: none;
     }
 }
+
+/* Very small screens – drop the CTA label entirely (icon-only), tighten
+   the lang toggle and shrink the gaps so the whole bar fits on one line. */
+@media (max-width: 520px) {
+    .header-right {
+        gap: 0.3rem;
+    }
+
+    .header-cta {
+        padding: 0.55rem;
+        min-width: 34px;
+        font-size: 0;
+        text-align: center;
+    }
+
+    .header-cta::before {
+        content: '\2192';
+        font-size: 1rem;
+    }
+
+    .lang-toggle {
+        padding: 0.35rem 0.4rem;
+        gap: 0.15rem;
+    }
+
+    .lang-chevron {
+        display: none;
+    }
+}
+
 /* ================================================================
    SERENGETI BUDGET SAFARI – BASE CSS
    ================================================================ */
@@ -862,6 +936,18 @@ table {
     font-weight: 800;
     line-height: 1.2;
     color: var(--black);
+}
+
+/* Cursive kicker line shown between the badge and the H2, used across
+   homepage sections for the same "premium editorial" feel as the guide
+   pages' .guide-section-tagline. */
+.section-tagline {
+    display: block;
+    font-family: 'Caveat', var(--font-display), cursive;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    margin: 0.1rem 0 0.4rem;
 }
 
 .section-title-left p {
@@ -1406,8 +1492,8 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 52vh;
-    padding: calc(var(--header-height) + 3rem) 0 3rem;
+    min-height: 400px;
+    padding: calc(var(--header-height) + 40px) 0 40px;
     overflow: hidden;
     color: var(--white);
     background: var(--black);
@@ -1473,6 +1559,16 @@ section {
 [class$="-hero"] h1 span,
 .page-hero h1 span {
     color: var(--gold);
+}
+
+.hero-tagline {
+    display: block;
+    font-family: 'Caveat', var(--font-display), cursive;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .hero-badge {
@@ -1697,13 +1793,6 @@ section {
    ============================================================ */
 
 @media (max-width: 768px) {
-    [class$="-hero"],
-    .hero-page,
-    .page-hero {
-        min-height: 54vh;
-        padding: calc(var(--header-height) + 2rem) 0 2.4rem;
-    }
-
     [class$="-hero-stats"] {
         gap: 1.4rem;
     }
@@ -1762,6 +1851,12 @@ section {
     color: var(--text-secondary);
     max-width: 680px;
     margin-bottom: 2.2rem;
+}
+
+.text-center .subtitle,
+.text-center .section-sub {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .detail-section h3,
@@ -1965,6 +2060,14 @@ section {
 .faq-column {
     display: grid;
     gap: 0.9rem;
+    text-align: left;
+}
+
+/* Single-column FAQ lists (not the 2-column .faq-mega-grid) read better
+   capped and centered under a centered section title. */
+.text-center > .faq-column {
+    max-width: 800px;
+    margin: 1.5rem auto 0;
 }
 
 .faq-item-acc {
@@ -2287,6 +2390,73 @@ section {
     font-size: 0.85rem;
 }
 
+.pkg-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0.8rem 0 1rem;
+}
+
+.pkg-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+}
+
+.pkg-features li svg {
+    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+    margin-top: 0.15rem;
+    color: var(--gold-dark);
+}
+
+.pkg-social-proof {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.9rem;
+}
+
+.pkg-social-proof svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.pkg-book-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--gold);
+    color: var(--black);
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.pkg-book-btn:hover {
+    background: var(--gold-dark);
+    transform: translateY(-2px);
+}
+
+.pkg-guarantee {
+    text-align: center;
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    margin-top: 0.55rem;
+}
+
 /* ============================================================
    SAFARI LISTING PAGE (filter bar + results grid)
    ============================================================ */
@@ -2369,6 +2539,7 @@ section {
 .listing-count {
     font-size: 0.95rem;
     color: var(--text-secondary);
+    text-align: center;
 }
 
 .listing-count strong {
@@ -6274,6 +6445,10 @@ textarea:focus-visible,
     color: var(--white);
 }
 
+.ai-planner .section-title-left .section-tagline {
+    color: var(--gold);
+}
+
 .ai-planner .section-title-left p {
     color: rgba(255, 255, 255, 0.65);
 }
@@ -7981,6 +8156,10 @@ textarea:focus-visible,
     display: inline-block;
 }
 
+.youtube-shorts-section .section-title-left .section-tagline {
+    color: var(--gold);
+}
+
 .youtube-shorts-section .section-title-left h2::after {
     content: '';
     position: absolute;
@@ -8408,6 +8587,8 @@ textarea:focus-visible,
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
+    justify-content: center;
+    text-align: center;
     margin-bottom: 1rem;
 }
 
@@ -8477,6 +8658,7 @@ textarea:focus-visible,
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
+    text-align: center;
     margin-bottom: 1rem;
 }
 
@@ -8588,6 +8770,9 @@ textarea:focus-visible,
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    text-align: left;
+    max-width: 760px;
+    margin: 1.5rem auto 0;
 }
 
 @media (max-width: 700px) {
@@ -8753,6 +8938,7 @@ textarea:focus-visible,
 
 .park-preview-body {
     padding: 1rem 1.1rem 1.2rem;
+    text-align: left;
 }
 
 .park-preview-body h3 {
@@ -8844,6 +9030,7 @@ textarea:focus-visible,
     transform: translateY(0);
 }
 
+
 .mega-panel-inner {
     display: grid;
     grid-template-columns: 1fr 1fr 1.1fr;
@@ -8922,6 +9109,202 @@ textarea:focus-visible,
     color: var(--gold-dark);
 }
 
+/* Destination row: small square photo + name/tag, used in the
+   destination-first "Safaris" mega-menu. */
+.mega-dest {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.4rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background var(--transition);
+}
+
+.mega-dest:hover {
+    background: var(--gray-100);
+}
+
+.mega-dest-thumb {
+    width: 42px;
+    height: 42px;
+    border-radius: 9px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.mega-dest strong {
+    display: block;
+    font-size: 0.86rem;
+    color: var(--black);
+    font-weight: 700;
+}
+
+.mega-dest small {
+    display: block;
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+}
+
+.mega-filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.7rem;
+    padding-top: 0.7rem;
+    border-top: 1px dashed var(--gray-200);
+}
+
+.mega-filter-chip {
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 0.28rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--gray-200);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: border-color var(--transition), color var(--transition);
+}
+
+/* ============================================================
+   MEGA MENU — HOVER-PREVIEW LAYOUT
+   A slim text list on the left; hovering/focusing an item swaps the
+   headline, description, CTA and photo shown on the right. Panel
+   width grows to fit this two-pane layout (list + big preview).
+   ============================================================ */
+.mega-panel.mega-panel-preview {
+    width: min(560px, calc(100vw - 40px));
+    padding: 0;
+    overflow: hidden;
+}
+
+.mega-preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 300px;
+}
+
+.mega-preview-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0.6rem;
+    border-right: 1px solid var(--gray-200);
+}
+
+.mega-preview-list li {
+    display: block;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.mega-preview-list li + li {
+    margin-top: 0.15rem;
+}
+
+.mega-preview-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0.7rem 0.9rem;
+    border-radius: 10px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.mega-preview-item strong {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.mega-preview-item span {
+    display: block;
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    margin-top: 0.1rem;
+}
+
+.mega-preview-item:hover,
+.mega-preview-item:focus-visible,
+.mega-preview-item.active {
+    background: rgba(200, 155, 60, 0.12);
+}
+
+.mega-preview-item.active strong {
+    color: var(--gold-dark);
+}
+
+.mega-preview-stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.4rem 1.3rem;
+}
+
+.mega-preview-body h4 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--black);
+    margin: 0 0 0.5rem;
+}
+
+.mega-preview-body p {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin: 0 0 1rem;
+}
+
+.mega-preview-body .mega-cta {
+    margin-top: 0;
+}
+
+.mega-preview-photo {
+    width: 100%;
+    height: 130px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--shadow-card);
+    flex-shrink: 0;
+    order: -1;
+}
+
+@media (max-width: 992px) {
+    .mega-panel.mega-panel-preview {
+        width: 100%;
+    }
+
+    .mega-preview-grid {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .mega-preview-list {
+        border-right: none;
+        border-bottom: 1px solid var(--gray-200);
+    }
+
+    .mega-preview-photo {
+        height: 140px;
+    }
+}
+
+.mega-filter-chip:hover {
+    border-color: var(--gold);
+    color: var(--gold-dark);
+}
+
 .mega-cta {
     display: inline-flex;
     align-items: center;
@@ -8949,7 +9332,8 @@ textarea:focus-visible,
     display: block;
     text-decoration: none;
     color: var(--white);
-    min-height: 220px;
+    min-height: 250px;
+    max-height: 300px;
 }
 
 .mega-feature img {
@@ -9055,7 +9439,7 @@ textarea:focus-visible,
     border-radius: 18px;
     box-shadow: var(--shadow-elevated);
     padding: 1.3rem 2rem;
-    margin: -3.5rem auto 0;
+    margin: 1.5rem auto 0;
     max-width: 900px;
     position: relative;
     z-index: 5;
@@ -9087,7 +9471,7 @@ textarea:focus-visible,
 
 @media (max-width: 700px) {
     .glance-strip {
-        margin-top: -2.5rem;
+        margin-top: 1.2rem;
         gap: 1.2rem 1.6rem;
         padding: 1.1rem 1.4rem;
     }
@@ -11862,4 +12246,19 @@ body.home-page .testimonial-card {
     vertical-align: -0.125em;
     flex-shrink: 0;
     stroke: currentColor;
+}
+
+/* ============================================================
+   SECTION BADGES REMOVED SITE-WIDE
+   The pill-shaped kicker badge (icon + label) above section titles
+   has been dropped everywhere in favor of a plain centered H2 +
+   .section-tagline / .guide-section-tagline script line, matching
+   the simpler "ALL SAFARIS" style. Hidden via a high-specificity
+   rule rather than deleting the markup in 30+ files, so it can be
+   restored by removing this block alone.
+   ============================================================ */
+[class~="section-badge"],
+[class~="hero-badge"],
+.about-us-content .story-badge {
+    display: none !important;
 }

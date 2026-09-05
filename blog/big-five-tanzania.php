@@ -39,7 +39,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Quick answers -->
                 <div class="quick-questions-card" style="margin-bottom:2rem;">
-                    <span class="section-badge"><?= icon('bolt') ?> <?= e(t('blogbig5_quick_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbig5_quick_badge')) ?></span>
                     <h2><?= e(t('blogbig5_quick_title')) ?></h2>
                     <p><?= e(t('blogbig5_quick_intro')) ?></p>
                     <div class="quick-questions-grid">
@@ -85,7 +85,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- What they are -->
                 <section id="what-they-are" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('blogbig5_s1_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbig5_s1_badge')) ?></span>
                     <h2><?= e(t('blogbig5_s1_title')) ?></h2>
                     <p><?= t('blogbig5_s1_p1') ?></p>
                     <p><?= e(t('blogbig5_s1_p2')) ?></p>
@@ -113,7 +113,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Where to see each -->
                 <section id="each-animal" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><i class="fas fa-paw"></i> <?= e(t('blogbig5_s2_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbig5_s2_badge')) ?></span>
                     <h2><?= e(t('blogbig5_s2_title')) ?></h2>
 
                     <h3><?= e(t('blogbig5_s2_lion_h')) ?></h3>
@@ -140,7 +140,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Itineraries -->
                 <section id="itineraries" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('route') ?> <?= e(t('blogbig5_s3_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbig5_s3_badge')) ?></span>
                     <h2><?= e(t('blogbig5_s3_title')) ?></h2>
                     <div class="article-table-wrap">
                         <table class="article-table">
@@ -172,7 +172,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Beyond the five -->
                 <section id="beyond" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('star') ?> <?= e(t('blogbig5_s4_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogbig5_s4_badge')) ?></span>
                     <h2><?= e(t('blogbig5_s4_title')) ?></h2>
                     <p><?= e(t('blogbig5_s4_intro')) ?></p>
                     <ul class="included-icon-list yes">
@@ -199,7 +199,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- FAQ -->
                 <section id="faq" style="margin-bottom:2.2rem;">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('blogcost_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogcost_faq_badge')) ?></span>
                     <h2><?= e(t('blogbig5_faq_title')) ?></h2>
                     <div class="faq-grid-2col">
                         <div class="faq-item-acc"><div class="faq-question-acc"><?= e(t('blogbig5_faq_q1')) ?> <span><?= icon('chevron-down') ?></span></div><div class="faq-answer-acc"><p><?= e(t('blogbig5_faq_a1')) ?></p></div></div>
@@ -221,7 +221,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                 <!-- Related articles -->
                 <section style="margin-bottom:1rem;">
-                    <span class="section-badge"><?= icon('link') ?> <?= e(t('blogcost_related_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('blogcost_related_badge')) ?></span>
                     <h2><?= e(t('blogbig5_related_title')) ?></h2>
                     <div class="related-grid">
                         <a href="<?= url('parks/ngorongoro-conservation-area.php') ?>" class="related-link"><?= icon('mountain') ?> <?= e(t('blogbig5_related_ngorongoro')) ?></a>

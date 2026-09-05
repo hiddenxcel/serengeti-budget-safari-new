@@ -101,7 +101,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('pkg5d_overview_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('pkg5d_overview_badge')) ?></span>
                             <h2><?= e(t('pkg5d_overview_title')) ?></h2>
                         </div>
                         <p><?= e(t('pkg5d_overview_p1')) ?></p>
@@ -120,7 +120,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('route') ?> <?= e(t('pkg5d_route_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('pkg5d_route_badge')) ?></span>
                             <h2><?= e(t('pkg5d_route_title')) ?></h2>
                         </div>
                         <div class="route-strip">
@@ -138,7 +138,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('pkg5d_itinerary_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('pkg5d_itinerary_badge')) ?></span>
                             <h2><?= e(t('pkg5d_itinerary_title')) ?></h2>
                             <p><?= e(t('pkg5d_itinerary_intro')) ?></p>
                         </div>
@@ -176,7 +176,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('campground') ?> <?= e(t('pkg5d_accommodation_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('pkg5d_accommodation_badge')) ?></span>
                             <h2><?= e(t('pkg5d_accommodation_title')) ?></h2>
                         </div>
                         <div class="itinerary-accordion">
@@ -194,7 +194,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('list-check') ?> <?= e(t('pkg5d_features_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('pkg5d_features_badge')) ?></span>
                             <h2><?= e(t('pkg5d_features_title')) ?></h2>
                         </div>
                         <div class="features-grid">
@@ -211,7 +211,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section id="pricing" style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('calculator') ?> <?= e(t('pkg5d_pricing_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('pkg5d_pricing_badge')) ?></span>
                             <h2><?= e(t('pkg5d_pricing_title')) ?></h2>
                             <p><?= e(t('pkg5d_pricing_intro')) ?></p>
                         </div>
@@ -273,7 +273,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><i class="fas fa-paw"></i> <?= e(t('pkg5d_expect_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('pkg5d_expect_badge')) ?></span>
                             <h2><?= e(t('pkg5d_expect_title')) ?></h2>
                         </div>
                         <h3><?= e(t('pkg5d_wildlife_heading')) ?></h3>
@@ -319,7 +319,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section style="margin-bottom:2.5rem;">
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('map-location-dot') ?> <?= e(t('pkg5d_getting_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('pkg5d_getting_badge')) ?></span>
                             <h2><?= e(t('pkg5d_getting_title')) ?></h2>
                         </div>
                         <div class="getting-there-grid">
@@ -331,7 +331,7 @@ require dirname(__DIR__) . '/includes/header.php';
 
                     <section>
                         <div class="section-title-left centered">
-                            <span class="section-badge"><?= icon('medal') ?> <?= e(t('pkg5d_why_badge')) ?></span>
+                            <span class="section-tagline"><?= e(badge_tagline('pkg5d_why_badge')) ?></span>
                             <h2><?= e(t('pkg5d_why_title')) ?></h2>
                         </div>
                         <div class="trust-grid">

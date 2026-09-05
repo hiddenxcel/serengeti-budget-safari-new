@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('mountain') ?> <?= e(t('ngorongoro_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(park_tagline('ngorongoro_hero_badge')) ?></span>
                 <h1><?= e(t('ngorongoro_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('ngorongoro_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -34,7 +34,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('ngorongoro_intro_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('ngorongoro_intro_badge')) ?></span>
                     <h2><?= e(t('ngorongoro_intro_title')) ?></h2>
                 </div>
                 <p><?= e(t('ngorongoro_intro_p1')) ?></p>
@@ -57,7 +57,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('compass') ?> <?= e(t('ngorongoro_areas_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('ngorongoro_areas_badge')) ?></span>
                     <h2><?= e(t('ngorongoro_areas_title')) ?></h2>
                     <p><?= e(t('ngorongoro_areas_intro')) ?></p>
                 </div>
@@ -76,7 +76,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('people-group') ?> <?= e(t('ngorongoro_maasai_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('ngorongoro_maasai_badge')) ?></span>
                     <h2><?= e(t('ngorongoro_maasai_title')) ?></h2>
                     <p><?= e(t('ngorongoro_maasai_intro')) ?></p>
                 </div>
@@ -88,7 +88,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-paw"></i> <?= e(t('ngorongoro_wildlife_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('ngorongoro_wildlife_badge')) ?></span>
                     <h2><?= e(t('ngorongoro_wildlife_title')) ?></h2>
                     <p><?= e(t('ngorongoro_wildlife_intro')) ?></p>
                 </div>
@@ -113,7 +113,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('ngorongoro_when_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('ngorongoro_when_badge')) ?></span>
                     <h2><?= e(t('ngorongoro_when_title')) ?></h2>
                     <p><?= e(t('ngorongoro_when_intro')) ?></p>
                 </div>
@@ -125,7 +125,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('bed') ?> <?= e(t('ngorongoro_stay_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('ngorongoro_stay_badge')) ?></span>
                     <h2><?= e(t('ngorongoro_stay_title')) ?></h2>
                     <p><?= e(t('ngorongoro_stay_intro')) ?></p>
                 </div>
@@ -164,7 +164,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('money-bill-wave') ?> <?= e(t('ngorongoro_fees_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('ngorongoro_fees_badge')) ?></span>
                     <h2><?= e(t('ngorongoro_fees_title')) ?></h2>
                     <p><?= e(t('ngorongoro_fees_intro')) ?></p>
                 </div>
@@ -193,7 +193,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('ngorongoro_gallery_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('ngorongoro_gallery_badge')) ?></span>
                     <h2><?= e(t('ngorongoro_gallery_title')) ?></h2>
                 </div>
 
@@ -235,7 +235,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('ngorongoro_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('ngorongoro_faq_badge')) ?></span>
                     <h2><?= e(t('ngorongoro_faq_title')) ?></h2>
                 </div>
                 <div class="faq-column">

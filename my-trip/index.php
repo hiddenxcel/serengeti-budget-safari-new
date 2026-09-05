@@ -78,7 +78,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('suitcase-rolling') ?> <?= e(t('mytrip_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(badge_tagline('mytrip_hero_badge')) ?></span>
                 <h1><?= e(t('mytrip_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('mytrip_hero_sub')) ?></p>
             </div>

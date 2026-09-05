@@ -96,9 +96,9 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="container guide-container">
             <div class="guide-layout guide-page">
 
-                <!-- ===== TOC SIDEBAR ===== -->
-                <aside class="guide-toc">
-                    <h3><?= e(t('mgg_toc_title')) ?></h3>
+                <!-- ===== TOC SIDEBAR (accordion on mobile, static sticky rail on desktop) ===== -->
+                <details class="guide-toc" open>
+                    <summary><?= icon('list') ?> <span class="guide-toc-summary-title"><?= e(t('mgg_toc_title')) ?></span> <span class="guide-toc-mobile-label"><?= e(t('bsg_toc_jump')) ?></span> <?= icon('chevron-down', 'guide-toc-chevron') ?></summary>
                     <ul>
                         <li><a href="#introduction"><?= e(t('mgg_toc_intro')) ?></a></li>
                         <li><a href="#route"><?= e(t('mgg_toc_route')) ?></a></li>
@@ -113,30 +113,46 @@ require dirname(__DIR__) . '/includes/header.php';
                         <li><a href="#faq"><?= e(t('mgg_toc_faq')) ?></a></li>
                         <li><a href="#book"><?= e(t('mgg_toc_book')) ?></a></li>
                     </ul>
-                </aside>
+                </details>
 
                 <!-- ===== MAIN CONTENT ===== -->
                 <div class="guide-main">
 
                     <!-- INTRODUCTION -->
-                    <h2 id="introduction"><?= e(t('mgg_intro_title')) ?></h2>
-                    <p class="guide-intro-lead"><?= t('mgg_intro_p1') ?></p>
-                    <p><?= t('mgg_intro_p2') ?></p>
-                    <p><?= t('mgg_intro_p3') ?></p>
-                    <div class="guide-quote-card">
-                        <span class="guide-quote-icon"><?= icon('quote-left') ?></span>
-                        <p><?= t('mgg_intro_box') ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="introduction"><?= e(t('mgg_intro_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('introduction')) ?></span>
+                        <p class="guide-intro-lead"><?= t('mgg_intro_p1') ?></p>
                     </div>
+                    <details class="guide-expandable-text">
+                        <p><?= t('mgg_intro_p2') ?></p>
+                        <p><?= t('mgg_intro_p3') ?></p>
+                        <div class="guide-quote-card">
+                            <span class="guide-quote-icon"><?= icon('quote-left') ?></span>
+                            <p><?= t('mgg_intro_box') ?></p>
+                        </div>
+                        <summary class="guide-expand-toggle">
+                            <span class="expand-label-more"><?= e(t('bsg_read_more')) ?></span>
+                            <span class="expand-label-less"><?= e(t('bsg_read_less')) ?></span>
+                            <?= icon('chevron-down') ?>
+                        </summary>
+                    </details>
 
                     <!-- ROUTE -->
-                    <h2 id="route"><?= e(t('mgg_route_title')) ?></h2>
-                    <p><?= e(t('mgg_route_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="route"><?= e(t('mgg_route_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('route')) ?></span>
+                        <p><?= e(t('mgg_route_p1')) ?></p>
+                    </div>
                     <div class="guide-box highlight"><p><?= t('mgg_route_box') ?></p></div>
                     <div class="guide-box pro-tip"><p><?= t('mgg_route_tip') ?></p></div>
 
                     <!-- MONTH BY MONTH -->
-                    <h2 id="months"><?= t('mgg_months_title') ?></h2>
-                    <p><?= e(t('mgg_months_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="months"><?= t('mgg_months_title') ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('months')) ?></span>
+                        <p><?= e(t('mgg_months_p1')) ?></p>
+                    </div>
                     <div class="guide-month-grid">
                         <?php
                         $months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
@@ -155,14 +171,24 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="guide-item-card">
                             <h4><?= e($monthLabels[$m]) ?></h4>
                             <p><?= icon('map-marker-alt') ?> <?= t('mgg_m_' . $m . '_loc') ?></p>
-                            <p><?= e(t('mgg_m_' . $m . '_desc')) ?></p>
+                            <details class="guide-item-more">
+                                <p><?= e(t('mgg_m_' . $m . '_desc')) ?></p>
+                                <summary class="guide-item-toggle">
+                                    <span class="expand-label-more"><?= e(t('bsg_read_more')) ?></span>
+                                    <span class="expand-label-less"><?= e(t('bsg_read_less')) ?></span>
+                                    <?= icon('chevron-down') ?>
+                                </summary>
+                            </details>
                         </div>
                         <?php endforeach; ?>
                     </div>
 
                     <!-- PACKAGES -->
-                    <h2 id="packages"><?= e(t('mgg_packages_title')) ?></h2>
-                    <p><?= e(t('mgg_packages_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="packages"><?= e(t('mgg_packages_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('packages')) ?></span>
+                        <p><?= e(t('mgg_packages_p1')) ?></p>
+                    </div>
                     <ul class="guide-checklist">
                         <li><?= e(t('mgg_packages_inc1')) ?></li>
                         <li><?= e(t('mgg_packages_inc2')) ?></li>
@@ -209,8 +235,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     <p style="text-align:center;"><strong><?= sprintf(t('mgg_packages_custom'), url('contact.php')) ?></strong></p>
 
                     <!-- RIVER CROSSINGS -->
-                    <h2 id="crossings"><?= e(t('mgg_crossings_title')) ?></h2>
-                    <p><?= e(t('mgg_crossings_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="crossings"><?= e(t('mgg_crossings_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('crossings')) ?></span>
+                        <p><?= e(t('mgg_crossings_p1')) ?></p>
+                    </div>
                     <h3><?= e(t('mgg_crossings_grumeti_title')) ?></h3>
                     <p><?= e(t('mgg_crossings_grumeti_p')) ?></p>
                     <div class="guide-box highlight"><p><?= t('mgg_crossings_grumeti_tip') ?></p></div>
@@ -220,14 +249,20 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="guide-box pro-tip"><p><?= t('mgg_crossings_pro') ?></p></div>
 
                     <!-- CALVING -->
-                    <h2 id="calving"><?= e(t('mgg_calving_title')) ?></h2>
-                    <p><?= t('mgg_calving_p1') ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="calving"><?= e(t('mgg_calving_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('calving')) ?></span>
+                        <p><?= t('mgg_calving_p1') ?></p>
+                    </div>
                     <p><?= e(t('mgg_calving_p2')) ?></p>
                     <div class="guide-box insider"><p><?= t('mgg_calving_box') ?></p></div>
 
                     <!-- ACCOMMODATION -->
-                    <h2 id="accommodation"><?= e(t('mgg_acc_title')) ?></h2>
-                    <p><?= e(t('mgg_acc_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="accommodation"><?= e(t('mgg_acc_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('accommodation')) ?></span>
+                        <p><?= e(t('mgg_acc_p1')) ?></p>
+                    </div>
                     <div class="guide-item-grid">
                         <?php for ($i = 1; $i <= 4; $i++): ?>
                         <div class="guide-item-card">
@@ -241,8 +276,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="guide-box pro-tip"><p><?= t('mgg_acc_tip') ?></p></div>
 
                     <!-- BEST TIME -->
-                    <h2 id="best-time"><?= e(t('mgg_best_time_title')) ?></h2>
-                    <p><?= e(t('mgg_best_time_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="best-time"><?= e(t('mgg_best_time_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('best-time')) ?></span>
+                        <p><?= e(t('mgg_best_time_p1')) ?></p>
+                    </div>
                     <div class="guide-month-grid">
                         <?php foreach ($months as $m): ?>
                         <div class="guide-month-cell <?= e($tiers[$m]) ?>">
@@ -254,8 +292,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="guide-box highlight"><p><?= t('mgg_best_time_box') ?></p></div>
 
                     <!-- ITINERARIES -->
-                    <h2 id="itineraries"><?= e(t('mgg_itin_title')) ?></h2>
-                    <p><?= e(t('mgg_itin_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="itineraries"><?= e(t('mgg_itin_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('itineraries')) ?></span>
+                        <p><?= e(t('mgg_itin_p1')) ?></p>
+                    </div>
                     <?php for ($i = 1; $i <= 2; $i++): ?>
                     <div class="guide-itinerary-card">
                         <h4><?= t('mgg_itin' . $i . '_name') ?> <span class="guide-itinerary-days"><?= e(t('mgg_itin' . $i . '_days')) ?></span></h4>
@@ -266,14 +307,25 @@ require dirname(__DIR__) . '/includes/header.php';
                     <?php endfor; ?>
 
                     <!-- LOCAL TIPS -->
-                    <h2 id="local-tips"><?= e(t('mgg_tips_title')) ?></h2>
-                    <p><?= e(t('mgg_tips_p1')) ?></p>
-                    <?php for ($i = 1; $i <= 8; $i++): ?>
-                        <div class="guide-tip"><p><?= t('mgg_tip' . $i) ?></p></div>
+                    <div class="guide-section-head">
+                        <h2 id="local-tips"><?= e(t('mgg_tips_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('local-tips')) ?></span>
+                        <p><?= e(t('mgg_tips_p1')) ?></p>
+                    </div>
+                    <?php for ($i = 1; $i <= 8; $i++):
+                        [$tipSummary, $tipBody] = guide_split_tip(t('mgg_tip' . $i));
+                    ?>
+                        <details class="guide-tip">
+                            <summary><span><span class="tip-number"><?= $i ?>.</span> <?= $tipSummary ?></span> <?= icon('chevron-down', 'tip-chevron') ?></summary>
+                            <p><?= $tipBody ?></p>
+                        </details>
                     <?php endfor; ?>
 
                     <!-- FAQ -->
-                    <h2 id="faq"><?= e(t('mgg_faq_title')) ?></h2>
+                    <div class="guide-section-head">
+                        <h2 id="faq"><?= e(t('mgg_faq_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('faq')) ?></span>
+                    </div>
                     <div class="faq-column">
                         <?php for ($i = 1; $i <= 8; $i++): ?>
                         <div class="faq-item-acc">
@@ -284,8 +336,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     </div>
 
                     <!-- BOOKING FORM -->
-                    <h2 id="book"><?= e(t('mgg_book_title')) ?></h2>
-                    <p><?= e(t('mgg_book_p1')) ?></p>
+                    <div class="guide-section-head">
+                        <h2 id="book"><?= e(t('mgg_book_title')) ?></h2>
+                        <span class="guide-section-tagline"><?= e(guide_tagline('book')) ?></span>
+                        <p><?= e(t('mgg_book_p1')) ?></p>
+                    </div>
                     <div class="guide-cta-box">
                         <h3><?= e(t('mgg_cta_title')) ?></h3>
                         <p><?= e(t('mgg_cta_p')) ?></p>

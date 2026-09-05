@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('tree') ?> <?= e(t('tarangire_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(park_tagline('tarangire_hero_badge')) ?></span>
                 <h1><?= e(t('tarangire_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('tarangire_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -34,7 +34,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('tarangire_intro_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('tarangire_intro_badge')) ?></span>
                     <h2><?= e(t('tarangire_intro_title')) ?></h2>
                 </div>
                 <p><?= e(t('tarangire_intro_p1')) ?></p>
@@ -57,7 +57,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('compass') ?> <?= e(t('tarangire_zones_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('tarangire_zones_badge')) ?></span>
                     <h2><?= e(t('tarangire_zones_title')) ?></h2>
                     <p><?= e(t('tarangire_zones_intro')) ?></p>
                 </div>
@@ -79,7 +79,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-paw"></i> <?= e(t('tarangire_wildlife_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('tarangire_wildlife_badge')) ?></span>
                     <h2><?= e(t('tarangire_wildlife_title')) ?></h2>
                     <p><?= e(t('tarangire_wildlife_intro')) ?></p>
                 </div>
@@ -104,7 +104,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('tarangire_when_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('tarangire_when_badge')) ?></span>
                     <h2><?= e(t('tarangire_when_title')) ?></h2>
                     <p><?= e(t('tarangire_when_intro')) ?></p>
                 </div>
@@ -116,7 +116,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('bed') ?> <?= e(t('tarangire_stay_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('tarangire_stay_badge')) ?></span>
                     <h2><?= e(t('tarangire_stay_title')) ?></h2>
                     <p><?= e(t('tarangire_stay_intro')) ?></p>
                 </div>
@@ -155,7 +155,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('money-bill-wave') ?> <?= e(t('tarangire_fees_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('tarangire_fees_badge')) ?></span>
                     <h2><?= e(t('tarangire_fees_title')) ?></h2>
                     <p><?= e(t('tarangire_fees_intro')) ?></p>
                 </div>
@@ -183,7 +183,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('tarangire_gallery_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('tarangire_gallery_badge')) ?></span>
                     <h2><?= e(t('tarangire_gallery_title')) ?></h2>
                 </div>
 
@@ -225,7 +225,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('tarangire_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('tarangire_faq_badge')) ?></span>
                     <h2><?= e(t('tarangire_faq_title')) ?></h2>
                 </div>
                 <div class="faq-column">

@@ -95,6 +95,10 @@
     </footer>
 
     <script src="<?= asset('js/main.js') ?>"></script>
+<?php if ($useGsap ?? false): ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<?php endif; ?>
 <?php foreach ($extraScripts ?? [] as $src): ?>
     <script src="<?= asset($src) ?>"></script>
 <?php endforeach; ?>

@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-paw"></i> <?= e(t('mikumi_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(park_tagline('mikumi_hero_badge')) ?></span>
                 <h1><?= e(t('mikumi_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('mikumi_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -34,7 +34,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('mikumi_intro_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('mikumi_intro_badge')) ?></span>
                     <h2><?= e(t('mikumi_intro_title')) ?></h2>
                 </div>
                 <p><?= e(t('mikumi_intro_p1')) ?></p>
@@ -57,7 +57,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('compass') ?> <?= e(t('mikumi_regions_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('mikumi_regions_badge')) ?></span>
                     <h2><?= e(t('mikumi_regions_title')) ?></h2>
                     <p><?= e(t('mikumi_regions_intro')) ?></p>
                 </div>
@@ -73,7 +73,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('route') ?> <?= e(t('mikumi_access_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('mikumi_access_badge')) ?></span>
                     <h2><?= e(t('mikumi_access_title')) ?></h2>
                     <p><?= e(t('mikumi_access_intro')) ?></p>
                 </div>
@@ -85,7 +85,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-paw"></i> <?= e(t('mikumi_wildlife_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('mikumi_wildlife_badge')) ?></span>
                     <h2><?= e(t('mikumi_wildlife_title')) ?></h2>
                     <p><?= e(t('mikumi_wildlife_intro')) ?></p>
                 </div>
@@ -110,7 +110,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('mikumi_when_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('mikumi_when_badge')) ?></span>
                     <h2><?= e(t('mikumi_when_title')) ?></h2>
                     <p><?= e(t('mikumi_when_intro')) ?></p>
                 </div>
@@ -122,7 +122,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('bed') ?> <?= e(t('mikumi_stay_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('mikumi_stay_badge')) ?></span>
                     <h2><?= e(t('mikumi_stay_title')) ?></h2>
                     <p><?= e(t('mikumi_stay_intro')) ?></p>
                 </div>
@@ -161,7 +161,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('money-bill-wave') ?> <?= e(t('mikumi_fees_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('mikumi_fees_badge')) ?></span>
                     <h2><?= e(t('mikumi_fees_title')) ?></h2>
                     <p><?= e(t('mikumi_fees_intro')) ?></p>
                 </div>
@@ -188,7 +188,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('mikumi_gallery_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('mikumi_gallery_badge')) ?></span>
                     <h2><?= e(t('mikumi_gallery_title')) ?></h2>
                 </div>
 
@@ -230,7 +230,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('mikumi_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('mikumi_faq_badge')) ?></span>
                     <h2><?= e(t('mikumi_faq_title')) ?></h2>
                 </div>
                 <div class="faq-column">

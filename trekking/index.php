@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><?= icon('mountain') ?> <?= e(t('trekking_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(badge_tagline('trekking_hero_badge')) ?></span>
                 <h1><span><?= e(t('trekking_hero_title_1')) ?></span> <?= e(t('trekking_hero_title_2')) ?></h1>
                 <p class="hero-sub"><?= e(t('trekking_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -34,7 +34,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('route') ?> <?= e(t('trekking_routes_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('trekking_routes_badge')) ?></span>
                     <h2><?= e(t('trekking_routes_title')) ?></h2>
                     <p><?= e(t('trekking_routes_intro')) ?></p>
                 </div>
@@ -144,7 +144,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('mountain-sun') ?> <?= e(t('trekking_other_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('trekking_other_badge')) ?></span>
                     <h2><?= e(t('trekking_other_title')) ?></h2>
                 </div>
                 <div class="grid-3">
@@ -182,7 +182,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('book-open') ?> <?= e(t('trekking_guide_badge')) ?></span>
+                    <span class="section-tagline"><?= e(badge_tagline('trekking_guide_badge')) ?></span>
                     <h2><?= e(t('trekking_guide_title')) ?></h2>
                     <p><?= e(t('trekking_guide_intro')) ?></p>
                 </div>

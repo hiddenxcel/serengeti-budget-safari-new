@@ -19,7 +19,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <div class="page-hero-overlay"></div>
         <div class="container page-hero-container">
             <div class="page-hero-content">
-                <span class="hero-badge"><i class="fas fa-dove"></i> <?= e(t('manyara_hero_badge')) ?></span>
+                <span class="hero-tagline"><?= e(park_tagline('manyara_hero_badge')) ?></span>
                 <h1><?= e(t('manyara_hero_title')) ?></h1>
                 <p class="hero-sub"><?= e(t('manyara_hero_sub')) ?></p>
                 <div class="page-hero-actions">
@@ -34,7 +34,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('circle-info') ?> <?= e(t('manyara_intro_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('manyara_intro_badge')) ?></span>
                     <h2><?= e(t('manyara_intro_title')) ?></h2>
                 </div>
                 <p><?= e(t('manyara_intro_p1')) ?></p>
@@ -57,7 +57,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('layer-group') ?> <?= e(t('manyara_zones_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('manyara_zones_badge')) ?></span>
                     <h2><?= e(t('manyara_zones_title')) ?></h2>
                     <p><?= e(t('manyara_zones_intro')) ?></p>
                 </div>
@@ -76,7 +76,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><i class="fas fa-paw"></i> <?= e(t('manyara_wildlife_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('manyara_wildlife_badge')) ?></span>
                     <h2><?= e(t('manyara_wildlife_title')) ?></h2>
                     <p><?= e(t('manyara_wildlife_intro')) ?></p>
                 </div>
@@ -102,7 +102,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('calendar-days') ?> <?= e(t('manyara_when_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('manyara_when_badge')) ?></span>
                     <h2><?= e(t('manyara_when_title')) ?></h2>
                     <p><?= e(t('manyara_when_intro')) ?></p>
                 </div>
@@ -114,7 +114,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('bed') ?> <?= e(t('manyara_stay_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('manyara_stay_badge')) ?></span>
                     <h2><?= e(t('manyara_stay_title')) ?></h2>
                     <p><?= e(t('manyara_stay_intro')) ?></p>
                 </div>
@@ -153,7 +153,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('money-bill-wave') ?> <?= e(t('manyara_fees_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('manyara_fees_badge')) ?></span>
                     <h2><?= e(t('manyara_fees_title')) ?></h2>
                     <p><?= e(t('manyara_fees_intro')) ?></p>
                 </div>
@@ -181,7 +181,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('camera-retro') ?> <?= e(t('manyara_gallery_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('manyara_gallery_badge')) ?></span>
                     <h2><?= e(t('manyara_gallery_title')) ?></h2>
                 </div>
 
@@ -223,7 +223,7 @@ require dirname(__DIR__) . '/includes/header.php';
         <section class="detail-section bg-light">
             <div class="container">
                 <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('question-circle') ?> <?= e(t('manyara_faq_badge')) ?></span>
+                    <span class="section-tagline"><?= e(park_tagline('manyara_faq_badge')) ?></span>
                     <h2><?= e(t('manyara_faq_title')) ?></h2>
                 </div>
                 <div class="faq-column">
