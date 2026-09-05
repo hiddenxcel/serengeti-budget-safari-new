@@ -54,14 +54,41 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
                         <div class="section-title-left centered">
                             <span class="section-tagline"><?= e(badge_tagline('pkg3d_itinerary_badge')) ?></span>
                             <h2><?= e(t('pkg3d_itinerary_title')) ?></h2>
+                            <p><?= e(t('pkg3d_itinerary_intro')) ?></p>
                         </div>
 
-                        <h3><?= e(t('pkg3d_day1_title')) ?></h3>
-                        <p><?= e(t('pkg3d_day1_desc')) ?></p>
-                        <h3><?= e(t('pkg3d_day2_title')) ?></h3>
-                        <p><?= e(t('pkg3d_day2_desc')) ?></p>
-                        <h3><?= e(t('pkg3d_day3_title')) ?></h3>
-                        <p><?= e(t('pkg3d_day3_desc')) ?></p>
+                        <div class="itinerary-accordion">
+                            <?php foreach ([1, 2, 3] as $d): ?>
+                            <div class="itinerary-day">
+                                <button type="button" class="itinerary-day-toggle">
+                                    <span class="itinerary-day-number"><?= $d ?></span>
+                                    <span class="itinerary-day-heading">
+                                        <strong>Day <?= $d ?></strong>
+                                        <small><?= e(t('pkg3d_day' . $d . '_title')) ?></small>
+                                    </span>
+                                    <?= icon('chevron-down') ?>
+                                </button>
+                                <div class="itinerary-day-body">
+                                    <p class="itinerary-day-mood"><?= e(t('pkg3d_day' . $d . '_mood')) ?></p>
+                                    <div class="itinerary-day-tags">
+                                        <span><?= icon('route') ?> <?= e(t('pkg3d_day' . $d . '_drive')) ?></span>
+                                        <span><?= icon('utensils') ?> <?= e(t('pkg3d_day' . $d . '_meals')) ?></span>
+                                        <span><?= icon('campground') ?> <?= e(t('pkg3d_day' . $d . '_stay')) ?></span>
+                                    </div>
+                                    <div class="day-timeline">
+                                        <?php foreach ([1, 2, 3, 4, 5] as $tl): ?>
+                                        <div class="day-timeline-item">
+                                            <span class="day-timeline-dot"></span>
+                                            <div class="day-timeline-time"><?= e(t('pkg3d_day' . $d . '_tl' . $tl . '_time')) ?></div>
+                                            <strong><?= e(t('pkg3d_day' . $d . '_tl' . $tl . '_title')) ?></strong>
+                                            <p><?= e(t('pkg3d_day' . $d . '_tl' . $tl . '_desc')) ?></p>
+                                        </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
 
                     <div class="price-calc"
@@ -188,6 +215,6 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
     </section>
 
 <?php
-$extraScripts = ['js/price-calculator.js'];
+$extraScripts = ['js/price-calculator.js', 'js/safari-detail.js'];
 require dirname(__DIR__) . '/includes/footer.php';
 ?>

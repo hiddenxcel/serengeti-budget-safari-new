@@ -158,15 +158,21 @@ require dirname(__DIR__) . '/includes/header.php';
                                     <?= icon('chevron-down') ?>
                                 </button>
                                 <div class="itinerary-day-body">
+                                    <p class="itinerary-day-mood"><?= e(t('pkg5d_day' . $d . '_mood')) ?></p>
                                     <div class="itinerary-day-tags">
                                         <span><?= icon('route') ?> <?= e(t('pkg5d_day' . $d . '_drive')) ?></span>
                                         <span><?= icon('utensils') ?> <?= e(t('pkg5d_day' . $d . '_meals')) ?></span>
                                         <span><?= icon('campground') ?> <?= e(t('pkg5d_day' . $d . '_stay')) ?></span>
                                     </div>
-                                    <p><?= e(t('pkg5d_day' . $d . '_desc')) ?></p>
-                                    <div class="itinerary-day-tags">
-                                        <span><?= icon('binoculars') ?> <?= e(t('pkg5d_day' . $d . '_act1')) ?></span>
-                                        <span><?= icon('check') ?> <?= e(t('pkg5d_day' . $d . '_act2')) ?></span>
+                                    <div class="day-timeline">
+                                        <?php foreach ([1, 2, 3, 4] as $tl): ?>
+                                        <div class="day-timeline-item">
+                                            <span class="day-timeline-dot"></span>
+                                            <div class="day-timeline-time"><?= e(t('pkg5d_day' . $d . '_tl' . $tl . '_time')) ?></div>
+                                            <strong><?= e(t('pkg5d_day' . $d . '_tl' . $tl . '_title')) ?></strong>
+                                            <p><?= e(t('pkg5d_day' . $d . '_tl' . $tl . '_desc')) ?></p>
+                                        </div>
+                                        <?php endforeach; ?>
                                     </div>
                                 </div>
                             </div>

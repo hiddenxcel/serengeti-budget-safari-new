@@ -11268,6 +11268,17 @@ textarea:focus-visible,
     margin: 0;
 }
 
+/* A short, warm one-liner shown at the top of a day's itinerary body
+   (e.g. "Karibu Sana Tanzania — Welcome to Tanzania"), before the
+   timeline of timed stops. Sets the mood, not a fact. */
+.itinerary-day-mood {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--gold-dark);
+    margin: 0 0 1rem;
+}
+
 /* ---------- Day trip: listing card ---------- */
 .day-trip-card {
     display: block;
