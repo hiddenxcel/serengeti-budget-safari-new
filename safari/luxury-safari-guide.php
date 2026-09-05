@@ -344,7 +344,6 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="guide-share-buttons">
                             <span><?= e(t('lsg_share_label')) ?></span>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" target="_blank" rel="noopener" class="guide-share-btn"><i class="fab fa-facebook-f"></i> Facebook</a>
-                            <a href="https://twitter.com/intent/tweet?url=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" target="_blank" rel="noopener" class="guide-share-btn"><i class="fab fa-twitter"></i> Twitter</a>
                             <a href="mailto:?subject=<?= rawurlencode(t('lsg_h1')) ?>&amp;body=<?= urlencode(SITE_URL . base_url() . '/' . $lang . '/' . $altPath) ?>" class="guide-share-btn"><?= icon('envelope') ?> Email</a>
                         </div>
                         <button type="button" class="guide-print-btn"><?= icon('print') ?> <?= e(t('lsg_print')) ?></button>
