@@ -136,42 +136,57 @@ if ($isUsingRealDepartures) {
                     <p><?= e(t('groups_departures_intro')) ?></p>
                 </div>
 
-                <div class="departures-table-wrap">
-                    <table class="departures-table">
-                        <thead>
-                            <tr>
-                                <th><?= e(t('groups_departures_col_departure')) ?></th>
-                                <th><?= e(t('groups_departures_col_itinerary')) ?></th>
-                                <th><?= e(t('groups_departures_col_price')) ?></th>
-                                <th><?= e(t('groups_departures_col_seats')) ?></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($departures as $dep): ?>
-                            <tr>
-                                <td><strong><?= e($dep['date']) ?></strong></td>
-                                <td><?= e($dep['itinerary']) ?></td>
-                                <td><?= e($dep['price']) ?></td>
-                                <td>
-                                    <span class="departure-seats <?= e($dep['status']) ?>">
-                                        <?= icon('circle') ?>
-                                        <?= e(t('groups_seats_' . $dep['status'])) ?>
-                                    </span>
-                                </td>
-                                <td>
-                                    <?php if ($dep['status'] !== 'full' && $isUsingRealDepartures): ?>
-                                        <a class="btn btn-primary btn-sm" href="<?= url('booking/?departure=' . $dep['id'] . '&adults=1') ?>"><?= e(t('groups_join_cta')) ?></a>
-                                    <?php elseif ($dep['status'] === 'full'): ?>
-                                        <span style="color:#999;font-size:0.85rem;"><?= e(t('groups_seats_full')) ?></span>
-                                    <?php else: ?>
-                                        <a class="btn btn-light btn-sm" href="https://wa.me/255697612865" target="_blank" rel="noopener"><?= e(t('groups_join_cta')) ?></a>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                <div class="departures-grid">
+                    <?php foreach ($departures as $dep): ?>
+                    <div class="departure-card">
+                        <div class="departure-card-top">
+                            <span class="departure-seats <?= e($dep['status']) ?>">
+                                <?= icon('circle') ?>
+                                <?= e(t('groups_seats_' . $dep['status'])) ?>
+                            </span>
+                            <span class="departure-date"><?= e($dep['date']) ?></span>
+                        </div>
+                        <h3 class="departure-itinerary"><?= e($dep['itinerary']) ?></h3>
+                        <div class="departure-price">
+                            <span class="departure-price-amount"><?= e($dep['price']) ?></span>
+                            <span class="departure-price-unit"><?= e(t('groups_departures_price_pp')) ?></span>
+                        </div>
+
+                        <details class="departure-includes">
+                            <summary><?= icon('circle-info') ?> <?= e(t('groups_departures_toggle')) ?></summary>
+                            <div class="departure-includes-body">
+                                <div class="departure-includes-col">
+                                    <h4><?= icon('check') ?> <?= e(t('groups_departures_includes_title')) ?></h4>
+                                    <ul>
+                                        <li><?= e(t('groups_departures_include_1')) ?></li>
+                                        <li><?= e(t('groups_departures_include_2')) ?></li>
+                                        <li><?= e(t('groups_departures_include_3')) ?></li>
+                                        <li><?= e(t('groups_departures_include_4')) ?></li>
+                                        <li><?= e(t('groups_departures_include_5')) ?></li>
+                                    </ul>
+                                </div>
+                                <div class="departure-includes-col excludes">
+                                    <h4><?= icon('times') ?> <?= e(t('groups_departures_excludes_title')) ?></h4>
+                                    <ul>
+                                        <li><?= e(t('groups_departures_exclude_1')) ?></li>
+                                        <li><?= e(t('groups_departures_exclude_2')) ?></li>
+                                        <li><?= e(t('groups_departures_exclude_3')) ?></li>
+                                        <li><?= e(t('groups_departures_exclude_4')) ?></li>
+                                        <li><?= e(t('groups_departures_exclude_5')) ?></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </details>
+
+                        <?php if ($dep['status'] !== 'full' && $isUsingRealDepartures): ?>
+                            <a class="btn btn-primary departure-cta" href="<?= url('booking/?departure=' . $dep['id'] . '&adults=1') ?>"><?= e(t('groups_join_cta')) ?></a>
+                        <?php elseif ($dep['status'] === 'full'): ?>
+                            <span class="departure-cta departure-cta-full"><?= e(t('groups_seats_full')) ?></span>
+                        <?php else: ?>
+                            <a class="btn btn-light departure-cta" href="https://wa.me/255697612865" target="_blank" rel="noopener"><?= e(t('groups_join_cta')) ?></a>
+                        <?php endif; ?>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
                 <p class="departures-note"><?= icon('circle-info') ?> <?= e($isUsingRealDepartures ? t('groups_departures_note_real') : t('groups_departures_note')) ?></p>
             </div>

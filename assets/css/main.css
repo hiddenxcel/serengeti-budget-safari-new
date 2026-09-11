@@ -4650,23 +4650,11 @@ textarea:focus-visible,
 .about-us-section {
     position: relative;
     padding: 5rem 0;
-    background: var(--black) url('../images/gallery/savanna-sunrise-acacia-trees.jpg') center / cover no-repeat;
+    background: linear-gradient(120deg, #173F35 0%, #1E4F42 45%, #2A4A3A 100%);
     overflow: hidden;
     width: 100%;
     max-width: 100%;
     isolation: isolate;
-}
-
-.about-us-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    /* Darkens the photo enough for white/gold text to stay readable, with
-       a slight warm gold cast (not flat black) so the section still reads
-       as a photo, not a solid panel. */
-    background:
-        linear-gradient(120deg, rgba(23, 63, 53, 0.94) 0%, rgba(23, 63, 53, 0.86) 45%, rgba(84, 63, 22, 0.82) 100%);
-    z-index: -1;
 }
 
 .about-us-wrapper {
@@ -5522,18 +5510,100 @@ textarea:focus-visible,
 }
 
 /* ---------- Testimonials ---------- */
-.testimonials-section {
-    padding: 4rem 0;
+.testimonials-slider-section {
+    padding: 5rem 0;
     background: var(--white);
+    overflow: hidden;
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
+.testimonials-slider-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.testimonials-slider-header .section-title-left {
+    margin-bottom: 0;
+}
+
+.testimonials-slider-nav {
+    display: flex;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+
+.testimonials-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-100);
+    background: var(--white);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.testimonials-arrow:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+}
+
+.testimonials-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.testimonials-arrow:disabled:hover {
+    background: var(--white);
+    border-color: var(--gray-100);
+    color: var(--black);
+}
+
+.testimonials-slider {
+    overflow: hidden;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.testimonials-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.testimonials-dots button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--gray-100);
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition);
+}
+
+.testimonials-dots button.active {
+    background: var(--gold);
+    width: 22px;
+    border-radius: 4px;
 }
 
 .testimonial-card {
+    flex: 0 0 calc(33.333% - 1rem);
+    max-width: calc(33.333% - 1rem);
     background: var(--cream);
     border-radius: var(--radius);
     padding: 1.5rem;
@@ -5544,6 +5614,29 @@ textarea:focus-visible,
 .testimonial-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-elevated);
+}
+
+@media (max-width: 992px) {
+    .testimonial-card {
+        flex: 0 0 calc(50% - 0.75rem);
+        max-width: calc(50% - 0.75rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-slider-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .testimonials-slider-nav {
+        align-self: center;
+    }
+
+    .testimonial-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 .testimonial-header {
@@ -5628,6 +5721,132 @@ textarea:focus-visible,
     color: var(--gold);
     font-size: 1rem;
     letter-spacing: 2px;
+}
+
+.testimonial-readmore {
+    display: inline-block;
+    margin-top: -0.3rem;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--gold-dark);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.testimonial-readmore:hover {
+    color: var(--green);
+}
+
+.testimonials-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.testimonials-cta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.testimonials-cta-badge svg {
+    width: 16px;
+    height: 16px;
+    color: var(--gold);
+}
+
+.testimonial-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.testimonial-modal[hidden] {
+    display: none;
+}
+
+.testimonial-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 20, 0.65);
+}
+
+.testimonial-modal-panel {
+    position: relative;
+    background: var(--white);
+    border-radius: var(--radius);
+    max-width: 560px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 2.5rem 2rem 2rem;
+    box-shadow: var(--shadow-elevated);
+}
+
+.testimonial-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.testimonial-modal-close:hover {
+    background: var(--gold);
+    color: var(--white);
+}
+
+.testimonial-modal-close svg {
+    width: 16px;
+    height: 16px;
+}
+
+.testimonial-full-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.testimonial-full-meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-full-rating {
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 0.8rem;
+}
+
+.testimonial-full blockquote {
+    font-style: italic;
+    color: var(--gray-800);
+    line-height: 1.7;
+    margin: 0;
 }
 
 /* ---------- FAQ ---------- */
@@ -9840,43 +10059,57 @@ textarea:focus-visible,
     line-height: 1.5;
 }
 
-/* ---------- Group safaris: departure calendar table ---------- */
-.departures-table-wrap {
-    overflow-x: auto;
+/* ---------- Group safaris: departure cards ---------- */
+.departures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.departure-card {
+    background: var(--white);
     border-radius: var(--radius-md, 16px);
     box-shadow: var(--shadow-card);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
 }
 
-.departures-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--white);
-    font-size: 0.9rem;
+.departure-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
 }
 
-.departures-table th {
-    background: var(--black);
-    color: var(--white);
-    text-align: left;
-    padding: 0.9rem 1.1rem;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
+.departure-date {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    font-weight: 600;
 }
 
-.departures-table td {
-    padding: 0.9rem 1.1rem;
-    border-bottom: 1px solid var(--gray-200);
-    white-space: nowrap;
+.departure-itinerary {
+    font-size: 1.1rem;
+    margin: 0;
 }
 
-.departures-table tr:last-child td {
-    border-bottom: none;
+.departure-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 0.2rem;
 }
 
-.departures-table tr:hover td {
-    background: var(--gray-100);
+.departure-price-amount {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--black);
+}
+
+.departure-price-unit {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
 }
 
 .departure-seats {
@@ -9884,24 +10117,111 @@ textarea:focus-visible,
     align-items: center;
     gap: 0.4rem;
     font-weight: 700;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
 }
 
 .departure-seats.open { color: #2f9e44; }
 .departure-seats.filling { color: var(--gold-dark); }
 .departure-seats.full { color: #c0392b; }
 
-.departure-seats i {
-    font-size: 0.6rem;
+.departure-seats i,
+.departure-seats svg {
+    font-size: 0.55rem;
+    width: 0.55rem;
+    height: 0.55rem;
+}
+
+.departure-includes {
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 0.6rem 0;
+}
+
+.departure-includes summary {
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.departure-includes summary::-webkit-details-marker {
+    display: none;
+}
+
+.departure-includes-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.9rem;
+}
+
+.departure-includes-col h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0 0 0.5rem;
+    color: #2f9e44;
+}
+
+.departure-includes-col.excludes h4 {
+    color: #c0392b;
+}
+
+.departure-includes-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.departure-includes-col li {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.departure-cta {
+    margin-top: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.departure-cta-full {
+    display: block;
+    text-align: center;
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius-sm);
+    background: var(--gray-100);
+    color: var(--gray-600);
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .departures-note {
     font-size: 0.82rem;
     color: var(--text-secondary);
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+@media (max-width: 560px) {
+    .departure-includes-body {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
 }
 
 /* ---------- Group safaris: availability request card ---------- */

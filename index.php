@@ -267,7 +267,6 @@ require __DIR__ . '/includes/header.php';
                         <li><?= icon('check-circle') ?> <?= e(t('comparison_budget_4')) ?></li>
                         <li><?= icon('check-circle') ?> <?= e(t('comparison_budget_5')) ?></li>
                     </ul>
-                    <div class="comparison-price"><span class="comparison-price-label"><?= e(t('comparison_from')) ?></span> €650 <span class="comparison-price-unit"><?= e(t('comparison_per_person')) ?></span></div>
                     <a href="<?= url('safari/') ?>" class="btn btn-outline"><?= e(t('comparison_budget_cta')) ?> <?= icon('arrow-right') ?></a>
                 </div>
                 <div class="comparison-card featured">
@@ -284,7 +283,6 @@ require __DIR__ . '/includes/header.php';
                         <li><?= icon('check-circle') ?> <?= e(t('comparison_luxury_4')) ?></li>
                         <li><?= icon('check-circle') ?> <?= e(t('comparison_luxury_5')) ?></li>
                     </ul>
-                    <div class="comparison-price"><span class="comparison-price-label"><?= e(t('comparison_from')) ?></span> €1,800 <span class="comparison-price-unit"><?= e(t('comparison_per_person')) ?></span></div>
                     <a href="<?= url('safari/') ?>" class="btn btn-primary"><?= e(t('comparison_luxury_cta')) ?> <?= icon('arrow-right') ?></a>
                 </div>
             </div>
@@ -790,40 +788,77 @@ require __DIR__ . '/includes/header.php';
     </section>
 
     <?php if ($testimonials): ?>
-    <section class="testimonials-section" id="testimonials" aria-labelledby="testimonialsTitle">
+    <section class="testimonials-slider-section" id="testimonials" aria-labelledby="testimonialsTitle">
         <div class="container">
-            <div class="section-title-left centered">
-                <span class="section-badge"><?= icon('quote-left') ?> <?= e(t('testimonials_badge')) ?></span>
-                <span class="section-tagline"><?= e(t('testimonials_tagline')) ?></span>
-                <h2 id="testimonialsTitle"><?= e(t('testimonials_title')) ?></h2>
-                <p><?= e(t('testimonials_intro')) ?></p>
+            <div class="testimonials-slider-header">
+                <div class="section-title-left centered">
+                    <span class="section-tagline"><?= e(t('testimonials_tagline')) ?></span>
+                    <h2 id="testimonialsTitle"><?= e(t('testimonials_title')) ?></h2>
+                    <p><?= e(t('testimonials_intro')) ?></p>
+                </div>
+                <div class="testimonials-slider-nav">
+                    <button type="button" class="testimonials-arrow prev" id="testimonialsPrev" aria-label="Previous review"><?= icon('arrow-left') ?></button>
+                    <button type="button" class="testimonials-arrow next" id="testimonialsNext" aria-label="Next review"><?= icon('arrow-right') ?></button>
+                </div>
             </div>
 
-            <div class="testimonials-grid">
-                <?php foreach ($testimonials as $tItem): ?>
-                <?php
-                    $tQuote = ($lang === 'it' && !empty($tItem['quote_it'])) ? $tItem['quote_it'] : $tItem['quote_en'];
-                    $tInitial = mb_strtoupper(mb_substr($tItem['guest_name'], 0, 1));
-                ?>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar-fallback" aria-hidden="true"><?= e($tInitial) ?></div>
-                        <div>
-                            <div class="testimonial-name"><?= e($tItem['guest_name']) ?></div>
-                            <?php if (!empty($tItem['guest_country'])): ?>
-                            <div class="testimonial-meta"><?= e($tItem['guest_country']) ?></div>
-                            <?php endif; ?>
+            <div class="testimonials-slider" id="testimonialsSlider">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <?php foreach ($testimonials as $tIndex => $tItem): ?>
+                    <?php
+                        $tQuote = ($lang === 'it' && !empty($tItem['quote_it'])) ? $tItem['quote_it'] : $tItem['quote_en'];
+                        $tInitial = mb_strtoupper(mb_substr($tItem['guest_name'], 0, 1));
+                        $tIsLong = mb_strlen($tQuote) > 180;
+                        $tShort = $tIsLong ? mb_substr($tQuote, 0, 170) . '…' : $tQuote;
+                    ?>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar-fallback" aria-hidden="true"><?= e($tInitial) ?></div>
+                            <div>
+                                <div class="testimonial-name"><?= e($tItem['guest_name']) ?></div>
+                                <?php if (!empty($tItem['guest_country'])): ?>
+                                <div class="testimonial-meta"><?= e($tItem['guest_country']) ?></div>
+                                <?php endif; ?>
+                            </div>
                         </div>
+                        <div class="testimonial-rating" aria-label="<?= (int) $tItem['rating'] ?> out of 5 stars">
+                            <?= str_repeat('★', (int) $tItem['rating']) . str_repeat('☆', 5 - (int) $tItem['rating']) ?>
+                        </div>
+                        <blockquote>&ldquo;<?= e($tShort) ?>&rdquo;</blockquote>
+                        <?php if ($tIsLong): ?>
+                        <button type="button" class="testimonial-readmore" data-testimonial-trigger="<?= $tIndex ?>"><?= e(t('testimonials_read_more')) ?></button>
+                        <div class="testimonial-full" data-testimonial-full="<?= $tIndex ?>" hidden>
+                            <div class="testimonial-full-name"><?= e($tItem['guest_name']) ?></div>
+                            <?php if (!empty($tItem['guest_country'])): ?>
+                            <div class="testimonial-full-meta"><?= e($tItem['guest_country']) ?></div>
+                            <?php endif; ?>
+                            <div class="testimonial-full-rating" aria-hidden="true"><?= str_repeat('★', (int) $tItem['rating']) . str_repeat('☆', 5 - (int) $tItem['rating']) ?></div>
+                            <blockquote><?= nl2br(e($tQuote)) ?></blockquote>
+                        </div>
+                        <?php endif; ?>
                     </div>
-                    <div class="testimonial-rating" aria-label="<?= (int) $tItem['rating'] ?> out of 5 stars">
-                        <?= str_repeat('★', (int) $tItem['rating']) . str_repeat('☆', 5 - (int) $tItem['rating']) ?>
-                    </div>
-                    <blockquote>&ldquo;<?= e($tQuote) ?>&rdquo;</blockquote>
+                    <?php endforeach; ?>
                 </div>
-                <?php endforeach; ?>
+            </div>
+
+            <div class="testimonials-dots" id="testimonialsDots" aria-hidden="true"></div>
+
+            <div class="testimonials-cta">
+                <span class="testimonials-cta-badge"><?= icon('check-circle') ?> <?= e(t('testimonials_verified')) ?></span>
+                <a href="https://www.google.com/maps/place/Serengeti+Budget+Safari/@-3.3868912,36.6829564,17z/data=!3m1!4b1!4m6!3m5!1s0xa74b76261cf9a769:0xb95496fac16964d7!8m2!3d-3.3868912!4d36.6829564!16s%2Fg%2F11zcvcr109" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    <?= icon('star') ?> <?= e(t('testimonials_write_review')) ?>
+                </a>
             </div>
         </div>
     </section>
+
+    <div class="testimonial-modal" id="testimonialModal" hidden>
+        <div class="testimonial-modal-backdrop" data-testimonial-close></div>
+        <div class="testimonial-modal-panel" role="dialog" aria-modal="true" aria-labelledby="testimonialModalName">
+            <button type="button" class="testimonial-modal-close" data-testimonial-close aria-label="Close"><?= icon('times') ?></button>
+            <div id="testimonialModalBody"></div>
+        </div>
+    </div>
     <?php endif; ?>
 
     <section class="faq-mega" id="faq" aria-labelledby="faqTitle">

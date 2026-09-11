@@ -358,11 +358,40 @@
             const item = this.parentElement;
             const isActive = item.classList.contains('active');
             document.querySelectorAll('.faq-item').forEach(other => {
-                if (other !== item) other.classList.remove('active');
+                other.classList.remove('active');
             });
             if (!isActive) item.classList.add('active');
         });
     });
+
+    // ===== TESTIMONIAL "READ MORE" MODAL =====
+    const testimonialModal = document.getElementById('testimonialModal');
+    const testimonialModalBody = document.getElementById('testimonialModalBody');
+    if (testimonialModal && testimonialModalBody) {
+        document.querySelectorAll('[data-testimonial-trigger]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const id = btn.getAttribute('data-testimonial-trigger');
+                const full = document.querySelector('[data-testimonial-full="' + id + '"]');
+                if (!full) return;
+                testimonialModalBody.innerHTML = full.innerHTML;
+                testimonialModal.hidden = false;
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeTestimonialModal() {
+            testimonialModal.hidden = true;
+            document.body.style.overflow = '';
+        }
+
+        testimonialModal.querySelectorAll('[data-testimonial-close]').forEach(function (el) {
+            el.addEventListener('click', closeTestimonialModal);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !testimonialModal.hidden) closeTestimonialModal();
+        });
+    }
 
     // ===== LANG SWITCHER =====
     const langToggle = document.getElementById('langToggle');
@@ -1240,6 +1269,79 @@ document.addEventListener('DOMContentLoaded', function () {
 
     goTo(0);
     updatePinScroll();
+});
+
+
+// ============================================================
+// TESTIMONIALS SLIDER – real Google reviews
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.getElementById('testimonialsSlider');
+    if (!slider) return;
+
+    const track = document.getElementById('testimonialsTrack');
+    const cards = Array.from(track.children);
+    const prevBtn = document.getElementById('testimonialsPrev');
+    const nextBtn = document.getElementById('testimonialsNext');
+    const dotsWrap = document.getElementById('testimonialsDots');
+
+    let index = 0;
+
+    function visibleCount() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 992) return 2;
+        return 3;
+    }
+
+    function maxIndex() {
+        return Math.max(0, cards.length - visibleCount());
+    }
+
+    function cardStep() {
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.columnGap || style.gap) || 0;
+        return cards[0].getBoundingClientRect().width + gap;
+    }
+
+    function buildDots() {
+        if (!dotsWrap) return;
+        dotsWrap.innerHTML = '';
+        const count = maxIndex() + 1;
+        for (let i = 0; i < count; i++) {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.setAttribute('aria-label', 'Go to review group ' + (i + 1));
+            dot.addEventListener('click', function () { goTo(i); });
+            dotsWrap.appendChild(dot);
+        }
+    }
+
+    function updateDots() {
+        if (!dotsWrap) return;
+        Array.from(dotsWrap.children).forEach(function (dot, i) {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    function goTo(i) {
+        index = Math.min(Math.max(i, 0), maxIndex());
+        track.style.transform = 'translateX(-' + (index * cardStep()) + 'px)';
+        if (prevBtn) prevBtn.disabled = index === 0;
+        if (nextBtn) nextBtn.disabled = index >= maxIndex();
+        updateDots();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(index - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(index + 1); });
+
+    window.addEventListener('resize', function () {
+        buildDots();
+        goTo(Math.min(index, maxIndex()));
+    });
+
+    buildDots();
+    goTo(0);
 });
 
 

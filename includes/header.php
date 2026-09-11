@@ -133,26 +133,6 @@
                                             <span><?= e(t('nav_day_trips_desc')) ?></span>
                                         </button>
                                     </li>
-                                    <li>
-                                        <button type="button" class="mega-preview-item"
-                                            data-title="<?= e(t('nav_trekking')) ?>"
-                                            data-desc="<?= e(t('nav_trekking_long')) ?>"
-                                            data-img="<?= asset('images/hero/male-lion-portrait-mane.jpg') ?>"
-                                            data-href="<?= url('trekking/') ?>">
-                                            <strong><?= e(t('nav_trekking')) ?></strong>
-                                            <span><?= e(t('nav_trekking_desc')) ?></span>
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="mega-preview-item"
-                                            data-title="<?= e(t('nav_zanzibar')) ?>"
-                                            data-desc="<?= e(t('nav_zanzibar_long')) ?>"
-                                            data-img="<?= asset('images/gallery/elephant-family-sunset-walk.jpg') ?>"
-                                            data-href="<?= url('zanzibar/') ?>">
-                                            <strong><?= e(t('nav_zanzibar')) ?></strong>
-                                            <span><?= e(t('nav_zanzibar_desc')) ?></span>
-                                        </button>
-                                    </li>
                                 </ul>
                                 <div class="mega-preview-stage">
                                     <div class="mega-preview-body">
