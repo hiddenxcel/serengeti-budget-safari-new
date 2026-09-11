@@ -96,7 +96,7 @@
         setTimeout(function () { toast.classList.remove('show'); }, 3500);
     }
 
-    // ===== BOOKING MODAL =====
+    // ===== ITINERARY / BOOKING MODAL =====
     var modal = document.getElementById('guideBookingModal');
     if (modal) {
         var closeModal = document.getElementById('guideCloseModal');
@@ -106,18 +106,69 @@
         var modalForm = document.getElementById('guideBookingFormModal');
         var modalSuccess = document.getElementById('guideModalSuccess');
 
-        document.querySelectorAll('.guide-package-card .btn[data-package]').forEach(function (btn) {
+        var itineraryView = document.getElementById('guideItineraryView');
+        var bookingView = document.getElementById('guideBookingView');
+        var modalDays = document.getElementById('guideModalDays');
+        var modalItineraryTitle = document.getElementById('guideModalItineraryTitle');
+        var modalRoute = document.getElementById('guideModalRoute');
+        var modalItineraryPrice = document.getElementById('guideModalItineraryPrice');
+        var modalIncluded = document.getElementById('guideModalIncluded');
+        var modalExcluded = document.getElementById('guideModalExcluded');
+        var modalBookBtn = document.getElementById('guideModalBookBtn');
+        var modalBackBtn = document.getElementById('guideModalBackBtn');
+        var currentPkgName = '';
+        var currentPkgPrice = '';
+
+        function fillList(listEl, items) {
+            if (!listEl) return;
+            listEl.innerHTML = '';
+            items.forEach(function (text) {
+                var li = document.createElement('li');
+                li.textContent = text;
+                listEl.appendChild(li);
+            });
+        }
+
+        function showItineraryView() {
+            if (itineraryView) itineraryView.hidden = false;
+            if (bookingView) bookingView.hidden = true;
+        }
+
+        function showBookingView() {
+            if (itineraryView) itineraryView.hidden = true;
+            if (bookingView) bookingView.hidden = false;
+            if (modalPackageName) modalPackageName.textContent = currentPkgName;
+            if (modalPackagePrice) modalPackagePrice.textContent = currentPkgPrice + ' per person';
+            if (modalTitle) modalTitle.textContent = 'Book ' + currentPkgName;
+        }
+
+        document.querySelectorAll('.guide-view-details-btn[data-package]').forEach(function (btn) {
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
-                var pkg = this.getAttribute('data-package');
-                var price = this.getAttribute('data-price');
-                if (modalPackageName) modalPackageName.textContent = pkg;
-                if (modalPackagePrice) modalPackagePrice.textContent = price + ' per person';
-                if (modalTitle) modalTitle.textContent = 'Book ' + pkg;
+                currentPkgName = this.getAttribute('data-package');
+                currentPkgPrice = this.getAttribute('data-price');
+                var days = this.getAttribute('data-days');
+                var route = this.getAttribute('data-route');
+                var inc = [];
+                var exc = [];
+                try { inc = JSON.parse(this.getAttribute('data-inc') || '[]'); } catch (err) {}
+                try { exc = JSON.parse(this.getAttribute('data-exc') || '[]'); } catch (err) {}
+
+                if (modalDays) modalDays.textContent = days;
+                if (modalItineraryTitle) modalItineraryTitle.textContent = currentPkgName;
+                if (modalRoute) modalRoute.textContent = route;
+                if (modalItineraryPrice) modalItineraryPrice.textContent = currentPkgPrice;
+                fillList(modalIncluded, inc);
+                fillList(modalExcluded, exc);
+
+                showItineraryView();
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
         });
+
+        if (modalBookBtn) modalBookBtn.addEventListener('click', showBookingView);
+        if (modalBackBtn) modalBackBtn.addEventListener('click', showItineraryView);
 
         function closeGuideModal() {
             modal.classList.remove('active');

@@ -969,6 +969,121 @@
     animation: guideModalIn 0.25s ease;
 }
 
+.guide-modal-box-lg {
+    max-width: 560px;
+}
+
+.guide-modal-days {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold-dark);
+    background: rgba(212, 168, 67, 0.12);
+    padding: 3px 14px;
+    border-radius: 40px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#guideModalItineraryTitle {
+    margin: 0 0 2px;
+    color: var(--black);
+    font-size: 1.35rem;
+}
+
+.guide-modal-route {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.guide-modal-price {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--black);
+    margin: 4px 0 18px;
+}
+
+.guide-modal-price .from-label {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--gray-600);
+    display: block;
+    margin-bottom: -2px;
+}
+
+.guide-modal-price small {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+.guide-modal-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--black);
+    margin: 16px 0 8px;
+}
+
+.guide-modal-list {
+    list-style: none;
+    margin: 0 0 4px;
+    padding: 0;
+}
+
+.guide-modal-list li {
+    padding: 4px 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: var(--text-secondary);
+}
+
+.guide-modal-list-inc li::before {
+    content: "✓";
+    color: #2e7d32;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.guide-modal-list-exc li::before {
+    content: "✕";
+    color: #c62828;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.guide-modal-book-btn {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.guide-modal-box .guide-guarantee {
+    margin-top: 10px;
+}
+
+.guide-modal-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+    font-weight: 600;
+    padding: 0;
+    margin-bottom: 12px;
+}
+
+.guide-modal-back:hover {
+    color: var(--black);
+}
+
 @keyframes guideModalIn {
     from {
         transform: scale(0.95) translateY(16px);

@@ -21,54 +21,80 @@ require dirname(__DIR__) . '/includes/header.php';
     <button id="guide-floating-cta" class="show"><?= icon('paper-plane') ?> <?= e(t('bsg_hero_cta_quote')) ?></button>
     <div class="guide-toast" id="guide-toast"></div>
 
-    <!-- ===== BOOKING MODAL ===== -->
+    <!-- ===== ITINERARY / BOOKING MODAL ===== -->
     <div class="guide-modal-overlay" id="guideBookingModal">
-        <div class="guide-modal-box">
+        <div class="guide-modal-box guide-modal-box-lg">
             <button class="guide-close-modal" id="guideCloseModal" aria-label="Close">&times;</button>
-            <h3 id="guideModalTitle"><?= e(t('bsg_book_title')) ?></h3>
-            <div class="guide-modal-summary">
-                <strong id="guideModalPackageName"></strong>
-                <span id="guideModalPackagePrice"></span>
+
+            <!-- ITINERARY VIEW -->
+            <div id="guideItineraryView">
+                <span class="guide-modal-days" id="guideModalDays"></span>
+                <h3 id="guideModalItineraryTitle"></h3>
+                <div class="guide-modal-route" id="guideModalRoute"></div>
+                <div class="guide-modal-price">
+                    <span class="from-label"><?= e(t('bsg_from')) ?></span>
+                    <span id="guideModalItineraryPrice"></span>
+                    <small><?= e(t('bsg_pp')) ?></small>
+                </div>
+
+                <h4 class="guide-modal-section-title"><?= icon('check-circle') ?> <?= e(t('guide_itinerary_included')) ?></h4>
+                <ul class="guide-modal-list guide-modal-list-inc" id="guideModalIncluded"></ul>
+
+                <h4 class="guide-modal-section-title"><?= icon('times') ?> <?= e(t('guide_itinerary_excluded')) ?></h4>
+                <ul class="guide-modal-list guide-modal-list-exc" id="guideModalExcluded"></ul>
+
+                <button type="button" class="btn btn-primary guide-modal-book-btn" id="guideModalBookBtn"><?= e(t('guide_itinerary_book_this')) ?></button>
+                <div class="guide-guarantee"><?= e(t('bsg_guarantee')) ?></div>
             </div>
-            <form id="guideBookingFormModal">
-                <div class="guide-form-group">
-                    <label for="guideModalName"><?= e(t('bsg_form_name')) ?> *</label>
-                    <input type="text" id="guideModalName" required>
+
+            <!-- BOOKING FORM VIEW -->
+            <div id="guideBookingView" hidden>
+                <button type="button" class="guide-modal-back" id="guideModalBackBtn"><?= icon('arrow-left') ?> <?= e(t('guide_itinerary_back')) ?></button>
+                <h3 id="guideModalTitle"><?= e(t('bsg_book_title')) ?></h3>
+                <div class="guide-modal-summary">
+                    <strong id="guideModalPackageName"></strong>
+                    <span id="guideModalPackagePrice"></span>
                 </div>
-                <div class="guide-form-group">
-                    <label for="guideModalEmail"><?= e(t('bsg_form_email')) ?> *</label>
-                    <input type="email" id="guideModalEmail" required placeholder="you@example.com">
-                </div>
-                <div class="guide-form-group">
-                    <label for="guideModalPhone"><?= e(t('bsg_form_phone')) ?></label>
-                    <input type="tel" id="guideModalPhone" placeholder="+44 123 456 789">
-                </div>
-                <div class="guide-form-row">
+                <form id="guideBookingFormModal">
                     <div class="guide-form-group">
-                        <label for="guideModalTravelers">Travelers</label>
-                        <select id="guideModalTravelers">
-                            <option value="1">1</option>
-                            <option value="2" selected>2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6+</option>
-                        </select>
+                        <label for="guideModalName"><?= e(t('bsg_form_name')) ?> *</label>
+                        <input type="text" id="guideModalName" required>
                     </div>
                     <div class="guide-form-group">
-                        <label for="guideModalDate">Preferred Start Date</label>
-                        <input type="date" id="guideModalDate">
+                        <label for="guideModalEmail"><?= e(t('bsg_form_email')) ?> *</label>
+                        <input type="email" id="guideModalEmail" required placeholder="you@example.com">
                     </div>
+                    <div class="guide-form-group">
+                        <label for="guideModalPhone"><?= e(t('bsg_form_phone')) ?></label>
+                        <input type="tel" id="guideModalPhone" placeholder="+44 123 456 789">
+                    </div>
+                    <div class="guide-form-row">
+                        <div class="guide-form-group">
+                            <label for="guideModalTravelers">Travelers</label>
+                            <select id="guideModalTravelers">
+                                <option value="1">1</option>
+                                <option value="2" selected>2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6+</option>
+                            </select>
+                        </div>
+                        <div class="guide-form-group">
+                            <label for="guideModalDate">Preferred Start Date</label>
+                            <input type="date" id="guideModalDate">
+                        </div>
+                    </div>
+                    <div class="guide-form-group">
+                        <label for="guideModalMessage">Special Requests</label>
+                        <textarea id="guideModalMessage"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;"><?= e(t('bsg_book_now')) ?></button>
+                </form>
+                <div class="guide-modal-success" id="guideModalSuccess">
+                    <h3>✅ <?= e(t('bsg_book_now')) ?></h3>
+                    <p><?= e(t('bsg_book_p1')) ?></p>
                 </div>
-                <div class="guide-form-group">
-                    <label for="guideModalMessage">Special Requests</label>
-                    <textarea id="guideModalMessage"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width:100%;"><?= e(t('bsg_book_now')) ?></button>
-            </form>
-            <div class="guide-modal-success" id="guideModalSuccess">
-                <h3>✅ <?= e(t('bsg_book_now')) ?></h3>
-                <p><?= e(t('bsg_book_p1')) ?></p>
             </div>
         </div>
     </div>
@@ -200,7 +226,17 @@ require dirname(__DIR__) . '/includes/header.php';
                                 <li><?= t('bsg_pkg' . $i . '_f4') ?></li>
                             </ul>
                             <span class="guide-trust-small"><?= icon('fire') ?> <?= e(t('bsg_pkg' . $i . '_trust')) ?></span>
-                            <button type="button" class="btn btn-primary" data-package="<?= e(t('bsg_pkg' . $i . '_name')) ?>" data-price="<?= e(t('bsg_pkg' . $i . '_price')) ?>"><?= e(t('bsg_book_now')) ?></button>
+                            <?php
+                                $pkgInc = [t('bsg_pkg' . $i . '_inc1'), t('bsg_pkg' . $i . '_inc2'), t('bsg_pkg' . $i . '_inc3'), t('bsg_pkg' . $i . '_inc4'), t('bsg_pkg' . $i . '_inc5'), t('bsg_pkg' . $i . '_inc6')];
+                                $pkgExc = [t('bsg_pkg' . $i . '_exc1'), t('bsg_pkg' . $i . '_exc2'), t('bsg_pkg' . $i . '_exc3')];
+                            ?>
+                            <button type="button" class="btn btn-primary guide-view-details-btn"
+                                data-package="<?= e(t('bsg_pkg' . $i . '_name')) ?>"
+                                data-price="<?= e(t('bsg_pkg' . $i . '_price')) ?>"
+                                data-days="<?= e(t('bsg_pkg' . $i . '_days')) ?>"
+                                data-route="<?= e(t('bsg_pkg' . $i . '_route')) ?>"
+                                data-inc="<?= e(json_encode($pkgInc)) ?>"
+                                data-exc="<?= e(json_encode($pkgExc)) ?>"><?= e(t('guide_view_details')) ?></button>
                             <div class="guide-guarantee"><?= e(t('bsg_guarantee')) ?></div>
                         </div>
                         <?php endforeach; ?>
