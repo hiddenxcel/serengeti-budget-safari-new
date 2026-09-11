@@ -1030,31 +1030,37 @@ document.addEventListener('DOMContentLoaded', function () {
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', function () {
+    var grids = Array.from(document.querySelectorAll('.gallery-grid'));
+    if (!grids.length) return;
+
+    // ---- Reveal + stagger (every .gallery-grid on the page, not just the homepage one) ----
+    grids.forEach(function (grid) {
+        var gridItems = Array.from(grid.querySelectorAll('.gallery-grid-item'));
+        gridItems.forEach(function (item, i) {
+            item.style.setProperty('--reveal-delay', (i % 4) * 0.08 + 's');
+        });
+
+        if (!('IntersectionObserver' in window)) {
+            grid.classList.add('is-revealed');
+        } else {
+            var revealObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        grid.classList.add('is-revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            revealObserver.observe(grid);
+        }
+    });
+
+    // ---- Lightbox (only wired up on pages that have the #galleryGrid + #galleryLightbox markup) ----
     var grid = document.getElementById('galleryGrid');
     if (!grid) return;
 
     var items = Array.from(grid.querySelectorAll('.gallery-grid-item'));
 
-    // ---- Reveal + stagger ----
-    items.forEach(function (item, i) {
-        item.style.setProperty('--reveal-delay', (i % 4) * 0.08 + 's');
-    });
-
-    if (!('IntersectionObserver' in window)) {
-        grid.classList.add('is-revealed');
-    } else {
-        var revealObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    grid.classList.add('is-revealed');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-        revealObserver.observe(grid);
-    }
-
-    // ---- Lightbox ----
     var lightbox = document.getElementById('galleryLightbox');
     if (!lightbox) return;
 

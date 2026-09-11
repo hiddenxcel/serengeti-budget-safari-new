@@ -49,7 +49,7 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
                     <div class="fact"><span class="fact-label"><?= e(t('pkg3d_fact_start')) ?></span><span class="fact-value"><?= e(t('pkg3d_fact_start_val')) ?></span></div>
                 </div>
 
-                <div class="grid-2" style="grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: start;">
+                <div class="itinerary-calc-layout">
                     <div>
                         <div class="section-title-left centered">
                             <span class="section-tagline"><?= e(badge_tagline('pkg3d_itinerary_badge')) ?></span>

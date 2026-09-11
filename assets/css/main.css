@@ -1296,6 +1296,22 @@ section {
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
 
+/* Itinerary + price-calculator two-column layout (3-day safari page).
+   Desktop keeps the calculator narrower than the itinerary; mobile
+   stacks to a single column instead of squeezing both side by side. */
+.itinerary-calc-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .itinerary-calc-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ============================================================
    SPACING & TEXT UTILITIES
    ============================================================ */
