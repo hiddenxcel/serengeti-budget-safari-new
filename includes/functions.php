@@ -334,6 +334,10 @@ function badge_tagline(string $badgeKey): string
             'daytrip_features_badge' => 'What is included', 'daytrip_wildlife_badge' => 'What you will see',
             'daytrip_pricing_badge' => 'No hidden fees', 'daytrip_pickup_badge' => 'The practical bits',
             'daytrip_bring_badge' => 'What to pack', 'daytrip_related_badge' => 'Keep exploring',
+
+            // car-rental
+            'carrental_hero_badge' => 'Just you and the road', 'carrental_why_badge' => 'Sit back, relax',
+            'carrental_fleet_badge' => 'Pick your ride', 'carrental_uses_badge' => 'Where it comes in handy',
         ],
         'it' => [
             'parks_hero_badge'        => 'Nove parchi, un paese',
@@ -468,6 +472,10 @@ function badge_tagline(string $badgeKey): string
             'daytrip_features_badge' => 'Cosa è incluso', 'daytrip_wildlife_badge' => 'Cosa vedrai',
             'daytrip_pricing_badge' => 'Nessun costo nascosto', 'daytrip_pickup_badge' => 'Gli aspetti pratici',
             'daytrip_bring_badge' => 'Cosa portare', 'daytrip_related_badge' => 'Continua a esplorare',
+
+            // car-rental
+            'carrental_hero_badge' => 'Solo tu e la strada', 'carrental_why_badge' => 'Rilassati',
+            'carrental_fleet_badge' => 'Scegli il tuo mezzo', 'carrental_uses_badge' => 'Quando torna utile',
         ],
     ];
 

@@ -249,6 +249,7 @@
 
                     <li><a href="<?= url('trekking/') ?>"><?= e(t('nav_trekking')) ?></a></li>
                     <li><a href="<?= url('zanzibar/') ?>"><?= e(t('nav_zanzibar')) ?></a></li>
+                    <li><a href="<?= url('car-rental/') ?>"><?= e(t('nav_car_rental')) ?></a></li>
                     <li><a href="<?= url('blog/') ?>"><?= e(t('nav_guides')) ?></a></li>
                     <li><a href="<?= url('about.php') ?>"><?= e(t('nav_about')) ?></a></li>
                     <li><a href="<?= url('contact.php') ?>" class="btn btn-primary btn-nav"><?= e(t('nav_contact')) ?></a></li>

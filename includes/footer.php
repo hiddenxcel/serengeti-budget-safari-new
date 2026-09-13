@@ -26,6 +26,7 @@
                         <li><a href="<?= url('trekking/') ?>"><?= e(t('nav_trekking')) ?></a></li>
                         <li><a href="<?= url('zanzibar/') ?>"><?= e(t('nav_zanzibar')) ?></a></li>
                         <li><a href="<?= url('day-trips/') ?>"><?= e(t('nav_day_trips')) ?></a></li>
+                        <li><a href="<?= url('car-rental/') ?>"><?= e(t('nav_car_rental')) ?></a></li>
                     </ul>
                 </div>
                 <div class="mega-footer-col">

@@ -10,7 +10,7 @@ $page = 'home';
 $altPath = '';
 $bodyClass = 'home-page';
 $useGsap = true;
-$extraStyles = ['css/promo-popup.css'];
+$extraStyles = ['css/promo-popup.css', 'css/car-rental.css'];
 $extraScripts = ['js/home-animations.js', 'js/promo-popup.js'];
 
 $testimonials = db()->query(
@@ -991,6 +991,26 @@ require __DIR__ . '/includes/header.php';
             </div>
 
             <div class="experiences-dots" id="experiencesDots" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <section class="car-rental-banner" aria-labelledby="carRentalTitle">
+        <div class="container">
+            <div class="car-rental-banner-inner">
+                <div class="car-rental-banner-photo">
+                    <img src="<?= asset('images/team/ranger-clients-safari-vehicle-logo.jpg') ?>" alt="Private car rental with driver in Tanzania" loading="lazy">
+                </div>
+                <div class="car-rental-banner-content">
+                    <span class="section-badge"><?= icon('route') ?> <?= e(t('carrental_home_badge')) ?></span>
+                    <h2 id="carRentalTitle"><?= e(t('carrental_home_title')) ?></h2>
+                    <p><?= e(t('carrental_home_intro')) ?></p>
+                    <span class="car-rental-banner-price"><?= icon('tag') ?> <?= e(t('carrental_home_price')) ?></span>
+                    <div class="btn-group">
+                        <a href="<?= url('car-rental/') ?>" class="btn btn-primary"><?= e(t('carrental_home_cta')) ?> <?= icon('arrow-right') ?></a>
+                        <a href="https://wa.me/255697612865?text=<?= urlencode('Hi! I would like to rent a car with a driver.') ?>" class="btn btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
