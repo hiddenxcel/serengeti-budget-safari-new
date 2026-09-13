@@ -482,7 +482,7 @@ function seo_crawl_compute_inbound_and_orphans(array $inboundLinks, array $crawl
 
 /**
  * Post-crawl pass: for each crawled page's hreflang set, verifies (a) it
- * references en/it/x-default, (b) each referenced URL was actually crawled
+ * references en/it/fr/es/x-default, (b) each referenced URL was actually crawled
  * (not dangling), and (c) reciprocity — the referenced page's own hreflang
  * set must point back to this page's URL.
  *
@@ -495,10 +495,10 @@ function seo_crawl_check_hreflang_reciprocity(array $hreflangByUrl): array
     $knownUrls = array_flip(array_keys($hreflangByUrl));
 
     foreach ($hreflangByUrl as $url => $set) {
-        $ok = isset($set['en'], $set['it'], $set['x-default']);
+        $ok = isset($set['en'], $set['it'], $set['fr'], $set['es'], $set['x-default']);
 
         if ($ok) {
-            foreach (['en', 'it'] as $lang) {
+            foreach (['en', 'it', 'fr', 'es'] as $lang) {
                 $target = $set[$lang];
                 if (!isset($knownUrls[$target])) {
                     // Points somewhere not crawled — can't verify reciprocity, but

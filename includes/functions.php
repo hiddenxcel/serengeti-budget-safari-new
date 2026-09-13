@@ -54,7 +54,7 @@ function base_url(): string
 
     if ($base === null) {
         $script = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
-        $base = rtrim(preg_replace('#/(en|it)(/.*)?$#', '', $script), '/');
+        $base = rtrim(preg_replace('#/(en|it|fr|es)(/.*)?$#', '', $script), '/');
     }
 
     return $base;
@@ -64,7 +64,13 @@ function current_lang(): string
 {
     $segments = explode('/', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
 
-    return in_array('it', $segments, true) ? 'it' : 'en';
+    foreach (['it', 'fr', 'es'] as $lang) {
+        if (in_array($lang, $segments, true)) {
+            return $lang;
+        }
+    }
+
+    return 'en';
 }
 
 function load_lang(string $lang): array

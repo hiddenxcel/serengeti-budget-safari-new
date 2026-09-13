@@ -71,6 +71,8 @@
                     <ul>
                         <li><a href="<?= base_url() ?>/en/<?= e($altPath ?? '') ?>" hreflang="en">English</a></li>
                         <li><a href="<?= base_url() ?>/it/<?= e($altPath ?? '') ?>" hreflang="it">Italiano</a></li>
+                        <li><a href="<?= base_url() ?>/fr/<?= e($altPath ?? '') ?>" hreflang="fr">Français</a></li>
+                        <li><a href="<?= base_url() ?>/es/<?= e($altPath ?? '') ?>" hreflang="es">Español</a></li>
                     </ul>
                 </div>
                 <div class="mega-footer-col">

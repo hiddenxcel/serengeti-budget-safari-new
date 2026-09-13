@@ -11,6 +11,8 @@
 
     <link rel="alternate" hreflang="it" href="<?= SITE_URL . base_url() ?>/it/<?= e($altPath ?? '') ?>" />
     <link rel="alternate" hreflang="en" href="<?= SITE_URL . base_url() ?>/en/<?= e($altPath ?? '') ?>" />
+    <link rel="alternate" hreflang="fr" href="<?= SITE_URL . base_url() ?>/fr/<?= e($altPath ?? '') ?>" />
+    <link rel="alternate" hreflang="es" href="<?= SITE_URL . base_url() ?>/es/<?= e($altPath ?? '') ?>" />
     <link rel="alternate" hreflang="x-default" href="<?= SITE_URL . base_url() ?>/en/<?= e($altPath ?? '') ?>" />
 
     <meta property="og:title" content="<?= e(t($pageMetaTitle ?? 'meta_title')) ?>" />
@@ -18,7 +20,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?= SITE_URL . base_url() . '/' . $lang . '/' . ($altPath ?? '') ?>" />
     <meta property="og:image" content="<?= SITE_URL . asset('images/hero/ngorongoro-crater-panorama.jpg') ?>" />
-    <meta property="og:locale" content="<?= $lang === 'it' ? 'it_IT' : 'en_GB' ?>" />
+    <meta property="og:locale" content="<?= ['it' => 'it_IT', 'fr' => 'fr_FR', 'es' => 'es_ES'][$lang] ?? 'en_GB' ?>" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <script type="application/ld+json">
@@ -270,6 +272,8 @@
                     <ul class="lang-dropdown" id="langDropdown">
                         <li><a href="<?= base_url() ?>/en/<?= e($altPath ?? '') ?>" class="lang-option <?= $lang === 'en' ? 'active' : '' ?>" data-lang="en"><span class="lang-name">English</span><span class="lang-code">EN</span></a></li>
                         <li><a href="<?= base_url() ?>/it/<?= e($altPath ?? '') ?>" class="lang-option <?= $lang === 'it' ? 'active' : '' ?>" data-lang="it"><span class="lang-name">Italiano</span><span class="lang-code">IT</span></a></li>
+                        <li><a href="<?= base_url() ?>/fr/<?= e($altPath ?? '') ?>" class="lang-option <?= $lang === 'fr' ? 'active' : '' ?>" data-lang="fr"><span class="lang-name">Français</span><span class="lang-code">FR</span></a></li>
+                        <li><a href="<?= base_url() ?>/es/<?= e($altPath ?? '') ?>" class="lang-option <?= $lang === 'es' ? 'active' : '' ?>" data-lang="es"><span class="lang-name">Español</span><span class="lang-code">ES</span></a></li>
                     </ul>
                 </div>
                 <a href="<?= url('contact.php') ?>" class="header-cta" aria-label="<?= e(t('nav_book_safari')) ?>"><?= e(t('nav_book_safari')) ?></a>

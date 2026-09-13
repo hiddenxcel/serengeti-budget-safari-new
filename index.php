@@ -10,7 +10,8 @@ $page = 'home';
 $altPath = '';
 $bodyClass = 'home-page';
 $useGsap = true;
-$extraScripts = ['js/home-animations.js'];
+$extraStyles = ['css/promo-popup.css'];
+$extraScripts = ['js/home-animations.js', 'js/promo-popup.js'];
 
 $testimonials = db()->query(
     "SELECT * FROM testimonials WHERE status = 'published' ORDER BY sort_order ASC, created_at DESC LIMIT 9"
@@ -1006,5 +1007,7 @@ require __DIR__ . '/includes/header.php';
             </div>
         </div>
     </section>
+
+<?php require __DIR__ . '/includes/promo-popup.php'; ?>
 
 <?php require __DIR__ . '/includes/footer.php'; ?>
