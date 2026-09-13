@@ -636,6 +636,7 @@ return [
     'pkg3d_calc_people_label' => 'Travellers',
     'pkg3d_calc_pp_label' => 'Price per person',
     'pkg3d_calc_total_label' => 'Total price',
+    'pkg3d_calc_book' => 'Book This Safari',
     'pkg3d_calc_cta' => 'Ask on WhatsApp',
     'pkg3d_calc_note' => 'Estimate only. Park fees and final price confirmed on request.',
     'pkg3d_calc_wa_template' => "Hello, I'm interested in the 3-Day Serengeti Safari for {people} people. Estimated price: {pp} p.p. ({total} total). Can you confirm availability?",
@@ -1559,6 +1560,7 @@ return [
     'booking_card_total' => 'Total',
     'booking_card_book' => 'Book This Safari',
     'booking_card_whatsapp' => 'Ask on WhatsApp',
+    'booking_card_email' => 'Email us',
     'booking_mobile_from' => 'From',
     'booking_wa_template' => "Hello, I'm interested in the 5-Day Serengeti & Ngorongoro Safari for {people} people ({accommodation}), travel date: {date}. Estimated price: {pp} p.p. ({total} total). Can you confirm availability?",
 

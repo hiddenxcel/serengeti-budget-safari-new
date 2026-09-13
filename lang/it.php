@@ -636,6 +636,7 @@ return [
     'pkg3d_calc_people_label' => 'Viaggiatori',
     'pkg3d_calc_pp_label' => 'Prezzo a persona',
     'pkg3d_calc_total_label' => 'Prezzo totale',
+    'pkg3d_calc_book' => 'Prenota questo safari',
     'pkg3d_calc_cta' => 'Chiedi su WhatsApp',
     'pkg3d_calc_note' => 'Solo una stima. Tasse del parco e prezzo finale confermati su richiesta.',
     'pkg3d_calc_wa_template' => 'Ciao, sono interessato/a al Safari di 3 Giorni nel Serengeti per {people} persone. Prezzo stimato: {pp} a persona ({total} totale). Puoi confermare la disponibilità?',
@@ -1791,6 +1792,7 @@ return [
     'booking_card_total' => 'Totale',
     'booking_card_book' => 'Prenota questo safari',
     'booking_card_whatsapp' => 'Chiedi su WhatsApp',
+    'booking_card_email' => 'Scrivici una email',
     'booking_mobile_from' => 'Da',
     'booking_wa_template' => 'Ciao, sono interessato/a al Safari di 5 Giorni Serengeti & Ngorongoro per {people} persone ({accommodation}), data di viaggio: {date}. Prezzo stimato: {pp} a persona ({total} totale). Puoi confermare la disponibilità?',
 

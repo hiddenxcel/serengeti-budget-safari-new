@@ -11,6 +11,10 @@
         var totalOut = calc.querySelector('.price-calc-total');
         var waLink = calc.querySelector('.price-calc-whatsapp');
         var waTemplate = calc.getAttribute('data-wa-template') || '';
+        var bookLink = calc.querySelector('.price-calc-book');
+        var bookBaseHref = bookLink ? bookLink.getAttribute('href') : '';
+        var bookTitle = calc.getAttribute('data-book-title') || '';
+        var bookCurrency = calc.getAttribute('data-book-currency') || 'EUR';
 
         if (!tiers.length || !input) return;
 
@@ -40,6 +44,15 @@
                     .replace('{pp}', currency + pp.toLocaleString())
                     .replace('{total}', currency + total.toLocaleString());
                 waLink.href = 'https://wa.me/255697612865?text=' + encodeURIComponent(text);
+            }
+
+            if (bookLink) {
+                var params = new URLSearchParams();
+                if (bookTitle) params.set('title', bookTitle);
+                params.set('pp', String(pp));
+                params.set('currency', bookCurrency);
+                params.set('adults', String(people));
+                bookLink.href = bookBaseHref + '?' + params.toString();
             }
         }
 

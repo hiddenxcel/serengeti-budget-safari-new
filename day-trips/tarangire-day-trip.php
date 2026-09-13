@@ -239,7 +239,9 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="price-calc"
                              data-currency="€"
                              data-tiers='<?= $tiersJson ?>'
-                             data-wa-template="<?= $waTemplate ?>">
+                             data-wa-template="<?= $waTemplate ?>"
+                             data-book-title="<?= e(t('daytrip_tarangire_hero_title')) ?>"
+                             data-book-currency="EUR">
                             <div class="price-calc-heading"><?= e(t('daytrip_pricing_title')) ?></div>
                             <div class="price-calc-subtext"><?= e(t('daytrip_pricing_intro')) ?></div>
                             <div class="price-calc-row">
@@ -260,7 +262,11 @@ require dirname(__DIR__) . '/includes/header.php';
                                     <span class="price-calc-total">€600</span>
                                 </div>
                             </div>
-                            <a href="https://wa.me/255697612865" target="_blank" rel="noopener" class="btn btn-success price-calc-whatsapp"><i class="fab fa-whatsapp"></i> <?= e(t('booking_card_whatsapp')) ?></a>
+                            <a href="<?= url('booking/') ?>" class="btn btn-primary price-calc-book"><?= e(t('booking_card_book')) ?> <?= icon('arrow-right') ?></a>
+                            <div class="price-calc-actions">
+                                <a href="mailto:booking@serengetibudgetsafari.com" class="btn btn-outline btn-sm price-calc-email"><?= icon('envelope') ?> <?= e(t('booking_card_email')) ?></a>
+                                <a href="https://wa.me/255697612865" target="_blank" rel="noopener" class="btn btn-success btn-sm price-calc-whatsapp"><i class="fab fa-whatsapp"></i> <?= e(t('booking_card_whatsapp')) ?></a>
+                            </div>
                         </div>
                     </section>
 

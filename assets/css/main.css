@@ -5277,18 +5277,8 @@ textarea:focus-visible,
 .story-preview-card .story-preview-footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 1rem;
-}
-
-.story-preview-card .story-preview-time {
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-}
-
-.story-preview-card .story-preview-time strong {
-    display: block;
-    color: var(--text-primary);
 }
 
 .story-preview-card .story-read-btn {
@@ -10448,6 +10438,23 @@ textarea:focus-visible,
 .price-calc .btn {
     width: 100%;
     justify-content: center;
+}
+
+.price-calc-book {
+    margin-top: 0.4rem;
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+}
+
+.price-calc-actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+.price-calc-actions .btn {
+    font-size: 0.82rem;
+    padding: 0.6rem 1rem;
 }
 
 .price-calc-tiers-note {

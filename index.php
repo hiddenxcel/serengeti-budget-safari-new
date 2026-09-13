@@ -88,7 +88,6 @@ require __DIR__ . '/includes/header.php';
                         <h3><?= e(t('story_leopard_title')) ?></h3>
                         <p class="story-preview-excerpt"><?= e(t('story_leopard_excerpt')) ?></p>
                         <div class="story-preview-footer">
-                            <span class="story-preview-time"><?= e(t('stories_reading_time')) ?><strong>2 min</strong></span>
                             <span class="story-read-btn"><?= e(t('stories_read')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </div>
@@ -104,7 +103,6 @@ require __DIR__ . '/includes/header.php';
                         <h3><?= e(t('story_kili_title')) ?></h3>
                         <p class="story-preview-excerpt"><?= e(t('story_kili_excerpt')) ?></p>
                         <div class="story-preview-footer">
-                            <span class="story-preview-time"><?= e(t('stories_reading_time')) ?><strong>2 min</strong></span>
                             <span class="story-read-btn"><?= e(t('stories_read')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </div>
@@ -120,7 +118,6 @@ require __DIR__ . '/includes/header.php';
                         <h3><?= e(t('story_maasai_title')) ?></h3>
                         <p class="story-preview-excerpt"><?= e(t('story_maasai_excerpt')) ?></p>
                         <div class="story-preview-footer">
-                            <span class="story-preview-time"><?= e(t('stories_reading_time')) ?><strong>2 min</strong></span>
                             <span class="story-read-btn"><?= e(t('stories_read')) ?> <?= icon('arrow-right') ?></span>
                         </div>
                     </div>

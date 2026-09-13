@@ -94,7 +94,9 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
                     <div class="price-calc"
                          data-currency="€"
                          data-tiers='<?= e(json_encode($priceTiers)) ?>'
-                         data-wa-template="<?= e(t('pkg3d_calc_wa_template')) ?>">
+                         data-wa-template="<?= e(t('pkg3d_calc_wa_template')) ?>"
+                         data-book-title="<?= e(t('pkg3d_hero_title')) ?>"
+                         data-book-currency="EUR">
                         <div class="price-calc-heading"><?= e(t('pkg3d_calc_heading')) ?></div>
                         <div class="price-calc-subtext"><?= e(t('pkg3d_calc_subtext')) ?></div>
 
@@ -118,7 +120,11 @@ $priceTiers = pricing_tiers_for_slug('3-day-serengeti-safari', [
                             </div>
                         </div>
 
-                        <a href="https://wa.me/255697612865" target="_blank" rel="noopener" class="btn btn-success price-calc-whatsapp"><i class="fab fa-whatsapp"></i> <?= e(t('pkg3d_calc_cta')) ?></a>
+                        <a href="<?= url('booking/') ?>" class="btn btn-primary price-calc-book"><?= e(t('pkg3d_calc_book')) ?> <?= icon('arrow-right') ?></a>
+                        <div class="price-calc-actions">
+                            <a href="mailto:booking@serengetibudgetsafari.com" class="btn btn-outline btn-sm price-calc-email"><?= icon('envelope') ?> <?= e(t('booking_card_email')) ?></a>
+                            <a href="https://wa.me/255697612865" target="_blank" rel="noopener" class="btn btn-success btn-sm price-calc-whatsapp"><i class="fab fa-whatsapp"></i> <?= e(t('pkg3d_calc_cta')) ?></a>
+                        </div>
                         <p class="price-calc-tiers-note"><?= e(t('pkg3d_calc_note')) ?></p>
                     </div>
                 </div>
