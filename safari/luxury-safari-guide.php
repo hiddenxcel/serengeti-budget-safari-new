@@ -224,7 +224,6 @@ require dirname(__DIR__) . '/includes/header.php';
                                 <li><?= t('lsg_pkg' . $i . '_f3') ?></li>
                                 <li><?= t('lsg_pkg' . $i . '_f4') ?></li>
                             </ul>
-                            <span class="guide-trust-small"><?= icon('star') ?> <?= e(t('lsg_pkg' . $i . '_trust')) ?></span>
                             <?php
                                 $pkgInc = [t('lsg_pkg' . $i . '_inc1'), t('lsg_pkg' . $i . '_inc2'), t('lsg_pkg' . $i . '_inc3'), t('lsg_pkg' . $i . '_inc4'), t('lsg_pkg' . $i . '_inc5'), t('lsg_pkg' . $i . '_inc6')];
                                 $pkgExc = [t('lsg_pkg' . $i . '_exc1'), t('lsg_pkg' . $i . '_exc2'), t('lsg_pkg' . $i . '_exc3')];

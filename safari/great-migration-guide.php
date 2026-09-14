@@ -251,7 +251,6 @@ require dirname(__DIR__) . '/includes/header.php';
                                 <li><?= t('mgg_pkg' . $i . '_f3') ?></li>
                                 <li><?= t('mgg_pkg' . $i . '_f4') ?></li>
                             </ul>
-                            <span class="guide-trust-small"><?= icon('fire') ?> <?= e(t('mgg_pkg' . $i . '_trust')) ?></span>
                             <?php
                                 $pkgInc = [t('mgg_pkg' . $i . '_inc1'), t('mgg_pkg' . $i . '_inc2'), t('mgg_pkg' . $i . '_inc3'), t('mgg_pkg' . $i . '_inc4'), t('mgg_pkg' . $i . '_inc5'), t('mgg_pkg' . $i . '_inc6')];
                                 $pkgExc = [t('mgg_pkg' . $i . '_exc1'), t('mgg_pkg' . $i . '_exc2'), t('mgg_pkg' . $i . '_exc3')];

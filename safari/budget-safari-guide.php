@@ -225,7 +225,6 @@ require dirname(__DIR__) . '/includes/header.php';
                                 <li><?= t('bsg_pkg' . $i . '_f3') ?></li>
                                 <li><?= t('bsg_pkg' . $i . '_f4') ?></li>
                             </ul>
-                            <span class="guide-trust-small"><?= icon('fire') ?> <?= e(t('bsg_pkg' . $i . '_trust')) ?></span>
                             <?php
                                 $pkgInc = [t('bsg_pkg' . $i . '_inc1'), t('bsg_pkg' . $i . '_inc2'), t('bsg_pkg' . $i . '_inc3'), t('bsg_pkg' . $i . '_inc4'), t('bsg_pkg' . $i . '_inc5'), t('bsg_pkg' . $i . '_inc6')];
                                 $pkgExc = [t('bsg_pkg' . $i . '_exc1'), t('bsg_pkg' . $i . '_exc2'), t('bsg_pkg' . $i . '_exc3')];

@@ -217,7 +217,6 @@ require dirname(__DIR__) . '/includes/header.php';
                                 <li><?= t('dtg_pkg' . $i . '_f3') ?></li>
                                 <li><?= t('dtg_pkg' . $i . '_f4') ?></li>
                             </ul>
-                            <span class="guide-trust-small"><?= icon('fire') ?> <?= e(t('dtg_pkg' . $i . '_trust')) ?></span>
                             <?php
                                 $pkgInc = [t('dtg_pkg' . $i . '_inc1'), t('dtg_pkg' . $i . '_inc2'), t('dtg_pkg' . $i . '_inc3'), t('dtg_pkg' . $i . '_inc4'), t('dtg_pkg' . $i . '_inc5'), t('dtg_pkg' . $i . '_inc6')];
                                 $pkgExc = [t('dtg_pkg' . $i . '_exc1'), t('dtg_pkg' . $i . '_exc2'), t('dtg_pkg' . $i . '_exc3')];
