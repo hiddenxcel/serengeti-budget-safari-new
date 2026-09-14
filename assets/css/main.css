@@ -8994,9 +8994,9 @@ textarea:focus-visible,
 .included-icon-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.75rem;
     text-align: left;
-    max-width: 760px;
+    max-width: 900px;
     margin: 1.5rem auto 0;
 }
 
@@ -9006,31 +9006,88 @@ textarea:focus-visible,
     }
 }
 
+.included-icon-grid > div {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius, 16px);
+    padding: 1.75rem 1.9rem;
+    box-shadow: var(--shadow-card, 0 12px 30px rgba(0, 0, 0, 0.05));
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.included-icon-grid > div:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elevated, 0 18px 40px rgba(0, 0, 0, 0.08));
+}
+
+.included-icon-grid h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 1.1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
 .included-icon-list {
     list-style: none;
     padding: 0;
-    margin: 0.8rem 0 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 0.85rem;
 }
 
 .included-icon-list li {
     display: flex;
     align-items: flex-start;
-    gap: 0.6rem;
+    gap: 0.7rem;
     font-size: 0.92rem;
     line-height: 1.5;
+    color: var(--text-primary, #202622);
 }
 
-.included-icon-list.yes li i {
+.included-icon-list li i,
+.included-icon-list li svg {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    margin-top: 0.05rem;
+}
+
+.included-icon-list.yes li i,
+.included-icon-list.yes li svg {
     color: #2f9e44;
-    margin-top: 0.2rem;
+    background: rgba(47, 158, 68, 0.12);
 }
 
-.included-icon-list.no li i {
-    color: var(--gray-600);
-    margin-top: 0.2rem;
+.included-icon-list.no li i,
+.included-icon-list.no li svg {
+    color: #d64545;
+    background: rgba(214, 69, 69, 0.1);
+}
+
+.included-icon-grid h3::before {
+    content: '';
+    display: inline-flex;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.included-icon-grid > div:first-child h3::before {
+    background: #2f9e44;
+}
+
+.included-icon-grid > div:last-child h3::before {
+    background: #d64545;
 }
 
 /* ---------- Safari listing: main package grid (same card language as Popular Now) ---------- */
@@ -10716,9 +10773,16 @@ textarea:focus-visible,
 
 .itinerary-day {
     background: var(--white);
-    border-radius: 14px;
+    border-radius: 16px;
+    border-left: 3px solid transparent;
     box-shadow: var(--shadow-card);
     overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.itinerary-day.open {
+    border-left-color: var(--gold);
+    box-shadow: var(--shadow-elevated, 0 18px 40px rgba(0, 0, 0, 0.08));
 }
 
 .itinerary-day-toggle {
@@ -10729,22 +10793,29 @@ textarea:focus-visible,
     background: none;
     border: none;
     text-align: left;
-    padding: 1.1rem 1.3rem;
+    padding: 1.2rem 1.4rem;
     cursor: pointer;
     font-family: var(--font-body);
+    transition: background 0.2s ease;
+}
+
+.itinerary-day-toggle:hover {
+    background: var(--cream-secondary, var(--gray-100));
 }
 
 .itinerary-day-number {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: var(--cream);
-    color: var(--gold-dark);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--black);
     font-weight: 800;
+    font-size: 1.05rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: 0 6px 14px rgba(200, 155, 60, 0.3);
 }
 
 .itinerary-day-heading {
@@ -10753,34 +10824,48 @@ textarea:focus-visible,
 
 .itinerary-day-heading strong {
     display: block;
-    font-size: 0.98rem;
-    color: var(--black);
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 0.72rem;
+    color: var(--gold-dark);
+    font-weight: 700;
 }
 
 .itinerary-day-heading small {
     display: block;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    margin-top: 0.15rem;
+    font-size: 0.98rem;
+    color: var(--black);
+    font-weight: 600;
+    margin-top: 0.2rem;
 }
 
-.itinerary-day-toggle i {
+.itinerary-day-toggle i,
+.itinerary-day-toggle svg {
     color: var(--gray-600);
-    transition: transform 0.2s;
+    transition: transform 0.25s ease, color 0.25s ease;
     flex-shrink: 0;
 }
 
-.itinerary-day.open .itinerary-day-toggle i {
+.itinerary-day.open .itinerary-day-toggle i,
+.itinerary-day.open .itinerary-day-toggle svg {
     transform: rotate(180deg);
+    color: var(--gold-dark);
 }
 
 .itinerary-day-body {
     display: none;
-    padding: 0 1.3rem 1.3rem 4.2rem;
+    padding: 0 1.4rem 1.5rem 4.3rem;
 }
 
 .itinerary-day.open .itinerary-day-body {
     display: block;
+    animation: itineraryBodyIn 0.3s ease;
+}
+
+@keyframes itineraryBodyIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .itinerary-day-body p {
@@ -10793,20 +10878,27 @@ textarea:focus-visible,
 .itinerary-day-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 0.9rem;
+    gap: 0.55rem;
+    margin-bottom: 1.1rem;
 }
 
 .itinerary-day-tags span {
-    background: var(--gray-100);
+    background: var(--cream);
+    border: 1px solid var(--gray-200);
     border-radius: 999px;
-    padding: 0.3rem 0.75rem;
+    padding: 0.35rem 0.8rem;
     font-size: 0.78rem;
     color: var(--black);
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.4rem;
+}
+
+.itinerary-day-tags span i,
+.itinerary-day-tags span svg {
+    color: var(--gold-dark);
+    font-size: 0.85em;
 }
 
 .itinerary-day-accommodation {
@@ -11558,55 +11650,73 @@ textarea:focus-visible,
 /* ---------- Day trip: timeline ---------- */
 .day-timeline {
     position: relative;
-    padding-left: 2.6rem;
+    padding-left: 2.75rem;
 }
 
 .day-timeline::before {
     content: '';
     position: absolute;
-    left: 0.65rem;
-    top: 0.5rem;
-    bottom: 0.5rem;
+    left: 0.75rem;
+    top: 0.6rem;
+    bottom: 0.6rem;
     width: 2px;
-    background: var(--gray-200);
+    background: linear-gradient(180deg, var(--gold), var(--black-light, var(--gold-dark)));
+    opacity: 0.35;
 }
 
 .day-timeline-item {
     position: relative;
-    padding-bottom: 1.8rem;
+    padding: 0.9rem 1.1rem 0.9rem 0.4rem;
+    margin-left: -0.4rem;
+    border-radius: 12px;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.day-timeline-item:hover {
+    background: var(--cream-secondary, var(--gray-100));
+    transform: translateX(2px);
 }
 
 .day-timeline-item:last-child {
-    padding-bottom: 0;
+    padding-bottom: 0.2rem;
 }
 
 .day-timeline-dot {
     position: absolute;
-    left: -2.6rem;
-    top: 0.15rem;
-    width: 1.3rem;
-    height: 1.3rem;
+    left: -2.35rem;
+    top: 1.15rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
-    background: var(--gold-dark);
+    background: var(--gold);
     border: 3px solid var(--white);
-    box-shadow: 0 0 0 2px var(--gold-dark);
+    box-shadow: 0 0 0 2px var(--gold), 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 1;
 }
 
 .day-timeline-time {
+    display: inline-block;
     font-weight: 800;
-    color: var(--gold-dark);
-    font-size: 0.85rem;
-    margin-bottom: 0.15rem;
+    color: var(--white);
+    background: var(--black);
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
 }
 
 .day-timeline-item strong {
     display: block;
+    font-family: var(--font-display);
+    font-size: 1.02rem;
     color: var(--black);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
 }
 
 .day-timeline-item p {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
     color: var(--text-secondary);
     margin: 0;
 }
@@ -11615,11 +11725,79 @@ textarea:focus-visible,
    (e.g. "Karibu Sana Tanzania — Welcome to Tanzania"), before the
    timeline of timed stops. Sets the mood, not a fact. */
 .itinerary-day-mood {
+    position: relative;
     font-family: var(--font-display);
     font-style: italic;
     font-size: 0.95rem;
-    color: var(--gold-dark);
-    margin: 0 0 1rem;
+    color: var(--black-light, var(--black));
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 0.7rem 1rem;
+    margin: 0 0 1.1rem;
+}
+
+/* ---------- Day plan: light, non-accordion itinerary (single-day pages) ---------- */
+.day-plan-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+    font-weight: 800;
+    color: var(--black);
+    margin: 0 0 0.4rem;
+}
+
+.day-plan-mood {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 1.75rem;
+}
+
+.day-plan-steps {
+    border-left: 2px solid var(--gray-200);
+    margin-left: 4px;
+}
+
+.day-plan-step {
+    position: relative;
+    padding: 0 0 1.6rem 1.5rem;
+}
+
+.day-plan-step:last-child {
+    padding-bottom: 0;
+}
+
+.day-plan-step::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0.3rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.day-plan-time {
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+}
+
+.day-plan-step h3 {
+    margin: 0 0 0.3rem;
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.day-plan-step p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
 }
 
 /* ---------- Day trip: listing card ---------- */
@@ -12615,4 +12793,593 @@ body.home-page .testimonial-card {
 [class~="hero-badge"],
 .about-us-content .story-badge {
     display: none !important;
+}
+
+/* ============================================================
+   TOUR DETAIL PAGE — booking-site style layout
+   (breadcrumb, split gallery, sidebar price + enquiry form)
+   ============================================================ */
+
+.tour-breadcrumb {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.6rem;
+}
+
+.tour-breadcrumb a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.tour-breadcrumb a:hover {
+    color: var(--gold-dark);
+}
+
+.tour-breadcrumb .sep {
+    margin: 0 0.4rem;
+    opacity: 0.5;
+}
+
+.tour-header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.4rem;
+}
+
+.tour-header-row h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 800;
+    color: var(--black);
+    margin: 0 0 0.6rem;
+}
+
+.tour-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+
+.tour-meta-row span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.tour-meta-row i,
+.tour-meta-row svg {
+    color: var(--gold-dark);
+}
+
+/* — Split gallery: one large image, small grid alongside — */
+.tour-gallery {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 0.9rem;
+    margin-bottom: 1.8rem;
+}
+
+.tour-gallery-main {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.tour-gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 260px;
+    transition: transform 0.4s ease;
+}
+
+.tour-gallery-main:hover img {
+    transform: scale(1.04);
+}
+
+.tour-gallery-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+}
+
+.tour-gallery-side a {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    display: block;
+    box-shadow: var(--shadow-card);
+}
+
+.tour-gallery-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 125px;
+    transition: transform 0.4s ease;
+}
+
+.tour-gallery-side a:hover img {
+    transform: scale(1.06);
+}
+
+.tour-gallery-more {
+    position: absolute;
+    inset: 0;
+    background: rgba(23, 63, 53, 0.65);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.tour-gallery-more::before {
+    content: '\f00a';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.tour-inc-exc-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem;
+}
+
+@media (max-width: 760px) {
+    .tour-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-gallery-main img {
+        min-height: 200px;
+    }
+
+    .tour-gallery-side {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tour-inc-exc-wrap {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+}
+
+/* — Intro with "See more" toggle — */
+.tour-intro {
+    margin-bottom: 1.6rem;
+}
+
+.tour-intro p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.96rem;
+}
+
+.tour-intro-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    color: var(--gold-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* — Highlights — */
+.tour-highlights {
+    margin-bottom: 1.6rem;
+}
+
+.tour-highlights h3,
+.tour-block h3 {
+    font-family: 'Caveat', var(--font-display), cursive;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: 0 0 0.8rem;
+}
+
+.tour-highlights ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tour-highlights li {
+    position: relative;
+    padding-left: 1.2rem;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.tour-highlights li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+/* — Generic bordered block, used for Highlights / Included / Excluded / Itinerary — */
+.tour-block {
+    border-top: 1px solid var(--gray-200);
+    padding: 1.6rem 0;
+}
+
+.tour-block:first-of-type {
+    border-top: none;
+}
+
+.tour-inc-exc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.5rem;
+}
+
+.tour-inc-exc li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.3rem 0;
+    list-style: none;
+}
+
+.tour-inc-exc.yes li i,
+.tour-inc-exc.yes li svg {
+    color: #2f9e44;
+}
+
+.tour-inc-exc.no li i,
+.tour-inc-exc.no li svg {
+    color: #d64545;
+}
+
+@media (max-width: 560px) {
+    .tour-inc-exc {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* — Itinerary, plain flowing list (no accordion) — */
+.tour-itinerary-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-itinerary-day {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 1.2rem;
+    padding: 1.3rem 0;
+    border-top: 1px dotted var(--gray-200);
+}
+
+.tour-itinerary-day:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.tour-itinerary-day-label {
+    font-weight: 800;
+    font-size: 0.92rem;
+    color: var(--black);
+}
+
+.tour-itinerary-day-loc {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: var(--gold-dark);
+    margin-top: 0.3rem;
+}
+
+.tour-itinerary-day-body h4 {
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: 0 0 0.4rem;
+}
+
+.tour-itinerary-day-body p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+@media (max-width: 620px) {
+    .tour-itinerary-day {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+}
+
+/* — Sidebar: price banner + enquiry form — */
+.tour-sidebar {
+    align-self: start;
+    position: relative;
+}
+
+/* position:sticky can't work here — body/html carry a site-wide
+   overflow-x:hidden which disables sticky's containing block on any
+   descendant. JS toggles these instead: .is-pinned while the sidebar's
+   column still has room below it, .is-bottomed once the column runs out
+   (so the sidebar settles at the bottom of tour-detail-layout instead of
+   overlapping the footer). See .safari-types-pin-wrap for the same
+   pattern used elsewhere on this site. */
+.tour-sidebar.is-pinned {
+    position: fixed;
+    top: 100px;
+    width: var(--tour-sidebar-width, 340px);
+}
+
+.tour-sidebar.is-bottomed {
+    position: absolute;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    width: var(--tour-sidebar-width, 340px);
+}
+
+.tour-price-banner {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--white);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.tour-price-banner .label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.3rem;
+}
+
+.tour-price-banner .value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--white);
+}
+
+.tour-price-banner .sub {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0.1rem;
+}
+
+.tour-enquiry-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+}
+
+.tour-enquiry-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--black);
+    margin: 0 0 1rem;
+}
+
+.sidebar-enquiry-error {
+    display: none;
+    background: #fdecea;
+    color: #c0392b;
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.82rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar-enquiry-error.visible {
+    display: block;
+}
+
+.sidebar-enquiry-success {
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.sidebar-enquiry-success.visible {
+    display: block;
+}
+
+.sidebar-enquiry-success i,
+.sidebar-enquiry-success svg {
+    font-size: 2.2rem;
+    color: #2f9e44;
+    margin-bottom: 0.6rem;
+}
+
+.sidebar-enquiry-success h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--black);
+    margin: 0 0 0.4rem;
+}
+
+.sidebar-enquiry-success p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.tour-enquiry-card .contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.tour-enquiry-card .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.tour-quick-contact-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem;
+    margin-top: 1rem;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+}
+
+.tour-quick-contact-card h4 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--black);
+    margin: 0 0 1rem;
+}
+
+.tour-quick-contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tour-quick-contact-btn + .tour-quick-contact-btn {
+    margin-top: 0.7rem;
+}
+
+.tour-quick-contact-btn i {
+    font-size: 1.15rem;
+}
+
+.tour-quick-contact-btn svg {
+    width: 1.15em;
+    height: 1.15em;
+    flex-shrink: 0;
+}
+
+.tour-quick-contact-btn.whatsapp {
+    background: #25d366;
+    color: #fff;
+}
+
+.tour-quick-contact-btn.whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+}
+
+.tour-quick-contact-btn.email {
+    background: var(--gray-100);
+    color: var(--black);
+    border: 1px solid var(--gray-200);
+}
+
+.tour-quick-contact-btn.email:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+}
+
+/* Repeating diagonal light sweep, used to draw attention to key CTA buttons */
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(
+        115deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.55) 50%,
+        rgba(255, 255, 255, 0) 70%,
+        transparent 100%
+    );
+    transform: skewX(-20deg);
+    animation: btn-shine-sweep 3.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes btn-shine-sweep {
+    0% {
+        left: -60%;
+    }
+    35%,
+    100% {
+        left: 130%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-shine::after {
+        animation: none;
+        display: none;
+    }
+}
+
+.tour-detail-layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (max-width: 960px) {
+    .tour-detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-sidebar,
+    .tour-sidebar.is-pinned,
+    .tour-sidebar.is-bottomed {
+        position: static;
+        width: auto;
+    }
 }

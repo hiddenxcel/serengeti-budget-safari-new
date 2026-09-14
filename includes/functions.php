@@ -21,7 +21,12 @@ function icon(string $name, string $class = '', string $style = ''): string
         } else {
             $svg = (string) file_get_contents($file);
             $svg = preg_replace('/<!--.*?-->\s*/s', '', $svg) ?? $svg;
-            $svg = preg_replace('/\s(width|height|class)="[^"]*"/', '', $svg) ?? $svg;
+            $svg = preg_replace_callback(
+                '/<svg\b[^>]*>/',
+                static fn (array $m): string => preg_replace('/\s(width|height|class)="[^"]*"/', '', $m[0]) ?? $m[0],
+                $svg,
+                1
+            ) ?? $svg;
             $svg = preg_replace(
                 '/<svg/',
                 '<svg class="icon icon-' . e($name) . '" width="1em" height="1em"',
