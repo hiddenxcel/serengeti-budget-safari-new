@@ -207,12 +207,12 @@ require __DIR__ . '/includes/header.php';
 
                 <div class="safari-types-slider" id="safariTypesSlider">
                     <div class="safari-types-track" id="safariTypesTrack">
-                        <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/wildlife/lion-pride-zebra-kill.jpg') ?>');">
+                        <a href="<?= url('safari/budget-safari-guide.php') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/wildlife/lion-pride-zebra-kill.jpg') ?>');">
                             <span class="type-icon"><?= icon('wallet') ?></span>
                             <h3><?= e(t('safari_type_budget_title')) ?></h3>
                             <p><?= e(t('safari_type_budget_desc')) ?></p>
                         </a>
-                        <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/hero/male-lion-portrait-mane.jpg') ?>');">
+                        <a href="<?= url('safari/luxury-safari-guide.php') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/hero/male-lion-portrait-mane.jpg') ?>');">
                             <span class="type-icon"><?= icon('gem') ?></span>
                             <h3><?= e(t('safari_type_luxury_title')) ?></h3>
                             <p><?= e(t('safari_type_luxury_desc')) ?></p>
@@ -222,7 +222,7 @@ require __DIR__ . '/includes/header.php';
                             <h3><?= e(t('safari_type_private_title')) ?></h3>
                             <p><?= e(t('safari_type_private_desc')) ?></p>
                         </a>
-                        <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/ranger-clients-safari-vehicle-logo.jpg') ?>');">
+                        <a href="<?= url('safari/groups.php') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/ranger-clients-safari-vehicle-logo.jpg') ?>');">
                             <span class="type-icon"><?= icon('users') ?></span>
                             <h3><?= e(t('safari_type_group_title')) ?></h3>
                             <p><?= e(t('safari_type_group_desc')) ?></p>
@@ -265,7 +265,7 @@ require __DIR__ . '/includes/header.php';
                         <li><?= icon('check-circle') ?> <?= e(t('comparison_budget_4')) ?></li>
                         <li><?= icon('check-circle') ?> <?= e(t('comparison_budget_5')) ?></li>
                     </ul>
-                    <a href="<?= url('safari/') ?>" class="btn btn-outline"><?= e(t('comparison_budget_cta')) ?> <?= icon('arrow-right') ?></a>
+                    <a href="<?= url('safari/budget-safari-guide.php') ?>" class="btn btn-outline"><?= e(t('comparison_budget_cta')) ?> <?= icon('arrow-right') ?></a>
                 </div>
                 <div class="comparison-card featured">
                     <span class="comparison-badge"><?= e(t('comparison_luxury_badge')) ?></span>
@@ -281,7 +281,7 @@ require __DIR__ . '/includes/header.php';
                         <li><?= icon('check-circle') ?> <?= e(t('comparison_luxury_4')) ?></li>
                         <li><?= icon('check-circle') ?> <?= e(t('comparison_luxury_5')) ?></li>
                     </ul>
-                    <a href="<?= url('safari/') ?>" class="btn btn-primary"><?= e(t('comparison_luxury_cta')) ?> <?= icon('arrow-right') ?></a>
+                    <a href="<?= url('safari/luxury-safari-guide.php') ?>" class="btn btn-primary"><?= e(t('comparison_luxury_cta')) ?> <?= icon('arrow-right') ?></a>
                 </div>
             </div>
         </div>

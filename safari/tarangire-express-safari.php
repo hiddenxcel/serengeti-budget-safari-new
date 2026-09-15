@@ -168,8 +168,8 @@ require dirname(__DIR__) . '/includes/header.php';
                     <aside class="tour-sidebar">
                         <div class="tour-price-banner">
                             <div class="label"><?= e(t('pkg1d_price_banner_label')) ?></div>
-                            <div class="value">$254 <small style="font-size:0.85rem;font-weight:600;">/ pp sharing</small></div>
-                            <div class="sub">$220 pp <?= e(t('pkg1d_price_banner_group')) ?></div>
+                            <div class="value">$165 <small style="font-size:0.85rem;font-weight:600;">/ pp sharing</small></div>
+                            <div class="sub">$157 pp <?= e(t('pkg1d_price_banner_group')) ?></div>
                         </div>
 
                         <div class="tour-enquiry-card">
