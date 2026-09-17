@@ -1525,3 +1525,65 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================================
+   MIGRATION SEASON DETAIL PAGES: multi-option itinerary cards
+   (used on calving/motion/grumeti/mara/zanzibar migration pages,
+   reuses .guide-itinerary-card as the base, adds only what that
+   class doesn't already cover)
+   ============================================================ */
+.mig-itinerary-intro {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin: -0.4rem 0 1.2rem;
+}
+
+.mig-option-card h4 {
+    align-items: center;
+}
+
+.mig-option-badge {
+    position: static;
+    display: inline-block;
+    margin-right: 8px;
+    transform: none;
+}
+
+.mig-option-note {
+    font-size: 0.86rem;
+    color: var(--gold-dark);
+    margin: 0 0 8px;
+}
+
+.mig-option-days {
+    list-style: none;
+    margin: 10px 0 12px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mig-option-days li {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.mig-option-days li strong {
+    color: var(--black);
+}
+
+.mig-option-cta {
+    margin-top: 6px;
+    width: 100%;
+}
+
+.mig-balloon-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+}
