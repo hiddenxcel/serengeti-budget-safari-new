@@ -183,12 +183,6 @@ return [
     'destinations_intro' => 'Les parcs que nos voyageurs choisissent le plus souvent.',
     'destinations_see_all' => 'Voir tous les parcs',
 
-    'trust_badge' => 'Pourquoi nous faire confiance',
-    'trust_title' => 'Des chiffres qui parlent d\'eux-mêmes',
-    'trust_tagline' => 'Pas seulement des mots',
-    'trust_years' => 'Années d\'expérience',
-    'trust_satisfaction' => 'Taux de satisfaction',
-    'trust_guides' => 'Guides certifiés',
 
     'packages_badge' => 'Les plus appréciés',
     'packages_title' => 'Des safaris qui marquent',

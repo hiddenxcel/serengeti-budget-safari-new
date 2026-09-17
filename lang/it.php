@@ -183,12 +183,6 @@ return [
     'destinations_intro' => 'I parchi scelti più spesso dai nostri viaggiatori.',
     'destinations_see_all' => 'Vedi tutti i parchi',
 
-    'trust_badge' => 'Perché fidarsi di noi',
-    'trust_title' => 'Numeri che parlano da soli',
-    'trust_tagline' => 'Non solo parole',
-    'trust_years' => 'Anni di esperienza',
-    'trust_satisfaction' => 'Tasso di soddisfazione',
-    'trust_guides' => 'Guide certificate',
 
     'packages_badge' => 'I più amati',
     'packages_title' => 'Safari che lasciano il segno',

@@ -183,12 +183,6 @@ return [
     'destinations_intro' => 'The parks our travellers choose most often.',
     'destinations_see_all' => 'See all parks',
 
-    'trust_badge' => 'Why trust us',
-    'trust_title' => 'Numbers that speak for themselves',
-    'trust_tagline' => 'Not just words',
-    'trust_years' => 'Years of experience',
-    'trust_satisfaction' => 'Satisfaction rate',
-    'trust_guides' => 'Certified guides',
 
     'packages_badge' => 'Most loved',
     'packages_title' => 'Safaris that leave a mark',

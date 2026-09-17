@@ -6087,151 +6087,6 @@ textarea:focus-visible,
    GROUP 5 – SECTIONS
    ============================================================ */
 
-/* ---------- Trust authority ---------- */
-.trust-authority {
-    padding: 4.5rem 0 5rem;
-    background-color: var(--cream);
-    background-image: radial-gradient(rgba(200, 155, 60, 0.35) 1.5px, transparent 1.5px);
-    background-size: 16px 16px;
-    position: relative;
-    overflow: hidden;
-}
-
-.trust-authority-intro {
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto 2.5rem;
-}
-
-.trust-authority-intro .section-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--gold-dark);
-    background: rgba(200, 155, 60, 0.12);
-    padding: 0.3rem 1.1rem;
-    border-radius: 40px;
-    margin-bottom: 1rem;
-}
-
-.trust-authority-intro h2 {
-    font-family: var(--font-display);
-    font-size: 2.2rem;
-    font-weight: 800;
-    line-height: 1.25;
-    color: var(--black);
-}
-
-.trust-authority-panel {
-    background: var(--black);
-    border-radius: var(--radius);
-    padding: 2.5rem 2rem 2rem;
-    box-shadow: var(--shadow-elevated);
-}
-
-.trust-authority-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-}
-
-.trust-stat {
-    background: var(--white);
-    border-radius: var(--radius-sm);
-    padding: 1.6rem 1.2rem;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.trust-stat:hover {
-    transform: translateY(-4px);
-}
-
-.trust-stat .trust-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: rgba(200, 155, 60, 0.14);
-    color: var(--gold-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    margin: 0 auto 0.9rem;
-}
-
-.trust-stat .trust-icon .icon {
-    stroke-width: 1.75;
-}
-
-.trust-stat .trust-number {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--black);
-}
-
-.trust-stat .trust-label {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-}
-
-.trust-badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem 1.8rem;
-    margin-top: 1.8rem;
-    padding-top: 1.6rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    font-size: 0.8rem;
-}
-
-.trust-badges .badge-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--gray-300);
-}
-
-.trust-badges .badge-item i {
-    color: var(--gold);
-}
-
-@media (max-width: 992px) {
-    .trust-authority-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .trust-authority {
-        padding: 3.5rem 0;
-    }
-
-    .trust-authority-intro h2 {
-        font-size: 1.7rem;
-    }
-
-    .trust-authority-panel {
-        padding: 2rem 1.2rem 1.6rem;
-    }
-
-    .trust-authority-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.6rem;
-    }
-
-    .trust-stat {
-        padding: 1rem 0.5rem;
-    }
-}
-
 /* ============================================================
    TOP DESTINATIONS
    ============================================================ */
@@ -7465,76 +7320,51 @@ textarea:focus-visible,
     overflow: hidden;
 }
 
-.experiences-slider-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-}
-
-.experiences-slider-header .section-title-left {
-    margin-bottom: 0;
-}
-
-.experiences-slider-nav {
-    display: flex;
-    gap: 0.6rem;
-    flex-shrink: 0;
-}
-
-.experiences-arrow {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--gray-100);
-    background: var(--white);
-    color: var(--black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 0.9rem;
-}
-
-.experiences-arrow:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--black);
-}
-
-.experiences-arrow:disabled {
-    opacity: 0.35;
-    cursor: default;
-}
-
-.experiences-arrow:disabled:hover {
-    background: var(--white);
-    border-color: var(--gray-100);
-    color: var(--black);
-}
-
 .experiences-slider {
     overflow: hidden;
+    /* Fades the track to transparent at both edges so cards scrolling in
+       and out of view don't get a hard visual cut-off. */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
 }
 
+/* Continuous marquee: the track holds the card list twice back-to-back
+   (see index.php) and animates from 0 to -50% (exactly one full copy's
+   width) on an infinite loop, so the seam between the two copies is
+   invisible and the strip appears to scroll forever. Pauses on hover
+   and is swapped for a plain static row when the visitor has
+   prefers-reduced-motion set. */
 .experiences-track {
     display: flex;
     gap: 1.5rem;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
+    width: max-content;
+    animation: experiences-marquee 45s linear infinite;
+}
+
+.experiences-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes experiences-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .experiences-track {
+        animation: none;
+    }
 }
 
 .experience-item {
-    flex: 0 0 calc(20% - 1.2rem);
-    max-width: calc(20% - 1.2rem);
+    flex: 0 0 260px;
+    width: 260px;
     text-align: center;
     padding: 2rem 1.2rem;
     background: var(--cream);
     border: 1px solid rgba(200, 155, 60, 0.12);
     border-radius: var(--radius);
-    transition: var(--transition);
+    transition: background var(--transition), border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 
 .experience-item:hover {
@@ -7577,50 +7407,10 @@ textarea:focus-visible,
     line-height: 1.5;
 }
 
-.experiences-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
-}
-
-.experiences-dots button {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: none;
-    background: var(--gray-100);
-    cursor: pointer;
-    padding: 0;
-    transition: var(--transition);
-}
-
-.experiences-dots button.active {
-    background: var(--gold);
-    width: 22px;
-    border-radius: 4px;
-}
-
-@media (max-width: 992px) {
-    .experience-item {
-        flex: 0 0 calc(33.333% - 1rem);
-        max-width: calc(33.333% - 1rem);
-    }
-}
-
 @media (max-width: 768px) {
-    .experiences-slider-header {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .experiences-slider-nav {
-        align-self: center;
-    }
-
     .experience-item {
-        flex: 0 0 calc(50% - 0.75rem);
-        max-width: calc(50% - 0.75rem);
+        flex: 0 0 210px;
+        width: 210px;
         padding: 1.5rem 0.8rem;
     }
 
@@ -7628,13 +7418,6 @@ textarea:focus-visible,
         width: 52px;
         height: 52px;
         font-size: 1.25rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .experience-item {
-        flex: 0 0 calc(100% - 0px);
-        max-width: 100%;
     }
 }
 
@@ -8881,12 +8664,6 @@ textarea:focus-visible,
 @media (max-width: 480px) {
     .mega-footer-grid {
         grid-template-columns: 1fr;
-    }
-    .trust-authority-grid {
-        gap: 0.8rem 1.5rem;
-    }
-    .trust-stat .trust-number {
-        font-size: 1.6rem;
     }
     .gallery-masonry {
         grid-template-columns: 1fr 1fr;
@@ -12890,7 +12667,6 @@ body.home-page .experiences-slider-section {
 
 body.home-page .stories-grid-section,
 body.home-page .comparison,
-body.home-page .trust-authority,
 body.home-page .journey-steps-section,
 body.home-page .faq-mega {
     background-color: rgba(250, 247, 240, 0.75);

@@ -388,34 +388,6 @@ require __DIR__ . '/includes/header.php';
         </div>
     </section>
 
-    <section class="trust-authority" aria-labelledby="trustTitle">
-        <div class="container">
-            <div class="trust-authority-intro centered">
-                <span class="section-badge"><?= icon('medal') ?> <?= e(t('trust_badge')) ?></span>
-                <span class="section-tagline"><?= e(t('trust_tagline')) ?></span>
-                <h2 id="trustTitle"><?= e(t('trust_title')) ?></h2>
-            </div>
-            <div class="trust-authority-panel">
-                <div class="trust-authority-grid">
-                    <div class="trust-stat">
-                        <span class="trust-icon"><?= icon('calendar-check') ?></span>
-                        <span class="trust-number">10+</span>
-                        <span class="trust-label"><?= e(t('trust_years')) ?></span>
-                    </div>
-                    <div class="trust-stat">
-                        <span class="trust-icon"><?= icon('star') ?></span>
-                        <span class="trust-number">98%</span>
-                        <span class="trust-label"><?= e(t('trust_satisfaction')) ?></span>
-                    </div>
-                    <div class="trust-stat">
-                        <span class="trust-icon"><?= icon('user-tie') ?></span>
-                        <span class="trust-number">12</span>
-                        <span class="trust-label"><?= e(t('trust_guides')) ?></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="best-packages-section" aria-labelledby="packagesTitle">
         <div class="container">
@@ -945,95 +917,50 @@ require __DIR__ . '/includes/header.php';
 
     <section class="experiences-slider-section" aria-labelledby="experiencesTitle">
         <div class="container">
-            <div class="experiences-slider-header">
-                <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('spa') ?> <?= e(t('experiences_badge')) ?></span>
-                    <span class="section-tagline"><?= e(t('experiences_tagline')) ?></span>
-                    <h2 id="experiencesTitle"><?= e(t('experiences_title')) ?></h2>
-                    <p><?= e(t('experiences_intro')) ?></p>
-                </div>
-                <div class="experiences-slider-nav">
-                    <button type="button" class="experiences-arrow prev" id="experiencesPrev" aria-label="Previous experience"><?= icon('arrow-left') ?></button>
-                    <button type="button" class="experiences-arrow next" id="experiencesNext" aria-label="Next experience"><?= icon('arrow-right') ?></button>
-                </div>
+            <div class="section-title-left centered">
+                <span class="section-badge"><?= icon('spa') ?> <?= e(t('experiences_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('experiences_tagline')) ?></span>
+                <h2 id="experiencesTitle"><?= e(t('experiences_title')) ?></h2>
+                <p><?= e(t('experiences_intro')) ?></p>
             </div>
 
-            <div class="experiences-slider" id="experiencesSlider">
-                <div class="experiences-track" id="experiencesTrack">
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('binoculars') ?></div>
-                        <h3><?= e(t('exp_game_drives_title')) ?></h3>
-                        <p><?= e(t('exp_game_drives_desc')) ?></p>
+            <?php
+            $experienceItems = [
+                ['icon' => icon('binoculars'), 'key' => 'exp_game_drives'],
+                ['icon' => '<i class="fas fa-kiwi-bird"></i>', 'key' => 'exp_migration'],
+                ['icon' => icon('plane-departure'), 'key' => 'exp_balloon'],
+                ['icon' => icon('utensils'), 'key' => 'exp_dinner'],
+                ['icon' => icon('hiking'), 'key' => 'exp_trekking'],
+                ['icon' => icon('camera'), 'key' => 'exp_photo'],
+                ['icon' => icon('star'), 'key' => 'exp_night'],
+                ['icon' => icon('heart'), 'key' => 'exp_maasai'],
+                ['icon' => icon('person-hiking'), 'key' => 'exp_walking'],
+                ['icon' => '<i class="fas fa-dove"></i>', 'key' => 'exp_birds'],
+                ['icon' => icon('umbrella-beach'), 'key' => 'exp_zanzibar'],
+                ['icon' => '<i class="fas fa-person-swimming"></i>', 'key' => 'exp_snorkeling'],
+                ['icon' => icon('water'), 'key' => 'exp_materuni'],
+                ['icon' => icon('people-group'), 'key' => 'exp_cultural'],
+            ];
+            ?>
+            <div class="experiences-slider">
+                <div class="experiences-track">
+                    <?php
+                    // Rendered twice back-to-back so the CSS marquee animation
+                    // (0 to -50%) loops seamlessly with no visible seam or gap.
+                    for ($copy = 0; $copy < 2; $copy++):
+                        foreach ($experienceItems as $item):
+                    ?>
+                    <div class="experience-item"<?= $copy === 1 ? ' aria-hidden="true"' : '' ?>>
+                        <div class="experience-icon"><?= $item['icon'] ?></div>
+                        <h3><?= e(t($item['key'] . '_title')) ?></h3>
+                        <p><?= e(t($item['key'] . '_desc')) ?></p>
                     </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-kiwi-bird"></i></div>
-                        <h3><?= e(t('exp_migration_title')) ?></h3>
-                        <p><?= e(t('exp_migration_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('plane-departure') ?></div>
-                        <h3><?= e(t('exp_balloon_title')) ?></h3>
-                        <p><?= e(t('exp_balloon_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('utensils') ?></div>
-                        <h3><?= e(t('exp_dinner_title')) ?></h3>
-                        <p><?= e(t('exp_dinner_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('hiking') ?></div>
-                        <h3><?= e(t('exp_trekking_title')) ?></h3>
-                        <p><?= e(t('exp_trekking_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('camera') ?></div>
-                        <h3><?= e(t('exp_photo_title')) ?></h3>
-                        <p><?= e(t('exp_photo_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('star') ?></div>
-                        <h3><?= e(t('exp_night_title')) ?></h3>
-                        <p><?= e(t('exp_night_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('heart') ?></div>
-                        <h3><?= e(t('exp_maasai_title')) ?></h3>
-                        <p><?= e(t('exp_maasai_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('person-hiking') ?></div>
-                        <h3><?= e(t('exp_walking_title')) ?></h3>
-                        <p><?= e(t('exp_walking_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-dove"></i></div>
-                        <h3><?= e(t('exp_birds_title')) ?></h3>
-                        <p><?= e(t('exp_birds_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('umbrella-beach') ?></div>
-                        <h3><?= e(t('exp_zanzibar_title')) ?></h3>
-                        <p><?= e(t('exp_zanzibar_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><i class="fas fa-person-swimming"></i></div>
-                        <h3><?= e(t('exp_snorkeling_title')) ?></h3>
-                        <p><?= e(t('exp_snorkeling_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('water') ?></div>
-                        <h3><?= e(t('exp_materuni_title')) ?></h3>
-                        <p><?= e(t('exp_materuni_desc')) ?></p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon"><?= icon('people-group') ?></div>
-                        <h3><?= e(t('exp_cultural_title')) ?></h3>
-                        <p><?= e(t('exp_cultural_desc')) ?></p>
-                    </div>
+                    <?php
+                        endforeach;
+                    endfor;
+                    ?>
                 </div>
             </div>
-
-            <div class="experiences-dots" id="experiencesDots" aria-hidden="true"></div>
         </div>
     </section>
 
