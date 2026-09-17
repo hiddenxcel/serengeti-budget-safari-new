@@ -44,6 +44,103 @@
 }
 
 /* ================================================================
+   SERENGETI BUDGET SAFARI – ANNOUNCEMENT BAR
+   Thin contact/social strip above the main header. Sits fixed at
+   the very top; both this bar and the header below react to scroll
+   direction (see .is-hidden rules and header.js), so scrolling down
+   tucks them away and scrolling up brings them back, header first.
+   ================================================================ */
+
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    height: var(--announcement-bar-height);
+    background: var(--black);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8rem;
+    overflow: hidden;
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.announcement-bar.is-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.announcement-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    gap: 1rem;
+}
+
+.announcement-bar-contact {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    min-width: 0;
+}
+
+.announcement-bar-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: inherit;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color var(--transition);
+}
+
+.announcement-bar-contact a:hover {
+    color: var(--gold);
+}
+
+.announcement-bar-contact svg,
+.announcement-bar-contact .icon {
+    width: 0.85em;
+    height: 0.85em;
+    flex-shrink: 0;
+}
+
+.announcement-bar-social {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-shrink: 0;
+}
+
+.announcement-bar-social a {
+    color: inherit;
+    font-size: 0.82rem;
+    transition: color var(--transition);
+}
+
+.announcement-bar-social a:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .announcement-bar-contact span {
+        display: none;
+    }
+
+    .announcement-bar-social {
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .announcement-bar-contact a:first-child span,
+    .announcement-bar {
+        font-size: 0.75rem;
+    }
+}
+
+/* ================================================================
    SERENGETI BUDGET SAFARI – HEADER CSS
    Floating pill navigation: transparent bar over the hero, logo on
    the bare left, white rounded nav capsule in the middle, phone +
@@ -52,17 +149,27 @@
 
 .site-header {
     position: fixed;
-    top: 0;
+    top: var(--announcement-bar-height);
     left: 0;
     right: 0;
     z-index: 1000;
     height: var(--header-height);
     background: transparent;
-    transition: background var(--transition), box-shadow var(--transition);
+    transition: background var(--transition), box-shadow var(--transition), transform var(--transition), top var(--transition);
     padding: 0 26px;
     display: flex;
     align-items: center;
     border-bottom: none;
+}
+
+/* Once the announcement bar has tucked itself away, the header slides
+   up to take its place instead of leaving an empty gap above it. */
+.announcement-bar.is-hidden + .site-header {
+    top: 0;
+}
+
+.site-header.is-hidden {
+    transform: translateY(calc(-1 * (var(--header-height) + var(--announcement-bar-height))));
 }
 
 .site-header.scrolled {
@@ -159,6 +266,7 @@ body:not(.hero-behind-header) .hamburger span {
     height: 46px;
     width: auto;
     filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
+    transition: height var(--transition), transform var(--transition);
 }
 
 .logo span {
@@ -177,6 +285,21 @@ body:not(.hero-behind-header) .hamburger span {
 .scrolled .logo img {
     height: 40px;
     filter: none;
+}
+
+/* At the very top of the page (before .scrolled is added), the logo
+   "pops out" larger than the header, overlapping the bottom edge of
+   the nav bar — purely decorative, disabled the instant scrolling
+   starts by the .scrolled swap above taking over. Desktop only: at
+   mobile widths the header is too short for an oversized logo to sit
+   proud of it without covering the nav links. */
+@media (min-width: 993px) {
+    .site-header:not(.scrolled) .logo img {
+        height: 108px;
+        position: relative;
+        top: 22px;
+        filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+    }
 }
 
 /* ============================================================
@@ -754,6 +877,7 @@ body:not(.hero-behind-header) .hamburger span {
     /* — Spacing — */
     --container-max: 1240px;
     --header-height: 80px;
+    --announcement-bar-height: 40px;
     --radius: 20px;
     --radius-sm: 12px;
     --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.08);
@@ -1170,7 +1294,7 @@ main {
 
 .page-wrapper,
 .page-content {
-    padding-top: var(--header-height);
+    padding-top: calc(var(--header-height) + var(--announcement-bar-height));
 }
 
 section {
@@ -1210,7 +1334,7 @@ section {
    would sit underneath it. Push it clear. */
 .site-header + .breadcrumb,
 .site-header + * > .breadcrumb:first-child {
-    margin-top: var(--header-height);
+    margin-top: calc(var(--header-height) + var(--announcement-bar-height));
 }
 
 .breadcrumb-list {
@@ -3781,6 +3905,7 @@ iframe {
 @media (max-width: 992px) {
     :root {
         --header-height: 72px;
+        --announcement-bar-height: 34px;
     }
 
     .container {

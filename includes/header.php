@@ -70,6 +70,20 @@
     </div>
     <noscript><style>.page-preloader{display:none!important;}</style></noscript>
 
+    <div class="announcement-bar" id="announcementBar">
+        <div class="container announcement-bar-inner">
+            <div class="announcement-bar-contact">
+                <a href="tel:+255697612865"><?= icon('phone-alt') ?> <span>+255 697 612 865</span></a>
+                <a href="mailto:info@serengetibudgetsafari.com"><?= icon('envelope') ?> <span>info@serengetibudgetsafari.com</span></a>
+            </div>
+            <div class="announcement-bar-social">
+                <a href="https://www.facebook.com/serengetibudgetsafari" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/serengetibudgetsafari" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@serengetibudgetsafari" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
     <header class="site-header" id="siteHeader">
         <div class="container header-container">
             <a href="<?= url('') ?>" class="logo" aria-label="Serengeti Budget Safari - Home">

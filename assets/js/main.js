@@ -207,12 +207,58 @@
         });
     });
 
-    // ===== HEADER SCROLL =====
-    const header = document.querySelector('.site-header');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) header.classList.add('scrolled');
-        else header.classList.remove('scrolled');
-    });
+    // ===== HEADER + ANNOUNCEMENT BAR SCROLL =====
+    // Three states as the page scrolls down: (1) at the top, both bars show
+    // and the logo sits large; (2) past a small threshold, the header turns
+    // solid (.scrolled) and the announcement bar tucks away first; (3) once
+    // scrolling further down, the header itself hides too. Scrolling back
+    // up reverses this in the same order — header returns first, then the
+    // announcement bar once the user is back near the top — so the two
+    // bars never "pop" back simultaneously.
+    (function () {
+        const header = document.querySelector('.site-header');
+        const announcementBar = document.getElementById('announcementBar');
+        if (!header) return;
+
+        const SCROLLED_AT = 50;           // header turns solid / logo shrinks
+        const ANNOUNCEMENT_HIDE_AT = 200; // announcement bar tucks away
+        const HEADER_HIDE_AT = 260;       // main header hides too
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function update() {
+            const y = window.scrollY;
+            const scrollingDown = y > lastScrollY;
+
+            header.classList.toggle('scrolled', y > SCROLLED_AT);
+
+            if (announcementBar) {
+                if (scrollingDown && y > ANNOUNCEMENT_HIDE_AT) {
+                    announcementBar.classList.add('is-hidden');
+                } else if (!scrollingDown && y < ANNOUNCEMENT_HIDE_AT) {
+                    announcementBar.classList.remove('is-hidden');
+                }
+            }
+
+            if (scrollingDown && y > HEADER_HIDE_AT) {
+                header.classList.add('is-hidden');
+            } else if (!scrollingDown) {
+                header.classList.remove('is-hidden');
+            }
+
+            lastScrollY = y;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                window.requestAnimationFrame(update);
+                ticking = true;
+            }
+        });
+
+        update();
+    })();
 
 
 
