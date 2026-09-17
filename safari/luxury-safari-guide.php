@@ -200,12 +200,11 @@ require dirname(__DIR__) . '/includes/header.php';
                     <div class="guide-package-grid">
                         <?php
                         $packages = [
-                            ['n' => 1, 'popular' => false],
-                            ['n' => 2, 'popular' => false],
-                            ['n' => 3, 'popular' => true],
-                            ['n' => 4, 'popular' => false],
-                            ['n' => 5, 'popular' => false],
-                            ['n' => 6, 'popular' => false],
+                            ['n' => 1, 'popular' => false, 'url' => 'safari/3-day-luxury-tanzania-safari.php'],
+                            ['n' => 2, 'popular' => false, 'url' => 'safari/4-day-luxury-flyin-safari.php'],
+                            ['n' => 3, 'popular' => false, 'url' => 'safari/5-day-luxury-tanzania-safari.php'],
+                            ['n' => 4, 'popular' => true, 'url' => 'safari/6-day-luxury-tanzania-safari.php'],
+                            ['n' => 5, 'popular' => false, 'url' => 'safari/7-day-luxury-wilderness-safari.php'],
                         ];
                         foreach ($packages as $pkg):
                             $i = $pkg['n'];
@@ -224,17 +223,7 @@ require dirname(__DIR__) . '/includes/header.php';
                                 <li><?= t('lsg_pkg' . $i . '_f3') ?></li>
                                 <li><?= t('lsg_pkg' . $i . '_f4') ?></li>
                             </ul>
-                            <?php
-                                $pkgInc = [t('lsg_pkg' . $i . '_inc1'), t('lsg_pkg' . $i . '_inc2'), t('lsg_pkg' . $i . '_inc3'), t('lsg_pkg' . $i . '_inc4'), t('lsg_pkg' . $i . '_inc5'), t('lsg_pkg' . $i . '_inc6')];
-                                $pkgExc = [t('lsg_pkg' . $i . '_exc1'), t('lsg_pkg' . $i . '_exc2'), t('lsg_pkg' . $i . '_exc3')];
-                            ?>
-                            <button type="button" class="btn btn-primary guide-view-details-btn"
-                                data-package="<?= e(t('lsg_pkg' . $i . '_name')) ?>"
-                                data-price="<?= e(t('lsg_pkg' . $i . '_price')) ?>"
-                                data-days="<?= e(t('lsg_pkg' . $i . '_days')) ?>"
-                                data-route="<?= e(t('lsg_pkg' . $i . '_route')) ?>"
-                                data-inc="<?= e(json_encode($pkgInc)) ?>"
-                                data-exc="<?= e(json_encode($pkgExc)) ?>"><?= e(t('guide_view_details')) ?></button>
+                            <a href="<?= url($pkg['url']) ?>" class="btn btn-primary guide-view-details-btn"><?= e(t('guide_view_details')) ?></a>
                             <div class="guide-guarantee"><?= e(t('lsg_guarantee')) ?></div>
                         </div>
                         <?php endforeach; ?>
