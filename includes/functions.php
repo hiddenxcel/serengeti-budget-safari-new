@@ -343,6 +343,9 @@ function badge_tagline(string $badgeKey): string
             // car-rental
             'carrental_hero_badge' => 'Just you and the road', 'carrental_why_badge' => 'Sit back, relax',
             'carrental_fleet_badge' => 'Pick your ride', 'carrental_uses_badge' => 'Where it comes in handy',
+            'carrental_dest_badge' => 'Anywhere you want to go', 'carrental_driver_badge' => 'More than just a driver',
+            'carrental_compare_badge' => 'Which is right for you', 'carrental_routes_badge' => 'Where the 4x4 takes you',
+            'carrental_whofor_badge' => 'Is this for you?',
         ],
         'it' => [
             'parks_hero_badge'        => 'Nove parchi, un paese',
@@ -481,6 +484,9 @@ function badge_tagline(string $badgeKey): string
             // car-rental
             'carrental_hero_badge' => 'Solo tu e la strada', 'carrental_why_badge' => 'Rilassati',
             'carrental_fleet_badge' => 'Scegli il tuo mezzo', 'carrental_uses_badge' => 'Quando torna utile',
+            'carrental_dest_badge' => 'Ovunque tu voglia andare', 'carrental_driver_badge' => 'Molto più di un autista',
+            'carrental_compare_badge' => 'Qual è la scelta giusta', 'carrental_routes_badge' => 'Dove ti porta il 4x4',
+            'carrental_whofor_badge' => 'Fa per te?',
         ],
     ];
 

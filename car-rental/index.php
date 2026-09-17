@@ -10,6 +10,7 @@ $page = 'car-rental';
 $altPath = 'car-rental/';
 $pageMetaTitle = 'carrental_meta_title';
 $pageMetaDescription = 'carrental_meta_description';
+$extraStyles = ['css/guide.css'];
 
 require dirname(__DIR__) . '/includes/header.php';
 ?>
@@ -107,6 +108,30 @@ require dirname(__DIR__) . '/includes/header.php';
                 </div>
 
                 <p class="mt-3" style="margin-top:1.3rem;"><em><?= e(t('carrental_fleet_note')) ?></em></p>
+
+                <div class="section-title-left centered" style="margin-top:2.5rem;">
+                    <span class="section-tagline"><?= e(badge_tagline('carrental_routes_badge')) ?></span>
+                    <h2><?= e(t('carrental_routes_title')) ?></h2>
+                    <p><?= e(t('carrental_routes_intro')) ?></p>
+                </div>
+
+                <div class="grid-3">
+                    <article class="card">
+                        <h3 style="margin-top:0;"><?= e(t('carrental_route1_name')) ?></h3>
+                        <p><strong><?= e(t('carrental_route1_stops')) ?></strong></p>
+                        <p><?= e(t('carrental_route1_desc')) ?></p>
+                    </article>
+                    <article class="card">
+                        <h3 style="margin-top:0;"><?= e(t('carrental_route2_name')) ?></h3>
+                        <p><strong><?= e(t('carrental_route2_stops')) ?></strong></p>
+                        <p><?= e(t('carrental_route2_desc')) ?></p>
+                    </article>
+                    <article class="card">
+                        <h3 style="margin-top:0;"><?= e(t('carrental_route3_name')) ?></h3>
+                        <p><strong><?= e(t('carrental_route3_stops')) ?></strong></p>
+                        <p><?= e(t('carrental_route3_desc')) ?></p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -144,7 +169,7 @@ require dirname(__DIR__) . '/includes/header.php';
                     <span class="section-tagline"><?= e(badge_tagline('carrental_uses_badge')) ?></span>
                     <h2><?= e(t('carrental_uses_title')) ?></h2>
                 </div>
-                <div class="grid-2">
+                <div class="grid-3">
                     <article class="card">
                         <span class="badge"><?= e(t('carrental_use1_badge')) ?></span>
                         <h3 style="margin-top:.6rem;"><?= e(t('carrental_use1_title')) ?></h3>
@@ -155,6 +180,117 @@ require dirname(__DIR__) . '/includes/header.php';
                         <h3 style="margin-top:.6rem;"><?= e(t('carrental_use2_title')) ?></h3>
                         <p><?= e(t('carrental_use2_desc')) ?></p>
                     </article>
+                    <article class="card">
+                        <span class="badge"><?= e(t('carrental_usecase3_badge')) ?></span>
+                        <h3 style="margin-top:.6rem;"><?= e(t('carrental_usecase3_title')) ?></h3>
+                        <p><?= e(t('carrental_usecase3_desc')) ?></p>
+                    </article>
+                    <article class="card">
+                        <span class="badge"><?= e(t('carrental_usecase4_badge')) ?></span>
+                        <h3 style="margin-top:.6rem;"><?= e(t('carrental_usecase4_title')) ?></h3>
+                        <p><?= e(t('carrental_usecase4_desc')) ?></p>
+                    </article>
+                    <article class="card">
+                        <span class="badge"><?= e(t('carrental_usecase5_badge')) ?></span>
+                        <h3 style="margin-top:.6rem;"><?= e(t('carrental_usecase5_title')) ?></h3>
+                        <p><?= e(t('carrental_usecase5_desc')) ?></p>
+                    </article>
+                    <article class="card">
+                        <span class="badge"><?= e(t('carrental_usecase6_badge')) ?></span>
+                        <h3 style="margin-top:.6rem;"><?= e(t('carrental_usecase6_title')) ?></h3>
+                        <p><?= e(t('carrental_usecase6_desc')) ?></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <div class="container">
+                <div class="section-title-left centered">
+                    <span class="section-tagline"><?= e(badge_tagline('carrental_dest_badge')) ?></span>
+                    <h2><?= e(t('carrental_dest_title')) ?></h2>
+                    <p><?= e(t('carrental_dest_intro')) ?></p>
+                </div>
+
+                <h3><?= e(t('carrental_dest_group1_title')) ?></h3>
+                <div class="tag-cloud" style="margin-bottom:1.5rem;">
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group1_item1')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group1_item2')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group1_item3')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group1_item4')) ?></span>
+                </div>
+
+                <h3><?= e(t('carrental_dest_group2_title')) ?></h3>
+                <div class="tag-cloud" style="margin-bottom:1.5rem;">
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group2_item1')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group2_item2')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group2_item3')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group2_item4')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group2_item5')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group2_item6')) ?></span>
+                </div>
+
+                <h3><?= e(t('carrental_dest_group3_title')) ?></h3>
+                <div class="tag-cloud">
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group3_item1')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group3_item2')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group3_item3')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group3_item4')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group3_item5')) ?></span>
+                    <span><?= icon('map-pin') ?> <?= e(t('carrental_dest_group3_item6')) ?></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section bg-light">
+            <div class="container">
+                <div class="section-title-left centered">
+                    <span class="section-tagline"><?= e(badge_tagline('carrental_driver_badge')) ?></span>
+                    <h2><?= e(t('carrental_driver_title')) ?></h2>
+                    <p><?= e(t('carrental_driver_intro')) ?></p>
+                </div>
+
+                <h3><?= e(t('carrental_driver_help_title')) ?></h3>
+                <ul class="included-icon-list yes">
+                    <li><?= icon('check-circle') ?> <strong><?= e(t('carrental_driver_help1_label')) ?></strong> <?= e(t('carrental_driver_help1_desc')) ?></li>
+                    <li><?= icon('check-circle') ?> <strong><?= e(t('carrental_driver_help2_label')) ?></strong> <?= e(t('carrental_driver_help2_desc')) ?></li>
+                    <li><?= icon('check-circle') ?> <strong><?= e(t('carrental_driver_help3_label')) ?></strong> <?= e(t('carrental_driver_help3_desc')) ?></li>
+                    <li><?= icon('check-circle') ?> <strong><?= e(t('carrental_driver_help4_label')) ?></strong> <?= e(t('carrental_driver_help4_desc')) ?></li>
+                    <li><?= icon('check-circle') ?> <strong><?= e(t('carrental_driver_help5_label')) ?></strong> <?= e(t('carrental_driver_help5_desc')) ?></li>
+                </ul>
+
+                <div class="guide-box pro-tip"><p><?= e(t('carrental_driver_tip')) ?></p></div>
+                <div class="guide-box highlight"><p><?= e(t('carrental_driver_licensed')) ?></p></div>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <div class="container">
+                <div class="section-title-left centered">
+                    <span class="section-tagline"><?= e(badge_tagline('carrental_compare_badge')) ?></span>
+                    <h2><?= e(t('carrental_compare_title')) ?></h2>
+                    <p><?= e(t('carrental_compare_intro')) ?></p>
+                </div>
+
+                <div class="article-table-wrap">
+                    <table class="article-table">
+                        <thead>
+                            <tr>
+                                <th><?= e(t('carrental_compare_h1')) ?></th>
+                                <th><?= e(t('carrental_compare_h2')) ?></th>
+                                <th><?= e(t('carrental_compare_h3')) ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong><?= e(t('carrental_compare_r1_label')) ?></strong></td><td><?= e(t('carrental_compare_r1_self')) ?></td><td><?= e(t('carrental_compare_r1_driver')) ?></td></tr>
+                            <tr><td><strong><?= e(t('carrental_compare_r2_label')) ?></strong></td><td><?= e(t('carrental_compare_r2_self')) ?></td><td><?= e(t('carrental_compare_r2_driver')) ?></td></tr>
+                            <tr><td><strong><?= e(t('carrental_compare_r3_label')) ?></strong></td><td><?= e(t('carrental_compare_r3_self')) ?></td><td><?= e(t('carrental_compare_r3_driver')) ?></td></tr>
+                            <tr><td><strong><?= e(t('carrental_compare_r4_label')) ?></strong></td><td><?= e(t('carrental_compare_r4_self')) ?></td><td><?= e(t('carrental_compare_r4_driver')) ?></td></tr>
+                            <tr><td><strong><?= e(t('carrental_compare_r5_label')) ?></strong></td><td><?= e(t('carrental_compare_r5_self')) ?></td><td><?= e(t('carrental_compare_r5_driver')) ?></td></tr>
+                            <tr><td><strong><?= e(t('carrental_compare_r6_label')) ?></strong></td><td><?= e(t('carrental_compare_r6_self')) ?></td><td><?= e(t('carrental_compare_r6_driver')) ?></td></tr>
+                            <tr><td><strong><?= e(t('carrental_compare_r7_label')) ?></strong></td><td><?= e(t('carrental_compare_r7_self')) ?></td><td><?= e(t('carrental_compare_r7_driver')) ?></td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -179,6 +315,48 @@ require dirname(__DIR__) . '/includes/header.php';
                         <div class="faq-question-acc"><?= e(t('carrental_faq_q4')) ?> <span><?= icon('chevron-down') ?></span></div>
                         <div class="faq-answer-acc"><p><?= e(t('carrental_faq_a4')) ?></p></div>
                     </div>
+                    <div class="faq-item-acc">
+                        <div class="faq-question-acc"><?= e(t('carrental_faq_q5')) ?> <span><?= icon('chevron-down') ?></span></div>
+                        <div class="faq-answer-acc"><p><?= e(t('carrental_faq_a5')) ?></p></div>
+                    </div>
+                    <div class="faq-item-acc">
+                        <div class="faq-question-acc"><?= e(t('carrental_faq_q6')) ?> <span><?= icon('chevron-down') ?></span></div>
+                        <div class="faq-answer-acc"><p><?= e(t('carrental_faq_a6')) ?></p></div>
+                    </div>
+                    <div class="faq-item-acc">
+                        <div class="faq-question-acc"><?= e(t('carrental_faq_q7')) ?> <span><?= icon('chevron-down') ?></span></div>
+                        <div class="faq-answer-acc"><p><?= e(t('carrental_faq_a7')) ?></p></div>
+                    </div>
+                    <div class="faq-item-acc">
+                        <div class="faq-question-acc"><?= e(t('carrental_faq_q8')) ?> <span><?= icon('chevron-down') ?></span></div>
+                        <div class="faq-answer-acc"><p><?= e(t('carrental_faq_a8')) ?></p></div>
+                    </div>
+                    <div class="faq-item-acc">
+                        <div class="faq-question-acc"><?= e(t('carrental_faq_q9')) ?> <span><?= icon('chevron-down') ?></span></div>
+                        <div class="faq-answer-acc"><p><?= e(t('carrental_faq_a9')) ?></p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section bg-light">
+            <div class="container">
+                <div class="section-title-left centered">
+                    <span class="section-tagline"><?= e(badge_tagline('carrental_whofor_badge')) ?></span>
+                    <h2><?= e(t('carrental_whofor_title')) ?></h2>
+                    <p><?= e(t('carrental_whofor_intro')) ?></p>
+                </div>
+
+                <div class="tag-cloud">
+                    <span><?= icon('users') ?> <?= e(t('carrental_whofor_item1')) ?></span>
+                    <span><?= icon('users') ?> <?= e(t('carrental_whofor_item2')) ?></span>
+                    <span><?= icon('users') ?> <?= e(t('carrental_whofor_item3')) ?></span>
+                    <span><?= icon('camera') ?> <?= e(t('carrental_whofor_item4')) ?></span>
+                    <span><?= icon('users') ?> <?= e(t('carrental_whofor_item5')) ?></span>
+                    <span><?= icon('users') ?> <?= e(t('carrental_whofor_item6')) ?></span>
+                    <span><?= icon('umbrella-beach') ?> <?= e(t('carrental_whofor_item7')) ?></span>
+                    <span><?= icon('users') ?> <?= e(t('carrental_whofor_item8')) ?></span>
+                    <span><?= icon('map') ?> <?= e(t('carrental_whofor_item9')) ?></span>
                 </div>
             </div>
         </section>
