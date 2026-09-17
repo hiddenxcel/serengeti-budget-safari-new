@@ -276,7 +276,7 @@ return [
     'safari_type_daytrips_tag' => 'Senza pernottamento',
     'safari_type_carrental_title' => 'Noleggio Auto con Autista',
     'safari_type_carrental_desc' => 'Un veicolo privato e un autista locale con licenza, per transfer aeroportuali, giornate in città o un percorso personalizzato ovunque in Tanzania.',
-    'safari_type_carrental_tag' => 'Da $180/giorno',
+    'safari_type_carrental_tag' => 'Da $20/giorno',
 
     'package_1day_title' => 'Safari di 1 Giorno – Tarangire',
     'package_1day_meta' => 'Partenza da Arusha · Elefanti e baobab',
@@ -5503,10 +5503,10 @@ return [
 
     // ===== Car Rental with Driver =====
     'nav_car_rental' => 'Noleggio Auto',
-    'nav_car_rental_desc' => 'Auto privata con autista, da $180/giorno',
+    'nav_car_rental_desc' => 'Auto privata con autista, da $20/giorno',
 
     'carrental_meta_title' => 'Noleggio Auto con Autista in Tanzania | Serengeti Budget Safari',
-    'carrental_meta_description' => 'Noleggia un\'auto privata con un autista locale esperto ad Arusha e in tutta la Tanzania. Transfer aeroportuali, gite in città e percorsi personalizzati da $180 al giorno, senza bisogno di guidare da soli.',
+    'carrental_meta_description' => 'Noleggia un\'auto privata con un autista locale esperto ad Arusha e in tutta la Tanzania. Transfer aeroportuali, gite in città e percorsi personalizzati da $20 al giorno, senza bisogno di guidare da soli.',
     'carrental_hero_badge' => 'Noleggio Auto con Autista',
     'carrental_hero_title_1' => 'Noleggio Auto',
     'carrental_hero_title_2' => 'con Autista in Tanzania',
@@ -5556,7 +5556,7 @@ return [
     'carrental_fleet_intro' => 'Da un\'auto berlina per gli spostamenti in città a un 4x4 completo per strade più difficili, abbiniamo il veicolo alla tua destinazione.',
     'carrental_car1_name' => 'Berlina con Autista',
     'carrental_car1_tagline' => 'Transfer città e aeroporto',
-    'carrental_car1_price' => 'Da $180/giorno',
+    'carrental_car1_price' => 'Da $20/giorno',
     'carrental_car1_seats' => 'Fino a 4 posti',
     'carrental_car1_desc' => 'Comoda ed economica, ideale per transfer aeroportuali, commissioni in città e brevi spostamenti tra Arusha e Moshi.',
     'carrental_car1_feat1' => 'Completamente climatizzata',
@@ -5566,7 +5566,7 @@ return [
     'carrental_car1_feat5' => 'Carburante incluso nel prezzo',
     'carrental_car2_name' => '4x4 con Autista',
     'carrental_car2_tagline' => 'Lunghe distanze e strade difficili',
-    'carrental_car2_price' => 'Da $250/giorno',
+    'carrental_car2_price' => 'Da $180/giorno',
     'carrental_car2_seats' => 'Fino a 6 posti',
     'carrental_car2_desc' => 'Costruito per le strade della Tanzania: ideale per viaggi più lunghi, percorsi rurali e spostamenti oltre le città principali.',
     'carrental_car2_feat1' => 'Costruito per strade dissestate e rurali',
@@ -5691,7 +5691,7 @@ return [
     'carrental_faq_q1' => 'Posso noleggiare un\'auto senza autista?',
     'carrental_faq_a1' => 'Offriamo solo auto con autista incluso. La guida autonoma è poco comune in Tanzania e le condizioni di guida, il codice della strada e i posti di blocco sono molto più semplici da affrontare per un professionista locale.',
     'carrental_faq_q2' => 'Quanto costa al giorno?',
-    'carrental_faq_a2' => 'Da $180 al giorno per una berlina, e da $250 al giorno per un 4x4, a seconda del percorso e di quanti giorni ti servono. Diccu il tuo piano per un preventivo esatto.',
+    'carrental_faq_a2' => 'Da $20 al giorno per una berlina, e da $180 al giorno per un 4x4, a seconda del percorso e di quanti giorni ti servono. Dicci il tuo piano per un preventivo esatto.',
     'carrental_faq_q3' => 'L\'autista può portarmi fuori da Arusha?',
     'carrental_faq_a3' => 'Sì. Organizziamo viaggi in tutta la Tanzania, da un singolo transfer aeroportuale a percorsi personalizzati di più giorni in tutto il paese.',
     'carrental_faq_q4' => 'Il carburante è incluso nel prezzo?',

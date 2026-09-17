@@ -276,7 +276,7 @@ return [
     'safari_type_daytrips_tag' => 'Sin pernoctar',
     'safari_type_carrental_title' => 'Alquiler de Coche con Conductor',
     'safari_type_carrental_desc' => 'Un vehículo privado y un conductor local con licencia, para traslados al aeropuerto, días en la ciudad o una ruta personalizada en cualquier lugar de Tanzania.',
-    'safari_type_carrental_tag' => 'Desde $180/día',
+    'safari_type_carrental_tag' => 'Desde $20/día',
 
     'package_1day_title' => 'Safari de 1 día – Tarangire',
     'package_1day_meta' => 'Sale de Arusha · Elefantes y baobabs',
@@ -5547,10 +5547,10 @@ return [
 
     // ===== Car Rental with Driver =====
     'nav_car_rental' => 'Alquiler de Coche',
-    'nav_car_rental_desc' => 'Coche privado con conductor, desde $180/día',
+    'nav_car_rental_desc' => 'Coche privado con conductor, desde $20/día',
 
     'carrental_meta_title' => 'Alquiler de Coche con Conductor en Tanzania | Serengeti Budget Safari',
-    'carrental_meta_description' => 'Alquile un coche privado con un conductor local experimentado en Arusha y en toda Tanzania. Traslados al aeropuerto, días en la ciudad y rutas personalizadas desde $180 por día, sin necesidad de conducir usted mismo.',
+    'carrental_meta_description' => 'Alquile un coche privado con un conductor local experimentado en Arusha y en toda Tanzania. Traslados al aeropuerto, días en la ciudad y rutas personalizadas desde $20 por día, sin necesidad de conducir usted mismo.',
     'carrental_hero_badge' => 'Alquiler de Coche con Conductor',
     'carrental_hero_title_1' => 'Alquiler de Coche',
     'carrental_hero_title_2' => 'con Conductor en Tanzania',
@@ -5600,7 +5600,7 @@ return [
     'carrental_fleet_intro' => 'Desde un sedán para trayectos urbanos hasta un 4x4 completo para carreteras más difíciles, adaptamos el vehículo a su destino.',
     'carrental_car1_name' => 'Sedán con Conductor',
     'carrental_car1_tagline' => 'Traslados urbanos y al aeropuerto',
-    'carrental_car1_price' => 'Desde $180/día',
+    'carrental_car1_price' => 'Desde $20/día',
     'carrental_car1_seats' => 'Hasta 4 plazas',
     'carrental_car1_desc' => 'Cómodo y económico, ideal para traslados al aeropuerto, gestiones en la ciudad y trayectos cortos entre Arusha y Moshi.',
     'carrental_car1_feat1' => 'Totalmente climatizado',
@@ -5610,7 +5610,7 @@ return [
     'carrental_car1_feat5' => 'Combustible incluido en el precio',
     'carrental_car2_name' => '4x4 con Conductor',
     'carrental_car2_tagline' => 'Larga distancia y caminos difíciles',
-    'carrental_car2_price' => 'Desde $250/día',
+    'carrental_car2_price' => 'Desde $180/día',
     'carrental_car2_seats' => 'Hasta 6 plazas',
     'carrental_car2_desc' => 'Diseñado para las carreteras de Tanzania: ideal para viajes más largos, rutas rurales y desplazamientos más allá de las ciudades principales.',
     'carrental_car2_feat1' => 'Diseñado para carreteras rurales y en mal estado',
@@ -5735,7 +5735,7 @@ return [
     'carrental_faq_q1' => '¿Puedo alquilar un coche sin conductor?',
     'carrental_faq_a1' => 'Solo ofrecemos coches con conductor incluido. Conducir uno mismo es poco común en Tanzania, y las condiciones de conducción, las normas de tráfico y los controles son mucho más fáciles de manejar para un profesional local.',
     'carrental_faq_q2' => '¿Cuánto cuesta por día?',
-    'carrental_faq_a2' => 'Desde $180 por día para un sedán, y desde $250 por día para un 4x4, según su ruta y cuántos días necesite. Cuéntenos su plan para un presupuesto exacto.',
+    'carrental_faq_a2' => 'Desde $20 por día para un sedán, y desde $180 por día para un 4x4, según su ruta y cuántos días necesite. Cuéntenos su plan para un presupuesto exacto.',
     'carrental_faq_q3' => '¿El conductor puede llevarme fuera de Arusha?',
     'carrental_faq_a3' => 'Sí. Organizamos viajes a cualquier lugar de Tanzania, desde un simple traslado al aeropuerto hasta rutas personalizadas de varios días por todo el país.',
     'carrental_faq_q4' => '¿El combustible está incluido en el precio?',

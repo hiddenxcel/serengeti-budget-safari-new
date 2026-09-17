@@ -276,7 +276,7 @@ return [
     'safari_type_daytrips_tag' => 'Sans nuitée',
     'safari_type_carrental_title' => 'Location de Voiture avec Chauffeur',
     'safari_type_carrental_desc' => 'Un véhicule privé et un chauffeur local agréé, pour les transferts aéroport, les journées en ville ou un itinéraire sur mesure partout en Tanzanie.',
-    'safari_type_carrental_tag' => 'Dès $180/jour',
+    'safari_type_carrental_tag' => 'Dès $20/jour',
 
     'package_1day_title' => 'Safari d\'1 jour – Tarangire',
     'package_1day_meta' => 'Départ d\'Arusha · Éléphants et baobabs',
@@ -5548,10 +5548,10 @@ return [
 
     // ===== Car Rental with Driver =====
     'nav_car_rental' => 'Location de Voiture',
-    'nav_car_rental_desc' => 'Voiture privée avec chauffeur, dès $180/jour',
+    'nav_car_rental_desc' => 'Voiture privée avec chauffeur, dès $20/jour',
 
     'carrental_meta_title' => 'Location de Voiture avec Chauffeur en Tanzanie | Serengeti Budget Safari',
-    'carrental_meta_description' => 'Louez une voiture privée avec un chauffeur local expérimenté à Arusha et partout en Tanzanie. Transferts aéroport, journées en ville et itinéraires sur mesure dès $180 par jour, sans avoir à conduire vous-même.',
+    'carrental_meta_description' => 'Louez une voiture privée avec un chauffeur local expérimenté à Arusha et partout en Tanzanie. Transferts aéroport, journées en ville et itinéraires sur mesure dès $20 par jour, sans avoir à conduire vous-même.',
     'carrental_hero_badge' => 'Location de Voiture avec Chauffeur',
     'carrental_hero_title_1' => 'Location de Voiture',
     'carrental_hero_title_2' => 'avec Chauffeur en Tanzanie',
@@ -5601,7 +5601,7 @@ return [
     'carrental_fleet_intro' => 'D\'une berline pour les trajets en ville à un 4x4 complet pour les routes plus difficiles, nous adaptons le véhicule à votre destination.',
     'carrental_car1_name' => 'Berline avec Chauffeur',
     'carrental_car1_tagline' => 'Transferts ville et aéroport',
-    'carrental_car1_price' => 'Dès $180/jour',
+    'carrental_car1_price' => 'Dès $20/jour',
     'carrental_car1_seats' => 'Jusqu\'à 4 places',
     'carrental_car1_desc' => 'Confortable et économique, idéale pour les transferts aéroport, les courses en ville et les courts trajets autour d\'Arusha ou de Moshi.',
     'carrental_car1_feat1' => 'Entièrement climatisée',
@@ -5611,7 +5611,7 @@ return [
     'carrental_car1_feat5' => 'Carburant inclus dans le prix',
     'carrental_car2_name' => '4x4 avec Chauffeur',
     'carrental_car2_tagline' => 'Longues distances et routes difficiles',
-    'carrental_car2_price' => 'Dès $250/jour',
+    'carrental_car2_price' => 'Dès $180/jour',
     'carrental_car2_seats' => 'Jusqu\'à 6 places',
     'carrental_car2_desc' => 'Conçu pour les routes de Tanzanie : idéal pour les trajets plus longs, les itinéraires ruraux et les déplacements au-delà des grandes villes.',
     'carrental_car2_feat1' => 'Conçu pour les routes accidentées et rurales',
@@ -5736,7 +5736,7 @@ return [
     'carrental_faq_q1' => 'Puis-je louer une voiture sans chauffeur ?',
     'carrental_faq_a1' => 'Nous proposons uniquement des voitures avec chauffeur inclus. La conduite autonome est peu courante en Tanzanie, et les conditions de circulation, le code de la route et les points de contrôle sont bien plus faciles à gérer pour un professionnel local.',
     'carrental_faq_q2' => 'Combien cela coûte-t-il par jour ?',
-    'carrental_faq_a2' => 'Dès $180 par jour pour une berline, et dès $250 par jour pour un 4x4, selon votre itinéraire et le nombre de jours dont vous avez besoin. Indiquez-nous votre projet pour un devis exact.',
+    'carrental_faq_a2' => 'Dès $20 par jour pour une berline, et dès $180 par jour pour un 4x4, selon votre itinéraire et le nombre de jours dont vous avez besoin. Indiquez-nous votre projet pour un devis exact.',
     'carrental_faq_q3' => 'Le chauffeur peut-il m\'emmener en dehors d\'Arusha ?',
     'carrental_faq_a3' => 'Oui. Nous organisons des trajets partout en Tanzanie, d\'un simple transfert aéroport à des itinéraires sur mesure de plusieurs jours à travers le pays.',
     'carrental_faq_q4' => 'Le carburant est-il inclus dans le prix ?',

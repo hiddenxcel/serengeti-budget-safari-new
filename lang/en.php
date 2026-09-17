@@ -276,7 +276,7 @@ return [
     'safari_type_daytrips_tag' => 'No overnight needed',
     'safari_type_carrental_title' => 'Car Rental with Driver',
     'safari_type_carrental_desc' => 'A private vehicle and a licensed local driver, for airport runs, city days or a custom route anywhere in Tanzania.',
-    'safari_type_carrental_tag' => 'From $180/day',
+    'safari_type_carrental_tag' => 'From $20/day',
 
     'package_1day_title' => '1-Day Safari – Tarangire',
     'package_1day_meta' => 'Departs from Arusha · Elephants and baobabs',
@@ -5548,10 +5548,10 @@ return [
 
     // ===== Car Rental with Driver =====
     'nav_car_rental' => 'Car Rental',
-    'nav_car_rental_desc' => 'Private car and driver, from $180/day',
+    'nav_car_rental_desc' => 'Private car and driver, from $20/day',
 
     'carrental_meta_title' => 'Car Rental with Driver in Tanzania | Serengeti Budget Safari',
-    'carrental_meta_description' => 'Rent a private car with an experienced local driver in Arusha and across Tanzania. Airport transfers, city trips and custom routes from $180 per day, no self-driving needed.',
+    'carrental_meta_description' => 'Rent a private car with an experienced local driver in Arusha and across Tanzania. Airport transfers, city trips and custom routes from $20 per day, no self-driving needed.',
     'carrental_hero_badge' => 'Car Rental with Driver',
     'carrental_hero_title_1' => 'Car Rental',
     'carrental_hero_title_2' => 'with Driver in Tanzania',
@@ -5601,7 +5601,7 @@ return [
     'carrental_fleet_intro' => 'From a saloon car for city runs to a full 4x4 for rougher roads, we match the vehicle to where you are going.',
     'carrental_car1_name' => 'Saloon Car with Driver',
     'carrental_car1_tagline' => 'City & airport transfers',
-    'carrental_car1_price' => 'From $180/day',
+    'carrental_car1_price' => 'From $20/day',
     'carrental_car1_seats' => 'Up to 4 seats',
     'carrental_car1_desc' => 'Comfortable and economical, ideal for airport transfers, city errands and short trips around Arusha or Moshi.',
     'carrental_car1_feat1' => 'Fully air-conditioned',
@@ -5611,7 +5611,7 @@ return [
     'carrental_car1_feat5' => 'Fuel included in quoted price',
     'carrental_car2_name' => '4x4 with Driver',
     'carrental_car2_tagline' => 'Long distance & rough roads',
-    'carrental_car2_price' => 'From $250/day',
+    'carrental_car2_price' => 'From $180/day',
     'carrental_car2_seats' => 'Up to 6 seats',
     'carrental_car2_desc' => 'Built for Tanzania\'s roads: ideal for longer journeys, rural routes and trips beyond the main towns.',
     'carrental_car2_feat1' => 'Built for rough and rural roads',
@@ -5736,7 +5736,7 @@ return [
     'carrental_faq_q1' => 'Can I rent a car without a driver?',
     'carrental_faq_a1' => 'We only offer cars with a driver included. Self-drive is uncommon in Tanzania and driving conditions, road rules and checkpoints are far easier left to a local professional.',
     'carrental_faq_q2' => 'How much does it cost per day?',
-    'carrental_faq_a2' => 'From $180 per day for a saloon car, and from $250 per day for a 4x4, depending on your route and how many days you need. Tell us your plan for an exact quote.',
+    'carrental_faq_a2' => 'From $20 per day for a saloon car, and from $180 per day for a 4x4, depending on your route and how many days you need. Tell us your plan for an exact quote.',
     'carrental_faq_q3' => 'Can the driver take me outside Arusha?',
     'carrental_faq_a3' => 'Yes. We arrange trips anywhere in Tanzania, from a single airport transfer to multi-day custom routes across the country.',
     'carrental_faq_q4' => 'Is fuel included in the price?',
