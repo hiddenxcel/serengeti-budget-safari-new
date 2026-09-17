@@ -105,19 +105,41 @@
     // ===== HAMBURGER =====
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.getElementById('mainNav');
+    const mainNavBackdrop = document.getElementById('mainNavBackdrop');
     if (hamburger && mainNav) {
+        function closeMobileNav() {
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            mainNav.classList.remove('open');
+            if (mainNavBackdrop) mainNavBackdrop.classList.remove('show');
+            document.body.classList.remove('mobile-nav-locked');
+        }
+
+        function openMobileNav() {
+            hamburger.classList.add('open');
+            hamburger.setAttribute('aria-expanded', 'true');
+            mainNav.classList.add('open');
+            if (mainNavBackdrop) mainNavBackdrop.classList.add('show');
+            document.body.classList.add('mobile-nav-locked');
+        }
+
         hamburger.addEventListener('click', function () {
-            const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
-            this.setAttribute('aria-expanded', expanded);
-            this.classList.toggle('open');
-            mainNav.classList.toggle('open');
+            if (mainNav.classList.contains('open')) {
+                closeMobileNav();
+            } else {
+                openMobileNav();
+            }
         });
+
+        if (mainNavBackdrop) {
+            mainNavBackdrop.addEventListener('click', closeMobileNav);
+        }
+
+        // Plain links close the menu on tap; mega-menu triggers (Safaris,
+        // Parks) manage their own open/closed state via the mega-menu
+        // handlers below, so leave those alone here.
         mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
-                mainNav.classList.remove('open');
-            });
+            link.addEventListener('click', closeMobileNav);
         });
     }
 
@@ -161,6 +183,32 @@
                 if (trigger) trigger.setAttribute('aria-expanded', 'false');
             });
         }
+    });
+
+    // ===== MEGA MENU — HOVER GRACE PERIOD (desktop) =====
+    // Plain CSS `:hover` closes the panel the instant the cursor leaves
+    // the trigger, which punishes anyone whose mouse drifts slightly off
+    // course crossing the gap to the panel below. Adding a short delay
+    // before actually closing gives that stray movement room without
+    // making the menu feel sluggish to open (opening still happens
+    // instantly via the `.mega-hover-open` class below).
+    document.querySelectorAll('.has-mega').forEach(function (item) {
+        let closeTimer = null;
+
+        item.addEventListener('mouseenter', function () {
+            if (closeTimer) {
+                clearTimeout(closeTimer);
+                closeTimer = null;
+            }
+            item.classList.add('mega-hover-open');
+        });
+
+        item.addEventListener('mouseleave', function () {
+            closeTimer = setTimeout(function () {
+                item.classList.remove('mega-hover-open');
+                closeTimer = null;
+            }, 400);
+        });
     });
 
     // ===== MEGA MENU — HOVER-PREVIEW PANELS =====

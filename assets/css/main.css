@@ -154,7 +154,10 @@
     right: 0;
     z-index: 1000;
     height: var(--header-height);
-    background: transparent;
+    background: rgba(255, 248, 235, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
     transition: background var(--transition), box-shadow var(--transition), transform var(--transition), top var(--transition);
     padding: 0 26px;
     display: flex;
@@ -179,43 +182,40 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* The transparent bar only works over a full-bleed hero. Inner pages open
-   on light content (breadcrumb, article), where white-on-white text would
-   vanish — so there the header is solid from the start. `body.hero-behind-header` is
-   set on pages whose hero sits directly behind the header. */
-body:not(.hero-behind-header) .site-header {
-    background: rgba(255, 248, 235, 0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-}
-
-body:not(.hero-behind-header) .logo,
-body:not(.hero-behind-header) .header-phone-number {
+/* The header is always solid now, on every page including a full-bleed
+   hero (background/blur/shadow are set directly on the base `.site-header`
+   rule above) — previously this whole block only applied via
+   `body:not(.hero-behind-header)`, leaving the header transparent over
+   the hero until the user scrolled. `body.hero-behind-header` (pages
+   whose hero sits directly behind the header) is no longer used to gate
+   this, but the class itself is left in the markup since other rules
+   may still key off it. */
+.logo,
+.header-phone-number {
     color: var(--black);
     text-shadow: none;
 }
 
-body:not(.hero-behind-header) .logo img {
+.logo img {
     filter: none;
 }
 
-body:not(.hero-behind-header) .header-phone-label {
+.header-phone-label {
     color: var(--gray-600);
     text-shadow: none;
 }
 
-body:not(.hero-behind-header) .header-phone {
+.header-phone {
     border-right-color: rgba(0, 0, 0, 0.12);
 }
 
-body:not(.hero-behind-header) .lang-toggle {
+.lang-toggle {
     background: rgba(0, 0, 0, 0.04);
     border-color: rgba(0, 0, 0, 0.1);
     color: var(--black);
 }
 
-body:not(.hero-behind-header) .hamburger span {
+.hamburger span {
     background: var(--black);
     box-shadow: none;
 }
@@ -371,11 +371,7 @@ body:not(.hero-behind-header) .hamburger span {
     align-items: center;
     gap: 0.7rem;
     padding-right: 1rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.35);
-}
-
-.scrolled .header-phone {
-    border-right-color: rgba(0, 0, 0, 0.12);
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .header-phone-icon {
@@ -400,31 +396,19 @@ body:not(.hero-behind-header) .hamburger span {
 
 .header-phone-label {
     font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+    color: var(--gray-600);
 }
 
 .header-phone-number {
     font-size: 0.92rem;
     font-weight: 700;
-    color: var(--white);
+    color: var(--black);
     white-space: nowrap;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
     transition: color var(--transition);
 }
 
 .header-phone-number:hover {
-    color: var(--gold);
-}
-
-.scrolled .header-phone-label {
-    color: var(--gray-600);
-    text-shadow: none;
-}
-
-.scrolled .header-phone-number {
-    color: var(--black);
-    text-shadow: none;
+    color: var(--gold-dark);
 }
 
 /* CTA button */
@@ -463,9 +447,9 @@ body:not(.hero-behind-header) .hamburger span {
 }
 
 .lang-toggle {
-    background: rgba(255, 255, 255, 0.18);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: var(--white);
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--black);
     padding: 0.4rem 0.85rem;
     border-radius: 40px;
     display: flex;
@@ -480,25 +464,13 @@ body:not(.hero-behind-header) .hamburger span {
 }
 
 .lang-toggle:hover {
-    background: rgba(200, 155, 60, 0.9);
+    background: rgba(200, 155, 60, 0.15);
     border-color: var(--gold);
-    color: var(--black);
 }
 
 .lang-current-code {
     font-weight: 700;
     color: inherit;
-}
-
-.scrolled .lang-toggle {
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(0, 0, 0, 0.1);
-    color: var(--black);
-}
-
-.scrolled .lang-toggle:hover {
-    background: rgba(200, 155, 60, 0.15);
-    border-color: var(--gold);
 }
 
 .lang-chevron {
@@ -571,17 +543,10 @@ body:not(.hero-behind-header) .hamburger span {
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--white);
+    background: var(--black);
     border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     transition: var(--transition);
     transform-origin: center;
-}
-
-.scrolled .hamburger span,
-.hamburger.open span {
-    background: var(--black);
-    box-shadow: none;
 }
 
 .hamburger.open span:nth-child(1) {
@@ -681,15 +646,14 @@ body:not(.hero-behind-header) .hamburger span {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 280px;
+        width: min(320px, 84vw);
         height: 100vh;
+        height: 100dvh;
         border-radius: 0;
-        background: rgba(255, 248, 235, 0.98);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 80px 1.5rem 1.5rem;
-        transition: right var(--transition);
-        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.12);
+        background: var(--cream);
+        padding: calc(var(--announcement-bar-height) + var(--header-height) + 0.5rem) 1.6rem 1.6rem;
+        transition: right 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+        box-shadow: -16px 0 48px rgba(0, 0, 0, 0.18);
         overflow-y: auto;
     }
 
@@ -697,28 +661,69 @@ body:not(.hero-behind-header) .hamburger span {
         right: 0;
     }
 
+    /* Dark scrim behind the slide-in panel: click-outside-to-close target
+       and a clear visual cue that the page below is inert while the menu
+       is open. Faded in/out with the panel via `.mainNav-backdrop.show`
+       (toggled in JS alongside `#mainNav.open`). */
+    .mainNav-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(13, 41, 35, 0.45);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease, visibility 0.35s;
+        z-index: 999;
+    }
+
+    .mainNav-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Stops the page behind the open slide-in menu from scrolling. */
+    body.mobile-nav-locked {
+        overflow: hidden;
+    }
+
     #mainNav ul {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.9rem;
+        align-items: stretch;
+        gap: 0.15rem;
     }
 
-    #mainNav ul li a {
+    #mainNav ul li a,
+    #mainNav ul li .mega-trigger {
+        display: flex;
+        align-items: center;
+        width: 100%;
         font-size: 1rem;
+        font-weight: 600;
         color: var(--black);
+        padding: 0.85rem 0.2rem;
+        border-bottom: 1px solid var(--gray-200);
     }
 
-    /* Restore the contact button inside the panel */
+    #mainNav ul li:last-child > a:not(.btn-nav) {
+        border-bottom: none;
+    }
+
+    /* Restore the contact button inside the panel, now the sole way to
+       reach it below 520px where the top-bar CTA is hidden entirely. */
     #mainNav ul li a.btn-nav {
-        display: inline-block;
-        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1.1rem;
         background: var(--gold);
         color: var(--black);
+        border: none;
         border-bottom: none;
         border-radius: 60px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        padding: 0.5rem 1.6rem;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 0.85rem 1.6rem;
+        box-shadow: 0 8px 24px rgba(200, 155, 60, 0.35);
     }
 
     #mainNav ul li a.btn-nav:hover {
@@ -790,32 +795,23 @@ body:not(.hero-behind-header) .hamburger span {
     }
 }
 
-/* Very small screens – drop the CTA label entirely (icon-only), tighten
-   the lang toggle and shrink the gaps so the whole bar fits on one line. */
+/* Very small screens – rather than shrinking "Book Safari" down to an
+   unlabelled circle (fails the "icon-only button without a visible
+   label" check), drop it from the top bar entirely: the same button
+   already exists, full-size and clearly labelled, inside the slide-in
+   menu (`#mainNav ul li a.btn-nav`) that the hamburger opens right next
+   to it. Logo + language + hamburger comfortably share one row instead. */
 @media (max-width: 520px) {
-    .header-right {
-        gap: 0.3rem;
-    }
-
     .header-cta {
-        padding: 0.55rem;
-        min-width: 34px;
-        font-size: 0;
-        text-align: center;
+        display: none;
     }
 
-    .header-cta::before {
-        content: '\2192';
-        font-size: 1rem;
+    .header-right {
+        gap: 0.5rem;
     }
 
     .lang-toggle {
-        padding: 0.35rem 0.4rem;
-        gap: 0.15rem;
-    }
-
-    .lang-chevron {
-        display: none;
+        padding: 0.35rem 0.55rem;
     }
 }
 
@@ -1633,7 +1629,7 @@ section {
     justify-content: center;
     text-align: center;
     min-height: 400px;
-    padding: calc(var(--header-height) + 40px) 0 40px;
+    padding: calc(var(--header-height) + var(--announcement-bar-height) + 40px) 0 40px;
     overflow: hidden;
     color: var(--white);
     background: var(--black);
@@ -1736,6 +1732,72 @@ section {
     color: rgba(255, 255, 255, 0.9);
     max-width: 620px;
     margin: 0 auto 1.8rem;
+}
+
+/* ============================================================
+   CAR RENTAL HERO – VEHICLE PRICE PILLS
+   Two glass cards showing the fleet's starting prices right in the
+   hero, so the headline price is visible before any scrolling.
+   ============================================================ */
+.carrental-hero-prices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.carrental-hero-price-card {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 16px;
+    border: 1px solid rgba(200, 155, 60, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.carrental-hero-price-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.carrental-hero-price-label {
+    display: block;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.carrental-hero-price-value {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    text-align: left;
+}
+
+@media (max-width: 576px) {
+    .carrental-hero-prices {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .carrental-hero-price-card {
+        justify-content: flex-start;
+    }
 }
 
 /* ============================================================
@@ -4143,7 +4205,7 @@ textarea:focus-visible,
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: var(--header-height) 1.5rem 4rem;
+    padding: calc(var(--header-height) + var(--announcement-bar-height)) 1.5rem 4rem;
     color: var(--white);
     animation: slideUpFade 1s ease 0.3s both;
 }
@@ -4441,7 +4503,7 @@ textarea:focus-visible,
     }
 
     .hero-content {
-        padding: var(--header-height) 1.2rem 3rem;
+        padding: calc(var(--header-height) + var(--announcement-bar-height)) 1.2rem 3rem;
     }
 
     .hero-heading {
@@ -6125,7 +6187,7 @@ textarea:focus-visible,
 
 .trust-authority-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
 }
 
@@ -6195,7 +6257,7 @@ textarea:focus-visible,
 
 @media (max-width: 992px) {
     .trust-authority-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -6213,12 +6275,12 @@ textarea:focus-visible,
     }
 
     .trust-authority-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.9rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.6rem;
     }
 
     .trust-stat {
-        padding: 1.2rem 0.8rem;
+        padding: 1rem 0.5rem;
     }
 }
 
@@ -9401,13 +9463,13 @@ textarea:focus-visible,
     transition: transform 0.2s;
 }
 
-#mainNav ul li .has-mega:hover .mega-trigger,
+#mainNav ul li .has-mega.mega-hover-open .mega-trigger,
 #mainNav ul li .has-mega.open .mega-trigger {
     color: var(--gold-dark);
     border-bottom-color: var(--gold);
 }
 
-.has-mega:hover .mega-trigger i,
+.has-mega.mega-hover-open .mega-trigger i,
 .has-mega.open .mega-trigger i {
     transform: rotate(180deg);
 }
@@ -9429,7 +9491,52 @@ textarea:focus-visible,
     z-index: 200;
 }
 
-.has-mega:hover .mega-panel,
+/* The simple text-only dropdown sits close under its trigger, like a
+   normal dropdown, instead of floating with the mega-menu's wide gap
+   (that gap existed to clear the pill-shaped nav; a small dropdown
+   doesn't need it, and a big gap is exactly what made it read as
+   "detached" from the nav). */
+.mega-panel.mega-panel-preview {
+    top: calc(100% + 0.6rem);
+    left: 0;
+    transform: translateY(8px);
+    border-radius: 14px;
+}
+
+.has-mega.mega-hover-open .mega-panel.mega-panel-preview,
+.has-mega.open .mega-panel.mega-panel-preview {
+    transform: translateY(0);
+}
+
+/* Little pointer "tail" connecting the simple dropdown to its trigger.
+   Lives on `.has-mega` (not the panel itself) because the panel has
+   `overflow: hidden` for its rounded corners, which would otherwise
+   clip a corner-positioned pseudo-element. */
+.has-mega::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 0.32rem);
+    left: 1.1rem;
+    width: 14px;
+    height: 14px;
+    background: var(--white);
+    transform: rotate(45deg);
+    border-radius: 3px;
+    box-shadow: -2px -2px 6px rgba(0, 0, 0, 0.03);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s;
+    z-index: 201;
+    pointer-events: none;
+}
+
+.has-mega.mega-hover-open::before,
+.has-mega.open::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.has-mega.mega-hover-open .mega-panel,
 .has-mega.open .mega-panel {
     opacity: 1;
     visibility: visible;
@@ -9580,36 +9687,63 @@ textarea:focus-visible,
    headline, description, CTA and photo shown on the right. Panel
    width grows to fit this two-pane layout (list + big preview).
    ============================================================ */
+/* Simple single-column dropdown: text-only list, no image preview pane.
+   Kept `.mega-preview-stage`/`.mega-preview-photo` markup in the PHP
+   untouched (still rendered, just hidden here) so nothing needs to
+   change in header.php or the JS that swaps the preview text/photo —
+   that JS keeps running harmlessly against hidden elements, and the
+   `data-href` click-to-navigate behaviour on each item is unaffected. */
 .mega-panel.mega-panel-preview {
-    width: min(560px, calc(100vw - 40px));
+    width: min(280px, calc(100vw - 40px));
     padding: 0;
     overflow: hidden;
 }
 
 .mega-preview-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 300px;
+    display: block;
 }
 
 .mega-preview-list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     list-style: none;
     margin: 0;
-    padding: 0.6rem;
-    border-right: 1px solid var(--gray-200);
+    padding: 0.5rem 0.7rem;
+    border-right: none;
 }
 
 .mega-preview-list li {
     display: block;
     width: 100%;
     flex-shrink: 0;
+    /* Each item fades/slides in with a slight stagger once the panel
+       opens — driven by the nth-child delays below, triggered by the
+       parent `.has-mega.mega-hover-open .mega-panel` / `.open .mega-panel`
+       opacity transition already in place. */
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
 }
 
+.has-mega.mega-hover-open .mega-panel-preview li,
+.has-mega.open .mega-panel-preview li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mega-preview-list li:nth-child(1) { transition-delay: 0.03s; }
+.mega-preview-list li:nth-child(2) { transition-delay: 0.07s; }
+.mega-preview-list li:nth-child(3) { transition-delay: 0.11s; }
+.mega-preview-list li:nth-child(4) { transition-delay: 0.15s; }
+.mega-preview-list li:nth-child(5) { transition-delay: 0.19s; }
+.mega-preview-list li:nth-child(6) { transition-delay: 0.23s; }
+.mega-preview-list li:nth-child(7) { transition-delay: 0.27s; }
+.mega-preview-list li:nth-child(8) { transition-delay: 0.31s; }
+.mega-preview-list li:nth-child(9) { transition-delay: 0.35s; }
+
 .mega-preview-list li + li {
-    margin-top: 0.15rem;
+    margin-top: 0;
+    border-top: 1px solid var(--gray-200);
 }
 
 .mega-preview-item {
@@ -9620,90 +9754,41 @@ textarea:focus-visible,
     border: none;
     font: inherit;
     cursor: pointer;
-    padding: 0.7rem 0.9rem;
-    border-radius: 10px;
+    padding: 0.75rem 0.6rem;
+    border-radius: 8px;
     color: var(--black);
     text-decoration: none;
+    transition: background var(--transition), color var(--transition);
 }
 
 .mega-preview-item strong {
     display: block;
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 0.88rem;
+    font-weight: 500;
 }
 
 .mega-preview-item span {
-    display: block;
-    font-size: 0.74rem;
-    color: var(--text-secondary);
-    margin-top: 0.1rem;
+    display: none;
 }
 
 .mega-preview-item:hover,
-.mega-preview-item:focus-visible,
-.mega-preview-item.active {
+.mega-preview-item:focus-visible {
     background: rgba(200, 155, 60, 0.12);
 }
 
-.mega-preview-item.active strong {
+.mega-preview-item:hover strong,
+.mega-preview-item:focus-visible strong {
     color: var(--gold-dark);
 }
 
-.mega-preview-stage {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.4rem 1.3rem;
-}
-
-.mega-preview-body h4 {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: var(--black);
-    margin: 0 0 0.5rem;
-}
-
-.mega-preview-body p {
-    font-size: 0.86rem;
-    line-height: 1.55;
-    color: var(--text-secondary);
-    margin: 0 0 1rem;
-}
-
-.mega-preview-body .mega-cta {
-    margin-top: 0;
-}
-
+.mega-preview-stage,
 .mega-preview-photo {
-    width: 100%;
-    height: 130px;
-    border-radius: 12px;
-    background-size: cover;
-    background-position: center;
-    box-shadow: var(--shadow-card);
-    flex-shrink: 0;
-    order: -1;
+    display: none;
 }
 
 @media (max-width: 992px) {
     .mega-panel.mega-panel-preview {
         width: 100%;
-    }
-
-    .mega-preview-grid {
-        grid-template-columns: 1fr;
-        min-height: 0;
-    }
-
-    .mega-preview-list {
-        border-right: none;
-        border-bottom: 1px solid var(--gray-200);
-    }
-
-    .mega-preview-photo {
-        height: 140px;
     }
 }
 
@@ -10670,7 +10755,7 @@ textarea:focus-visible,
 /* ---------- Detail hero ---------- */
 .detail-hero {
     position: relative;
-    padding: calc(var(--header-height) + 2.5rem) 0 2.5rem;
+    padding: calc(var(--header-height) + var(--announcement-bar-height) + 2.5rem) 0 2.5rem;
     color: var(--white);
     overflow: hidden;
 }
@@ -11188,7 +11273,7 @@ textarea:focus-visible,
 /* ---------- Sticky booking card ---------- */
 .booking-card-wrap {
     position: sticky;
-    top: calc(var(--header-height) + 1.5rem);
+    top: calc(var(--header-height) + var(--announcement-bar-height) + 1.5rem);
 }
 
 .booking-card {
@@ -11411,7 +11496,7 @@ textarea:focus-visible,
 
 .saved-safaris-pill {
     position: fixed;
-    top: calc(var(--header-height) + 0.8rem);
+    top: calc(var(--header-height) + var(--announcement-bar-height) + 0.8rem);
     right: 1.3rem;
     z-index: 450;
     background: var(--black);

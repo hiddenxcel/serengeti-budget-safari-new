@@ -34,7 +34,7 @@
         linear-gradient(180deg, rgba(13, 41, 35, 0.72) 0%, rgba(13, 41, 35, 0.82) 100%),
         url('../images/hero/safari-vehicle-jangwani-mountain.jpg') center / cover no-repeat;
     color: var(--white);
-    padding: 90px 0;
+    padding: calc(var(--header-height) + var(--announcement-bar-height) + 40px) 0 90px;
     min-height: 400px;
     display: flex;
     align-items: center;

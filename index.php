@@ -352,11 +352,6 @@ require __DIR__ . '/includes/header.php';
             <div class="trust-authority-panel">
                 <div class="trust-authority-grid">
                     <div class="trust-stat">
-                        <span class="trust-icon"><?= icon('smile-beam') ?></span>
-                        <span class="trust-number">3,000+</span>
-                        <span class="trust-label"><?= e(t('trust_travellers')) ?></span>
-                    </div>
-                    <div class="trust-stat">
                         <span class="trust-icon"><?= icon('calendar-check') ?></span>
                         <span class="trust-number">10+</span>
                         <span class="trust-label"><?= e(t('trust_years')) ?></span>

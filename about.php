@@ -16,7 +16,6 @@ $foundedYear = 2019;
 $yearsExperience = date('Y') - $foundedYear;
 
 $stats = [
-    ['number' => '500+', 'label' => t('about_stat_travelers')],
     ['number' => $yearsExperience . '+', 'label' => t('about_stat_years')],
     ['number' => '9', 'label' => t('about_stat_parks')],
     ['number' => '25+', 'label' => t('about_stat_routes')],

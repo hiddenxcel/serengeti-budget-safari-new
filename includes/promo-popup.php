@@ -50,10 +50,6 @@
 
             <div class="promo-trust">
                 <div class="promo-trust-item">
-                    <strong>500+</strong>
-                    <span><?= e(t('promo_trust_travelers')) ?></span>
-                </div>
-                <div class="promo-trust-item">
                     <strong>15+</strong>
                     <span><?= e(t('promo_trust_years')) ?></span>
                 </div>

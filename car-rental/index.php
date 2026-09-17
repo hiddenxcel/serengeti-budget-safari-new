@@ -23,13 +23,51 @@ require dirname(__DIR__) . '/includes/header.php';
                 <span class="hero-tagline"><?= e(badge_tagline('carrental_hero_badge')) ?></span>
                 <h1><span><?= e(t('carrental_hero_title_1')) ?></span> <?= e(t('carrental_hero_title_2')) ?></h1>
                 <p class="hero-sub"><?= e(t('carrental_hero_sub')) ?></p>
+
+                <div class="carrental-hero-prices">
+                    <div class="carrental-hero-price-card">
+                        <span class="carrental-hero-price-icon"><?= icon('truck-field') ?></span>
+                        <div>
+                            <span class="carrental-hero-price-label"><?= e(t('carrental_car1_name')) ?></span>
+                            <span class="carrental-hero-price-value"><?= e(t('carrental_car1_price')) ?></span>
+                        </div>
+                    </div>
+                    <div class="carrental-hero-price-card">
+                        <span class="carrental-hero-price-icon"><?= icon('truck-monster') ?></span>
+                        <div>
+                            <span class="carrental-hero-price-label"><?= e(t('carrental_car2_name')) ?></span>
+                            <span class="carrental-hero-price-value"><?= e(t('carrental_car2_price')) ?></span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="page-hero-actions">
                     <a href="<?= url('contact.php') ?>" class="btn btn-primary"><?= e(t('carrental_hero_cta_quote')) ?></a>
                     <a href="https://wa.me/255697612865?text=<?= urlencode('Hi! I would like to rent a car with a driver.') ?>" class="btn btn-success" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 </div>
+
+                <div class="hero-features">
+                    <span><?= icon('calendar-check') ?> <?= e(t('carrental_hero_stat_1')) ?></span>
+                    <span><?= icon('shield-alt') ?> <?= e(t('carrental_hero_stat_2')) ?></span>
+                    <span><?= icon('user-tie') ?> <?= e(t('carrental_hero_stat_3')) ?></span>
+                    <span><?= icon('star') ?> <?= e(t('carrental_hero_stat_4')) ?></span>
+                </div>
             </div>
         </div>
     </section>
+
+    <div class="container">
+        <div class="guide-trust-badges">
+            <span class="guide-trust-badge"><?= icon('shield-alt') ?> <?= e(t('carrental_trust_1')) ?></span>
+            <span class="guide-trust-badge"><?= icon('droplet') ?> <?= e(t('carrental_trust_2')) ?></span>
+            <span class="guide-trust-badge"><?= icon('truck-monster') ?> <?= e(t('carrental_trust_3')) ?></span>
+            <span class="guide-trust-badge"><?= icon('headset') ?> <?= e(t('carrental_trust_4')) ?></span>
+            <span class="guide-trust-badge"><?= icon('globe-africa') ?> <?= e(t('carrental_trust_5')) ?></span>
+            <span class="guide-trust-badge"><?= icon('clipboard-list') ?> <?= e(t('carrental_trust_6')) ?></span>
+            <span class="guide-trust-badge"><i class="fab fa-whatsapp"></i> <?= e(t('carrental_trust_7')) ?></span>
+            <span class="guide-trust-badge"><?= icon('star') ?> <?= e(t('carrental_trust_8')) ?></span>
+        </div>
+    </div>
 
     <main>
         <section class="detail-section">
@@ -69,6 +107,29 @@ require dirname(__DIR__) . '/includes/header.php';
                         </div>
                     </div>
                 </div>
+
+                <div class="grid-2" style="margin-top:2rem;">
+                    <div class="guide-box pro-tip">
+                        <h3 style="margin-top:0;"><?= e(t('carrental_choose_title')) ?></h3>
+                        <ul class="included-icon-list yes">
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_choose_1')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_choose_2')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_choose_3')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_choose_4')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_choose_5')) ?></li>
+                        </ul>
+                    </div>
+                    <div class="guide-box highlight">
+                        <h3 style="margin-top:0;"><?= e(t('carrental_arrange_title')) ?></h3>
+                        <ul class="included-icon-list yes">
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_arrange_1')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_arrange_2')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_arrange_3')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_arrange_4')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_arrange_5')) ?></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -81,7 +142,7 @@ require dirname(__DIR__) . '/includes/header.php';
                 </div>
 
                 <div class="route-grid featured">
-                    <a href="<?= url('contact.php') ?>" class="route-card featured">
+                    <div class="route-card featured">
                         <div class="route-card-img">
                             <img src="<?= asset('images/team/ranger-clients-company-vehicle-4.jpg') ?>" alt="<?= e(t('carrental_car1_name')) ?>" loading="lazy" />
                             <span class="route-card-days"><?= e(t('carrental_car1_price')) ?></span>
@@ -91,9 +152,17 @@ require dirname(__DIR__) . '/includes/header.php';
                             <span class="route-card-tagline"><?= e(t('carrental_car1_tagline')) ?></span>
                             <h3><?= e(t('carrental_car1_name')) ?></h3>
                             <p><?= e(t('carrental_car1_desc')) ?></p>
+                            <ul class="included-icon-list yes">
+                                <li><?= icon('check-circle') ?> <?= e(t('carrental_car1_feat1')) ?></li>
+                                <li><?= icon('check-circle') ?> <?= e(t('carrental_car1_feat2')) ?></li>
+                                <li><?= icon('check-circle') ?> <?= e(t('carrental_car1_feat3')) ?></li>
+                                <li><?= icon('check-circle') ?> <?= e(t('carrental_car1_feat4')) ?></li>
+                                <li><?= icon('check-circle') ?> <?= e(t('carrental_car1_feat5')) ?></li>
+                            </ul>
+                            <a href="<?= url('contact.php') ?>" class="btn btn-primary" style="margin-top:1rem;width:100%;text-align:center;"><?= e(t('carrental_hero_cta_quote')) ?></a>
                         </div>
-                    </a>
-                    <a href="<?= url('contact.php') ?>" class="route-card featured">
+                    </div>
+                    <div class="route-card featured">
                         <div class="route-card-img">
                             <img src="<?= asset('images/team/ranger-clients-company-vehicle-1.jpg') ?>" alt="<?= e(t('carrental_car2_name')) ?>" loading="lazy" />
                             <span class="route-card-days"><?= e(t('carrental_car2_price')) ?></span>
@@ -103,8 +172,16 @@ require dirname(__DIR__) . '/includes/header.php';
                             <span class="route-card-tagline"><?= e(t('carrental_car2_tagline')) ?></span>
                             <h3><?= e(t('carrental_car2_name')) ?></h3>
                             <p><?= e(t('carrental_car2_desc')) ?></p>
+                            <ul class="included-icon-list yes">
+                                <li><?= icon('check-circle') ?> <?= e(t('carrental_car2_feat1')) ?></li>
+                                <li><?= icon('check-circle') ?> <?= e(t('carrental_car2_feat2')) ?></li>
+                                <li><?= icon('check-circle') ?> <?= e(t('carrental_car2_feat3')) ?></li>
+                                <li><?= icon('check-circle') ?> <?= e(t('carrental_car2_feat4')) ?></li>
+                                <li><?= icon('check-circle') ?> <?= e(t('carrental_car2_feat5')) ?></li>
+                            </ul>
+                            <a href="<?= url('contact.php') ?>" class="btn btn-primary" style="margin-top:1rem;width:100%;text-align:center;"><?= e(t('carrental_hero_cta_quote')) ?></a>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
                 <p class="mt-3" style="margin-top:1.3rem;"><em><?= e(t('carrental_fleet_note')) ?></em></p>

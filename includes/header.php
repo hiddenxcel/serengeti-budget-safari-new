@@ -100,7 +100,7 @@
                             <div class="mega-preview-grid">
                                 <ul class="mega-preview-list">
                                     <li>
-                                        <button type="button" class="mega-preview-item active"
+                                        <button type="button" class="mega-preview-item"
                                             data-title="<?= e(t('nav_safari_budget')) ?>"
                                             data-desc="<?= e(t('nav_safari_budget_long')) ?>"
                                             data-img="<?= asset('images/wildlife/lion-pride-stalking-zebra.jpg') ?>"
@@ -168,7 +168,7 @@
                             <div class="mega-preview-grid">
                                 <ul class="mega-preview-list">
                                     <li>
-                                        <button type="button" class="mega-preview-item active"
+                                        <button type="button" class="mega-preview-item"
                                             data-title="<?= e(t('parks_serengeti_name')) ?>"
                                             data-desc="<?= e(t('parks_serengeti_desc')) ?>"
                                             data-img="<?= asset('images/wildlife/lion-pride-stalking-zebra.jpg') ?>"
@@ -298,3 +298,5 @@
             </div>
         </div>
     </header>
+
+    <div class="mainNav-backdrop" id="mainNavBackdrop" aria-hidden="true"></div>
