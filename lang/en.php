@@ -117,7 +117,7 @@ return [
     'safari_types_badge' => 'What we do',
     'safari_types_title' => 'Types of safari we run',
     'safari_types_tagline' => 'Pick your adventure',
-    'safari_types_intro' => 'We are based in Arusha, at the gateway to the northern parks. Every trip is run by our own guides and our own vehicles, with no middlemen and no hidden costs.',
+    'safari_types_view' => 'View',
 
     'experiences_badge' => 'Signature experiences',
     'experiences_title' => "Moments you won't forget",
@@ -267,14 +267,22 @@ return [
 
     'safari_type_budget_title' => 'Budget Safari',
     'safari_type_budget_desc' => 'Shared vehicles, honest itineraries and no hidden costs: see the big parks without the big price tag.',
+    'safari_type_budget_tag' => 'From $165 pp',
     'safari_type_luxury_title' => 'Luxury Safari',
     'safari_type_luxury_desc' => 'Premium lodges and tented camps, private guiding and unhurried days in the best parts of the parks.',
+    'safari_type_luxury_tag' => 'From $1,700 pp',
     'safari_type_private_title' => 'Private Safari',
     'safari_type_private_desc' => 'Your own vehicle, guide and pace, built around your family or group, on your schedule.',
+    'safari_type_private_tag' => 'Fully customisable',
     'safari_type_group_title' => 'Group Joining Safari',
     'safari_type_group_desc' => 'Join fellow travellers on a shared departure to split costs without splitting the experience.',
+    'safari_type_group_tag' => 'Shared departures',
     'safari_type_daytrips_title' => 'Day Trips & Culture',
     'safari_type_daytrips_desc' => 'Materuni waterfalls, Chemka hot springs, Lake Duluti and Maasai village visits, no overnight needed.',
+    'safari_type_daytrips_tag' => 'No overnight needed',
+    'safari_type_carrental_title' => 'Car Rental with Driver',
+    'safari_type_carrental_desc' => 'A private vehicle and a licensed local driver, for airport runs, city days or a custom route anywhere in Tanzania.',
+    'safari_type_carrental_tag' => 'From $180/day',
 
     'package_1day_title' => '1-Day Safari – Tarangire',
     'package_1day_meta' => 'Departs from Arusha · Elephants and baobabs',
@@ -5627,10 +5635,10 @@ return [
     'carrental_included_3' => 'Comprehensive vehicle insurance',
     'carrental_included_4' => 'Air-conditioned, well-maintained vehicle',
     'carrental_included_5' => '24/7 support during your rental',
+    'carrental_included_6' => 'Driver\'s meals and accommodation on multi-day trips',
     'carrental_excluded_heading' => 'Not included',
-    'carrental_excluded_1' => 'Driver\'s meals and accommodation on multi-day trips',
-    'carrental_excluded_2' => 'Park entry fees, if your route enters a national park',
-    'carrental_excluded_3' => 'Tips for the driver',
+    'carrental_excluded_1' => 'Park entry fees, if your route enters a national park',
+    'carrental_excluded_2' => 'Tips for the driver',
 
     'carrental_uses_badge' => 'Popular uses',
     'carrental_uses_title' => 'What our clients use it for',
@@ -5768,11 +5776,6 @@ return [
     'carrental_cta_contact_form' => 'Contact form',
 
     // Homepage promo card for car rental
-    'carrental_home_badge' => 'Also available',
-    'carrental_home_title' => 'Need Just a Car and a Driver?',
-    'carrental_home_intro' => 'Skip the safari and simply hire a private vehicle with an experienced local driver, for airport transfers, city days or your own custom route across Tanzania.',
-    'carrental_home_price' => 'From $180 to $250 per day',
-    'carrental_home_cta' => 'Explore Car Rental',
 
     // ===== Tarangire Express Safari (1 day package detail page) =====
     'pkg1d_meta_title' => 'Tarangire Express Safari: 1-Day Tour from Arusha | Serengeti Budget Safari',

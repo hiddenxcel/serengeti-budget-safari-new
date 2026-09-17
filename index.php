@@ -10,7 +10,7 @@ $page = 'home';
 $altPath = '';
 $bodyClass = 'home-page';
 $useGsap = true;
-$extraStyles = ['css/promo-popup.css', 'css/car-rental.css'];
+$extraStyles = ['css/promo-popup.css'];
 $extraScripts = ['js/home-animations.js', 'js/promo-popup.js'];
 
 $testimonials = db()->query(
@@ -195,47 +195,93 @@ require __DIR__ . '/includes/header.php';
         </div>
     </div>
 
-    <section class="safari-types-section has-pin-scroll" id="safariTypesPinSection" aria-labelledby="offerTitle">
-        <div class="safari-types-pin-wrap">
-            <div class="container">
-                <div class="section-title-left centered">
-                    <span class="section-badge"><?= icon('compass') ?> <?= e(t('safari_types_badge')) ?></span>
-                    <span class="section-tagline"><?= e(t('safari_types_tagline')) ?></span>
-                    <h2 id="offerTitle"><?= e(t('safari_types_title')) ?></h2>
-                    <p><?= e(t('safari_types_intro')) ?></p>
-                </div>
+    <section class="safari-types-section" aria-labelledby="offerTitle">
+        <div class="container">
+            <div class="section-title-left centered">
+                <span class="section-badge"><?= icon('compass') ?> <?= e(t('safari_types_badge')) ?></span>
+                <span class="section-tagline"><?= e(t('safari_types_tagline')) ?></span>
+                <h2 id="offerTitle"><?= e(t('safari_types_title')) ?></h2>
+            </div>
 
-                <div class="safari-types-slider" id="safariTypesSlider">
-                    <div class="safari-types-track" id="safariTypesTrack">
-                        <a href="<?= url('safari/budget-safari-guide.php') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/wildlife/lion-pride-zebra-kill.jpg') ?>');">
-                            <span class="type-icon"><?= icon('wallet') ?></span>
-                            <h3><?= e(t('safari_type_budget_title')) ?></h3>
-                            <p><?= e(t('safari_type_budget_desc')) ?></p>
-                        </a>
-                        <a href="<?= url('safari/luxury-safari-guide.php') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/hero/male-lion-portrait-mane.jpg') ?>');">
-                            <span class="type-icon"><?= icon('gem') ?></span>
-                            <h3><?= e(t('safari_type_luxury_title')) ?></h3>
-                            <p><?= e(t('safari_type_luxury_desc')) ?></p>
-                        </a>
-                        <a href="<?= url('safari/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/guide-client-ngorongoro-viewpoint.jpg') ?>');">
-                            <span class="type-icon"><?= icon('user-friends') ?></span>
-                            <h3><?= e(t('safari_type_private_title')) ?></h3>
-                            <p><?= e(t('safari_type_private_desc')) ?></p>
-                        </a>
-                        <a href="<?= url('safari/groups.php') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/ranger-clients-safari-vehicle-logo.jpg') ?>');">
-                            <span class="type-icon"><?= icon('users') ?></span>
-                            <h3><?= e(t('safari_type_group_title')) ?></h3>
-                            <p><?= e(t('safari_type_group_desc')) ?></p>
-                        </a>
-                        <a href="<?= url('day-trips/') ?>" class="safari-type-card" style="background-image:url('<?= asset('images/team/client-with-maasai-village.jpg') ?>');">
-                            <span class="type-icon"><?= icon('hiking') ?></span>
-                            <h3><?= e(t('safari_type_daytrips_title')) ?></h3>
-                            <p><?= e(t('safari_type_daytrips_desc')) ?></p>
-                        </a>
+            <div class="safari-types-grid">
+                <a href="<?= url('safari/budget-safari-guide.php') ?>" class="safari-type-card">
+                    <div class="safari-type-card-img" style="background-image:url('<?= asset('images/wildlife/lion-pride-zebra-kill.jpg') ?>');">
+                        <span class="type-icon"><?= icon('wallet') ?></span>
                     </div>
-                    <button type="button" class="stories-slider-arrow prev" id="safariTypesPrev" aria-label="Previous safari type"><?= icon('chevron-left') ?></button>
-                    <button type="button" class="stories-slider-arrow next" id="safariTypesNext" aria-label="Next safari type"><?= icon('chevron-right') ?></button>
-                </div>
+                    <div class="safari-type-card-body">
+                        <h3><?= e(t('safari_type_budget_title')) ?></h3>
+                        <p><?= e(t('safari_type_budget_desc')) ?></p>
+                        <div class="safari-type-card-footer">
+                            <span class="safari-type-card-tag"><?= icon('tag') ?> <?= e(t('safari_type_budget_tag')) ?></span>
+                            <span class="safari-type-card-cta"><?= e(t('safari_types_view')) ?> <?= icon('arrow-right') ?></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="<?= url('safari/luxury-safari-guide.php') ?>" class="safari-type-card">
+                    <div class="safari-type-card-img" style="background-image:url('<?= asset('images/hero/male-lion-portrait-mane.jpg') ?>');">
+                        <span class="type-icon"><?= icon('gem') ?></span>
+                    </div>
+                    <div class="safari-type-card-body">
+                        <h3><?= e(t('safari_type_luxury_title')) ?></h3>
+                        <p><?= e(t('safari_type_luxury_desc')) ?></p>
+                        <div class="safari-type-card-footer">
+                            <span class="safari-type-card-tag"><?= icon('tag') ?> <?= e(t('safari_type_luxury_tag')) ?></span>
+                            <span class="safari-type-card-cta"><?= e(t('safari_types_view')) ?> <?= icon('arrow-right') ?></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="<?= url('safari/') ?>" class="safari-type-card">
+                    <div class="safari-type-card-img" style="background-image:url('<?= asset('images/team/guide-client-ngorongoro-viewpoint.jpg') ?>');">
+                        <span class="type-icon"><?= icon('user-friends') ?></span>
+                    </div>
+                    <div class="safari-type-card-body">
+                        <h3><?= e(t('safari_type_private_title')) ?></h3>
+                        <p><?= e(t('safari_type_private_desc')) ?></p>
+                        <div class="safari-type-card-footer">
+                            <span class="safari-type-card-tag"><?= icon('tag') ?> <?= e(t('safari_type_private_tag')) ?></span>
+                            <span class="safari-type-card-cta"><?= e(t('safari_types_view')) ?> <?= icon('arrow-right') ?></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="<?= url('safari/groups.php') ?>" class="safari-type-card">
+                    <div class="safari-type-card-img" style="background-image:url('<?= asset('images/team/ranger-clients-safari-vehicle-logo.jpg') ?>');">
+                        <span class="type-icon"><?= icon('users') ?></span>
+                    </div>
+                    <div class="safari-type-card-body">
+                        <h3><?= e(t('safari_type_group_title')) ?></h3>
+                        <p><?= e(t('safari_type_group_desc')) ?></p>
+                        <div class="safari-type-card-footer">
+                            <span class="safari-type-card-tag"><?= icon('tag') ?> <?= e(t('safari_type_group_tag')) ?></span>
+                            <span class="safari-type-card-cta"><?= e(t('safari_types_view')) ?> <?= icon('arrow-right') ?></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="<?= url('day-trips/') ?>" class="safari-type-card">
+                    <div class="safari-type-card-img" style="background-image:url('<?= asset('images/team/client-with-maasai-village.jpg') ?>');">
+                        <span class="type-icon"><?= icon('hiking') ?></span>
+                    </div>
+                    <div class="safari-type-card-body">
+                        <h3><?= e(t('safari_type_daytrips_title')) ?></h3>
+                        <p><?= e(t('safari_type_daytrips_desc')) ?></p>
+                        <div class="safari-type-card-footer">
+                            <span class="safari-type-card-tag"><?= icon('tag') ?> <?= e(t('safari_type_daytrips_tag')) ?></span>
+                            <span class="safari-type-card-cta"><?= e(t('safari_types_view')) ?> <?= icon('arrow-right') ?></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="<?= url('car-rental/') ?>" class="safari-type-card">
+                    <div class="safari-type-card-img" style="background-image:url('<?= asset('images/team/ranger-clients-company-vehicle-4.jpg') ?>');">
+                        <span class="type-icon"><?= icon('route') ?></span>
+                    </div>
+                    <div class="safari-type-card-body">
+                        <h3><?= e(t('safari_type_carrental_title')) ?></h3>
+                        <p><?= e(t('safari_type_carrental_desc')) ?></p>
+                        <div class="safari-type-card-footer">
+                            <span class="safari-type-card-tag"><?= icon('tag') ?> <?= e(t('safari_type_carrental_tag')) ?></span>
+                            <span class="safari-type-card-cta"><?= e(t('safari_types_view')) ?> <?= icon('arrow-right') ?></span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -624,6 +670,7 @@ require __DIR__ . '/includes/header.php';
         </div>
     </section>
 
+    <?php /* Hidden per request 2026-09-18 — "Your story in Tanzania" journey-steps section. Markup kept intact below in case it's wanted back.
     <section class="journey-steps-section" aria-labelledby="storyTitle">
         <div class="container">
             <div class="section-title-left centered">
@@ -676,6 +723,7 @@ require __DIR__ . '/includes/header.php';
             </div>
         </div>
     </section>
+    */ ?>
 
     <section class="youtube-shorts-section" id="shorts" aria-labelledby="shortsTitle">
         <div class="youtube-shorts-bg-icons" aria-hidden="true">
@@ -986,26 +1034,6 @@ require __DIR__ . '/includes/header.php';
             </div>
 
             <div class="experiences-dots" id="experiencesDots" aria-hidden="true"></div>
-        </div>
-    </section>
-
-    <section class="car-rental-banner" aria-labelledby="carRentalTitle">
-        <div class="container">
-            <div class="car-rental-banner-inner">
-                <div class="car-rental-banner-photo">
-                    <img src="<?= asset('images/team/ranger-clients-safari-vehicle-logo.jpg') ?>" alt="Private car rental with driver in Tanzania" loading="lazy">
-                </div>
-                <div class="car-rental-banner-content">
-                    <span class="section-badge"><?= icon('route') ?> <?= e(t('carrental_home_badge')) ?></span>
-                    <h2 id="carRentalTitle"><?= e(t('carrental_home_title')) ?></h2>
-                    <p><?= e(t('carrental_home_intro')) ?></p>
-                    <span class="car-rental-banner-price"><?= icon('tag') ?> <?= e(t('carrental_home_price')) ?></span>
-                    <div class="btn-group">
-                        <a href="<?= url('car-rental/') ?>" class="btn btn-primary"><?= e(t('carrental_home_cta')) ?> <?= icon('arrow-right') ?></a>
-                        <a href="https://wa.me/255697612865?text=<?= urlencode('Hi! I would like to rent a car with a driver.') ?>" class="btn btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 

@@ -117,7 +117,7 @@ return [
     'safari_types_badge' => 'Ce que nous faisons',
     'safari_types_title' => 'Types de safaris que nous organisons',
     'safari_types_tagline' => 'Choisissez votre aventure',
-    'safari_types_intro' => 'Nous sommes basés à Arusha, porte d\'entrée des parcs du nord. Chaque voyage est mené par nos propres guides et nos propres véhicules, sans intermédiaires et sans frais cachés.',
+    'safari_types_view' => 'Découvrir',
 
     'experiences_badge' => 'Expériences signature',
     'experiences_title' => "Des moments inoubliables",
@@ -267,14 +267,22 @@ return [
 
     'safari_type_budget_title' => 'Safari Économique',
     'safari_type_budget_desc' => 'Véhicules partagés, itinéraires honnêtes et aucun frais caché : découvrez les grands parcs sans le grand prix.',
+    'safari_type_budget_tag' => 'Dès $165 par personne',
     'safari_type_luxury_title' => 'Safari de Luxe',
     'safari_type_luxury_desc' => 'Lodges et camps de tentes haut de gamme, guide privé et journées sans hâte dans les plus belles zones des parcs.',
+    'safari_type_luxury_tag' => 'Dès $1 700 par personne',
     'safari_type_private_title' => 'Safari Privé',
     'safari_type_private_desc' => 'Votre propre véhicule, guide et rythme, conçu autour de votre famille ou groupe, selon votre emploi du temps.',
+    'safari_type_private_tag' => 'Entièrement personnalisable',
     'safari_type_group_title' => 'Safari en Groupe Partagé',
     'safari_type_group_desc' => 'Rejoignez d\'autres voyageurs sur un départ partagé pour partager les frais sans partager l\'expérience.',
+    'safari_type_group_tag' => 'Départs partagés',
     'safari_type_daytrips_title' => 'Excursions & Culture',
     'safari_type_daytrips_desc' => 'Cascades de Materuni, sources chaudes de Chemka, lac Duluti et visites de villages maasaï, sans besoin de nuitée.',
+    'safari_type_daytrips_tag' => 'Sans nuitée',
+    'safari_type_carrental_title' => 'Location de Voiture avec Chauffeur',
+    'safari_type_carrental_desc' => 'Un véhicule privé et un chauffeur local agréé, pour les transferts aéroport, les journées en ville ou un itinéraire sur mesure partout en Tanzanie.',
+    'safari_type_carrental_tag' => 'Dès $180/jour',
 
     'package_1day_title' => 'Safari d\'1 jour – Tarangire',
     'package_1day_meta' => 'Départ d\'Arusha · Éléphants et baobabs',
@@ -5627,10 +5635,10 @@ return [
     'carrental_included_3' => 'Assurance véhicule complète',
     'carrental_included_4' => 'Véhicule climatisé et bien entretenu',
     'carrental_included_5' => 'Assistance 24/7 pendant votre location',
+    'carrental_included_6' => 'Repas et hébergement du chauffeur lors des voyages de plusieurs jours',
     'carrental_excluded_heading' => 'Non inclus',
-    'carrental_excluded_1' => 'Repas et hébergement du chauffeur lors des voyages de plusieurs jours',
-    'carrental_excluded_2' => 'Frais d\'entrée aux parcs, si votre itinéraire traverse un parc national',
-    'carrental_excluded_3' => 'Pourboire pour le chauffeur',
+    'carrental_excluded_1' => 'Frais d\'entrée aux parcs, si votre itinéraire traverse un parc national',
+    'carrental_excluded_2' => 'Pourboire pour le chauffeur',
 
     'carrental_uses_badge' => 'Utilisations courantes',
     'carrental_uses_title' => 'Pour quoi nos clients l\'utilisent',
@@ -5768,11 +5776,6 @@ return [
     'carrental_cta_contact_form' => 'Formulaire de contact',
 
     // Homepage promo card for car rental
-    'carrental_home_badge' => 'Également disponible',
-    'carrental_home_title' => 'Besoin Simplement d\'une Voiture et d\'un Chauffeur ?',
-    'carrental_home_intro' => 'Sautez le safari et louez simplement un véhicule privé avec un chauffeur local expérimenté, pour les transferts aéroport, les journées en ville ou votre propre itinéraire sur mesure à travers la Tanzanie.',
-    'carrental_home_price' => 'De $180 à $250 par jour',
-    'carrental_home_cta' => 'Découvrir la Location de Voiture',
 
     // ===== Tarangire Express Safari (1 day package detail page) =====
     'pkg1d_meta_title' => 'Tarangire Express Safari : circuit d\'1 jour depuis Arusha | Serengeti Budget Safari',

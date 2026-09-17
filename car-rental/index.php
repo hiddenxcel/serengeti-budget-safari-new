@@ -214,8 +214,10 @@ require dirname(__DIR__) . '/includes/header.php';
 
         <section class="detail-section">
             <div class="container">
-                <h2 class="section-title"><?= e(t('carrental_included_title')) ?></h2>
-                <p class="subtitle"><?= e(t('carrental_included_subtitle')) ?></p>
+                <div class="section-title-left centered">
+                    <h2><?= e(t('carrental_included_title')) ?></h2>
+                    <p><?= e(t('carrental_included_subtitle')) ?></p>
+                </div>
 
                 <div class="included-icon-grid">
                     <div>
@@ -226,6 +228,7 @@ require dirname(__DIR__) . '/includes/header.php';
                             <li><?= icon('check-circle') ?> <?= e(t('carrental_included_3')) ?></li>
                             <li><?= icon('check-circle') ?> <?= e(t('carrental_included_4')) ?></li>
                             <li><?= icon('check-circle') ?> <?= e(t('carrental_included_5')) ?></li>
+                            <li><?= icon('check-circle') ?> <?= e(t('carrental_included_6')) ?></li>
                         </ul>
                     </div>
                     <div>
@@ -233,7 +236,6 @@ require dirname(__DIR__) . '/includes/header.php';
                         <ul class="included-icon-list no">
                             <li><?= icon('times-circle') ?> <?= e(t('carrental_excluded_1')) ?></li>
                             <li><?= icon('times-circle') ?> <?= e(t('carrental_excluded_2')) ?></li>
-                            <li><?= icon('times-circle') ?> <?= e(t('carrental_excluded_3')) ?></li>
                         </ul>
                     </div>
                 </div>
